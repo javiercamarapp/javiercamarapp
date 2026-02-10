@@ -1,54 +1,77 @@
-## 👋 Hi, I'm Javier
+👋 Hi, I’m **Javier**
 
-Founder building **AI-first products for Latin America**.
+Founder building **AI-native companies for Latin America**.
 
-Currently:
-- 🚀 Building a **next-generation AI agent startup on OpenClaw**, focused on LATAM markets  
-- 💳 Founder of **Moni AI**, a personal finance app helping users make better financial decisions
+I focus on creating **high-leverage AI agent platforms** and shipping real products fast — not demos, not research projects.
 
 ---
 
-## 🧠 What I do
+## 🚀 What I’m building
 
-I build and ship **production-grade AI systems**, with a strong focus on:
-- AI agents & autonomous workflows  
-- LLM orchestration and tool-using agents  
-- Rapid experimentation → real products  
-- LATAM-first problems at scale  
+### 🧠 AI Agent Startup (OpenClaw-based)
+I’m currently building a **next-generation AI agent company** on top of **OpenClaw**, designed specifically for **LATAM-scale problems**.
 
-I’m deeply hands-on and operate at the intersection of **engineering, product, and applied AI**.
+The goal:
+- Autonomous agents that **replace workflows**, not assistants
+- AI systems that **operate**, not just suggest
+- LATAM-first infrastructure, data, and use cases
 
----
-
-## ⚡ Vibe coding & AI-native tools
-
-I actively use and experiment with modern AI-first development tools, including:
-
-- **Lovable**
-- **Replit**
-- **Cursor**
-- **Claude Code**
-- **Antigravity**
-- **Codex**
-- **v0**
-- Vibe coding–driven workflows for fast iteration
-
-I believe the future of software is built by **small teams with extreme leverage**.
+This is my **big bet**.
 
 ---
 
-## 🤖 AI platforms & creative tools
+### 💳 Moni AI
+Founder of **Moni AI**, a personal finance app helping users across Latin America:
+- Understand their money
+- Centralize accounts
+- Make better financial decisions with AI
 
-I constantly test and integrate new AI technologies:
+Consumer fintech + AI, built for real users.
 
-- **OpenClaw**
-- **ElevenLabs**
-- **Higgsfield**
-- **Midjourney**
-- **HeyGen**
-- Latest LLMs, agents, and multimodal systems
+---
 
-If it’s new in AI, I’ve probably tried it.
+## 🧠 How I work
+
+I’m extremely hands-on and operate at the intersection of:
+- Engineering
+- Product
+- Applied AI
+- Rapid execution
+
+I believe the next wave of billion-dollar companies will be built by **small teams with extreme leverage**, powered by AI-native tooling.
+
+I ship fast, learn in public, and iterate aggressively.
+
+---
+
+## ⚡ Vibe coding & AI-native development
+
+I actively use **vibe coding workflows** and modern AI-first tools to move faster than traditional teams:
+
+**Tools I use daily / experiment with:**
+- Lovable  
+- Replit  
+- Cursor  
+- Claude Code  
+- Antigravity  
+- Codex  
+- v0  
+
+I treat AI as a **co-founder**, not a feature.
+
+---
+
+## 🤖 AI platforms & creative tech
+
+I constantly test, integrate, and break cutting-edge AI platforms:
+
+- OpenClaw  
+- ElevenLabs  
+- Higgsfield  
+- Midjourney  
+- HeyGen  
+
+If it’s new in AI, agents, or multimodal systems — I’m already playing with it.
 
 ---
 
@@ -59,39 +82,32 @@ If it’s new in AI, I’ve probably tried it.
 - JavaScript
 - Python
 
-**Stack & ecosystem**
+**Stack**
 - React / Vite
 - Cloud-native architectures
 - API-first systems
 - Supabase, Stripe, modern SaaS tooling
 - AI agent frameworks & orchestration layers
 
+I optimize for **speed, scalability, and iteration velocity**.
+
 ---
 
 ## 🌎 Philosophy
 
 I’m obsessed with:
-- Shipping fast
-- Learning in public
-- Building real products (not demos)
-- Applying frontier AI to real-world problems in Latin America
+- Building real products (not theory)
+- Applying frontier AI to real-world problems
+- LATAM as a massive, underserved market
+- Long-term compounding through technology
 
 ---
 
-📫 **Let’s connect**  
-If you’re a founder, investor, or builder interested in AI agents, LATAM, or AI-native startups — feel free to reach out.## Hi there 👋
+## 📫 Let’s talk
 
-<!--
-**javiercamarapp/javiercamarapp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+If you’re:
+- A founder building with AI
+- An investor interested in AI agents or LATAM
+- Someone obsessed with shipping fast
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Let’s connect.
