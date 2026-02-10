@@ -57,7 +57,7 @@ Founder of **Moni AI**, a consumer fintech app helping users across Latin Americ
 🔗 App: [https://monifinancialai.app](https://monifinancialai.app)
 🔗 Repo: [https://github.com/javiercamarapp/Moni-AI](https://github.com/javiercamarapp/Moni-AI)
 
-
+--
 ## 🧠 How I work
 
 I’m extremely hands‑on and operate at the intersection of:
