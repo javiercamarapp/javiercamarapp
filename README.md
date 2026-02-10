@@ -57,28 +57,7 @@ Founder of **Moni AI**, a consumer fintech app helping users across Latin Americ
 🔗 App: [https://monifinancialai.app](https://monifinancialai.app)
 🔗 Repo: [https://github.com/javiercamarapp/Moni-AI](https://github.com/javiercamarapp/Moni-AI)
 
----
-## 📊👇 Stats
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=javiercamarapp&style=for-the-badge&color=blue" />
-</p>
-
-<p align="center">
-  <a href="https://gitroll.io/profile/u8xVh3QhQ9W6mZ5xQ6X4o">
-    <img src="https://gitroll.io/api/badges/profiles/v1/u8xVh3QhQ9W6mZ5xQ6X4o?theme=dark" />
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=javiercamarapp&show_icons=true&theme=dark&hide_border=true&cache_seconds=7200" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=javiercamarapp&layout=compact&theme=dark&hide_border=true&cache_seconds=7200" />
-</p>
-
----
+--
 
 ## 🧠 How I work
 
