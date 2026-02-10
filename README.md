@@ -59,6 +59,7 @@ Founder of **Moni AI**, a consumer fintech app helping users across Latin Americ
 
 ---
 ## 📊👇 Stats 
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=javiercamarapp&style=for-the-badge&color=blue" />
 </p>
