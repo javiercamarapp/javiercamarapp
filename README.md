@@ -5,7 +5,7 @@ Founder building <strong>AI-native companies</strong> for Latin America
 </h3>
 
 <p align="center">
-I build high-leverage AI agent platforms and ship real products fast — <br/>
+I build high‑leverage AI agent platforms and ship <strong>real products</strong> fast — <br/>
 <strong>not demos, not research projects.</strong>
 </p>
 
@@ -27,18 +27,17 @@ I build high-leverage AI agent platforms and ship real products fast — <br/>
 
 ---
 
-
 ## 🚀 What I’m building
 
-### 🧠 AI Agent Startup (OpenClaw-based)
+### 🧠 AI Agent Startup (OpenClaw‑based)
 
-I’m building a **next-generation AI agent company** on top of **OpenClaw**, designed specifically for **LATAM-scale problems**.
+I’m building a **next‑generation AI agent company** on top of **OpenClaw**, purpose‑built for **LATAM‑scale problems**.
 
-**The goal:**
+**The thesis:**
 
 * Autonomous agents that **replace workflows**, not assistants
-* AI systems that **operate**, not just suggest
-* **LATAM-first** infrastructure, data, and real-world use cases
+* AI systems that **operate end‑to‑end**, not just suggest
+* **LATAM‑first** infrastructure, data, and real‑world constraints
 
 > This is my **big bet**.
 
@@ -46,34 +45,29 @@ I’m building a **next-generation AI agent company** on top of **OpenClaw**, de
 
 ### 💳 Moni AI — Personal Finance for LATAM
 
-Founder of **Moni AI**, a personal finance app helping users across Latin America:
+Founder of **Moni AI**, a consumer fintech app helping users across Latin America:
 
 * Understand their money
 * Centralize accounts
 * Make better financial decisions with AI
 
-**Consumer fintech + AI**, built for real users.
+**Consumer fintech × applied AI**, built for real users.
 
 🔗 Website: [https://monifinancialai.com](https://monifinancialai.com)
 🔗 App: [https://monifinancialai.app](https://monifinancialai.app)
 🔗 Repo: [https://github.com/javiercamarapp/Moni-AI](https://github.com/javiercamarapp/Moni-AI)
 
 ---
-<!-- Profile views -->
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=javiercamarapp&style=for-the-badge&color=blue" />
 </p>
-
-<!-- GitRoll profile -->
 
 <p align="center">
   <a href="https://gitroll.io/profile/u8xVh3QhQ9W6mZ5xQ6X4o">
     <img src="https://gitroll.io/api/badges/profiles/v1/u8xVh3QhQ9W6mZ5xQ6X4o?theme=dark" />
   </a>
 </p>
-
-<!-- GitHub stats (2 columns) -->
 
 <table align="center">
   <tr>
@@ -90,24 +84,24 @@ Founder of **Moni AI**, a personal finance app helping users across Latin Americ
 
 ## 🧠 How I work
 
-I’m extremely hands-on and operate at the intersection of:
+I’m extremely hands‑on and operate at the intersection of:
 
 * Engineering
 * Product
 * Applied AI
 * Rapid execution
 
-I believe the next wave of **billion-dollar companies** will be built by **small teams with extreme leverage**, powered by AI-native tooling.
+I believe the next wave of **billion‑dollar companies** will be built by **small teams with extreme leverage**, powered by AI‑native tooling.
 
 I ship fast, learn in public, and iterate aggressively.
 
 ---
 
-## ⚡ Vibe coding & AI-native development
+## ⚡ Vibe coding & AI‑native development
 
-I use **AI as a co-founder**, not a feature.
+I use **AI as a co‑founder**, not a feature.
 
-## ⚡ Tools I use daily
+### ⚡ Tools I use daily
 
 <p align="left">
   <a href="https://lovable.dev" target="_blank">
@@ -131,21 +125,11 @@ I use **AI as a co-founder**, not a feature.
   <img src="https://skillicons.dev/icons?i=cursor,replit,github,vercel" />
 </p>
 
-### 🔗 Links
-
-- **Lovable** → https://lovable.dev  
-- **Cursor** → https://cursor.sh  
-- **Claude Code** → https://www.anthropic.com/claude  
-- **OpenAI Codex** → https://openai.com/codex  
-- **Replit** → https://replit.com  
-- **v0** → https://v0.dev
-
-
 ---
 
 ## 🤖 AI platforms & creative tech
 
-I constantly test, integrate, and break cutting-edge AI platforms:
+I constantly test, integrate, and break cutting‑edge AI platforms across **agents, multimodal, and creative systems**:
 
 <p align="left">
   <img src="https://img.shields.io/badge/OpenClaw-AI-blue?style=flat&logo=robotframework" />
@@ -153,11 +137,6 @@ I constantly test, integrate, and break cutting-edge AI platforms:
   <img src="https://img.shields.io/badge/Midjourney-Image-purple?style=flat" />
   <img src="https://img.shields.io/badge/HeyGen-Video-orange?style=flat" />
 </p>
-
-* OpenClaw → [https://openclaw.ai](https://openclaw.ai)
-* ElevenLabs → [https://elevenlabs.io](https://elevenlabs.io)
-* Midjourney → [https://www.midjourney.com](https://www.midjourney.com)
-* HeyGen → [https://www.heygen.com](https://www.heygen.com)
 
 If it’s new in **agents, multimodal, or AI systems** — I’m already playing with it.
 
@@ -178,8 +157,8 @@ If it’s new in **agents, multimodal, or AI systems** — I’m already playing
 </p>
 
 * React / Vite
-* Cloud-native architectures
-* API-first systems
+* Cloud‑native architectures
+* API‑first systems
 * Supabase, Stripe, modern SaaS tooling
 * AI agent frameworks & orchestration layers
 
@@ -192,9 +171,9 @@ I optimize for **speed, scalability, and iteration velocity**.
 I’m obsessed with:
 
 * Building **real products** (not theory)
-* Applying **frontier AI** to real-world problems
+* Applying **frontier AI** to real‑world problems
 * **LATAM** as a massive, underserved market
-* Long-term compounding through technology
+* Long‑term compounding through technology
 
 ---
 
@@ -211,6 +190,5 @@ If you’re:
 
 ---
 
-<sub>⚡ Built in public. Shipping fast. Playing long-term.</sub>
-
+<sub>⚡ Built in public. Shipping fast. Playing long‑term.</sub>
 
