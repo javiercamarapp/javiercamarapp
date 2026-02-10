@@ -74,17 +74,28 @@ I ship fast, learn in public, and iterate aggressively.
 
 I use **AI as a co-founder**, not a feature.
 
-### Tools I use daily / experiment with
+## ⚡ Tools I use daily
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=cursor,replit,github,vercel" />
+  <a href="https://lovable.dev" target="_blank">
+    <img src="https://img.shields.io/badge/Lovable-AI%20Builder-black?style=for-the-badge" />
+  </a>
+  <a href="https://cursor.sh" target="_blank">
+    <img src="https://img.shields.io/badge/Cursor-AI%20IDE-blue?style=for-the-badge" />
+  </a>
+  <a href="https://www.anthropic.com/claude" target="_blank">
+    <img src="https://img.shields.io/badge/Claude-Code-purple?style=for-the-badge" />
+  </a>
+  <a href="https://openai.com/codex" target="_blank">
+    <img src="https://img.shields.io/badge/OpenAI-Codex-black?style=for-the-badge" />
+  </a>
+  <a href="https://replit.com" target="_blank">
+    <img src="https://img.shields.io/badge/Replit-Dev-orange?style=for-the-badge" />
+  </a>
 </p>
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=cursor,replit,github,vercel" />
 
-* **Lovable** → [https://lovable.dev](https://lovable.dev)
-* **Replit** → [https://replit.com](https://replit.com)
-* **Cursor** → [https://cursor.sh](https://cursor.sh)
-* **Claude Code** → [https://www.anthropic.com](https://www.anthropic.com)
-* **Codex** → [https://platform.openai.com](https://platform.openai.com)
 * **v0** → [https://v0.dev](https://v0.dev)
 
 ---
