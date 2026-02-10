@@ -1,10 +1,3 @@
-👋 Hi, I’m **Javier**
-
-Founder building **AI-native companies for Latin America**.
-
-I focus on creating **high-leverage AI agent platforms** and shipping real products fast — not demos, not research projects.
-
----
 #<!-- HERO -->
 
 <h1 align="center">👋 Hi, I’m Javier</h1>
