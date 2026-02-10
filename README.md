@@ -96,7 +96,29 @@ I use **AI as a co-founder**, not a feature.
 <p align="left">
   <img src="https://skillicons.dev/icons?i=cursor,replit,github,vercel" />
 
-* **v0** → [https://v0.dev](https://v0.dev)
+## ⚡ Tools I use daily
+
+**Lovable** → [https://lovable.dev](https://lovable.dev)
+**Cursor** → [https://cursor.sh](https://cursor.sh)
+**Claude Code** → [https://www.anthropic.com/claude](https://www.anthropic.com/claude)
+**OpenAI Codex** → [https://openai.com](https://openai.com)
+**Replit** → [https://replit.com](https://replit.com)
+**v0** → [https://v0.dev](https://v0.dev)
+
+<br/>
+
+<p align="left">
+  <a href="https://lovable.dev" target="_blank">
+    <img src="https://cdn.simpleicons.org/lovable/ffffff" height="42" alt="Lovable"/>
+  </a>
+  <a href="https://github.com" target="_blank">
+    <img src="https://cdn.simpleicons.org/github/ffffff" height="42" alt="GitHub"/>
+  </a>
+  <a href="https://v0.dev" target="_blank">
+    <img src="https://cdn.simpleicons.org/vercel/ffffff" height="42" alt="v0.dev"/>
+  </a>
+</p>
+
 
 ---
 
