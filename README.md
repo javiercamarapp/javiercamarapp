@@ -10,8 +10,12 @@ I build high-leverage AI agent platforms and ship real products fast — <br/>
 </p>
 
 <p align="center">
+  <img src="https://komarev.com/ghpvc/?username=javiercamarapp&style=for-the-badge&color=blueviolet" alt="Profile views" />
+</p>
+
+<p align="center">
   <a href="https://github.com/javiercamarapp">
-    <img src="https://img.shields.io/github/followers/javiercamarapp?label=GitHub&style=for-the-badge" />
+    <img src="https://img.shields.io/github/followers/javiercamarapp?label=GitHub&style=for-the-badge&logo=github" />
   </a>
   <a href="https://www.linkedin.com/in/javier-cámara-porte-petit">
     <img src="https://img.shields.io/badge/LinkedIn-Javier%20Cámara-blue?style=for-the-badge&logo=linkedin" />
@@ -22,6 +26,7 @@ I build high-leverage AI agent platforms and ship real products fast — <br/>
 </p>
 
 ---
+
 
 ## 🚀 What I’m building
 
