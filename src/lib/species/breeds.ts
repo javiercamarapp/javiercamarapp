@@ -1,0 +1,190 @@
+// ---------------------------------------------------------------------------
+// Complete breed lists per species — includes Mexican/regional breeds
+// ---------------------------------------------------------------------------
+
+import type { SpeciesId } from "@/types/species";
+
+export const BREEDS_BY_SPECIES: Record<SpeciesId, string[]> = {
+  bovino: [
+    "Brahman",
+    "Cebú",
+    "Suizo",
+    "Holstein",
+    "Charolais",
+    "Simmental",
+    "Angus",
+    "Angus Rojo",
+    "Hereford",
+    "Limousin",
+    "Gyr",
+    "Sardo Negro",
+    "Nelore",
+    "Indubrasil",
+    "Criollo",
+    "Beefmaster",
+    "Brangus",
+    "Droughtmaster",
+    "Guzerat",
+    "Jersey",
+    "Pardo Suizo Europeo",
+    "Tropicarne",
+    "Santa Gertrudis",
+    "Simbrah",
+    "F1",
+    "Cruzas comerciales",
+  ],
+
+  porcino: [
+    "Yorkshire",
+    "Landrace",
+    "Duroc",
+    "Hampshire",
+    "Pietrain",
+    "Pelón Mexicano",
+    "Línea terminal F1",
+    "Large White",
+    "Berkshire",
+    "Spotted Poland China",
+    "Chester White",
+    "Meishan",
+    "Cuino",
+    "Criollo",
+    "Línea materna F1 (York x Land)",
+    "Línea terminal (Duroc x Pietrain)",
+  ],
+
+  ovino: [
+    "Pelibuey",
+    "Blackbelly",
+    "Dorper",
+    "Dorper Blanco",
+    "Katahdin",
+    "Suffolk",
+    "Hampshire",
+    "Texel",
+    "Criollo",
+    "Santa Inés",
+    "Rambouillet",
+    "Charollais",
+    "Ile de France",
+    "East Friesian",
+    "Lacaune",
+    "Romanov",
+    "Damara",
+    "F1 (Dorper x Pelibuey)",
+    "F1 (Katahdin x Blackbelly)",
+  ],
+
+  caprino: [
+    "Boer",
+    "Nubia",
+    "Saanen",
+    "Alpina",
+    "Toggenburg",
+    "Anglo-Nubian",
+    "Criollo",
+    "Granadina",
+    "Murciana",
+    "La Mancha",
+    "Kalahari Red",
+    "Savanna",
+    "Oberhasli",
+    "F1 (Boer x Criollo)",
+  ],
+
+  ave: [
+    "Rhode Island Red",
+    "Plymouth Rock",
+    "Leghorn",
+    "ISA Brown",
+    "Lohmann Brown",
+    "Hy-Line Brown",
+    "Ross 308",
+    "Cobb 500",
+    "Hubbard",
+    "Criollo",
+    "Sussex",
+    "Cornish",
+    "Brahma",
+    "New Hampshire",
+    "Guajolote Bronceado",
+    "Guajolote Blanco Nicholas",
+    "Pato Pekín",
+    "Pato Muscovy (Criollo)",
+    "Codorniz Japónica",
+    "Avestruz Africano",
+  ],
+
+  abeja: [
+    "Italiana (Apis mellifera ligustica)",
+    "Carniola (Apis mellifera carnica)",
+    "Africanizada (Apis mellifera scutellata hybrid)",
+    "Caucásica (Apis mellifera caucasica)",
+    "Buckfast",
+    "Melipona beecheii (Xunan Kab)",
+    "Melipona yucatanica",
+    "Scaptotrigona mexicana",
+    "Tetragonisca angustula",
+  ],
+
+  equido: [
+    "Cuarto de Milla",
+    "Criollo",
+    "Azteca",
+    "Pura Sangre Inglés",
+    "Pura Sangre Árabe",
+    "Appaloosa",
+    "Paint Horse",
+    "Warmblood",
+    "Lusitano",
+    "Pony",
+    "Mula",
+    "Burro",
+    "Percherón",
+    "Clydesdale",
+    "Frisón",
+    "Mustang",
+  ],
+
+  conejo: [
+    "Nueva Zelanda",
+    "California",
+    "Rex",
+    "Chinchilla",
+    "Angora",
+    "Holandés",
+    "Criollo",
+    "Gigante de Flandes",
+    "Mini Rex",
+    "Satín",
+    "Mariposa",
+    "Belier",
+    "Azteca Negro",
+  ],
+
+  diversificado: [
+    "Venado cola blanca (Odocoileus virginianus)",
+    "Venado bura (Odocoileus hemionus)",
+    "Pecarí de collar (Pecari tajacu)",
+    "Avestruz africano",
+    "Emú",
+    "Iguana verde",
+    "Cocodrilo de pantano (Crocodylus moreletii)",
+    "Búfalo de agua",
+    "Bisonte americano",
+    "Borrego cimarrón",
+    "Jabalí europeo",
+  ],
+};
+
+/** Flat searchable array of all breeds with species context */
+export const ALL_BREEDS: { species: SpeciesId; breed: string }[] =
+  (Object.entries(BREEDS_BY_SPECIES) as [SpeciesId, string[]][]).flatMap(
+    ([species, breeds]) => breeds.map((breed) => ({ species, breed }))
+  );
+
+/** Search breeds across all species */
+export function searchBreeds(query: string): { species: SpeciesId; breed: string }[] {
+  const q = query.toLowerCase();
+  return ALL_BREEDS.filter((b) => b.breed.toLowerCase().includes(q));
+}
