@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------------
+// Supabase Edge Function: ai-insights
+// Runs weekly via pg_cron to generate AI-powered insights for all ranches
+// ---------------------------------------------------------------------------
+
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
 
 const supabase = createClient(
@@ -7,9 +12,12 @@ const supabase = createClient(
 
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY")!
 
-const SYSTEM_PROMPT = `Eres un consultor ganadero experto con 20 años de experiencia en la Península de Yucatán, México.
+const SYSTEM_PROMPT = `Eres HatoAI, un consultor ganadero experto con 20 años de experiencia en México, especializado en ganadería tropical y subtropical.
 Analizas datos de ranchos y generas insights accionables en español mexicano.
-Responde SIEMPRE en formato JSON con la estructura: { "insights": [{ "tipo": string, "prioridad": "alta"|"media"|"baja", "mensaje": string, "accion": string }] }`
+Siempre incluyes datos específicos, comparaciones con benchmarks regionales (INIFAP, CONASA, SIAP), y recomendaciones concretas.
+Consideras estacionalidad (temporada de lluvias mayo-octubre, secas noviembre-abril) y normativas SENASICA.
+Responde SIEMPRE en formato JSON válido sin markdown con la estructura:
+{ "insights": [{ "tipo": "productividad"|"reproductivo"|"sanitario"|"economico", "prioridad": "alta"|"media"|"baja", "mensaje": string, "accion": string, "impacto_economico": string }] }`
 
 Deno.serve(async () => {
   try {
@@ -20,105 +28,211 @@ Deno.serve(async () => {
       .is("deleted_at", null)
 
     if (!ranchos || ranchos.length === 0) {
-      return new Response(JSON.stringify({ message: "No ranches found" }), {
-        headers: { "Content-Type": "application/json" },
-      })
+      return new Response(
+        JSON.stringify({ message: "No active ranches found" }),
+        { headers: { "Content-Type": "application/json" } }
+      )
     }
 
     let totalInsights = 0
+    let ranchesProcessed = 0
+    const errors: string[] = []
 
     for (const rancho of ranchos) {
-      // Gather 30-day data
-      const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString()
+      try {
+        // Gather 30-day data
+        const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString()
 
-      const [animalesRes, pesajesRes, eventosRes, economicosRes] = await Promise.all([
-        supabase
+        const [animalesRes, pesajesRes, eventosReproRes, eventosSanitRes, economicosRes] =
+          await Promise.all([
+            supabase
+              .from("animales")
+              .select("id, especie, gdp_actual, peso_actual, estado_reproductivo, estado, fecha_ultimo_pesaje")
+              .eq("rancho_id", rancho.id)
+              .is("deleted_at", null)
+              .eq("estado", "activo"),
+            supabase
+              .from("pesajes")
+              .select("animal_id, peso, fecha, gdp_calculada")
+              .eq("rancho_id", rancho.id)
+              .gte("fecha", thirtyDaysAgo),
+            supabase
+              .from("eventos_reproductivos")
+              .select("tipo, fecha, animal_id, resultado")
+              .eq("rancho_id", rancho.id)
+              .gte("fecha", thirtyDaysAgo),
+            supabase
+              .from("eventos_sanitarios")
+              .select("tipo, fecha, producto, animal_id")
+              .eq("rancho_id", rancho.id)
+              .gte("fecha", thirtyDaysAgo),
+            supabase
+              .from("movimientos_economicos")
+              .select("tipo, monto, categoria, fecha")
+              .eq("rancho_id", rancho.id)
+              .gte("fecha", thirtyDaysAgo),
+          ])
+
+        const animales = animalesRes.data || []
+        const pesajes = pesajesRes.data || []
+        const eventosRepro = eventosReproRes.data || []
+        const eventosSanit = eventosSanitRes.data || []
+        const economicos = economicosRes.data || []
+
+        // Skip ranches with no animals
+        if (animales.length === 0) continue
+
+        // Calculate metrics
+        const gdps = animales
+          .filter((a) => a.gdp_actual)
+          .map((a) => a.gdp_actual as number)
+        const avgGdp =
+          gdps.length > 0 ? gdps.reduce((a, b) => a + b, 0) / gdps.length : 0
+
+        const pesos = animales
+          .filter((a) => a.peso_actual)
+          .map((a) => a.peso_actual as number)
+        const avgPeso =
+          pesos.length > 0 ? pesos.reduce((a, b) => a + b, 0) / pesos.length : 0
+
+        const gestantes = animales.filter(
+          (a) => a.estado_reproductivo === "gestante"
+        )
+        const servicios = eventosRepro.filter((e) => e.tipo === "servicio")
+        const partos = eventosRepro.filter((e) => e.tipo === "parto")
+        const vacunaciones = eventosSanit.filter((e) => e.tipo === "vacunacion")
+        const tratamientos = eventosSanit.filter((e) => e.tipo === "tratamiento")
+
+        const ingresos = economicos
+          .filter((e) => e.tipo === "ingreso")
+          .reduce((s, e) => s + (e.monto || 0), 0)
+        const egresos = economicos
+          .filter((e) => e.tipo === "egreso")
+          .reduce((s, e) => s + (e.monto || 0), 0)
+
+        // Count animals without recent weighing
+        const sinPesaje = animales.filter((a) => {
+          if (!a.fecha_ultimo_pesaje) return true
+          return new Date(a.fecha_ultimo_pesaje).getTime() < Date.now() - 30 * 86400000
+        })
+
+        // Get mortality count
+        const { count: muertos30d } = await supabase
           .from("animales")
-          .select("id, especie, gdp_actual, peso_actual, estado_reproductivo")
+          .select("id", { count: "exact", head: true })
           .eq("rancho_id", rancho.id)
-          .is("deleted_at", null)
-          .eq("estado", "activo"),
-        supabase
-          .from("pesajes")
-          .select("animal_id, peso, fecha, gdp_calculada")
-          .eq("rancho_id", rancho.id)
-          .gte("fecha", thirtyDaysAgo),
-        supabase
-          .from("eventos_reproductivos")
-          .select("tipo, fecha, animal_id")
-          .eq("rancho_id", rancho.id)
-          .gte("fecha", thirtyDaysAgo),
-        supabase
-          .from("movimientos_economicos")
-          .select("tipo, monto, categoria")
-          .eq("rancho_id", rancho.id)
-          .gte("fecha", thirtyDaysAgo),
-      ])
+          .eq("estado", "muerto")
+          .gte("updated_at", thirtyDaysAgo)
 
-      const animales = animalesRes.data || []
-      const pesajes = pesajesRes.data || []
-      const eventos = eventosRes.data || []
-      const economicos = economicosRes.data || []
+        const month = new Date().getMonth()
+        const temporada = month >= 4 && month <= 9 ? "lluvias" : "secas"
+        const especie = (rancho.especies_activas as string[])?.[0] || "bovino"
 
-      const ingresos = economicos.filter((e) => e.tipo === "ingreso").reduce((s, e) => s + (e.monto || 0), 0)
-      const egresos = economicos.filter((e) => e.tipo === "egreso").reduce((s, e) => s + (e.monto || 0), 0)
-      const gdps = animales.filter((a) => a.gdp_actual).map((a) => a.gdp_actual as number)
-      const avgGdp = gdps.length > 0 ? gdps.reduce((a, b) => a + b, 0) / gdps.length : 0
+        const prompt = `Datos del rancho "${rancho.nombre}" - Resumen 30 días (${temporada}):
 
-      const prompt = `Datos del rancho "${rancho.nombre}" (últimos 30 días):
+INVENTARIO:
+- Especie principal: ${especie}
 - Total animales activos: ${animales.length}
-- GDP promedio: ${avgGdp.toFixed(3)} kg/día (benchmark: 0.8 kg/día)
+- Sin pesaje reciente: ${sinPesaje.length}
+
+PRODUCTIVIDAD:
+- GDP promedio: ${avgGdp.toFixed(3)} kg/día (benchmark regional: 0.8 kg/día)
+- Peso promedio: ${avgPeso.toFixed(1)} kg
 - Pesajes registrados: ${pesajes.length}
-- Eventos reproductivos: ${eventos.length}
-- Gestantes: ${animales.filter((a) => a.estado_reproductivo === "gestante").length}
+
+REPRODUCCION:
+- Gestantes actuales: ${gestantes.length} (${animales.length > 0 ? ((gestantes.length / animales.length) * 100).toFixed(1) : 0}% del hato)
+- Servicios realizados: ${servicios.length}
+- Partos registrados: ${partos.length}
+
+SANIDAD:
+- Vacunaciones aplicadas: ${vacunaciones.length}
+- Tratamientos realizados: ${tratamientos.length}
+- Muertes registradas: ${muertos30d || 0}
+- Mortalidad mensual: ${animales.length > 0 ? (((muertos30d || 0) / animales.length) * 100).toFixed(2) : 0}%
+
+ECONOMIA:
 - Ingresos: $${ingresos.toLocaleString()} MXN
 - Egresos: $${egresos.toLocaleString()} MXN
 - Balance: $${(ingresos - egresos).toLocaleString()} MXN
+- Costo por cabeza/mes: $${animales.length > 0 ? Math.round(egresos / animales.length).toLocaleString() : 0} MXN
 
-Genera 3-4 insights accionables para este rancho.`
+Genera 3-5 insights accionables priorizados para este rancho. Enfócate en las áreas con mayor oportunidad de mejora.`
 
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": ANTHROPIC_API_KEY,
-          "anthropic-version": "2023-06-01",
-        },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1024,
-          system: SYSTEM_PROMPT,
-          messages: [{ role: "user", content: prompt }],
-        }),
-      })
+        const response = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": ANTHROPIC_API_KEY,
+            "anthropic-version": "2023-06-01",
+          },
+          body: JSON.stringify({
+            model: "claude-sonnet-4-20250514",
+            max_tokens: 1500,
+            system: SYSTEM_PROMPT,
+            messages: [{ role: "user", content: prompt }],
+          }),
+        })
 
-      if (response.ok) {
+        if (!response.ok) {
+          errors.push(`Ranch ${rancho.id}: API error ${response.status}`)
+          continue
+        }
+
         const data = await response.json()
         const content = data.content?.[0]?.text || "{}"
 
+        let parsed: { insights?: Array<{ tipo?: string; prioridad?: string; mensaje?: string; accion?: string; impacto_economico?: string }> }
         try {
-          const parsed = JSON.parse(content)
-          const insights = parsed.insights || []
+          parsed = JSON.parse(content)
+        } catch {
+          errors.push(`Ranch ${rancho.id}: Failed to parse AI response`)
+          continue
+        }
 
-          for (const insight of insights) {
-            await supabase.from("alertas").insert({
-              rancho_id: rancho.id,
-              tipo: "ia_insight",
-              mensaje: insight.mensaje,
-              prioridad: insight.prioridad || "media",
-              accion_sugerida: insight.accion,
-              fecha_alerta: new Date().toISOString().split("T")[0],
-            })
+        const insights = parsed.insights || []
+
+        // Insert each insight as an alert
+        for (const insight of insights) {
+          if (!insight.mensaje) continue
+
+          const { error: insertError } = await supabase.from("alertas").insert({
+            rancho_id: rancho.id,
+            tipo: "ia_insight",
+            mensaje: `[${insight.tipo || "general"}] ${insight.mensaje}`,
+            prioridad: insight.prioridad || "media",
+            accion_sugerida: insight.accion || null,
+            metadata: {
+              impacto_economico: insight.impacto_economico || null,
+              tipo_insight: insight.tipo || null,
+              generado_por: "ai-insights-weekly",
+            },
+            fecha_alerta: new Date().toISOString().split("T")[0],
+          })
+
+          if (!insertError) {
             totalInsights++
           }
-        } catch {
-          console.error("Failed to parse AI response for ranch:", rancho.id)
         }
+
+        ranchesProcessed++
+
+        // Small delay between ranches to avoid API rate limits
+        await new Promise((resolve) => setTimeout(resolve, 500))
+      } catch (ranchError) {
+        errors.push(`Ranch ${rancho.id}: ${(ranchError as Error).message}`)
       }
     }
 
     return new Response(
-      JSON.stringify({ success: true, insightsGenerated: totalInsights }),
+      JSON.stringify({
+        success: true,
+        insightsGenerated: totalInsights,
+        ranchesProcessed,
+        totalRanches: ranchos.length,
+        errors: errors.length > 0 ? errors : undefined,
+        timestamp: new Date().toISOString(),
+      }),
       { headers: { "Content-Type": "application/json" } }
     )
   } catch (error) {
