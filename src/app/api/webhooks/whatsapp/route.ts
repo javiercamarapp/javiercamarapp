@@ -9,7 +9,8 @@ export async function GET(req: Request) {
   const token = searchParams.get('hub.verify_token')
   const challenge = searchParams.get('hub.challenge')
 
-  const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN || 'hatoai_webhook_2026'
+  const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN
+  if (!VERIFY_TOKEN) return new Response('Server not configured', { status: 500 })
 
   if (mode === 'subscribe' && token === VERIFY_TOKEN) {
     return new Response(challenge, { status: 200 })
@@ -17,10 +18,23 @@ export async function GET(req: Request) {
   return new Response('Forbidden', { status: 403 })
 }
 
-// Receive messages (POST)
+// Receive messages (POST) with signature verification
 export async function POST(req: Request) {
   try {
-    const body = await req.json()
+    const rawBody = await req.text()
+    const signature = req.headers.get('x-hub-signature-256')
+    const appSecret = process.env.WHATSAPP_APP_SECRET
+
+    // Verify webhook signature from Meta (skip in dev if no secret configured)
+    if (appSecret && signature) {
+      const crypto = await import('crypto')
+      const expectedSig = 'sha256=' + crypto.createHmac('sha256', appSecret).update(rawBody).digest('hex')
+      if (signature !== expectedSig) {
+        return new Response('Invalid signature', { status: 401 })
+      }
+    }
+
+    const body = JSON.parse(rawBody)
 
     const entry = body.entry?.[0]
     const changes = entry?.changes?.[0]
@@ -123,7 +137,7 @@ async function sendWhatsAppMessage(to: string, text: string) {
   const phoneNumberId = process.env.WHATSAPP_PHONE_NUMBER_ID
 
   if (!token || !phoneNumberId) {
-    console.log('WhatsApp not configured. Would send to', to, ':', text)
+    console.log('WhatsApp not configured — message not sent')
     return
   }
 
