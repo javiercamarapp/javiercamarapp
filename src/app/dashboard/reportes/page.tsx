@@ -80,7 +80,7 @@ export default function ReportesPage() {
                 <CardDescription>{reporte.descripcion}</CardDescription>
               </CardContent>
               <div className="p-6 pt-0">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full" onClick={() => window.print()}>
                   <Download className="h-4 w-4 mr-2" />
                   Generar PDF
                 </Button>

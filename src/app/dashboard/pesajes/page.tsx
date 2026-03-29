@@ -42,7 +42,7 @@ export default function PesajesPage() {
             Registro de pesos y ganancia diaria de peso
           </p>
         </div>
-        <Button className="bg-green-600 hover:bg-green-700">
+        <Button className="bg-green-600 hover:bg-green-700" onClick={() => alert('Modo Manga: Función disponible próximamente. Permite registrar pesajes en lote desde la manga de manejo.')}>
           <Rows3 className="h-4 w-4 mr-2" />
           Modo Manga
         </Button>
