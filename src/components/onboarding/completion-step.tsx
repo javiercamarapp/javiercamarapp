@@ -74,7 +74,7 @@ export function CompletionStep({ data }: CompletionStepProps) {
         {/* CTAs */}
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Button asChild size="lg">
-            <Link href="/inventario/nuevo">Registrar tu primer animal</Link>
+            <Link href="/dashboard/inventario/nuevo">Registrar tu primer animal</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="/">Ir al dashboard</Link>

@@ -12,11 +12,11 @@ import {
 import { cn } from '@/lib/utils'
 
 const tabs = [
-  { label: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { label: 'Inventario', href: '/inventario', icon: Warehouse },
-  { label: 'Reproduccion', href: '/reproduccion', icon: Heart },
-  { label: 'Sanidad', href: '/sanidad', icon: Stethoscope },
-  { label: 'Mas', href: '/mas', icon: MoreHorizontal },
+  { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { label: 'Inventario', href: '/dashboard/inventario', icon: Warehouse },
+  { label: 'Reproducción', href: '/dashboard/reproduccion', icon: Heart },
+  { label: 'Sanidad', href: '/dashboard/sanidad', icon: Stethoscope },
+  { label: 'Más', href: '/dashboard/reportes', icon: MoreHorizontal },
 ]
 
 export function MobileNav() {

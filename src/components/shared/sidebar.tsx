@@ -17,16 +17,16 @@ import {
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { label: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { label: 'Inventario', href: '/inventario', icon: Warehouse },
-  { label: 'Reproduccion', href: '/reproduccion', icon: Heart },
-  { label: 'Pesajes', href: '/pesajes', icon: Scale },
-  { label: 'Sanidad', href: '/sanidad', icon: Stethoscope },
-  { label: 'Alimentacion', href: '/alimentacion', icon: Wheat },
-  { label: 'Economico', href: '/economico', icon: DollarSign },
-  { label: 'AI Insights', href: '/ai-insights', icon: Brain },
-  { label: 'Reportes', href: '/reportes', icon: FileText },
-  { label: 'Configuracion', href: '/configuracion', icon: Settings },
+  { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { label: 'Inventario', href: '/dashboard/inventario', icon: Warehouse },
+  { label: 'Reproducción', href: '/dashboard/reproduccion', icon: Heart },
+  { label: 'Pesajes', href: '/dashboard/pesajes', icon: Scale },
+  { label: 'Sanidad', href: '/dashboard/sanidad', icon: Stethoscope },
+  { label: 'Alimentación', href: '/dashboard/alimentacion', icon: Wheat },
+  { label: 'Económico', href: '/dashboard/economico', icon: DollarSign },
+  { label: 'AI Insights', href: '/dashboard/ai-insights', icon: Brain },
+  { label: 'Reportes', href: '/dashboard/reportes', icon: FileText },
+  { label: 'Configuración', href: '/dashboard/configuracion', icon: Settings },
 ]
 
 export function Sidebar() {
