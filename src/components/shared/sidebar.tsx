@@ -15,10 +15,13 @@ import {
   Zap,
   Sparkles,
   TrendingUp,
+  LineChart,
+  BarChart3,
   FileText,
   Settings,
   ShieldCheck,
   CloudSun,
+  Satellite,
   Bot,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -37,6 +40,9 @@ export const navItems = [
   { label: 'Predicciones', href: '/dashboard/predicciones', icon: Sparkles },
   { label: 'Mercado', href: '/dashboard/mercado', icon: TrendingUp },
   { label: 'Clima', href: '/dashboard/clima', icon: CloudSun },
+  { label: 'Pasturas', href: '/dashboard/pasturas', icon: Satellite },
+  { label: 'Crecimiento', href: '/dashboard/crecimiento', icon: LineChart },
+  { label: 'Benchmark', href: '/dashboard/benchmark', icon: BarChart3 },
   { label: 'Agentes AI', href: '/dashboard/agentes', icon: Bot },
   { label: 'Reportes', href: '/dashboard/reportes', icon: FileText },
   { label: 'Configuración', href: '/dashboard/configuracion', icon: Settings },
