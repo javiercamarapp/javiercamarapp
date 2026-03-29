@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Settings, User, MapPin, CreditCard } from 'lucide-react'
+import { Settings, User, MapPin, CreditCard, Smartphone } from 'lucide-react'
 
 export default function ConfiguracionPage() {
   return (
@@ -100,6 +100,30 @@ export default function ConfiguracionPage() {
             <p>Insights de IA: Incluidos</p>
           </div>
           <Button variant="outline">Cambiar plan</Button>
+        </CardContent>
+      </Card>
+
+      {/* Instalar App */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Smartphone className="h-5 w-5 text-green-700" />
+            Instalar HatoAI
+          </CardTitle>
+          <CardDescription>Usa HatoAI como aplicación en tu celular</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="p-4 rounded-lg border bg-green-50 text-sm space-y-2">
+            <p className="font-semibold">Para instalar HatoAI en tu celular:</p>
+            <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
+              <li>Abre esta página en Chrome</li>
+              <li>Toca los tres puntos (⋮) en la esquina superior</li>
+              <li>Selecciona &quot;Instalar aplicación&quot; o &quot;Agregar a pantalla de inicio&quot;</li>
+            </ol>
+            <p className="text-muted-foreground">
+              Una vez instalada, HatoAI funcionará sin conexión a internet, ideal para zonas rurales con señal limitada.
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>

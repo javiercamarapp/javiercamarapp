@@ -11,6 +11,7 @@ import {
   Wheat,
   DollarSign,
   Brain,
+  HeartPulse,
   FileText,
   Settings,
 } from 'lucide-react'
@@ -25,6 +26,7 @@ export const navItems = [
   { label: 'Alimentación', href: '/dashboard/alimentacion', icon: Wheat },
   { label: 'Económico', href: '/dashboard/economico', icon: DollarSign },
   { label: 'AI Insights', href: '/dashboard/ai-insights', icon: Brain },
+  { label: 'Veterinario AI', href: '/dashboard/veterinario', icon: HeartPulse },
   { label: 'Reportes', href: '/dashboard/reportes', icon: FileText },
   { label: 'Configuración', href: '/dashboard/configuracion', icon: Settings },
 ]
