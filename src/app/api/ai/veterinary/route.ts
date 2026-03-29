@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { createClient } from '@/lib/supabase/server'
 import { callClaude, parseJSONResponse } from '@/lib/ai/client'
 import { SPECIES_CONFIG } from '@/lib/species/config'
 
@@ -26,6 +27,12 @@ FORMATO: Responde en JSON:
 
 export async function POST(req: Request) {
   try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) {
+      return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+    }
+
     const { mensaje, especie, historial } = await req.json()
 
     const validSpecies = Object.keys(SPECIES_CONFIG).includes(especie) ? especie : 'bovino'

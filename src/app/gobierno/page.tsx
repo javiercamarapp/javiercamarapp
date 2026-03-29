@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
@@ -24,6 +25,11 @@ import {
   FileText,
 } from 'lucide-react'
 import Link from 'next/link'
+
+const CoverageMap = dynamic(
+  () => import('@/components/gobierno/coverage-map').then(mod => ({ default: mod.CoverageMap })),
+  { ssr: false, loading: () => <div className="h-[450px] bg-muted rounded-lg animate-pulse" /> }
+)
 
 /* ── KPI data per species tab ── */
 type KpiData = {
@@ -303,6 +309,9 @@ export default function GobiernoDashboard() {
           </TabsContent>
         ))}
       </Tabs>
+
+      {/* Mapa de Cobertura */}
+      <CoverageMap />
 
       {/* Alertas */}
       <Card>
