@@ -1,15 +1,23 @@
 'use client'
-
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Badge } from '@/components/ui/badge'
 import { MessageSquare, Send, Check, Loader2, Zap, Mic } from 'lucide-react'
+import { useCreatePesaje } from '@/lib/hooks/use-weights'
+import { useCreateReproEvent } from '@/lib/hooks/use-reproduction'
+import { useCreateHealthEvent } from '@/lib/hooks/use-health'
+import { useCreateMovimiento } from '@/lib/hooks/use-economics'
+import { useCreateProduccionLeche } from '@/lib/hooks/use-milk-production'
+import { useRanchStore } from '@/lib/store/ranch-store'
+import { useToastNotifications } from '@/lib/hooks/use-toast-notifications'
+import { createClient } from '@/lib/supabase/client'
 
 interface ParsedEvent {
   tipo: string
   animal: string
+  animal_id?: string
   datos: Record<string, string | number>
   confianza: number
   tabla_destino: string
@@ -38,7 +46,66 @@ export default function CapturaRapidaPage() {
   const [mensaje, setMensaje] = useState('')
   const [loading, setLoading] = useState(false)
   const [resultados, setResultados] = useState<ParsedEvent[]>([])
+  const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [isRecording, setIsRecording] = useState(false)
+
+  const currentRanch = useRanchStore((s) => s.currentRanch)
+  const toast = useToastNotifications()
+  const createPesaje = useCreatePesaje()
+  const createReproEvent = useCreateReproEvent()
+  const createHealthEvent = useCreateHealthEvent()
+  const createMovimiento = useCreateMovimiento()
+  const createProduccionLeche = useCreateProduccionLeche()
+
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null)
+
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      const mediaRecorder = new MediaRecorder(stream)
+      const chunks: BlobPart[] = []
+
+      mediaRecorder.ondataavailable = (e) => chunks.push(e.data)
+      mediaRecorder.onstop = async () => {
+        const blob = new Blob(chunks, { type: 'audio/webm' })
+        stream.getTracks().forEach(t => t.stop())
+
+        // Send to Whisper
+        const formData = new FormData()
+        formData.append('audio', blob, 'recording.webm')
+
+        try {
+          const res = await fetch('/api/ai/transcribe', { method: 'POST', body: formData })
+          const data = await res.json()
+          if (data.transcription) {
+            setMensaje(data.transcription)
+          }
+        } catch {
+          // Whisper not configured, show message
+        }
+      }
+
+      mediaRecorder.start()
+      mediaRecorderRef.current = mediaRecorder
+      setIsRecording(true)
+
+      // Auto-stop after 30 seconds
+      setTimeout(() => {
+        if (mediaRecorderRef.current?.state === 'recording') {
+          mediaRecorderRef.current.stop()
+          setIsRecording(false)
+        }
+      }, 30000)
+    } catch {
+      // Microphone not available
+    }
+  }
+
+  const stopRecording = () => {
+    mediaRecorderRef.current?.stop()
+    setIsRecording(false)
+  }
 
   const handleParse = async () => {
     if (!mensaje.trim()) return
@@ -60,13 +127,121 @@ export default function CapturaRapidaPage() {
     }
   }
 
-  const handleSave = () => {
-    setSaved(true)
-    setMensaje('')
-    setTimeout(() => {
-      setResultados([])
-      setSaved(false)
-    }, 3000)
+  const handleSave = async () => {
+    if (!currentRanch) {
+      toast.error('Error', 'No hay rancho seleccionado.')
+      return
+    }
+
+    setSaving(true)
+    try {
+      for (const evento of resultados) {
+        const ranchoId = currentRanch.id
+        const fecha = String(evento.datos.fecha || new Date().toISOString().split('T')[0])
+
+        // Try to find the animal by name/arete if animal_id not provided
+        let animalId = evento.animal_id
+        if (!animalId && evento.animal) {
+          const supabase = createClient()
+          const searchTerm = evento.animal.split('(')[0].trim().split('#')[0].trim()
+          if (searchTerm) {
+            const { data: animales } = await supabase
+              .from('animales')
+              .select('id')
+              .eq('rancho_id', ranchoId)
+              .or(`nombre.ilike.%${searchTerm}%,numero_arete.ilike.%${searchTerm}%`)
+              .limit(1)
+            if (animales && animales.length > 0) {
+              animalId = animales[0].id
+            }
+          }
+        }
+
+        switch (evento.tabla_destino) {
+          case 'pesajes':
+            await createPesaje.mutateAsync({
+              animal_id: animalId || '',
+              fecha,
+              peso: Number(evento.datos.peso) || 0,
+              metodo: String(evento.datos.metodo || ''),
+              notas: String(evento.datos.notas || ''),
+              rancho_id: ranchoId,
+            })
+            break
+
+          case 'eventos_reproductivos':
+            await createReproEvent.mutateAsync({
+              animal_id: animalId || '',
+              fecha,
+              tipo: (evento.datos.tipo_evento || evento.tipo) as any,
+              num_crias: evento.datos.num_crias ? Number(evento.datos.num_crias) : undefined,
+              peso_destete: evento.datos.peso_destete ? Number(evento.datos.peso_destete) : undefined,
+              notas: String(evento.datos.notas || ''),
+              rancho_id: ranchoId,
+            })
+            break
+
+          case 'eventos_sanitarios':
+            await createHealthEvent.mutateAsync({
+              animal_id: animalId || undefined,
+              fecha,
+              tipo: (evento.datos.tipo_evento || 'vacunacion') as any,
+              producto: String(evento.datos.producto || ''),
+              notas: String(evento.datos.notas || ''),
+              rancho_id: ranchoId,
+            })
+            break
+
+          case 'movimientos_economicos':
+            await createMovimiento.mutateAsync({
+              tipo: (evento.datos.tipo_movimiento || 'ingreso') as 'ingreso' | 'egreso',
+              categoria: String(evento.datos.categoria || 'venta_ganado'),
+              monto: Number(evento.datos.monto) || 0,
+              fecha,
+              descripcion: String(evento.datos.descripcion || ''),
+              notas: String(evento.datos.notas || ''),
+              rancho_id: ranchoId,
+            })
+            break
+
+          case 'produccion_leche':
+            await createProduccionLeche.mutateAsync({
+              animal_id: animalId || '',
+              fecha,
+              litros_total: Number(evento.datos.litros || evento.datos.litros_total) || 0,
+              litros_am: evento.datos.litros_am ? Number(evento.datos.litros_am) : undefined,
+              litros_pm: evento.datos.litros_pm ? Number(evento.datos.litros_pm) : undefined,
+              notas: String(evento.datos.notas || ''),
+              rancho_id: ranchoId,
+            })
+            break
+
+          default: {
+            // Fallback: insert directly into the specified table
+            const supabase = createClient()
+            await supabase.from(evento.tabla_destino).insert({
+              rancho_id: ranchoId,
+              animal_id: animalId || null,
+              fecha,
+              ...evento.datos,
+            })
+            break
+          }
+        }
+      }
+
+      setSaved(true)
+      toast.success('Guardado exitosamente', `Se registraron ${resultados.length} evento(s).`)
+      setMensaje('')
+      setTimeout(() => {
+        setResultados([])
+        setSaved(false)
+      }, 3000)
+    } catch (err: any) {
+      toast.error('Error al guardar', err.message || 'Intenta de nuevo.')
+    } finally {
+      setSaving(false)
+    }
   }
 
   return (
@@ -110,9 +285,9 @@ export default function CapturaRapidaPage() {
             <Button
               size="icon"
               variant="ghost"
-              className="absolute right-2 bottom-2 text-muted-foreground"
-              title="Entrada por voz (próximamente)"
-              disabled
+              className={`absolute right-2 bottom-2 ${isRecording ? 'text-red-500 animate-pulse' : 'text-muted-foreground'}`}
+              title={isRecording ? 'Detener grabación' : 'Grabar mensaje de voz'}
+              onClick={isRecording ? stopRecording : startRecording}
             >
               <Mic className="h-5 w-5" />
             </Button>
@@ -160,14 +335,16 @@ export default function CapturaRapidaPage() {
             ))}
 
             <div className="flex gap-2">
-              <Button onClick={handleSave} className="flex-1" disabled={saved}>
-                {saved ? (
-                  <><Check className="h-4 w-4 mr-2" />¡Guardado!</>
+              <Button onClick={handleSave} className="flex-1" disabled={saved || saving}>
+                {saving ? (
+                  <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Guardando...</>
+                ) : saved ? (
+                  <><Check className="h-4 w-4 mr-2" />Guardado!</>
                 ) : (
                   <><Check className="h-4 w-4 mr-2" />Confirmar y guardar</>
                 )}
               </Button>
-              <Button variant="outline" onClick={() => setResultados([])}>
+              <Button variant="outline" onClick={() => setResultados([])} disabled={saving}>
                 Cancelar
               </Button>
             </div>

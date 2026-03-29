@@ -3,8 +3,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 
-const supabase = createClient()
-
 // =============================================
 // Apiarios
 // =============================================
@@ -14,6 +12,7 @@ export function useApiarios(ranchoId: string | null) {
     queryKey: ['apiarios', ranchoId],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('apiarios')
         .select('*')
@@ -32,6 +31,7 @@ export function useApiario(id: string | null) {
     queryKey: ['apiario', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('apiarios')
         .select('*')
@@ -61,6 +61,7 @@ export function useCreateApiario() {
       certificadora?: string
       notas?: string
     }) => {
+      const supabase = createClient()
       const { data: apiario, error } = await supabase
         .from('apiarios')
         .insert(data)
@@ -79,6 +80,7 @@ export function useUpdateApiario() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string; [key: string]: unknown }) => {
+      const supabase = createClient()
       const { data: apiario, error } = await supabase
         .from('apiarios')
         .update(data)
@@ -104,6 +106,7 @@ export function useColmenas(apiarioId: string | null, ranchoId?: string | null) 
     queryKey: ['colmenas', apiarioId, ranchoId],
     queryFn: async () => {
       if (!apiarioId && !ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('colmenas')
         .select('*, apiarios!apiario_id(nombre)')
@@ -129,6 +132,7 @@ export function useColmena(id: string | null) {
     queryKey: ['colmena', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('colmenas')
         .select('*, apiarios!apiario_id(nombre)')
@@ -157,6 +161,7 @@ export function useCreateColmena() {
       fortaleza?: string
       notas?: string
     }) => {
+      const supabase = createClient()
       const { data: colmena, error } = await supabase
         .from('colmenas')
         .insert({
@@ -179,6 +184,7 @@ export function useUpdateColmena() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string; [key: string]: unknown }) => {
+      const supabase = createClient()
       const { data: colmena, error } = await supabase
         .from('colmenas')
         .update(data)
@@ -204,6 +210,7 @@ export function useRevisionesColmena(colmenaId: string | null) {
     queryKey: ['revisionesColmena', colmenaId],
     queryFn: async () => {
       if (!colmenaId) return []
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('revisiones_colmena')
         .select('*')
@@ -239,6 +246,7 @@ export function useCreateRevisionColmena() {
       alimentacion_cantidad?: string
       notas?: string
     }) => {
+      const supabase = createClient()
       const { data: revision, error } = await supabase
         .from('revisiones_colmena')
         .insert(data)
@@ -263,6 +271,7 @@ export function useCosechasMiel(ranchoId: string | null, apiarioId?: string) {
     queryKey: ['cosechasMiel', ranchoId, apiarioId],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('cosechas_miel')
         .select('*, apiarios!apiario_id(nombre)')
@@ -304,6 +313,7 @@ export function useCreateCosechaMiel() {
       comprador?: string
       notas?: string
     }) => {
+      const supabase = createClient()
       const { data: cosecha, error } = await supabase
         .from('cosechas_miel')
         .insert(data)

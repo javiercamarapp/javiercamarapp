@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { PesajeFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 export function usePesajes(ranchoId: string | null, animalId?: string) {
   return useQuery({
     queryKey: ['pesajes', ranchoId, animalId],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('pesajes')
         .select('*, animales!animal_id(numero_arete, nombre)')
@@ -33,6 +32,7 @@ export function useCreatePesaje() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: PesajeFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: pesaje, error } = await supabase
         .from('pesajes')
         .insert(data)
@@ -52,6 +52,7 @@ export function useUpdatePesaje() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<PesajeFormData>) => {
+      const supabase = createClient()
       const { data: pesaje, error } = await supabase
         .from('pesajes')
         .update(data)
@@ -71,6 +72,7 @@ export function useDeletePesaje() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (id: string) => {
+      const supabase = createClient()
       const { error } = await supabase
         .from('pesajes')
         .delete()

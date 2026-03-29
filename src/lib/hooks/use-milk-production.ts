@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { ProduccionLecheFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 export function useProduccionLeche(ranchoId: string | null, filters?: { animalId?: string; fechaDesde?: string; fechaHasta?: string }) {
   return useQuery({
     queryKey: ['produccionLeche', ranchoId, filters],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('produccion_leche')
         .select('*, animales!animal_id(numero_arete, nombre)')
@@ -39,6 +38,7 @@ export function useCreateProduccionLeche() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: ProduccionLecheFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: produccion, error } = await supabase
         .from('produccion_leche')
         .insert(data)
@@ -57,6 +57,7 @@ export function useUpdateProduccionLeche() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<ProduccionLecheFormData>) => {
+      const supabase = createClient()
       const { data: produccion, error } = await supabase
         .from('produccion_leche')
         .update(data)
@@ -76,6 +77,7 @@ export function useDeleteProduccionLeche() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (id: string) => {
+      const supabase = createClient()
       const { error } = await supabase
         .from('produccion_leche')
         .delete()
@@ -93,6 +95,7 @@ export function useResumenLecheDiario(ranchoId: string | null, fecha?: string) {
     queryKey: ['resumenLecheDiario', ranchoId, fecha],
     queryFn: async () => {
       if (!ranchoId) return { total: 0, registros: 0 }
+      const supabase = createClient()
       const targetDate = fecha ?? new Date().toISOString().split('T')[0]
       const { data, error } = await supabase
         .from('produccion_leche')

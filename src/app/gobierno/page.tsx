@@ -23,34 +23,43 @@ import {
   AlertTriangle,
   MapPin,
   FileText,
+  Download,
 } from 'lucide-react'
 import Link from 'next/link'
+import { exportToCSV } from '@/lib/utils/export-csv'
 
 const CoverageMap = dynamic(
   () => import('@/components/gobierno/coverage-map').then(mod => ({ default: mod.CoverageMap })),
   { ssr: false, loading: () => <div className="h-[450px] bg-muted rounded-lg animate-pulse" /> }
 )
 
+/* ── Formateador es-MX ── */
+const fmtNum = (n: number) => n.toLocaleString('es-MX')
+const fmtMoney = (n: number) => `$${n.toLocaleString('es-MX')}`
+
 /* ── KPI data per species tab ── */
 type KpiData = {
   label: string
   valor: string
+  valorNum?: number
   meta: string | null
   icon: typeof Users
   color: string
   bg: string
 }
 
+type MunicipioData = {
+  nombre: string
+  ranchos: number
+  cabezas: number
+  inseminaciones: number
+  nacencias: number
+  programaId: string
+}
+
 type TabData = {
   kpis: KpiData[]
-  municipios: {
-    nombre: string
-    ranchos: number
-    cabezas: number
-    inseminaciones: number
-    nacencias: number
-    programaId: string
-  }[]
+  municipios: MunicipioData[]
   progreso: { label: string; valor: number }[]
 }
 
@@ -58,17 +67,17 @@ const tabsData: Record<string, TabData> = {
   todos: {
     kpis: [
       { label: 'Ranchos activos', valor: '25', meta: '50', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
-      { label: 'Cabezas registradas', valor: '3,450', meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
-      { label: 'Inseminaciones', valor: '34,500', meta: '100,000', icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
+      { label: 'Cabezas registradas', valor: fmtNum(3450), valorNum: 3450, meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inseminaciones', valor: fmtNum(34500), valorNum: 34500, meta: fmtNum(100000), icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
       { label: 'Sementales entregados', valor: '120', meta: '334', icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
-      { label: 'Nacencias', valor: '1,200', meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
-      { label: 'Inversión ejercida', valor: '$42M', meta: '$98M', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Nacencias', valor: fmtNum(1200), valorNum: 1200, meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
+      { label: 'Inversi\u00f3n ejercida', valor: fmtMoney(42000000), valorNum: 42000000, meta: fmtMoney(98000000), icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
     ],
     municipios: [
       { nombre: 'Aldama', ranchos: 8, cabezas: 1200, inseminaciones: 12000, nacencias: 450, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Delicias', ranchos: 6, cabezas: 980, inseminaciones: 9500, nacencias: 320, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Camargo', ranchos: 5, cabezas: 650, inseminaciones: 7000, nacencias: 230, programaId: 'renacer-ganadero-2026' },
-      { nombre: 'Jiménez', ranchos: 4, cabezas: 420, inseminaciones: 4000, nacencias: 150, programaId: 'renacer-ganadero-2026' },
+      { nombre: 'Jim\u00e9nez', ranchos: 4, cabezas: 420, inseminaciones: 4000, nacencias: 150, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Saucillo', ranchos: 2, cabezas: 200, inseminaciones: 2000, nacencias: 50, programaId: 'renacer-ganadero-2026' },
     ],
     progreso: [
@@ -80,17 +89,17 @@ const tabsData: Record<string, TabData> = {
   bovinos: {
     kpis: [
       { label: 'Ranchos activos', valor: '22', meta: '45', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
-      { label: 'Cabezas registradas', valor: '2,890', meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
-      { label: 'Inseminaciones', valor: '31,200', meta: '90,000', icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
+      { label: 'Cabezas registradas', valor: fmtNum(2890), valorNum: 2890, meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inseminaciones', valor: fmtNum(31200), valorNum: 31200, meta: fmtNum(90000), icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
       { label: 'Sementales entregados', valor: '98', meta: '280', icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
       { label: 'Nacencias', valor: '980', meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
-      { label: 'Inversión ejercida', valor: '$35M', meta: '$80M', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inversi\u00f3n ejercida', valor: fmtMoney(35000000), valorNum: 35000000, meta: fmtMoney(80000000), icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
     ],
     municipios: [
       { nombre: 'Aldama', ranchos: 7, cabezas: 1050, inseminaciones: 11000, nacencias: 400, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Delicias', ranchos: 5, cabezas: 820, inseminaciones: 8500, nacencias: 280, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Camargo', ranchos: 5, cabezas: 540, inseminaciones: 6200, nacencias: 165, programaId: 'renacer-ganadero-2026' },
-      { nombre: 'Jiménez', ranchos: 3, cabezas: 320, inseminaciones: 3500, nacencias: 95, programaId: 'renacer-ganadero-2026' },
+      { nombre: 'Jim\u00e9nez', ranchos: 3, cabezas: 320, inseminaciones: 3500, nacencias: 95, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Saucillo', ranchos: 2, cabezas: 160, inseminaciones: 2000, nacencias: 40, programaId: 'renacer-ganadero-2026' },
     ],
     progreso: [
@@ -103,10 +112,10 @@ const tabsData: Record<string, TabData> = {
     kpis: [
       { label: 'Ranchos activos', valor: '8', meta: '15', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
       { label: 'Cabezas registradas', valor: '320', meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
-      { label: 'Inseminaciones', valor: '1,800', meta: '5,000', icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
+      { label: 'Inseminaciones', valor: fmtNum(1800), valorNum: 1800, meta: fmtNum(5000), icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
       { label: 'Sementales entregados', valor: '12', meta: '30', icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
       { label: 'Nacencias', valor: '145', meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
-      { label: 'Inversión ejercida', valor: '$4M', meta: '$10M', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inversi\u00f3n ejercida', valor: fmtMoney(4000000), valorNum: 4000000, meta: fmtMoney(10000000), icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
     ],
     municipios: [
       { nombre: 'Delicias', ranchos: 3, cabezas: 140, inseminaciones: 800, nacencias: 65, programaId: 'renacer-ganadero-2026' },
@@ -123,13 +132,13 @@ const tabsData: Record<string, TabData> = {
     kpis: [
       { label: 'Ranchos activos', valor: '4', meta: '10', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
       { label: 'Cabezas registradas', valor: '180', meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
-      { label: 'Inseminaciones', valor: '900', meta: '3,000', icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
+      { label: 'Inseminaciones', valor: '900', meta: fmtNum(3000), icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
       { label: 'Sementales entregados', valor: '8', meta: '20', icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
       { label: 'Nacencias', valor: '55', meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
-      { label: 'Inversión ejercida', valor: '$2M', meta: '$5M', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inversi\u00f3n ejercida', valor: fmtMoney(2000000), valorNum: 2000000, meta: fmtMoney(5000000), icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
     ],
     municipios: [
-      { nombre: 'Jiménez', ranchos: 2, cabezas: 90, inseminaciones: 450, nacencias: 30, programaId: 'renacer-ganadero-2026' },
+      { nombre: 'Jim\u00e9nez', ranchos: 2, cabezas: 90, inseminaciones: 450, nacencias: 30, programaId: 'renacer-ganadero-2026' },
       { nombre: 'Aldama', ranchos: 2, cabezas: 90, inseminaciones: 450, nacencias: 25, programaId: 'renacer-ganadero-2026' },
     ],
     progreso: [
@@ -141,11 +150,11 @@ const tabsData: Record<string, TabData> = {
   aves: {
     kpis: [
       { label: 'Ranchos activos', valor: '3', meta: '8', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
-      { label: 'Cabezas registradas', valor: '1,200', meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
-      { label: 'Inseminaciones', valor: '—', meta: null, icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
-      { label: 'Sementales entregados', valor: '—', meta: null, icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
+      { label: 'Cabezas registradas', valor: fmtNum(1200), valorNum: 1200, meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inseminaciones', valor: '\u2014', meta: null, icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
+      { label: 'Sementales entregados', valor: '\u2014', meta: null, icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
       { label: 'Nacencias', valor: '350', meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
-      { label: 'Inversión ejercida', valor: '$0.8M', meta: '$2M', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inversi\u00f3n ejercida', valor: fmtMoney(800000), valorNum: 800000, meta: fmtMoney(2000000), icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
     ],
     municipios: [
       { nombre: 'Delicias', ranchos: 2, cabezas: 800, inseminaciones: 0, nacencias: 250, programaId: 'renacer-ganadero-2026' },
@@ -153,7 +162,7 @@ const tabsData: Record<string, TabData> = {
     ],
     progreso: [
       { label: 'Ranchos activados', valor: 37.5 },
-      { label: 'Meta de producción', valor: 28 },
+      { label: 'Meta de producci\u00f3n', valor: 28 },
       { label: 'Presupuesto ejercido', valor: 40 },
     ],
   },
@@ -161,10 +170,10 @@ const tabsData: Record<string, TabData> = {
     kpis: [
       { label: 'Ranchos activos', valor: '2', meta: '5', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
       { label: 'Colmenas registradas', valor: '85', meta: null, icon: Bug, color: 'text-green-600', bg: 'bg-green-50' },
-      { label: 'Inseminaciones', valor: '—', meta: null, icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
+      { label: 'Inseminaciones', valor: '\u2014', meta: null, icon: Syringe, color: 'text-pink-600', bg: 'bg-pink-50' },
       { label: 'Reinas entregadas', valor: '15', meta: '40', icon: Baby, color: 'text-purple-600', bg: 'bg-purple-50' },
       { label: 'Nuevas colmenas', valor: '12', meta: null, icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
-      { label: 'Inversión ejercida', valor: '$0.2M', meta: '$1M', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+      { label: 'Inversi\u00f3n ejercida', valor: fmtMoney(200000), valorNum: 200000, meta: fmtMoney(1000000), icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
     ],
     municipios: [
       { nombre: 'Camargo', ranchos: 1, cabezas: 50, inseminaciones: 0, nacencias: 8, programaId: 'renacer-ganadero-2026' },
@@ -179,9 +188,9 @@ const tabsData: Record<string, TabData> = {
 }
 
 const alertas = [
-  { tipo: 'warning', mensaje: 'El municipio de Saucillo tiene baja participación (4% de ranchos)' },
-  { tipo: 'info', mensaje: 'Meta de inseminaciones al 34.5% — se requiere acelerar el programa' },
-  { tipo: 'warning', mensaje: 'Inversión ejercida al 42.8% con 75% del año transcurrido' },
+  { tipo: 'warning', mensaje: 'El municipio de Saucillo tiene baja participaci\u00f3n (4% de ranchos)' },
+  { tipo: 'info', mensaje: 'Meta de inseminaciones al 34.5% \u2014 se requiere acelerar el programa' },
+  { tipo: 'warning', mensaje: 'Inversi\u00f3n ejercida al 42.8% con 75% del a\u00f1o transcurrido' },
 ]
 
 const speciesTabs = [
@@ -192,6 +201,17 @@ const speciesTabs = [
   { value: 'aves', label: 'Aves' },
   { value: 'abejas', label: 'Abejas' },
 ]
+
+function handleExportExcel() {
+  const data = tabsData.todos.municipios.map((m) => ({
+    Municipio: m.nombre,
+    Ranchos: m.ranchos,
+    Cabezas: m.cabezas,
+    Inseminaciones: m.inseminaciones,
+    Nacencias: m.nacencias,
+  }))
+  exportToCSV(data, 'gobierno_municipios')
+}
 
 function TabContent({ data }: { data: TabData }) {
   return (
@@ -239,7 +259,7 @@ function TabContent({ data }: { data: TabData }) {
         </CardContent>
       </Card>
 
-      {/* Tabla de municipios — clickable */}
+      {/* Tabla de municipios -- clickable */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -269,10 +289,10 @@ function TabContent({ data }: { data: TabData }) {
                       {m.nombre}
                     </Link>
                   </TableCell>
-                  <TableCell className="text-right">{m.ranchos}</TableCell>
-                  <TableCell className="text-right">{m.cabezas.toLocaleString()}</TableCell>
-                  <TableCell className="text-right">{m.inseminaciones.toLocaleString()}</TableCell>
-                  <TableCell className="text-right">{m.nacencias.toLocaleString()}</TableCell>
+                  <TableCell className="text-right">{fmtNum(m.ranchos)}</TableCell>
+                  <TableCell className="text-right">{fmtNum(m.cabezas)}</TableCell>
+                  <TableCell className="text-right">{fmtNum(m.inseminaciones)}</TableCell>
+                  <TableCell className="text-right">{fmtNum(m.nacencias)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -286,11 +306,19 @@ function TabContent({ data }: { data: TabData }) {
 export default function GobiernoDashboard() {
   return (
     <div className="space-y-6 mt-4">
-      <div>
-        <h2 className="text-2xl font-bold">Dashboard del Programa Ganadero</h2>
-        <p className="text-muted-foreground">
-          Monitoreo en tiempo real de indicadores del programa estatal
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 className="text-2xl font-bold">Dashboard del Programa Ganadero</h2>
+          <p className="text-muted-foreground">
+            Monitoreo en tiempo real de indicadores del programa estatal
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <Button variant="outline" className="gap-2" onClick={handleExportExcel}>
+            <Download className="h-4 w-4" />
+            Exportar Excel
+          </Button>
+        </div>
       </div>
 
       {/* Species Tabs */}
@@ -342,10 +370,12 @@ export default function GobiernoDashboard() {
 
       {/* Generar Reporte CONEVAL */}
       <div className="flex justify-end">
-        <Button className="gap-2" size="lg">
-          <FileText className="h-5 w-5" />
-          Generar Reporte CONEVAL
-        </Button>
+        <Link href="/gobierno/coneval">
+          <Button className="gap-2" size="lg">
+            <FileText className="h-5 w-5" />
+            Generar Reporte CONEVAL
+          </Button>
+        </Link>
       </div>
     </div>
   )

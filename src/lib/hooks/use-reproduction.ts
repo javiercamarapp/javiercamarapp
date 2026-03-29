@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { ReproEventFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 export function useReproEvents(ranchoId: string | null, animalId?: string) {
   return useQuery({
     queryKey: ['reproEvents', ranchoId, animalId],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('eventos_reproductivos')
         .select('*, animales!animal_id(numero_arete, nombre)')
@@ -34,6 +33,7 @@ export function useReproEvent(id: string | null) {
     queryKey: ['reproEvent', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('eventos_reproductivos')
         .select('*')
@@ -50,6 +50,7 @@ export function useCreateReproEvent() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: ReproEventFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: event, error } = await supabase
         .from('eventos_reproductivos')
         .insert(data)
@@ -69,6 +70,7 @@ export function useUpdateReproEvent() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<ReproEventFormData>) => {
+      const supabase = createClient()
       const { data: event, error } = await supabase
         .from('eventos_reproductivos')
         .update(data)

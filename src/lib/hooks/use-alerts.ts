@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import { ALERT_REFETCH_INTERVAL } from '@/lib/constants'
 
-const supabase = createClient()
-
 export function useAlertas(ranchoId: string | null, soloNoLeidas?: boolean) {
   return useQuery({
     queryKey: ['alertas', ranchoId, soloNoLeidas],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('alertas')
         .select('*')
@@ -34,6 +33,7 @@ export function useAlertasCount(ranchoId: string | null) {
     queryKey: ['alertasCount', ranchoId],
     queryFn: async () => {
       if (!ranchoId) return 0
+      const supabase = createClient()
       const { count, error } = await supabase
         .from('alertas')
         .select('*', { count: 'exact', head: true })
@@ -52,6 +52,7 @@ export function useMarcarAlertaLeida() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (id: string) => {
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('alertas')
         .update({ leida: true })
@@ -72,6 +73,7 @@ export function useMarcarTodasLeidas() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (ranchoId: string) => {
+      const supabase = createClient()
       const { error } = await supabase
         .from('alertas')
         .update({ leida: true })
@@ -101,6 +103,7 @@ export function useCreateAlerta() {
       fecha_alerta?: string
       accion_sugerida?: string
     }) => {
+      const supabase = createClient()
       const { data: alerta, error } = await supabase
         .from('alertas')
         .insert({

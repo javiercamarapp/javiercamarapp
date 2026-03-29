@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { AnimalFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 export function useAnimals(ranchoId: string | null, especie?: string) {
   return useQuery({
     queryKey: ['animals', ranchoId, especie],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('animales')
         .select('*')
@@ -35,6 +34,7 @@ export function useAnimal(id: string | null) {
     queryKey: ['animal', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('animales')
         .select('*')
@@ -51,6 +51,7 @@ export function useCreateAnimal() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: AnimalFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: animal, error } = await supabase
         .from('animales')
         .insert(data)
@@ -69,6 +70,7 @@ export function useUpdateAnimal() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<AnimalFormData>) => {
+      const supabase = createClient()
       const { data: animal, error } = await supabase
         .from('animales')
         .update(data)

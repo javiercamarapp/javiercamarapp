@@ -1,6 +1,8 @@
 'use client'
-
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -13,27 +15,64 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { ArrowLeft, Save, Camera } from 'lucide-react'
+import { ArrowLeft, Save, Camera, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { SPECIES_CONFIG, SPECIES_LIST, type SpeciesKey } from '@/lib/species/config'
-
-const CORRALES_DEMO = [
-  { id: '1', nombre: 'Corral Principal' },
-  { id: '2', nombre: 'Potrero Norte' },
-  { id: '3', nombre: 'Potrero Sur' },
-  { id: '4', nombre: 'Corral de Manejo' },
-  { id: '5', nombre: 'Paridero' },
-]
+import { animalSchema, type AnimalFormData } from '@/lib/validations/animal'
+import { useCreateAnimal } from '@/lib/hooks/use-animals'
+import { useRanchStore } from '@/lib/store/ranch-store'
+import { useToastNotifications } from '@/lib/hooks/use-toast-notifications'
 
 export default function NuevoAnimalPage() {
-  const [especie, setEspecie] = useState<SpeciesKey | ''>('')
+  const router = useRouter()
+  const toast = useToastNotifications()
+  const currentRanch = useRanchStore((s) => s.currentRanch)
+  const createAnimal = useCreateAnimal()
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm<AnimalFormData>({
+    resolver: zodResolver(animalSchema) as any,
+    defaultValues: {
+      especie: '',
+      numero_arete: '',
+      sexo: undefined,
+      origen: 'nacido_en_rancho',
+    },
+  })
+
+  const especie = watch('especie') as SpeciesKey | ''
   const speciesConfig = especie ? SPECIES_CONFIG[especie] : null
+
+  const onSubmit = (data: AnimalFormData) => {
+    if (!currentRanch) {
+      toast.error('Error', 'No hay rancho seleccionado. Configura tu rancho primero.')
+      return
+    }
+
+    createAnimal.mutate(
+      { ...data, rancho_id: currentRanch.id },
+      {
+        onSuccess: () => {
+          toast.success('Animal registrado', 'El animal se guardó correctamente.')
+          router.push('/dashboard/inventario')
+        },
+        onError: (error) => {
+          toast.error('Error al guardar', error.message || 'Intenta de nuevo.')
+        },
+      }
+    )
+  }
 
   return (
     <div className="space-y-4 max-w-2xl mx-auto">
       {/* Header */}
       <div className="flex items-center gap-3">
-        <Link href="/inventario">
+        <Link href="/dashboard/inventario">
           <Button variant="ghost" size="icon">
             <ArrowLeft className="w-5 h-5" />
           </Button>
@@ -46,13 +85,7 @@ export default function NuevoAnimalPage() {
         </div>
       </div>
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          alert('Guardado (demo)')
-        }}
-        className="space-y-4"
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Especie */}
         <Card>
           <CardHeader className="pb-3">
@@ -64,7 +97,7 @@ export default function NuevoAnimalPage() {
                 <button
                   key={sp.key}
                   type="button"
-                  onClick={() => setEspecie(sp.key)}
+                  onClick={() => setValue('especie', sp.key, { shouldValidate: true })}
                   className={`flex flex-col items-center gap-1 p-3 rounded-lg border-2 transition-colors ${
                     especie === sp.key
                       ? 'border-primary bg-primary/5'
@@ -76,6 +109,9 @@ export default function NuevoAnimalPage() {
                 </button>
               ))}
             </div>
+            {errors.especie && (
+              <p className="text-sm text-destructive mt-2">{errors.especie.message}</p>
+            )}
           </CardContent>
         </Card>
 
@@ -90,19 +126,24 @@ export default function NuevoAnimalPage() {
               <Input
                 id="numero_arete"
                 placeholder="Ej: 484-0-2601234001"
-                required
+                {...register('numero_arete')}
               />
+              {errors.numero_arete && (
+                <p className="text-sm text-destructive">{errors.numero_arete.message}</p>
+              )}
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="nombre">Nombre (opcional)</Label>
-              <Input id="nombre" placeholder="Ej: La Negra" />
+              <Input id="nombre" placeholder="Ej: La Negra" {...register('nombre')} />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="sexo">Sexo *</Label>
-                <Select required>
+                <Select
+                  onValueChange={(val) => setValue('sexo', val as 'macho' | 'hembra', { shouldValidate: true })}
+                >
                   <SelectTrigger id="sexo">
                     <SelectValue placeholder="Seleccionar" />
                   </SelectTrigger>
@@ -111,11 +152,17 @@ export default function NuevoAnimalPage() {
                     <SelectItem value="hembra">Hembra</SelectItem>
                   </SelectContent>
                 </Select>
+                {errors.sexo && (
+                  <p className="text-sm text-destructive">{errors.sexo.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="categoria">Categoria</Label>
-                <Select disabled={!speciesConfig}>
+                <Select
+                  disabled={!speciesConfig}
+                  onValueChange={(val) => setValue('categoria', val)}
+                >
                   <SelectTrigger id="categoria">
                     <SelectValue
                       placeholder={
@@ -146,7 +193,10 @@ export default function NuevoAnimalPage() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="raza">Raza</Label>
-              <Select disabled={!speciesConfig}>
+              <Select
+                disabled={!speciesConfig}
+                onValueChange={(val) => setValue('raza', val)}
+              >
                 <SelectTrigger id="raza">
                   <SelectValue
                     placeholder={
@@ -168,7 +218,10 @@ export default function NuevoAnimalPage() {
 
             <div className="space-y-2">
               <Label htmlFor="tipo_produccion">Tipo de produccion</Label>
-              <Select disabled={!speciesConfig}>
+              <Select
+                disabled={!speciesConfig}
+                onValueChange={(val) => setValue('tipo_produccion', val)}
+              >
                 <SelectTrigger id="tipo_produccion">
                   <SelectValue
                     placeholder={
@@ -199,7 +252,7 @@ export default function NuevoAnimalPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="fecha_nacimiento">Fecha de nacimiento</Label>
-                <Input id="fecha_nacimiento" type="date" />
+                <Input id="fecha_nacimiento" type="date" {...register('fecha_nacimiento')} />
               </div>
 
               <div className="space-y-2">
@@ -210,18 +263,22 @@ export default function NuevoAnimalPage() {
                   placeholder="Ej: 450"
                   min="0"
                   step="0.1"
+                  {...register('peso_actual', { valueAsNumber: true })}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="origen">Origen</Label>
-              <Select>
+              <Select
+                defaultValue="nacido_en_rancho"
+                onValueChange={(val) => setValue('origen', val)}
+              >
                 <SelectTrigger id="origen">
                   <SelectValue placeholder="Seleccionar origen" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="nacido_rancho">Nacido en el rancho</SelectItem>
+                  <SelectItem value="nacido_en_rancho">Nacido en el rancho</SelectItem>
                   <SelectItem value="comprado">Comprado</SelectItem>
                   <SelectItem value="donado">Donado</SelectItem>
                   <SelectItem value="intercambio">Intercambio</SelectItem>
@@ -231,16 +288,12 @@ export default function NuevoAnimalPage() {
 
             <div className="space-y-2">
               <Label htmlFor="corral">Corral / Potrero</Label>
-              <Select>
+              <Select onValueChange={(val) => setValue('corral_id', val)}>
                 <SelectTrigger id="corral">
                   <SelectValue placeholder="Seleccionar corral" />
                 </SelectTrigger>
                 <SelectContent>
-                  {CORRALES_DEMO.map((corral) => (
-                    <SelectItem key={corral.id} value={corral.id}>
-                      {corral.nombre}
-                    </SelectItem>
-                  ))}
+                  <SelectItem value="">Sin asignar</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -274,20 +327,25 @@ export default function NuevoAnimalPage() {
             <Textarea
               placeholder="Notas adicionales sobre el animal..."
               rows={3}
+              {...register('notas')}
             />
           </CardContent>
         </Card>
 
         {/* Actions */}
         <div className="flex gap-3 pt-2 pb-4">
-          <Link href="/inventario" className="flex-1">
+          <Link href="/dashboard/inventario" className="flex-1">
             <Button type="button" variant="outline" className="w-full">
               Cancelar
             </Button>
           </Link>
-          <Button type="submit" className="flex-1">
-            <Save className="w-4 h-4 mr-2" />
-            Guardar animal
+          <Button type="submit" className="flex-1" disabled={createAnimal.isPending}>
+            {createAnimal.isPending ? (
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+            ) : (
+              <Save className="w-4 h-4 mr-2" />
+            )}
+            {createAnimal.isPending ? 'Guardando...' : 'Guardar animal'}
           </Button>
         </div>
       </form>

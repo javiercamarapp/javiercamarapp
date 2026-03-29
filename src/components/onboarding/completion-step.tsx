@@ -1,14 +1,73 @@
 'use client'
 
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Loader2 } from 'lucide-react'
+import { saveOnboardingData } from '@/lib/actions/save-onboarding'
+import { useToastNotifications } from '@/lib/hooks/use-toast-notifications'
+import { useRanchStore } from '@/lib/store/ranch-store'
+import { useAuthStore } from '@/lib/store/auth-store'
 
 interface CompletionStepProps {
   data: Record<string, any>
 }
 
 export function CompletionStep({ data }: CompletionStepProps) {
+  const router = useRouter()
+  const toast = useToastNotifications()
+  const setCurrentRanch = useRanchStore((s) => s.setCurrentRanch)
+  const user = useAuthStore((s) => s.user)
+  const setUser = useAuthStore((s) => s.setUser)
+  const [saving, setSaving] = useState(false)
+  const [saved, setSaved] = useState(false)
+
+  const handleGoToDashboard = async () => {
+    setSaving(true)
+    try {
+      const ranch = await saveOnboardingData({
+        nombre: data.nombre || '',
+        telefono: data.telefono,
+        email: data.email,
+        nombreRancho: data.nombreRancho || '',
+        estado: data.estado || '',
+        municipio: data.municipio || '',
+        superficie: data.superficie ? Number(data.superficie) : undefined,
+        especies: data.especies || [],
+        corrales: data.corrales || [],
+      })
+
+      // Update local stores
+      setCurrentRanch({
+        id: ranch.id,
+        nombre: ranch.nombre,
+        estado: ranch.estado,
+        municipio: ranch.municipio,
+        especies_activas: ranch.especies_activas || [],
+        tipo_produccion: ranch.tipo_produccion || null,
+        superficie_ha: ranch.superficie_ha || null,
+      })
+
+      if (user) {
+        setUser({
+          ...user,
+          nombre: data.nombre || user.nombre,
+          onboarding_completado: true,
+        })
+      }
+
+      setSaved(true)
+      toast.success('Configuracion completa', 'Tu rancho fue creado exitosamente.')
+      router.push('/dashboard')
+    } catch (err: any) {
+      toast.error('Error al guardar', err.message || 'Intenta de nuevo.')
+    } finally {
+      setSaving(false)
+    }
+  }
+
   return (
     <Card>
       <CardHeader className="text-center">
@@ -27,15 +86,15 @@ export function CompletionStep({ data }: CompletionStepProps) {
             />
           </svg>
         </div>
-        <CardTitle className="text-2xl">¡Felicidades!</CardTitle>
+        <CardTitle className="text-2xl">Felicidades!</CardTitle>
         <CardDescription className="text-base">
-          Tu cuenta de HatoAI está lista. Ya puedes comenzar a gestionar tu rancho.
+          Tu cuenta de HatoAI esta lista. Ya puedes comenzar a gestionar tu rancho.
         </CardDescription>
       </CardHeader>
       <CardContent>
         {/* Summary */}
         <div className="rounded-lg border bg-muted/50 p-4 mb-6 space-y-2 text-sm">
-          <h3 className="font-semibold text-base mb-3">Resumen de configuración</h3>
+          <h3 className="font-semibold text-base mb-3">Resumen de configuracion</h3>
           {data.nombre && (
             <p>
               <span className="text-muted-foreground">Nombre:</span> {data.nombre}
@@ -48,7 +107,7 @@ export function CompletionStep({ data }: CompletionStepProps) {
           )}
           {data.estado && (
             <p>
-              <span className="text-muted-foreground">Ubicación:</span> {data.estado}
+              <span className="text-muted-foreground">Ubicacion:</span> {data.estado}
               {data.municipio ? `, ${data.municipio}` : ''}
             </p>
           )}
@@ -76,8 +135,14 @@ export function CompletionStep({ data }: CompletionStepProps) {
           <Button asChild size="lg">
             <Link href="/dashboard/inventario/nuevo">Registrar tu primer animal</Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/">Ir al dashboard</Link>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={handleGoToDashboard}
+            disabled={saving || saved}
+          >
+            {saving && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+            {saving ? 'Guardando...' : saved ? 'Guardado!' : 'Ir al dashboard'}
           </Button>
         </div>
       </CardContent>

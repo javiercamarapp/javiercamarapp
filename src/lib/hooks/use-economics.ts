@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { MovimientoFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 export function useMovimientos(ranchoId: string | null, filters?: { tipo?: string; categoria?: string; fechaDesde?: string; fechaHasta?: string }) {
   return useQuery({
     queryKey: ['movimientos', ranchoId, filters],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('movimientos_economicos')
         .select('*, animales!animal_id(numero_arete, nombre)')
@@ -43,6 +42,7 @@ export function useMovimiento(id: string | null) {
     queryKey: ['movimiento', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('movimientos_economicos')
         .select('*')
@@ -59,6 +59,7 @@ export function useCreateMovimiento() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: MovimientoFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: movimiento, error } = await supabase
         .from('movimientos_economicos')
         .insert(data)
@@ -77,6 +78,7 @@ export function useUpdateMovimiento() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<MovimientoFormData>) => {
+      const supabase = createClient()
       const { data: movimiento, error } = await supabase
         .from('movimientos_economicos')
         .update(data)
@@ -97,6 +99,7 @@ export function useDeleteMovimiento() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (id: string) => {
+      const supabase = createClient()
       const { error } = await supabase
         .from('movimientos_economicos')
         .delete()
@@ -114,6 +117,7 @@ export function useResumenEconomico(ranchoId: string | null, periodo?: { desde: 
     queryKey: ['resumenEconomico', ranchoId, periodo],
     queryFn: async () => {
       if (!ranchoId) return { ingresos: 0, egresos: 0, balance: 0 }
+      const supabase = createClient()
       let query = supabase
         .from('movimientos_economicos')
         .select('tipo, monto')

@@ -4,13 +4,12 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { HealthEventFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 export function useHealthEvents(ranchoId: string | null, filters?: { animalId?: string; loteId?: string; colmenaId?: string; tipo?: string }) {
   return useQuery({
     queryKey: ['healthEvents', ranchoId, filters],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('eventos_sanitarios')
         .select('*, animales!animal_id(numero_arete, nombre)')
@@ -43,6 +42,7 @@ export function useHealthEvent(id: string | null) {
     queryKey: ['healthEvent', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('eventos_sanitarios')
         .select('*')
@@ -59,6 +59,7 @@ export function useCreateHealthEvent() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: HealthEventFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: event, error } = await supabase
         .from('eventos_sanitarios')
         .insert(data)
@@ -78,6 +79,7 @@ export function useUpdateHealthEvent() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<HealthEventFormData>) => {
+      const supabase = createClient()
       const { data: event, error } = await supabase
         .from('eventos_sanitarios')
         .update(data)

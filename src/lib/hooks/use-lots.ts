@@ -4,8 +4,6 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import type { LoteFormData, ProduccionLoteFormData } from '@/lib/validations/animal'
 
-const supabase = createClient()
-
 // =============================================
 // Lotes
 // =============================================
@@ -15,6 +13,7 @@ export function useLotes(ranchoId: string | null, especie?: string) {
     queryKey: ['lotes', ranchoId, especie],
     queryFn: async () => {
       if (!ranchoId) return []
+      const supabase = createClient()
       let query = supabase
         .from('lotes')
         .select('*')
@@ -39,6 +38,7 @@ export function useLote(id: string | null) {
     queryKey: ['lote', id],
     queryFn: async () => {
       if (!id) return null
+      const supabase = createClient()
       const { data, error } = await supabase
         .from('lotes')
         .select('*')
@@ -55,6 +55,7 @@ export function useCreateLote() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: LoteFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: lote, error } = await supabase
         .from('lotes')
         .insert(data)
@@ -73,6 +74,7 @@ export function useUpdateLote() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<LoteFormData>) => {
+      const supabase = createClient()
       const { data: lote, error } = await supabase
         .from('lotes')
         .update(data)
@@ -98,6 +100,7 @@ export function useProduccionLote(loteId: string | null, ranchoId?: string | nul
     queryKey: ['produccionLote', loteId, ranchoId],
     queryFn: async () => {
       if (!loteId) return []
+      const supabase = createClient()
       let query = supabase
         .from('produccion_lotes')
         .select('*')
@@ -120,6 +123,7 @@ export function useCreateProduccionLote() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (data: ProduccionLoteFormData & { rancho_id: string }) => {
+      const supabase = createClient()
       const { data: produccion, error } = await supabase
         .from('produccion_lotes')
         .insert(data)
@@ -139,6 +143,7 @@ export function useUpdateProduccionLote() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string } & Partial<ProduccionLoteFormData>) => {
+      const supabase = createClient()
       const { data: produccion, error } = await supabase
         .from('produccion_lotes')
         .update(data)
