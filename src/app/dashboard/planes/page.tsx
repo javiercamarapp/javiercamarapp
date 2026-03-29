@@ -170,7 +170,7 @@ export default function PlanesPage() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" variant={plan.popular ? 'default' : 'outline'}>
+                <Button className="w-full" variant={plan.popular ? 'default' : 'outline'} onClick={() => alert(`Plan ${plan.nombre} seleccionado. Serás redirigido al proceso de pago.`)}>
                   {precio === 0 ? 'Empezar gratis' : `Iniciar prueba de 7 días`}
                 </Button>
               </CardFooter>
