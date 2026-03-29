@@ -1,15 +1,7 @@
 import { NextResponse } from 'next/server'
+import { callClaude, parseJSONResponse } from '@/lib/ai/client'
 
-export async function POST(req: Request) {
-  try {
-    const { mensaje, especie, historial } = await req.json()
-
-    const apiKey = process.env.ANTHROPIC_API_KEY
-    if (!apiKey) {
-      return NextResponse.json({ error: 'API key no configurada' }, { status: 500 })
-    }
-
-    const systemPrompt = `Eres el Veterinario AI de HatoAI, un asistente veterinario especializado en ganadería tropical del sureste de México (Yucatán, Campeche, Tabasco).
+const VETERINARY_SYSTEM_PROMPT = `Eres el Veterinario AI de HatoAI, un asistente veterinario especializado en ganadería tropical del sureste de México (Yucatán, Campeche, Tabasco).
 
 REGLAS:
 - Responde SIEMPRE en español mexicano, tono amigable pero profesional
@@ -31,39 +23,23 @@ FORMATO: Responde en JSON:
   "prevencion": "cómo evitar que vuelva a pasar"
 }`
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1500,
-        system: systemPrompt,
-        messages: [{
-          role: 'user',
-          content: `Especie: ${especie || 'bovino'}
+export async function POST(req: Request) {
+  try {
+    const { mensaje, especie, historial } = await req.json()
+
+    const userMessage = `Especie: ${especie || 'bovino'}
 ${historial ? `Historial del animal: ${historial}` : ''}
 
 Consulta del ganadero: ${mensaje}`
-        }],
-      }),
+
+    const content = await callClaude({
+      systemPrompt: VETERINARY_SYSTEM_PROMPT,
+      userMessage,
+      maxTokens: 1500,
     })
 
-    if (!response.ok) {
-      return NextResponse.json({ error: 'Error del servicio AI' }, { status: response.status })
-    }
-
-    const data = await response.json()
-    const content = data.content[0]?.text || '{}'
-
-    try {
-      return NextResponse.json(JSON.parse(content))
-    } catch {
-      return NextResponse.json({ explicacion: content, confianza: 'media' })
-    }
+    const fallback = { explicacion: content, confianza: 'media' }
+    return NextResponse.json(parseJSONResponse(content, fallback))
   } catch {
     return NextResponse.json({ error: 'Error interno' }, { status: 500 })
   }

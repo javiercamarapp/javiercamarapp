@@ -2,6 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
+import { ALERT_REFETCH_INTERVAL } from '@/lib/constants'
 
 const supabase = createClient()
 
@@ -43,7 +44,7 @@ export function useAlertasCount(ranchoId: string | null) {
       return count ?? 0
     },
     enabled: !!ranchoId,
-    refetchInterval: 60000, // Refetch every minute
+    refetchInterval: ALERT_REFETCH_INTERVAL,
   })
 }
 

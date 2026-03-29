@@ -19,6 +19,13 @@ interface Diagnostico {
   prevencion: string
 }
 
+const urgenciaColor: Record<string, string> = {
+  inmediata: 'bg-red-100 text-red-800 border-red-200',
+  '24h': 'bg-amber-100 text-amber-800 border-amber-200',
+  esta_semana: 'bg-blue-100 text-blue-800 border-blue-200',
+  no_urgente: 'bg-green-100 text-green-800 border-green-200',
+}
+
 export default function VeterinarioPage() {
   const [mensaje, setMensaje] = useState('')
   const [especie, setEspecie] = useState<string>('bovino')
@@ -44,13 +51,6 @@ export default function VeterinarioPage() {
     } finally {
       setLoading(false)
     }
-  }
-
-  const urgenciaColor: Record<string, string> = {
-    inmediata: 'bg-red-100 text-red-800 border-red-200',
-    '24h': 'bg-amber-100 text-amber-800 border-amber-200',
-    esta_semana: 'bg-blue-100 text-blue-800 border-blue-200',
-    no_urgente: 'bg-green-100 text-green-800 border-green-200',
   }
 
   return (
