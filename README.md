@@ -1,171 +1,215 @@
-<h1 align="center">👋 Hi, I’m Javier</h1>
+# 🐄 HatoAI — Registro Ganadero Inteligente
 
-<h3 align="center">
-Founder building <strong>AI-native companies</strong> for Latin America
-</h3>
+**La plataforma integral de gestión pecuaria con IA para productores y gobierno de México.**
 
-<p align="center">
-I build high‑leverage AI agent platforms and ship <strong>real products</strong> fast — <br/>
-<strong>not demos, not research projects.</strong>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=javiercamarapp&style=for-the-badge&color=blueviolet" alt="Profile views" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/javiercamarapp">
-    <img src="https://img.shields.io/github/followers/javiercamarapp?label=GitHub&style=for-the-badge&logo=github" />
-  </a>
-  <a href="https://www.linkedin.com/in/javier-cámara-porte-petit">
-    <img src="https://img.shields.io/badge/LinkedIn-Javier%20Cámara-blue?style=for-the-badge&logo=linkedin" />
-  </a>
-  <a href="https://x.com/javiercamarapp">
-    <img src="https://img.shields.io/badge/X-@javiercamarapp-black?style=for-the-badge&logo=x" />
-  </a>
-</p>
+9 especies del PGN | B2C SaaS | B2G Gobierno | AI Agents | Fintech-ready | Offline-first
 
 ---
 
-## 🚀 What I’m building
+## ¿Qué es HatoAI?
 
-### 🧠 AI Agent Startup (OpenClaw‑based)
+HatoAI digitaliza la ganadería mexicana. Reemplaza libretas, formatos en papel y Excel con una plataforma inteligente que:
 
-I’m building a **next‑generation AI agent company** on top of **OpenClaw**, purpose‑built for **LATAM‑scale problems**.
+- **Para el ganadero**: Registra animales, pesajes, reproducción, sanidad y producción desde el celular — incluso sin internet. La IA predice partos, recomienda ventas, y diagnostica enfermedades.
+- **Para el gobierno**: Dashboard en tiempo real de programas pecuarios con KPIs, mapa de cobertura, reportes CONEVAL automáticos, y detección de anomalías.
 
-**The thesis:**
+## Features Principales
 
-* Autonomous agents that **replace workflows**, not assistants
-* AI systems that **operate end‑to‑end**, not just suggest
-* **LATAM‑first** infrastructure, data, and real‑world constraints
+### 🤖 IA que trabaja por ti
+- **Captura Rápida**: Escribe "La Negra pesó 465 kg" y la IA estructura los datos automáticamente
+- **Veterinario AI**: Diagnóstico veterinario en español con tratamiento, urgencia y prevención
+- **Predicciones**: Partos, momento óptimo de venta, riesgo de enfermedades, proyección de peso
+- **Agentes Autónomos**: Resumen semanal, alertas automáticas, pre-guía de tránsito REEMO
+- **WhatsApp**: Envía datos por WhatsApp y la IA los registra
+- **Voz**: Dicta al micrófono y Whisper transcribe en español
 
-> This is my **big bet**.
+### 📊 Dashboard del Productor
+- KPIs por especie (bovinos, porcinos, ovinos, caprinos, aves, abejas, equinos, conejos, diversificados)
+- Inventario multi-especie con formulario dinámico
+- Reproducción: panel de estados + calendario de partos
+- Sanidad: kanban + campañas SENASICA
+- Pesajes con gráficas de tendencia + GDP automático
+- Producción: leche, huevo, miel
+- Económico: P&L + credit score ganadero (7 variables)
+- Clima: pronóstico + índice de estrés calórico (THI)
+- Pasturas: monitoreo NDVI satelital
+- Curvas de crecimiento Gompertz por raza
+- Benchmarking anónimo regional
 
----
+### 🏛️ Portal de Gobierno (B2G)
+- Dashboard ejecutivo con 6 KPIs del programa
+- Mapa interactivo Leaflet con estado de licencias por rancho
+- Reportes CONEVAL/MIR auto-generados
+- Detección de fraude (Ley de Benford + verificación cruzada)
+- Sistema de alertas tempranas (brotes sanitarios, sequía, inactividad)
+- Gestión de licencias (asignar, recordatorio, exportar CSV)
+- Vista read-only de ranchos del programa
+- Cumplimiento SINIIGA/SENASICA
 
-### 💳 Moni AI — Personal Finance for LATAM
+### 💰 Planes
+| Plan | Precio | Animales | Especies | AI |
+|------|--------|----------|----------|----|
+| Gratis | $0 | 20 | 1 | ❌ |
+| Productor | $349 MXN/mes | 200 | 3 | Básico |
+| Profesional | $699 MXN/mes | Ilimitado | 9 | Completo + WhatsApp |
+| Gobierno | $499 MXN/licencia | — | — | Dashboard + CONEVAL |
 
-Founder of **Moni AI**, a consumer fintech app helping users across Latin America:
+7 días de prueba gratis en planes de pago. 20% descuento anual.
 
-* Understand their money
-* Centralize accounts
-* Make better financial decisions with AI
+## Tech Stack
 
-**Consumer fintech × applied AI**, built for real users.
+```
+Frontend:   Next.js 14 (App Router) + TypeScript strict
+Styling:    Tailwind CSS + shadcn/ui (New York)
+State:      Zustand + TanStack Query v5
+Charts:     Recharts (peso, leche, NDVI, radar, benchmark)
+Maps:       Leaflet (mapa de ranchos gobierno)
+Auth:       Supabase Auth (email + Google OAuth)
+Database:   Supabase PostgreSQL (25+ tablas, RLS)
+AI:         Claude API (9 sub-agentes por especie)
+Voice:      OpenAI Whisper (transcripción español)
+WhatsApp:   Meta Business API (webhook)
+Satellite:  Agromonitoring API (NDVI gratuito)
+PWA:        Offline indicator + manifest
+```
 
-🔗 Website: [https://monifinancialai.com](https://monifinancialai.com)
-🔗 App: [https://monifinancialai.app](https://monifinancialai.app)
-🔗 Repo: [https://github.com/javiercamarapp/Moni-AI](https://github.com/javiercamarapp/Moni-AI)
+## Setup Rápido
 
----
+### 1. Clonar e instalar
+```bash
+git clone https://github.com/javiercamarapp/hato-ai.git
+cd hato-ai
+npm install
+```
 
-## 🧠 How I work
+### 2. Configurar Supabase
+1. Crea un proyecto en [supabase.com](https://supabase.com)
+2. En **SQL Editor**, ejecuta en orden:
+   - `src/supabase/migrations/001_initial_schema.sql`
+   - `src/supabase/migrations/002_indexes_rls.sql`
+   - `src/supabase/migrations/003_functions_triggers.sql`
+   - `src/supabase/migrations/004_seed_data.sql`
 
-I’m extremely hands‑on and operate at the intersection of:
+### 3. Variables de entorno
+```bash
+cp .env.local.example .env.local
+```
+Edita `.env.local` con tus keys:
+```
+NEXT_PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-anon-key
+ANTHROPIC_API_KEY=sk-ant-tu-key          # Para AI
+OPENAI_API_KEY=sk-tu-key                  # Para voz (opcional)
+```
 
-* Engineering
-* Product
-* Applied AI
-* Rapid execution
+### 4. Correr
+```bash
+npm run dev
+# Abre http://localhost:3000
+```
 
-I believe the next wave of **billion‑dollar companies** will be built by **small teams with extreme leverage**, powered by AI‑native tooling.
+### 5. Deploy
+```bash
+# Vercel (recomendado)
+vercel --prod
 
-I ship fast, learn in public, and iterate aggressively.
+# O cualquier plataforma que soporte Next.js
+```
 
----
+## Estructura del Proyecto
 
-## ⚡ Vibe coding & AI‑native development
+```
+src/
+├── app/
+│   ├── (auth)/              # Login, Register, Forgot Password
+│   ├── auth/callback/       # OAuth callback
+│   ├── dashboard/           # 20+ páginas del productor
+│   │   ├── inventario/      # Multi-especie + lotes + apiarios
+│   │   ├── reproduccion/    # Estados + calendario + eventos
+│   │   ├── sanidad/         # Kanban + campañas SENASICA
+│   │   ├── pesajes/         # Gráficas + producción
+│   │   ├── economico/       # P&L + credit score
+│   │   ├── captura-rapida/  # NLP + voz
+│   │   ├── veterinario/     # AI diagnóstico
+│   │   ├── predicciones/    # AI predictivo
+│   │   ├── mercado/         # Precios regionales
+│   │   ├── clima/           # Pronóstico + THI
+│   │   ├── pasturas/        # NDVI satelital
+│   │   ├── crecimiento/     # Curvas Gompertz
+│   │   ├── benchmark/       # Comparación regional
+│   │   ├── agentes/         # AI agents hub
+│   │   └── planes/          # Suscripción
+│   ├── gobierno/            # Portal B2G
+│   │   ├── programa/        # Detalle de programa
+│   │   ├── ranchos/         # Vista read-only
+│   │   ├── coneval/         # Reporte MIR
+│   │   ├── fraude/          # Detección anomalías
+│   │   ├── alertas/         # Alertas tempranas
+│   │   └── licencias/       # Gestión licencias
+│   └── api/                 # 17 API endpoints
+│       ├── ai/              # Claude + Whisper
+│       ├── reports/         # CONEVAL + SINIIGA
+│       ├── satellite/       # NDVI
+│       ├── webhooks/        # WhatsApp
+│       └── health/          # Health check
+├── components/
+│   ├── ui/                  # shadcn/ui (30+ componentes)
+│   ├── shared/              # Sidebar, Topbar, FAB, Skeletons
+│   ├── dashboard/           # KPIs, alerts, timeline
+│   ├── gobierno/            # CoverageMap
+│   └── onboarding/          # 5 step components
+├── lib/
+│   ├── supabase/            # Client, Server, Middleware
+│   ├── store/               # Zustand (auth, ranch)
+│   ├── hooks/               # 10 TanStack Query hooks
+│   ├── validations/         # Zod schemas
+│   ├── species/             # SPECIES_CONFIG (9 especies)
+│   ├── ai/                  # Prompts, client, credit-score, growth-curves
+│   ├── constants.ts         # Enums y configuración
+│   └── utils/               # CSV export, heat stress
+└── supabase/migrations/     # 4 SQL files (1,500+ líneas)
+```
 
-I use **AI as a co‑founder**, not a feature.
+## Base de Datos
 
-### ⚡ Tools I use daily
+25+ tablas PostgreSQL con Row Level Security:
 
-<p align="left">
-  <a href="https://lovable.dev" target="_blank">
-    <img src="https://img.shields.io/badge/Lovable-AI%20Builder-black?style=for-the-badge" />
-  </a>
-  <a href="https://cursor.sh" target="_blank">
-    <img src="https://img.shields.io/badge/Cursor-AI%20IDE-blue?style=for-the-badge" />
-  </a>
-  <a href="https://www.anthropic.com/claude" target="_blank">
-    <img src="https://img.shields.io/badge/Claude-Code-purple?style=for-the-badge" />
-  </a>
-  <a href="https://openai.com/codex" target="_blank">
-    <img src="https://img.shields.io/badge/OpenAI-Codex-black?style=for-the-badge" />
-  </a>
-  <a href="https://replit.com" target="_blank">
-    <img src="https://img.shields.io/badge/Replit-Dev-orange?style=for-the-badge" />
-  </a>
-</p>
+| Categoría | Tablas |
+|-----------|--------|
+| Core | perfiles, ranchos, rancho_usuarios, corrales |
+| Animales | animales, lotes, crias |
+| Producción | pesajes, produccion_leche, produccion_lotes |
+| Reproducción | eventos_reproductivos |
+| Sanidad | eventos_sanitarios |
+| Apicultura | apiarios, colmenas, revisiones_colmena, cosechas_miel |
+| Economía | movimientos_economicos, inventario_alimentos, consumo_alimento |
+| Gobierno | programas_gobierno, programa_ranchos |
+| Sistema | alertas, activity_log, credit_score, documentos |
 
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=cursor,replit,github,vercel" />
-</p>
+## 9 Sub-agentes AI por Especie
 
----
+| Agente | Especie | Especialidad |
+|--------|---------|-------------|
+| BovAI | 🐄 Bovinos | GDP, tasa preñez, IPP, leche |
+| PorcAI | 🐖 Porcinos | PSY, mortalidad predestete, FCR |
+| OviAI | 🐑 Ovinos | FAMACHA, prolificidad, parasitosis |
+| CapriAI | 🐐 Caprinos | Leche caprina, FAMACHA |
+| AviAI | 🐔 Aves | % postura, FCR, Newcastle |
+| ApiAI | 🐝 Abejas | Varroa, floración Yucatán, cosecha miel |
+| EquiAI | 🐴 Equinos | Herraje, dental, AIE Coggins |
+| CuniAI | 🐰 Conejos | Gazapos/año, RHDV2 |
+| DivAI | 🦌 Otros | UMA, venado, búfalo |
 
-## 🤖 AI platforms & creative tech
+## Seguridad
 
-I constantly test, integrate, and break cutting‑edge AI platforms across **agents, multimodal, and creative systems**:
+- Auth en todos los API endpoints (401 si no autenticado)
+- Row Level Security en todas las tablas
+- HMAC SHA-256 en webhook de WhatsApp
+- Security headers: CSP, X-Frame-Options, XSS Protection
+- Input validation con Zod
+- LLM trust boundary (whitelist de campos, no systemPrompt del cliente)
+- Open redirect protection en OAuth callback
 
-<p align="left">
-  <img src="https://img.shields.io/badge/OpenClaw-AI-blue?style=flat&logo=robotframework" />
-  <img src="https://img.shields.io/badge/ElevenLabs-Voice-black?style=flat" />
-  <img src="https://img.shields.io/badge/Midjourney-Image-purple?style=flat" />
-  <img src="https://img.shields.io/badge/HeyGen-Video-orange?style=flat" />
-</p>
+## Licencia
 
-If it’s new in **agents, multimodal, or AI systems** — I’m already playing with it.
-
----
-
-## 💻 Programming languages & stack
-
-### Languages
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=ts,js,python" />
-</p>
-
-### Stack
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=react,vite,supabase,cloudflare" />
-</p>
-
-* React / Vite
-* Cloud‑native architectures
-* API‑first systems
-* Supabase, Stripe, modern SaaS tooling
-* AI agent frameworks & orchestration layers
-
-I optimize for **speed, scalability, and iteration velocity**.
-
----
-
-## 🌎 Philosophy
-
-I’m obsessed with:
-
-* Building **real products** (not theory)
-* Applying **frontier AI** to real‑world problems
-* **LATAM** as a massive, underserved market
-* Long‑term compounding through technology
-
----
-
-## 📫 Let’s talk
-
-If you’re:
-
-* A founder building with AI
-* An investor interested in AI agents or LATAM
-* Someone obsessed with shipping fast
-
-📩 **DM me on X:** [https://x.com/javiercamarapp](https://x.com/javiercamarapp)
-💼 **LinkedIn:** [https://www.linkedin.com/in/javier-cámara-porte-petit](https://www.linkedin.com/in/javier-cámara-porte-petit)
-
----
-
-<sub>⚡ Built in public. Shipping fast. Playing long‑term.</sub>
-
+Privado — © 2026 HatoAI. Todos los derechos reservados.
