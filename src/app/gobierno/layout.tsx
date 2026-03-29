@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Landmark, Shield, LayoutDashboard, FileText } from 'lucide-react'
+import { Landmark, Shield, LayoutDashboard, FileText, ShieldAlert } from 'lucide-react'
 
 export default function GobiernoLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,6 +26,10 @@ export default function GobiernoLayout({ children }: { children: React.ReactNode
             <Link href="/gobierno/alertas" className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors">
               <Shield className="h-4 w-4" />
               Alertas
+            </Link>
+            <Link href="/gobierno/fraude" className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors">
+              <ShieldAlert className="h-4 w-4" />
+              Anomalías
             </Link>
             <Link href="/gobierno/coneval" className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors">
               <FileText className="h-4 w-4" />

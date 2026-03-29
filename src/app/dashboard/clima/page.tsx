@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { CloudSun, Droplets, Wind, Thermometer, AlertTriangle, Sun, CloudRain } from 'lucide-react'
+import { CloudSun, Droplets, Wind, Thermometer, AlertTriangle, Sun, CloudRain, Milk } from 'lucide-react'
+import { calculateTHI, getTHICategory, estimateMilkLoss } from '@/lib/utils/heat-stress'
 
 const WEATHER_DATA = {
   ubicacion: 'Tizimin, Yucatan',
@@ -58,6 +59,10 @@ const severidadColor: Record<string, string> = {
 
 export default function ClimaPage() {
   const w = WEATHER_DATA
+  const thi = calculateTHI(w.actual.temperatura, w.actual.humedad)
+  const thiCategory = getTHICategory(thi)
+  const baseMilkLiters = 20 // Produccion base promedio litros/dia
+  const milkLoss = estimateMilkLoss(thi, baseMilkLiters)
 
   return (
     <div className="space-y-6">
@@ -100,6 +105,53 @@ export default function ClimaPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* THI - Heat Stress Index */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base flex items-center gap-2">
+            <Thermometer className="h-5 w-5 text-orange-500" />
+            Índice de Estrés Calórico (THI)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <div className="text-center">
+              <p className={`text-5xl font-bold ${thiCategory.color}`}>{thi}</p>
+              <Badge className={`mt-2 ${
+                thiCategory.nivel === 'Normal' ? 'bg-green-100 text-green-700' :
+                thiCategory.nivel === 'Alerta' ? 'bg-yellow-100 text-yellow-700' :
+                thiCategory.nivel === 'Peligro' ? 'bg-orange-100 text-orange-700' :
+                'bg-red-100 text-red-700'
+              }`}>
+                {thiCategory.nivel}
+              </Badge>
+            </div>
+            <div className="flex-1 space-y-2">
+              <p className="text-sm">{thiCategory.descripcion}</p>
+              <div className="bg-primary/5 border border-primary/20 rounded p-2 text-sm">
+                <span className="font-medium text-primary">Accion recomendada:</span>{' '}
+                {thiCategory.accion}
+              </div>
+              {milkLoss > 0 && (
+                <div className="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded p-2 text-sm">
+                  <Milk className="h-4 w-4 text-amber-600 shrink-0" />
+                  <span>
+                    Pérdida estimada de leche: <strong className="text-amber-700">-{milkLoss} L/día</strong> por vaca
+                    (base {baseMilkLiters} L/día → {(baseMilkLiters - milkLoss).toFixed(1)} L/día)
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="mt-4 grid grid-cols-4 gap-1 text-xs text-center">
+            <div className="bg-green-100 rounded-l p-1">Normal &lt;72</div>
+            <div className="bg-yellow-100 p-1">Alerta 72-78</div>
+            <div className="bg-orange-100 p-1">Peligro 79-88</div>
+            <div className="bg-red-100 rounded-r p-1">Emergencia 89+</div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* 5-day forecast */}
       <Card>
