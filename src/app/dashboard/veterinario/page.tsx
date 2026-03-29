@@ -42,12 +42,21 @@ export default function VeterinarioPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mensaje, especie }),
       })
+      if (!res.ok) throw new Error('Error del servidor')
       const data = await res.json()
       setDiagnostico(data)
       setHistorial((prev) => [...prev, { pregunta: mensaje, respuesta: data }])
       setMensaje('')
     } catch {
-      setDiagnostico(null)
+      setDiagnostico({
+        diagnostico_probable: 'Error de conexión',
+        confianza: 'baja',
+        explicacion: 'No se pudo conectar con el servicio de IA. Verifica tu conexión a internet e intenta de nuevo.',
+        tratamiento_sugerido: '',
+        urgencia: 'no_urgente',
+        necesita_veterinario: false,
+        prevencion: ''
+      })
     } finally {
       setLoading(false)
     }

@@ -5,9 +5,18 @@ export async function POST(req: Request) {
   try {
     const { systemPrompt, ranchoData } = await req.json()
 
+    // Whitelist fields before sending to LLM
+    const safeData = {
+      rancho_id: ranchoData.rancho_id,
+      nombre: ranchoData.nombre,
+      especies_activas: ranchoData.especies_activas,
+      animales_total: ranchoData.animales_total,
+      datos_por_especie: ranchoData.datos_por_especie,
+    }
+
     const content = await callClaude({
       systemPrompt,
-      userMessage: `Analiza estos datos del rancho y genera 5 insights accionables:\n${JSON.stringify(ranchoData, null, 2)}`,
+      userMessage: `Analiza estos datos del rancho y genera 5 insights accionables:\n${JSON.stringify(safeData, null, 2)}`,
     })
 
     const insights = parseJSONResponse(content, [])

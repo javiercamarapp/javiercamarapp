@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { callClaude, parseJSONResponse } from '@/lib/ai/client'
+import { SPECIES_CONFIG } from '@/lib/species/config'
 
 const VETERINARY_SYSTEM_PROMPT = `Eres el Veterinario AI de HatoAI, un asistente veterinario especializado en ganadería tropical del sureste de México (Yucatán, Campeche, Tabasco).
 
@@ -27,10 +28,14 @@ export async function POST(req: Request) {
   try {
     const { mensaje, especie, historial } = await req.json()
 
-    const userMessage = `Especie: ${especie || 'bovino'}
-${historial ? `Historial del animal: ${historial}` : ''}
+    const validSpecies = Object.keys(SPECIES_CONFIG).includes(especie) ? especie : 'bovino'
+    const safeMensaje = (mensaje || '').substring(0, 3000)
+    const safeHistorial = (historial || '').substring(0, 2000)
 
-Consulta del ganadero: ${mensaje}`
+    const userMessage = `Especie: ${validSpecies}
+${safeHistorial ? `Historial del animal: ${safeHistorial}` : ''}
+
+Consulta del ganadero: ${safeMensaje}`
 
     const content = await callClaude({
       systemPrompt: VETERINARY_SYSTEM_PROMPT,

@@ -26,7 +26,7 @@ export type AnimalFormData = z.infer<typeof animalSchema>
 export const reproEventSchema = z.object({
   animal_id: z.string().min(1, 'Selecciona un animal'),
   fecha: z.string().min(1, 'La fecha es requerida'),
-  tipo: z.enum(['celo', 'monta_natural', 'inseminacion', 'diagnostico_gestacion', 'parto', 'destete', 'aborto', 'secado'], { message: 'Selecciona el tipo de evento' }),
+  tipo: z.enum(['celo', 'monta_natural', 'inseminacion', 'transferencia_embrion', 'diagnostico_gestacion', 'parto', 'destete', 'aborto', 'secado'], { message: 'Selecciona el tipo de evento' }),
   macho_id: z.string().optional(),
   inseminador: z.string().optional(),
   pajilla_id: z.string().optional(),
