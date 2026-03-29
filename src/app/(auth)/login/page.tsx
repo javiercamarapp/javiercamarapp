@@ -1,10 +1,13 @@
 "use client"
 
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import Link from "next/link"
 
+import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -38,6 +41,10 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>
 
 export default function LoginPage() {
+  const router = useRouter()
+  const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -46,14 +53,33 @@ export default function LoginPage() {
     },
   })
 
-  function onSubmit(data: LoginFormValues) {
-    // TODO: Conectar con Supabase Auth
-    console.log("Login:", data)
+  const onSubmit = async (data: LoginFormValues) => {
+    setIsLoading(true)
+    setError(null)
+    try {
+      const supabase = createClient()
+      const { error } = await supabase.auth.signInWithPassword({
+        email: data.email,
+        password: data.password,
+      })
+      if (error) {
+        setError(error.message)
+        return
+      }
+      router.push('/dashboard')
+    } catch {
+      setError('Error al iniciar sesión')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
-  function handleGoogleLogin() {
-    // TODO: Conectar con Supabase Auth (Google OAuth)
-    console.log("Google login")
+  const handleGoogleLogin = async () => {
+    const supabase = createClient()
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/auth/callback` }
+    })
   }
 
   return (
@@ -101,6 +127,12 @@ export default function LoginPage() {
           </div>
         </div>
 
+        {error && (
+          <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
+            {error}
+          </div>
+        )}
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
@@ -113,6 +145,7 @@ export default function LoginPage() {
                     <Input
                       type="email"
                       placeholder="tu@ejemplo.com"
+                      disabled={isLoading}
                       {...field}
                     />
                   </FormControl>
@@ -136,15 +169,15 @@ export default function LoginPage() {
                     </Link>
                   </div>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    <Input type="password" placeholder="••••••••" disabled={isLoading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button type="submit" className="w-full">
-              Iniciar sesión
+            <Button type="submit" className="w-full" disabled={isLoading}>
+              {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
             </Button>
           </form>
         </Form>

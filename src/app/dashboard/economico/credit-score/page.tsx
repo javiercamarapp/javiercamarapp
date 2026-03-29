@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { ShieldCheck } from 'lucide-react'
+import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts'
 
 const variables = [
   { nombre: 'Completitud de datos', valor: 85, color: 'text-green-600' },
@@ -12,6 +13,16 @@ const variables = [
   { nombre: 'Antigüedad', valor: 50, color: 'text-amber-600' },
   { nombre: 'Sanitario', valor: 90, color: 'text-green-600' },
   { nombre: 'Tamaño del hato', valor: 60, color: 'text-amber-600' },
+]
+
+const scoreData = [
+  { variable: 'Completitud', score: 85, fullMark: 100 },
+  { variable: 'Regularidad', score: 70, fullMark: 100 },
+  { variable: 'Productividad', score: 65, fullMark: 100 },
+  { variable: 'Financiero', score: 80, fullMark: 100 },
+  { variable: 'Antigüedad', score: 50, fullMark: 100 },
+  { variable: 'Sanitario', score: 90, fullMark: 100 },
+  { variable: 'Tamaño', score: 60, fullMark: 100 },
 ]
 
 export default function CreditScorePage() {
@@ -59,6 +70,35 @@ export default function CreditScorePage() {
           <p className="text-sm text-muted-foreground text-center max-w-md mt-1">
             Tu rancho tiene un buen historial. Mejora la antigüedad y el tamaño del hato para subir tu puntuación.
           </p>
+        </CardContent>
+      </Card>
+
+      {/* Radar Chart */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <ShieldCheck className="h-5 w-5 text-green-600" />
+            Perfil del Score
+          </CardTitle>
+          <CardDescription>
+            Visualización radar de los 7 factores de tu puntuación
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={350}>
+            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={scoreData}>
+              <PolarGrid />
+              <PolarAngleAxis dataKey="variable" tick={{ fontSize: 12 }} />
+              <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fontSize: 10 }} />
+              <Radar
+                name="Score"
+                dataKey="score"
+                stroke="#1B6B3C"
+                fill="#1B6B3C"
+                fillOpacity={0.3}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
         </CardContent>
       </Card>
 

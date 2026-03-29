@@ -10,7 +10,18 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { Milk, Egg, Flower2 } from 'lucide-react'
+import { Milk, Egg, Flower2, BarChart3 } from 'lucide-react'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+
+const milkData = [
+  { fecha: 'Lun', litros: 62 },
+  { fecha: 'Mar', litros: 58 },
+  { fecha: 'Mié', litros: 65 },
+  { fecha: 'Jue', litros: 61 },
+  { fecha: 'Vie', litros: 67 },
+  { fecha: 'Sáb', litros: 59 },
+  { fecha: 'Dom', litros: 64 },
+]
 
 const lecheData = [
   { vaca: 'Vaca La Negra', litros_am: 8.5, litros_pm: 7.2, total: 15.7, fecha: '29 mar 2026' },
@@ -40,6 +51,27 @@ export default function ProduccionPage() {
           Registro de producción por tipo: leche, huevos y miel
         </p>
       </div>
+
+      {/* Milk Production Trend Chart */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <BarChart3 className="h-5 w-5 text-blue-500" />
+            Tendencia de Producción de Leche (Semanal)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={milkData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="fecha" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="litros" fill="#1B6B3C" radius={[4, 4, 0, 0]} name="Litros" />
+            </BarChart>
+          </ResponsiveContainer>
+        </CardContent>
+      </Card>
 
       <Tabs defaultValue="leche" className="w-full">
         <TabsList>

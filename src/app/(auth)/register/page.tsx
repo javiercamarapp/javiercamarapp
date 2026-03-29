@@ -1,10 +1,13 @@
 "use client"
 
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import Link from "next/link"
 
+import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -51,6 +54,10 @@ const registerSchema = z
 type RegisterFormValues = z.infer<typeof registerSchema>
 
 export default function RegisterPage() {
+  const router = useRouter()
+  const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -62,14 +69,36 @@ export default function RegisterPage() {
     },
   })
 
-  function onSubmit(data: RegisterFormValues) {
-    // TODO: Conectar con Supabase Auth
-    console.log("Register:", data)
+  const onSubmit = async (data: RegisterFormValues) => {
+    setIsLoading(true)
+    setError(null)
+    try {
+      const supabase = createClient()
+      const { error } = await supabase.auth.signUp({
+        email: data.email,
+        password: data.password,
+        options: {
+          data: { nombre: data.name, telefono: data.phone }
+        }
+      })
+      if (error) {
+        setError(error.message)
+        return
+      }
+      router.push('/onboarding')
+    } catch {
+      setError('Error al crear la cuenta')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
-  function handleGoogleRegister() {
-    // TODO: Conectar con Supabase Auth (Google OAuth)
-    console.log("Google register")
+  const handleGoogleRegister = async () => {
+    const supabase = createClient()
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/auth/callback` }
+    })
   }
 
   return (
@@ -117,6 +146,12 @@ export default function RegisterPage() {
           </div>
         </div>
 
+        {error && (
+          <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
+            {error}
+          </div>
+        )}
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
@@ -126,7 +161,7 @@ export default function RegisterPage() {
                 <FormItem>
                   <FormLabel>Nombre completo</FormLabel>
                   <FormControl>
-                    <Input placeholder="Juan Pérez" {...field} />
+                    <Input placeholder="Juan Pérez" disabled={isLoading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -143,6 +178,7 @@ export default function RegisterPage() {
                     <Input
                       type="email"
                       placeholder="tu@ejemplo.com"
+                      disabled={isLoading}
                       {...field}
                     />
                   </FormControl>
@@ -158,7 +194,7 @@ export default function RegisterPage() {
                 <FormItem>
                   <FormLabel>Contraseña</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    <Input type="password" placeholder="••••••••" disabled={isLoading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -172,7 +208,7 @@ export default function RegisterPage() {
                 <FormItem>
                   <FormLabel>Confirmar contraseña</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    <Input type="password" placeholder="••••••••" disabled={isLoading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -189,6 +225,7 @@ export default function RegisterPage() {
                     <Input
                       type="tel"
                       placeholder="+52 (555) 123-4567"
+                      disabled={isLoading}
                       {...field}
                     />
                   </FormControl>
@@ -197,8 +234,8 @@ export default function RegisterPage() {
               )}
             />
 
-            <Button type="submit" className="w-full">
-              Crear cuenta
+            <Button type="submit" className="w-full" disabled={isLoading}>
+              {isLoading ? "Creando cuenta..." : "Crear cuenta"}
             </Button>
           </form>
         </Form>
