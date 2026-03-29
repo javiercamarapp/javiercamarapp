@@ -18,6 +18,7 @@ import {
   LineChart,
   BarChart3,
   FileText,
+  CreditCard,
   Settings,
   ShieldCheck,
   CloudSun,
@@ -45,6 +46,7 @@ export const navItems = [
   { label: 'Benchmark', href: '/dashboard/benchmark', icon: BarChart3 },
   { label: 'Agentes AI', href: '/dashboard/agentes', icon: Bot },
   { label: 'Reportes', href: '/dashboard/reportes', icon: FileText },
+  { label: 'Planes', href: '/dashboard/planes', icon: CreditCard },
   { label: 'Configuración', href: '/dashboard/configuracion', icon: Settings },
   { label: 'Cumplimiento', href: '/dashboard/cumplimiento', icon: ShieldCheck },
 ]
