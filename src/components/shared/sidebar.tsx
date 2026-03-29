@@ -12,8 +12,12 @@ import {
   DollarSign,
   Brain,
   HeartPulse,
+  Zap,
+  Sparkles,
+  TrendingUp,
   FileText,
   Settings,
+  ShieldCheck,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -26,9 +30,13 @@ export const navItems = [
   { label: 'Alimentación', href: '/dashboard/alimentacion', icon: Wheat },
   { label: 'Económico', href: '/dashboard/economico', icon: DollarSign },
   { label: 'AI Insights', href: '/dashboard/ai-insights', icon: Brain },
+  { label: 'Captura Rápida', href: '/dashboard/captura-rapida', icon: Zap },
   { label: 'Veterinario AI', href: '/dashboard/veterinario', icon: HeartPulse },
+  { label: 'Predicciones', href: '/dashboard/predicciones', icon: Sparkles },
+  { label: 'Mercado', href: '/dashboard/mercado', icon: TrendingUp },
   { label: 'Reportes', href: '/dashboard/reportes', icon: FileText },
   { label: 'Configuración', href: '/dashboard/configuracion', icon: Settings },
+  { label: 'Cumplimiento', href: '/dashboard/cumplimiento', icon: ShieldCheck },
 ]
 
 export function Sidebar() {
