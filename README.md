@@ -5,7 +5,7 @@ Founder · Builder · AI‑native companies for Latin America
 </h3>
 
 <p align="center">
-I don't pitch decks — I ship products.<br/>
+Buikding th enext unicorn.<br/>
 <strong>3 AI companies. Full‑stack. Solo‑founded. All live.</strong>
 </p>
 
