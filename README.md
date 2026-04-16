@@ -6,7 +6,6 @@ Founder atiende.ai· Builder · AI‑native companies for Latin America
 
 <p align="center">
 Building the next unicorn.<br/>
-<strong>.</strong>
 </p>
 
 <p align="center">
