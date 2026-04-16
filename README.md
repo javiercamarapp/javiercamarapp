@@ -1,12 +1,12 @@
 <h1 align="center">Javier Cámara Porte‑Petit</h1>
 
 <h3 align="center">
-Founder · Builder · AI‑native companies for Latin America
+Founder atiende.ai· Builder · AI‑native companies for Latin America
 </h3>
 
 <p align="center">
 Buikding th enext unicorn.<br/>
-<strong>3 AI companies. Full‑stack. Solo‑founded. All live.</strong>
+<strong>.</strong>
 </p>
 
 <p align="center">
