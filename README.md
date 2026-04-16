@@ -29,9 +29,9 @@ I build high‑leverage AI agent platforms and ship <strong>real products</stron
 
 ## 🚀 What I’m building
 
-### 🧠 AI Agent Startup (OpenClaw‑based)
+### 🧠 Atiende.ai — My main startup
 
-I’m building a **next‑generation AI agent company** on top of **OpenClaw**, purpose‑built for **LATAM‑scale problems**.
+**Atiende.ai** is my **main bet**: an **AI‑native company** building autonomous agents purpose‑built for **LATAM‑scale problems**.
 
 **The thesis:**
 
@@ -39,13 +39,13 @@ I’m building a **next‑generation AI agent company** on top of **OpenClaw**, 
 * AI systems that **operate end‑to‑end**, not just suggest
 * **LATAM‑first** infrastructure, data, and real‑world constraints
 
-> This is my **big bet**.
+> Currently exploring seed conversations.
 
 ---
 
-### 💳 Moni AI — Personal Finance for LATAM
+### 💳 Moni AI — My stellar personal project
 
-Founder of **Moni AI**, a consumer fintech app helping users across Latin America:
+**Moni AI** is my **stellar personal project**: a consumer fintech app helping users across Latin America:
 
 * Understand their money
 * Centralize accounts
@@ -56,6 +56,13 @@ Founder of **Moni AI**, a consumer fintech app helping users across Latin Americ
 🔗 Website: [https://monifinancialai.com](https://monifinancialai.com)
 🔗 App: [https://monifinancialai.app](https://monifinancialai.app)
 🔗 Repo: [https://github.com/javiercamarapp/Moni-AI](https://github.com/javiercamarapp/Moni-AI)
+
+---
+
+### 🌱 Other projects
+
+* **HatoAI** — Plataforma de gestión pecuaria con AI (NDVI, curvas de crecimiento, benchmarking, THI, agentes autónomos). Ahora vive en su propio repo: [Hato-AI-Agropecuario](https://github.com/javiercamarapp/Hato-AI-Agropecuario).
+* Experimentos continuos en **agentes**, **multimodal** y **AI‑native tooling**.
 
 ---
 
@@ -109,7 +116,6 @@ I use **AI as a co‑founder**, not a feature.
 I constantly test, integrate, and break cutting‑edge AI platforms across **agents, multimodal, and creative systems**:
 
 <p align="left">
-  <img src="https://img.shields.io/badge/OpenClaw-AI-blue?style=flat&logo=robotframework" />
   <img src="https://img.shields.io/badge/ElevenLabs-Voice-black?style=flat" />
   <img src="https://img.shields.io/badge/Midjourney-Image-purple?style=flat" />
   <img src="https://img.shields.io/badge/HeyGen-Video-orange?style=flat" />
@@ -168,4 +174,3 @@ If you’re:
 ---
 
 <sub>⚡ Built in public. Shipping fast. Playing long‑term.</sub>
-
