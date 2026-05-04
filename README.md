@@ -59,34 +59,6 @@ Not another budget tracker. An **AI financial copilot** for the 650M+ people in 
 
 ---
 
-### 🐄 HatoAI — AgTech SaaS Platform
-
-Full‑stack **livestock management platform with AI** for producers and government in Mexico. This is what "execution speed" looks like:
-
-**Built solo. 160+ source files. 25+ database tables. 10+ AI endpoints. Production‑ready.**
-
-<details>
-<summary><strong>See the full scope ↓</strong></summary>
-
-#### 9 species supported (Mexico's PGN)
-Bovinos · Porcinos · Ovinos · Caprinos · Aves · Abejas · Equinos · Conejos · Diversificado
-
-#### 9 specialized AI sub‑agents
-`BovAI` · `PorcAI` · `OviAI` · `CapriAI` · `AviAI` · `ApiAI` · `EquiAI` · `CuniAI` · `DivAI`
-— orchestrated by priority and economic impact
-
-#### AI capabilities
-* Productivity, reproductive & economic insights (Claude API)
-* Veterinary AI chatbot — diagnoses, dosing, Mexican commercial products
-* Regional market prices in real‑time (MXN)
-* Natural language processing — ranchers speak colloquial Spanish, AI parses to structured data
-* Voice capture via WhatsApp (OpenAI Whisper transcription)
-* Satellite NDVI monitoring for pasture conditions
-* Gompertz growth curves with published research parameters per breed
-* **Fraud detection** for government programs (Benford's Law + cross‑reference SINIIGA‑weights)
-* THI heat stress calculator with milk loss estimation
-* Credit scoring system (7 weighted variables, 0‑100 scale)
-
 #### Dual business model
 | | B2C (Productor) | B2G (Gobierno) |
 |---|---|---|
