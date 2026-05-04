@@ -59,24 +59,6 @@ Not another budget tracker. An **AI financial copilot** for the 650M+ people in 
 
 ---
 
-#### Dual business model
-| | B2C (Productor) | B2G (Gobierno) |
-|---|---|---|
-| **Value** | Manage herds, AI insights, voice input, reports | Executive dashboard, CONEVAL/MIR, fraud detection, maps |
-| **Pricing** | Free / $349 / $699 MXN/mo | $499 MXN/license/mo (50+ licenses) |
-
-#### Integrations
-WhatsApp Business API · SINIIGA (national livestock tracking) · SENASICA · CONEVAL · INIFAP benchmarks · Agromonitoring (satellite) · Stripe
-
-#### Tech
-Next.js 14 · TypeScript strict · Supabase (Auth + PG + RLS + Edge Functions) · TanStack Query · Zustand · Recharts · Leaflet · PWA offline‑first · Mobile‑first (375px)
-
-</details>
-
-🔗 Repo: [Hato‑AI‑Agropecuario](https://github.com/javiercamarapp/Hato-AI-Agropecuario)
-
----
-
 ## 🧠 How I operate
 
 I'm not a "technical co‑founder looking for a business person." I'm the **entire founding team compressed into one person** — engineering, product, design, GTM, and AI architecture.
