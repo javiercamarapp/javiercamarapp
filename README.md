@@ -28,7 +28,7 @@ Building the next unicorn.<br/>
 
 ## 🚀 What I'm building
 
-### 🧠 Atiende.ai — Main Startup
+### 🧠 Atiende.ai 
 
 My **big bet**. An AI‑native company building **autonomous agents** purpose‑built for **LATAM‑scale problems**.
 
