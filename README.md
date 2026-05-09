@@ -39,7 +39,7 @@ My **big bet**. An AI‑native company building **autonomous agents** purpose‑
 * **LATAM‑first** infrastructure, regulation, and real‑world constraints
 * The next wave of billion‑dollar companies will be built by **small teams with extreme leverage**
 
-> Currently in **seed conversations**. Building in public.
+> Currently in **pre-seed conversations**. Building in public.
 
 ---
 
