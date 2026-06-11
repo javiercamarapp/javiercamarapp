@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "descripcion": "Estructura del bracket eliminatorio Mundial 2026 (partidos 73-104)",
+    "fuentes": [
+      "data/estructura_torneo.md (Wikipedia knockout stage, FIFA, Sportmonks)",
+      "Sky Sports day-by-day breakdown: https://www.skysports.com/football/news/11095/13481245/ (R16/QF con sedes y horarios)",
+      "Anclas verificadas de forma independiente: M80=2K vs 2L (ESPN ruta de Inglaterra), M90=W73 vs W75 en Houston (NBC), M95=W86 vs W88 en Atlanta (Bleacher Report)"
+    ],
+    "nota_semis": "El emparejamiento de semifinales (101=W97vsW98, 102=W99vsW100) sigue el patrón secuencial estándar FIFA (mismo que Qatar 2022), consistente con fechas y descansos (QF 97/98 del 9-10 jul alimentan la semi del 14-jul en Dallas; QF 99/100 del 11-jul la del 15-jul en Atlanta). Los snippets de búsqueda no lo confirmaron textualmente: etiquetado como INFERIDO.",
+    "nota_terceros": "La asignación EXACTA de terceros depende de la tabla FIFA de 495 combinaciones; aquí se usan los orígenes elegibles por llave y se resuelve por matching que respete elegibilidad (aproximación documentada)."
+  },
+  "dieciseisavos": [
+    {"num": 73, "local": "2A", "visitante": "2B", "ciudad": "Los Ángeles", "fecha": "2026-06-28"},
+    {"num": 74, "local": "1E", "visitante": "3_ABCDF", "ciudad": "Boston", "fecha": "2026-06-29"},
+    {"num": 75, "local": "1F", "visitante": "2C", "ciudad": "Monterrey", "fecha": "2026-06-29"},
+    {"num": 76, "local": "1C", "visitante": "2F", "ciudad": "Houston", "fecha": "2026-06-29"},
+    {"num": 77, "local": "1I", "visitante": "3_CDFGH", "ciudad": "Nueva York", "fecha": "2026-06-30"},
+    {"num": 78, "local": "2E", "visitante": "2I", "ciudad": "San Francisco", "fecha": "2026-06-30"},
+    {"num": 79, "local": "1A", "visitante": "3_CEFHI", "ciudad": "Ciudad de México", "fecha": "2026-06-30"},
+    {"num": 80, "local": "2K", "visitante": "2L", "ciudad": "Atlanta", "fecha": "2026-07-01"},
+    {"num": 81, "local": "1D", "visitante": "3_BEFIJ", "ciudad": "Seattle", "fecha": "2026-07-01"},
+    {"num": 82, "local": "1G", "visitante": "3_AEHIJ", "ciudad": "Toronto", "fecha": "2026-07-02"},
+    {"num": 83, "local": "1B", "visitante": "3_EFGIJ", "ciudad": "Vancouver", "fecha": "2026-07-02"},
+    {"num": 84, "local": "1L", "visitante": "3_EHIJK", "ciudad": "Boston", "fecha": "2026-07-02"},
+    {"num": 85, "local": "1J", "visitante": "2H", "ciudad": "Kansas City", "fecha": "2026-07-03"},
+    {"num": 86, "local": "1H", "visitante": "2J", "ciudad": "Miami", "fecha": "2026-07-03"},
+    {"num": 87, "local": "1K", "visitante": "3_DEIJL", "ciudad": "Filadelfia", "fecha": "2026-07-03"},
+    {"num": 88, "local": "2D", "visitante": "2G", "ciudad": "Dallas", "fecha": "2026-07-03"}
+  ],
+  "octavos": [
+    {"num": 89, "local": "W74", "visitante": "W77", "ciudad": "Filadelfia", "fecha": "2026-07-04"},
+    {"num": 90, "local": "W73", "visitante": "W75", "ciudad": "Houston", "fecha": "2026-07-04"},
+    {"num": 91, "local": "W76", "visitante": "W78", "ciudad": "Nueva York", "fecha": "2026-07-05"},
+    {"num": 92, "local": "W79", "visitante": "W80", "ciudad": "Ciudad de México", "fecha": "2026-07-05"},
+    {"num": 93, "local": "W83", "visitante": "W84", "ciudad": "Dallas", "fecha": "2026-07-06"},
+    {"num": 94, "local": "W81", "visitante": "W82", "ciudad": "Seattle", "fecha": "2026-07-06"},
+    {"num": 95, "local": "W86", "visitante": "W88", "ciudad": "Atlanta", "fecha": "2026-07-07"},
+    {"num": 96, "local": "W85", "visitante": "W87", "ciudad": "Vancouver", "fecha": "2026-07-07"}
+  ],
+  "cuartos": [
+    {"num": 97, "local": "W89", "visitante": "W90", "ciudad": "Boston", "fecha": "2026-07-09"},
+    {"num": 98, "local": "W93", "visitante": "W94", "ciudad": "Los Ángeles", "fecha": "2026-07-10"},
+    {"num": 99, "local": "W91", "visitante": "W92", "ciudad": "Miami", "fecha": "2026-07-11"},
+    {"num": 100, "local": "W95", "visitante": "W96", "ciudad": "Kansas City", "fecha": "2026-07-11"}
+  ],
+  "semifinales": [
+    {"num": 101, "local": "W97", "visitante": "W98", "ciudad": "Dallas", "fecha": "2026-07-14", "estatus": "INFERIDO patrón secuencial"},
+    {"num": 102, "local": "W99", "visitante": "W100", "ciudad": "Atlanta", "fecha": "2026-07-15", "estatus": "INFERIDO patrón secuencial"}
+  ],
+  "tercer_lugar": {"num": 103, "local": "L101", "visitante": "L102", "ciudad": "Miami", "fecha": "2026-07-18"},
+  "final": {"num": 104, "local": "W101", "visitante": "W102", "ciudad": "Nueva York", "fecha": "2026-07-19"}
+}
