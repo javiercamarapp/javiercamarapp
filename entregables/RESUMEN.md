@@ -4,30 +4,29 @@
 ---
 
 ## 1. Quiniela (`QUINIELA_2026_JAVIER_FINAL.xlsx`)
-Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación, KO sin empates, campeón coherente.
+Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación, KO sin empates, campeón coherente. **Bracket corregido al cuadro OFICIAL FIFA** (dos mitades): España (1H) y Argentina (1J) en lados OPUESTOS — solo pueden cruzarse en la final.
 
 **Picks clave:**
-- 🏆 **Campeona: ESPAÑA** (le gana la final a Francia 2-1 vía penales, 19-jul MetLife). Modelo MC: España 21.2% campeona (mercado ~16-18%, Caliente +400). Es el pick #1 del mercado Y del modelo.
-- **Final España–Francia** (no España–Inglaterra como la referencia previa: con el bracket real, Inglaterra cae del lado de Francia — semifinal #101 — y esa final era estructuralmente imposible si ambas ganan su grupo).
-- **Grupo K: Portugal 1°, Colombia 2°** — decisión de Javier (Compuerta 1) siguiendo el mercado (Polymarket 62-63% Portugal). OJO: el modelo puro daba Colombia 52.7% (calor de Miami + altura CDMX la favorecen); la tesis vive en los parlays.
-- **México gana el Grupo A** (Polymarket 57%, modelo 63.5%) y elimina a Escocia en dieciseisavos en el Azteca… y cae 1-2 vs Colombia en octavos (CDMX, 5-jul).
-- **Semis:** Francia–Inglaterra y Brasil–España. **3er lugar:** Brasil.
-- **Bota de Oro: Mbappé** (+600 favorito; Francia llega a la final). **Último lugar: Curazao** (0 pts, −5; Elo 1500).
-- Marcadores: modal Poisson/Dixon-Coles por partido; 17 cruces de KO marcados "+1 gol por penales" (regla del template).
+- 🏆 **Campeona: ESPAÑA** (le gana la final a **Argentina** 2-1 vía penales, 19-jul MetLife). Modelo MC: España 21.2% campeona (mercado ~16-18%, Caliente +400). Pick #1 del mercado Y del modelo.
+- **Bracket oficial respetado:** mitad izquierda = Francia, Alemania, España, Países Bajos; mitad derecha = Brasil, Inglaterra, Argentina, Portugal. **Cuartos:** Argentina–Portugal (Messi-Ronaldo, KC #97), Brasil–Inglaterra (#98), España–Países Bajos (#99), Francia–Alemania (#100). **Semis:** España–Francia (#102) y Argentina–Inglaterra (#101). **3er lugar:** Francia.
+- **Grupo K: Portugal 1°, Colombia 2°** — decisión de Javier (Compuerta 1) siguiendo el mercado (Polymarket 62-63% Portugal). El modelo puro daba Colombia 52.7%; la tesis vive en los parlays.
+- **México gana el Grupo A** (Polymarket 57%, modelo 63.5%), elimina a Escocia en dieciseisavos en el Azteca y cae vs Inglaterra en octavos (Azteca, 5-jul).
+- **Bota de Oro: Mbappé** (+600 favorito; Francia llega a semis). **Último lugar: Curazao** (0 pts, −5; Elo 1500).
+- Marcadores: modal Poisson/Dixon-Coles; cruces de KO con "+1 gol por penales" (regla del template).
 
-## 2. Portafolio de 100 parlays (`PORTAFOLIO_100_PARLAYS.md` + `parlays.json`)
-**$500 MXN: 100 boletos × $5, estructura 60/20/20, TODOS en Caliente** (mínimo $5-10 confirmado; el de Draftea NO se confirmó → regla del proyecto). Verificación automática: `scripts/verificar_portafolio.py` → **TODO PASS** (límites de casa, ≥7,000x en jackpots, diversificación ≤30% por evento/tier, 0 boletos que mueran el día 1, 0 patas anticorrelacionadas).
+## 2. Portafolio SOÑADOR (`PORTAFOLIO_74_SONADORES.md` / `.pdf` + `parlays.json`)
+**$370 MXN: 74 boletos × $5, TODOS en Caliente, TODOS pagan >$35,000.** Estructura 60/20/20 como NIVELES DE SUEÑO (decisión de Javier: "que paguen un chingo, son soñadores"). Verificación `scripts/verificar_portafolio.py` → **TODO PASS** (≤8 patas, ≥7,000x, diversificación ≤30%, 0 correlaciones, 0 boletos que mueran el día 1).
 
-| Tier | Boletos | Pago | Prob/boleto | EV |
+| Nivel | Boletos | Pago | Multiplicador | Prob/boleto |
 |---|---|---|---|---|
-| Conservador | 60 | 1.5x–4x | 25%–60% (esperados ~24 ganadores) | ~$304 |
-| Medio | 20 | 20x–300x | 0.6%–3.4% | ~$129 |
-| Jackpot | 20 | $35,065–$151,363 | **~1 entre 14,800 a 1 entre 26,300 c/u** | ~$68 |
+| 🌙 Soñador | 44 | $35k–$150k | 7,000–30,000x | ~1 entre miles |
+| 🚀 Súper soñador | 15 | $150k–$750k | 30,000–150,000x | ~1 entre decenas de miles |
+| 🎰 Lotería máxima | 15 | $750k–$1.1M | 150,000–720,000x | ~1 entre cientos de miles |
 
 ### 🚨 HONESTIDAD BRUTAL
-- **P(que AL MENOS UN jackpot pegue): ~0.12% ≈ 1 entre 830.** Así de real.
-- EV total ≈ $500 según el modelo (breakeven), pero el escenario MÁS PROBABLE es recuperar $100–200 vía conservadores. Esto es entretenimiento con presupuesto cerrado, no inversión.
-- Upside no contado: bono parlay fútbol de Caliente (hasta +100% sobre ganancias, aplica al Mundial 2026, vigente a dic-2026).
+- **P(que CUALQUIERA de los 74 pegue): ~0.47% ≈ 1 entre 213.** Así de real. Lo más probable, por MUCHO, es perder los $370.
+- Son moonshots de marcadores exactos: casi todos los momios son `EST · PENDIENTE-CAPTURA` (estimación del modelo, factor 0.86 calibrado con el único exacto real hallado, México 1-0 a +550). Valídalos en la app de Caliente antes de apostar.
+- Upside no contado: bono parlay fútbol de Caliente (hasta +100% sobre ganancias, aplica al Mundial 2026).
 
 ## 3. Las 5 mejores apuestas de VALOR detectadas
 (edge = prob_real × momio − 1; prob_real = mezcla modelo+mercado, ver `data/probabilidades_mc.json`)
