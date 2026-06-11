@@ -141,7 +141,28 @@ def verificar():
     print("PASS: 72 marcadores + posiciones + terceros + bracket + campeón coherentes (recalc LibreOffice)")
 
 
+def hornear_valores():
+    """Recalcula con LibreOffice y guarda CON valores cacheados (conservando
+    las fórmulas) para que el archivo se vea resuelto en cualquier visor, no
+    solo en Excel con autocálculo. Sin esto, openpyxl deja las celdas de
+    fórmula en blanco al abrir."""
+    outdir = "/tmp/baked_final"
+    if os.path.exists(outdir):
+        shutil.rmtree(outdir)
+    os.makedirs(outdir)
+    subprocess.run(["soffice", "--headless", "-env:UserInstallation=file:///tmp/loprofile",
+                    "--convert-to", "xlsx:Calc MS Excel 2007 XML", "--outdir", outdir, SALIDA],
+                   check=True, capture_output=True, timeout=300)
+    shutil.copy(os.path.join(outdir, os.path.basename(SALIDA)), SALIDA)
+    wb = load_workbook(SALIDA, data_only=True)
+    blancos = sum(1 for r in range(6, 10) if wb["Grupos"].cell(r, 15).value is None)
+    if blancos:
+        raise SystemExit("ERROR: el horneado no llenó las posiciones")
+    print("Valores horneados: posiciones, bracket y campeón visibles al abrir.")
+
+
 if __name__ == "__main__":
     os.makedirs(os.path.join(BASE, "entregables"), exist_ok=True)
     llenar()
     verificar()
+    hornear_valores()
