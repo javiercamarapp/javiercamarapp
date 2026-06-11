@@ -1,44 +1,48 @@
 # TODO — Máquina de Predicción Mundial 2026
 
-> Estado al 11-jun-2026. Plan aprobado por Javier (los activos originales NO existían;
-> se reconstruyen desde cero. Momios: WebSearch + capturas de Javier. Quiniela sigue vigente).
+> Estado al 11-jun-2026. Plan aprobado por Javier (activos originales NO existían;
+> reconstrucción desde cero. Momios: WebSearch + capturas. Quiniela vigente).
 
-## FASE 0 — Reconstrucción de activos
-- [x] Verificación: `modelo_mundial.py` y template .xlsx NO existen → Javier autorizó reconstrucción
-- [x] Red verificada: Odds API / Caliente / Draftea BLOQUEADOS (allowlist); WebSearch SÍ funciona
-- [x] `pip install openpyxl`
-- [ ] Subagente ESTRUCTURA: grupos reales, calendario 72 partidos, sedes, bracket, Elo 48 equipos → `data/`
-- [ ] `modelo_mundial.py` reconstruido (Elo→Poisson + ajustes localía/altura/calor + Dixon-Coles)
-- [ ] Smoke-test del modelo con output mostrado
-- [ ] `QUINIELA_2026_TEMPLATE_RECONSTRUIDO.xlsx` (posiciones por fórmulas + bracket auto-poblado)
-- [ ] COMPUERTA 0: modelo corre + Excel calcula → evidencia + commit/push
+## FASE 0 — Reconstrucción de activos ✅ COMPLETA
+- [x] Verificación: activos no existían → Javier autorizó reconstrucción
+- [x] Red: Odds API/Caliente/Draftea BLOQUEADOS (allowlist); WebSearch SÍ
+- [x] openpyxl + libreoffice-calc instalados
+- [x] Subagente ESTRUCTURA: 12 grupos (≥2 fuentes c/u), 72 partidos confirmados,
+      sedes, bracket (anclas M80/M90/M95), Elo 48 equipos → `data/`
+- [x] `modelo_mundial.py` reconstruido + smoke-test (México 67.1% mezcla vs 68.4% Caliente)
+- [x] Template Excel: fórmulas == lógica Python (recálculo LibreOffice) → PASS
+- [x] COMPUERTA 0 mostrada con evidencia
 
-## FASE 1 — Investigación (subagentes en paralelo, solo WebSearch)
-- [ ] A momios → `data/momios_mx.json` (+ lista de capturas faltantes para Javier)
-- [ ] B lesiones → `data/lesiones.md`
-- [ ] C clima → `data/clima.md`
-- [ ] D mercado de predicción → `data/mercado_prediccion.md`
-- [ ] COMPUERTA 1: reportar cambios mayores vs inteligencia 10-jun; confirmar llamada Colombia gana K; pedir capturas
+## FASE 1 — Investigación ✅ COMPLETA (4 subagentes paralelos)
+- [x] A momios → `data/momios_mx.json` (19 campeón, 18 grupos, 12 partidos de-vig, 15 bota, reglas casas)
+- [x] B lesiones → `data/lesiones.md` (tesis Colombia INTACTA; Yamal/Messi/Saliba mejoran)
+- [x] C clima → `data/clima.md` (bandera roja Miami 15-jun y Monterrey diurno)
+- [x] D mercados → `data/mercado_prediccion.md` (ALERTA Grupo K: Portugal 62-63%)
+- [x] COMPUERTA 1: Javier decidió Portugal 1°/Colombia 2° en quiniela; tesis Colombia
+      en parlays; momios faltantes → PENDIENTE-CAPTURA y sigue
 
-## FASE 2 — Modelado
-- [ ] 72 partidos de grupos: prob modelo + mercado + mezcla 50/50 + marcador Poisson/Dixon-Coles
-- [ ] Simulación de posiciones + mejores terceros FIFA + bracket
-- [ ] Modelo en cada cruce KO ("sin línea de mercado"; empates → +1 gol por penales)
-- [ ] Sanity check vs referencia (España campeón 2-1, Mbappé, Curazao último, Colombia gana K)
-- [ ] COMPUERTA 2: tabla de 104 predicciones con probabilidades mostrada
+## FASE 2 — Modelado ✅ COMPLETA
+- [x] 72 partidos (mezcla 50/50 donde hay línea) + Dixon-Coles → `data/predicciones_104.json/.md`
+- [x] Posiciones + terceros + bracket; ajuste forzado Grupo K documentado
+- [x] KO completo: España campeona (2-1 a Francia, penales)
+- [x] Monte Carlo 20k torneos → `data/probabilidades_mc.json` (España 21.2% campeona)
+- [x] Sanity check vs referencia: divergencias justificadas (final España-Inglaterra era
+      imposible con el bracket real; Honduras no clasificó; España debuta vs Cabo Verde)
+- [x] COMPUERTA 2 mostrada
 
-## FASE 3 — Entregables (`entregables/` con timestamp)
-- [ ] 3A `QUINIELA_2026_JAVIER_FINAL.xlsx` (verificada vs simulación)
-- [ ] 3B `PORTAFOLIO_100_PARLAYS.md` + `parlays.json` (60/20/20, $500, diversificación verificada por script)
-- [ ] 3C `RESUMEN.md` (1 página, honestidad de probabilidades)
-- [ ] COMPUERTA 3: 3 archivos abren sin error → commit/push
+## FASE 3 — Entregables ✅ COMPLETA (`entregables/`)
+- [x] 3A `QUINIELA_2026_JAVIER_FINAL.xlsx` (recálculo LibreOffice == simulación: PASS)
+- [x] 3B `PORTAFOLIO_100_PARLAYS.md` + `parlays.json` (60/20/20, $500, TODO PASS,
+      fix de correlaciones excluyentes aplicado y re-verificado)
+- [x] 3C `RESUMEN.md` (P(≥1 jackpot) ~0.12%, top 5 valor, capturas faltantes)
+- [x] COMPUERTA 3: los 3 archivos abren sin error
 
-## FASE 4 — Verificación independiente
-- [ ] Subagente fresco → `entregables/VERIFICACION.md` PASS/FAIL
-- [ ] Corregir FAILs y re-verificar
+## FASE 4 — Verificación independiente 🔄 EN CURSO
+- [ ] Subagente verificador fresco → `entregables/VERIFICACION.md` PASS/FAIL
+- [ ] Corregir FAILs si los hay y re-verificar
 - [ ] Entrega final con confirmación de Javier + push
 
-## Riesgos aceptados
-- Momios de marcador exacto dependen de capturas de Javier (se marcan PENDIENTE-CAPTURA, jamás se inventan como reales)
-- El Excel reconstruido NO es el template oficial de Pablo (sirve para transcribir)
-- Elo de equipos menores puede ir ESTIMADO y etiquetado
+## Pendientes de JAVIER (no bloquean la entrega)
+- Capturas de Caliente: marcadores exactos de jackpots, Grupo K, 1X2 faltantes,
+  tabla del bono parlay (lista completa: `data/momios_mx.json → faltantes_para_captura`)
+- Confirmar mínimo de Draftea (si acepta $5, se puede migrar parte del tier conservador)
