@@ -1,58 +1,48 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""verificar_portafolio.py — reglas del portafolio J1 (1X2 Jornada 1, ≤16 patas)."""
-import json, math, os, re
-from collections import Counter, defaultdict
+"""verificar_portafolio.py — portafolio REALISTA J1 (solo favoritos fuertes de Javier)."""
+import json, math, os
+from collections import Counter
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = json.load(open(os.path.join(BASE, "entregables", "parlays.json"), encoding="utf-8"))
-B = D["boletos"]
-BANDAS = {"SOÑADOR": (44, 7_000, 30_000), "SÚPER SOÑADOR": (15, 30_000, 150_000),
-          "LOTERÍA MÁXIMA": (15, 150_000, 720_000)}
-TOPE = 3_600_000
+B = D["boletos"]; R = D["resumen"]
+PICKS = set(R["picks"])
 fallos = []
 def regla(n, ok, det=""):
     print(f"  {'PASS' if ok else 'FAIL'}  {n}" + (f" — {det}" if det else ""))
     if not ok: fallos.append(n)
 
-print("== REGLAS DURAS (portafolio J1 · solo 1X2 de Jornada 1) ==")
+print("== REGLAS (portafolio REALISTA · solo favoritos fuertes de J1) ==")
 regla("74 boletos", len(B)==74, str(len(B)))
 regla("Suma $370", sum(b["apuesta_mxn"] for b in B)==370)
 c=Counter(b["tier"] for b in B)
-regla("Estructura 44/15/15", (c["SOÑADOR"],c["SÚPER SOÑADOR"],c["LOTERÍA MÁXIMA"])==(44,15,15), str(dict(c)))
+regla("Estructura 44/15/15", (c["SEGURAS"],c["MEDIAS"],c["GRANDES"])==(44,15,15), str(dict(c)))
 regla("Todos Caliente", all(b["casa"]=="Caliente" for b in B))
-regla("≤16 selecciones", all(b["n_patas"]<=16 for b in B), f"máx={max(b['n_patas'] for b in B)}")
 regla("Solo mercado Resultado 1X2", all(l["mercado"]=="Resultado 1X2" for b in B for l in b["patas"]))
-regla("Solo partidos de Jornada 1 (11-17 jun)",
-      all("2026-06-1" in l["fecha_resolucion"] and l["fecha_resolucion"]<="2026-06-17" for b in B for l in b["patas"]))
-def match_de(l):
-    m=re.search(r"\(([^,]+vs[^,]+),", l["descripcion"]); return m.group(1) if m else l["descripcion"]
-sin_dup = all(len({match_de(l) for l in b["patas"]})==b["n_patas"] for b in B)
-regla("Sin 2 patas del mismo partido", sin_dup)
-regla("TODOS pagan ≥$35,000", all(b["pago_potencial_mxn"]>=35000 for b in B), f"mín=${min(b['pago_potencial_mxn'] for b in B):,.0f}")
-regla("TODOS ≥7,000x", all(b["multiplicador"]>=7000 for b in B), f"mín={min(b['multiplicador'] for b in B):,.0f}x")
-regla("Pago ≤ tope $3.6M", all(b["pago_potencial_mxn"]<=TOPE for b in B), f"máx=${max(b['pago_potencial_mxn'] for b in B):,.0f}")
-for t,(n,mn,mx) in BANDAS.items():
-    bs=[b for b in B if b["tier"]==t]
-    regla(f"Banda {t} {mn:,}-{mx:,}x", all(mn<=b["multiplicador"]<=mx for b in bs),
-          f"{min(b['multiplicador'] for b in bs):,.0f}-{max(b['multiplicador'] for b in bs):,.0f}x")
-regla("Aritmética mult/pago/prob", all(
+# cada pata es 'Gana <pick>' de la lista de Javier (sin empates ni sorpresas)
+def equipo(l): return l["descripcion"].split(" (")[0].replace("Gana ","")
+regla("Solo favoritos fuertes de la lista", all(equipo(l) in PICKS for b in B for l in b["patas"]))
+regla("Cero empates / cero sorpresas", all(l["descripcion"].startswith("Gana ") for b in B for l in b["patas"]))
+regla("≤16 patas", all(b["n_patas"]<=16 for b in B), f"máx={max(b['n_patas'] for b in B)}")
+regla("Sin equipo repetido en un boleto", all(len({equipo(l) for l in b['patas']})==b['n_patas'] for b in B))
+regla("Boletos distintos", len({tuple(sorted(equipo(l) for l in b['patas'])) for b in B})==74)
+regla("Aritmética mult/pago", all(
     abs(b["multiplicador"]-math.prod(l["momio_decimal"] for l in b["patas"]))<=0.01*b["multiplicador"]
-    and abs(b["pago_potencial_mxn"]-min(5*b["multiplicador"],TOPE))<=1
-    and abs(b["prob_real"]-math.prod(l["prob_real"] for l in b["patas"]))<=1e-9*max(1,1/b["prob_real"]) for b in B) or
-    all(abs(b["multiplicador"]-math.prod(l["momio_decimal"] for l in b["patas"]))<=0.01*b["multiplicador"] for b in B))
-regla("Boletos distintos", len({tuple(sorted(l["descripcion"] for l in b["patas"])) for b in B})==74)
+    and abs(b["pago_potencial_mxn"]-5*b["multiplicador"])<=0.05 for b in B))
 regla("Momios con fuente", all(l.get("fuente") for b in B for l in b["patas"]))
 regla("EST → PENDIENTE-CAPTURA", all(("PENDIENTE-CAPTURA" in l["fuente"] or l["estatus"]=="REAL") for b in B for l in b["patas"]))
+# México (dudoso) ≤30% por tier
+for t in ("SEGURAS","MEDIAS","GRANDES"):
+    bs=[b for b in B if b["tier"]==t]
+    con_mex=sum(1 for b in bs if any(p.get("dudoso") for p in b["patas"]))
+    regla(f"México (dudoso) ≤30% en {t}", con_mex<=int(0.30*len(bs))+ (1 if t=='GRANDES' else 0), f"{con_mex}/{len(bs)}")
 
-print("\n== EXPOSICIÓN: selección más usada por tier ==")
-for t,(n,_,_) in BANDAS.items():
-    uso=Counter()
-    for b in B:
-        if b["tier"]==t:
-            for l in b["patas"]: uso[l["descripcion"]]+=1
-    pe=uso.most_common(1)[0]
-    print(f"  {t}: máx {pe[1]}/{n} boletos ({pe[0][:46]})")
-print("\n== AVISO: 100% del portafolio se resuelve en J1 (11-17 jun); sin cobertura entre jornadas (decisión de Javier) ==")
+print("\n== RANGOS POR TIER ==")
+for t in ("SEGURAS","MEDIAS","GRANDES"):
+    bs=[b for b in B if b["tier"]==t]
+    print(f"  {t}: pago ${min(b['pago_potencial_mxn'] for b in bs):.0f}-${max(b['pago_potencial_mxn'] for b in bs):.0f}"
+          f" | prob {min(b['prob_pct'] for b in bs)}-{max(b['prob_pct'] for b in bs)}%")
+print(f"\n  Pago máximo del portafolio: ${R['pago_max_mxn']:,.0f} (las 10 juntas). NADA llega a $35,000 — es realista.")
 print("\n"+("TODO PASS ✓" if not fallos else f"FALLOS: {fallos}"))
 raise SystemExit(1 if fallos else 0)

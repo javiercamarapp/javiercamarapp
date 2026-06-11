@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""parlays_a_pdf.py — convierte entregables/parlays.json a un PDF imprimible
-(vía HTML + LibreOffice Writer headless)."""
-import html, json, os, subprocess, sys
+"""parlays_a_pdf.py — PDF imprimible del portafolio REALISTA J1 (vía HTML + LibreOffice)."""
+import html, json, os, subprocess
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ENT = os.path.join(BASE, "entregables")
@@ -16,35 +15,35 @@ h1{color:#1F4E79;font-size:20px;margin:0;} .sub{color:#555;font-size:10px;margin
 .warn{background:#FFF2CC;border-left:4px solid #d4a017;padding:8px 10px;margin:8px 0;font-size:10px;}
 .tier{background:#1F4E79;color:#fff;font-weight:bold;padding:5px 9px;margin-top:12px;border-radius:3px;font-size:13px;}
 .bol{border:1px solid #ccc;border-radius:4px;margin:5px 0;padding:5px 8px;page-break-inside:avoid;}
-.bolh{font-weight:bold;font-size:11px;color:#1F4E79;} .pay{color:#1a7a1a;} .odd{color:#b00;font-weight:bold;}
-.meta{color:#666;font-size:8.5px;margin:1px 0 3px;} table{border-collapse:collapse;width:100%;font-size:8px;}
+.bolh{font-weight:bold;font-size:11px;color:#1F4E79;} .pay{color:#1a7a1a;} .pr{color:#1a5276;font-weight:bold;}
+table{border-collapse:collapse;width:100%;font-size:8px;}
 th{background:#D9E1F2;text-align:left;padding:2px 4px;} td{border-bottom:1px solid #e8e8e8;padding:2px 4px;}
-.r{color:#1a7a1a;} .e{color:#b07000;}</style>"""
+.r{color:#1a7a1a;} .e{color:#b07000;} .dud{color:#b00;}</style>"""
 
+b9, b10 = R["bandera_9_sin_dudoso"], R["bandera_10_todas"]
 out = [f"<html><head><meta charset='utf-8'>{CSS}</head><body>",
-       "<h1>Portafolio Parlays J1 — 74 boletos · Mundial 2026</h1>",
-       f"<div class='sub'>$370 MXN · 74 boletos × $5 · Caliente · solo RESULTADO 1X2 de la Jornada 1 · ≤16 patas · <b>TODOS pagan &gt;$35,000</b></div>",
-       f"""<div class='warn'><b>⚠️ ESTO ES UN SUEÑO, NO UN PLAN DE INVERSIÓN.</b>
-       P(que CUALQUIERA de los 74 pegue): <b>~{R['p_al_menos_uno_pegue']*100:.2f}% ≈ 1 entre {R['uno_entre_global']:,}</b>.
-       Cada boleto es ~1 entre decenas de miles a millones. Casi todos los momios son
-       <span class='odd'>EST · PENDIENTE-CAPTURA</span>: valídalos en Caliente. Lo más probable es perder los $370.</div>"""]
-nombres = {"SOÑADOR": "🌙 44 SOÑADORES · $35k–$150k",
-           "SÚPER SOÑADOR": "🚀 15 SÚPER SOÑADORES · $150k–$750k",
-           "LOTERÍA MÁXIMA": "🎰 15 LOTERÍA MÁXIMA · $750k–$3.6M"}
-for tier in ("SOÑADOR", "SÚPER SOÑADOR", "LOTERÍA MÁXIMA"):
+       "<h1>Portafolio REALISTA J1 — 74 boletos · Mundial 2026</h1>",
+       f"<div class='sub'>$370 · 74 boletos × $5 · Caliente · SOLO favoritos fuertes (sin empates ni sorpresas) · {esc(', '.join(R['picks']))}</div>",
+       f"""<div class='warn'><b>LA VERDAD SOBRE LOS PAGOS.</b>
+       Tus 9 selecciones (sin México) juntas: <b>{b9['mult']}x → ${b9['pago_mxn']:,.0f}</b> (prob ~{b9['prob_pct']}%).
+       Las 10 con México: <b>{b10['mult']}x → ${b10['pago_mxn']:,.0f}</b> (prob ~{b10['prob_pct']}%).
+       Con puros favoritos NO se llega a $35,000 — eso exigía patas irreales que quitamos.
+       Lo más probable es cobrar las combinadas chicas (2-3 fuertes). Momios <span class='e'>EST</span> = PENDIENTE-CAPTURA en Caliente.</div>"""]
+nombres = {"SEGURAS": "✅ 44 SEGURAS · 2-3 fuertes · pago $6-$16 · prob alta",
+           "MEDIAS": "⚡ 15 MEDIAS · 4-6 fuertes · pago $10-$80",
+           "GRANDES": "🔥 15 GRANDES · 7-10 fuertes · pago $80-$166"}
+for tier in ("SEGURAS", "MEDIAS", "GRANDES"):
     out.append(f"<div class='tier'>{nombres[tier]}</div>")
     for b in [b for b in B if b["tier"] == tier]:
-        cap = " · <span class='odd'>pago TOPADO $3.6M</span>" if b.get("pago_topado") else ""
+        dud = " · <span class='dud'>incluye México (dudoso)</span>" if any(p.get("dudoso") for p in b["patas"]) else ""
         out.append(f"<div class='bol'><div class='bolh'>{b['emoji']} #{b['boleto']} — {b['n_patas']} patas — "
-                   f"{b['multiplicador']:,.0f}x → <span class='pay'>${b['pago_potencial_mxn']:,.0f} MXN</span> "
-                   f"· <span class='odd'>~1 entre {b['uno_entre']:,}</span>{cap}</div>"
-                   f"<div class='meta'>Se resuelve a más tardar: {b['fecha_ultima_pata']}</div>"
-                   "<table><tr><th>Pata</th><th>Mercado</th><th>Momio</th><th>Prob</th><th>Estatus</th></tr>")
+                   f"{b['multiplicador']:.2f}x → <span class='pay'>${b['pago_potencial_mxn']:,.0f} MXN</span> "
+                   f"· <span class='pr'>prob ~{b['prob_pct']}%</span>{dud}</div>"
+                   "<table><tr><th>Selección</th><th>Momio</th><th>Prob</th><th>Estatus</th></tr>")
         for l in b["patas"]:
             cls = "r" if l["estatus"] == "REAL" else "e"
-            out.append(f"<tr><td>{esc(l['descripcion'])}</td><td>{esc(l['mercado'])}</td>"
-                       f"<td>{l['momio_decimal']} ({l['momio_americano']})</td><td>{l['prob_real']*100:.1f}%</td>"
-                       f"<td class='{cls}'>{l['estatus']}</td></tr>")
+            out.append(f"<tr><td>{esc(l['descripcion'])}</td><td>{l['momio_decimal']} ({l['momio_americano']})</td>"
+                       f"<td>{l['prob_real']*100:.0f}%</td><td class='{cls}'>{l['estatus']}</td></tr>")
         out.append("</table></div>")
 out.append("</body></html>")
 
