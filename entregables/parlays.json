@@ -1,0 +1,5015 @@
+{
+ "resumen": {
+  "total_boletos": 100,
+  "total_mxn": 500,
+  "estructura": {
+   "CONSERVADOR": 60,
+   "MEDIO": 20,
+   "JACKPOT": 20
+  },
+  "p_al_menos_un_jackpot": 0.001206,
+  "nota_honestidad": "Los 20 jackpots usan en su mayoría momios EST del modelo (PENDIENTE-CAPTURA). La prob. de que AL MENOS UNO pegue es ~0.12% (cota superior por correlación entre boletos)."
+ },
+ "boletos": [
+  {
+   "boleto": 1,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.51,
+   "pago_potencial_mxn": 17.53,
+   "prob_real": 0.33866999999999997,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 2,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.24,
+   "pago_potencial_mxn": 16.22,
+   "prob_real": 0.36252599999999996,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 3,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.38,
+   "pago_potencial_mxn": 11.88,
+   "prob_real": 0.48034694999999994,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 4,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.04,
+   "pago_potencial_mxn": 15.2,
+   "prob_real": 0.37209975000000006,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 5,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.53,
+   "pago_potencial_mxn": 17.66,
+   "prob_real": 0.31959000000000004,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 6,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.22,
+   "pago_potencial_mxn": 16.11,
+   "prob_real": 0.34720799999999996,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 7,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.27,
+   "pago_potencial_mxn": 16.34,
+   "prob_real": 0.342102,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 8,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.62,
+   "pago_potencial_mxn": 13.08,
+   "prob_real": 0.426,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-24"
+  },
+  {
+   "boleto": 9,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 3.35,
+   "pago_potencial_mxn": 16.74,
+   "prob_real": 0.33,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-24"
+  },
+  {
+   "boleto": 10,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.51,
+   "pago_potencial_mxn": 17.53,
+   "prob_real": 0.31044750000000004,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 11,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.39,
+   "pago_potencial_mxn": 11.96,
+   "prob_real": 0.4532851500000001,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 12,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.92,
+   "pago_potencial_mxn": 9.58,
+   "prob_real": 0.56445,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 13,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.19,
+   "pago_potencial_mxn": 15.94,
+   "prob_real": 0.33866999999999997,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 14,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.24,
+   "pago_potencial_mxn": 16.22,
+   "prob_real": 0.3323155,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 15,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Francia gana a Irak (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.18,
+     "momio_americano": "-556",
+     "prob_real": 0.78,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.89,
+   "pago_potencial_mxn": 14.47,
+   "prob_real": 0.37206,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 16,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.72,
+   "pago_potencial_mxn": 18.58,
+   "prob_real": 0.28968,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-24"
+  },
+  {
+   "boleto": 17,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.58,
+   "pago_potencial_mxn": 17.9,
+   "prob_real": 0.30051,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 18,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.77,
+   "pago_potencial_mxn": 18.84,
+   "prob_real": 0.28542,
+   "uno_entre": 4,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-24"
+  },
+  {
+   "boleto": 19,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "España gana a Arabia Saudita (21-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.12,
+     "momio_americano": "-833",
+     "prob_real": 0.82,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.75,
+   "pago_potencial_mxn": 13.73,
+   "prob_real": 0.39114,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 20,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Colombia gana a RD Congo (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.74,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.04,
+   "pago_potencial_mxn": 15.2,
+   "prob_real": 0.35297999999999996,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 21,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.45,
+   "pago_potencial_mxn": 12.26,
+   "prob_real": 0.4372500000000001,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 22,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Brasil gana a Haití (19-jun, Boston)",
+     "mercado": "1X2",
+     "momio_decimal": 1.16,
+     "momio_americano": "-625",
+     "prob_real": 0.79,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-19"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.84,
+   "pago_potencial_mxn": 14.22,
+   "prob_real": 0.37683,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 23,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Inglaterra gana a Ghana (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.16,
+     "momio_americano": "-625",
+     "prob_real": 0.79,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.84,
+   "pago_potencial_mxn": 14.22,
+   "prob_real": 0.37683,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 24,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.77,
+   "pago_potencial_mxn": 8.87,
+   "prob_real": 0.6042099999999999,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 25,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "España gana a Cabo Verde (15-jun, Atlanta)",
+     "mercado": "1X2",
+     "momio_decimal": 1.09,
+     "momio_americano": "-1111",
+     "prob_real": 0.84,
+     "fuente": "US books vía vegasodds.com (mercado parcial)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.67,
+   "pago_potencial_mxn": 13.36,
+   "prob_real": 0.40068000000000004,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 26,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México gana el Grupo A (def. 24-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.6,
+     "fuente": "US books -120 vía https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.95,
+   "pago_potencial_mxn": 14.75,
+   "prob_real": 0.36252599999999996,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 27,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.27,
+   "pago_potencial_mxn": 11.35,
+   "prob_real": 0.46805,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 28,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.76,
+   "pago_potencial_mxn": 13.8,
+   "prob_real": 0.3781815,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 29,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.29,
+   "pago_potencial_mxn": 11.47,
+   "prob_real": 0.453961695,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 30,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.52,
+   "pago_potencial_mxn": 12.59,
+   "prob_real": 0.4108628,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 31,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.55,
+   "pago_potencial_mxn": 12.77,
+   "prob_real": 0.4048207,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 32,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.22,
+   "pago_potencial_mxn": 16.11,
+   "prob_real": 0.31827400000000006,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 33,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.27,
+   "pago_potencial_mxn": 16.34,
+   "prob_real": 0.3135935,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 34,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.76,
+   "pago_potencial_mxn": 8.8,
+   "prob_real": 0.57868,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 35,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.79,
+   "pago_potencial_mxn": 8.93,
+   "prob_real": 0.5701700000000001,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 36,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Francia gana el Grupo I (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.48,
+     "momio_americano": "-208",
+     "prob_real": 0.637,
+     "fuente": "US books -210 vía https://www.covers.com/world-cup/odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 2.62,
+   "pago_potencial_mxn": 13.12,
+   "prob_real": 0.38488176999999996,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 37,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Francia gana el Grupo I (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.48,
+     "momio_americano": "-208",
+     "prob_real": 0.637,
+     "fuente": "US books -210 vía https://www.covers.com/world-cup/odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.87,
+   "pago_potencial_mxn": 19.37,
+   "prob_real": 0.2487485,
+   "uno_entre": 4,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 38,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Francia gana el Grupo I (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.48,
+     "momio_americano": "-208",
+     "prob_real": 0.637,
+     "fuente": "US books -210 vía https://www.covers.com/world-cup/odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.12,
+   "pago_potencial_mxn": 10.58,
+   "prob_real": 0.45227,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 39,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Francia gana el Grupo I (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.48,
+     "momio_americano": "-208",
+     "prob_real": 0.637,
+     "fuente": "US books -210 vía https://www.covers.com/world-cup/odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.71,
+   "pago_potencial_mxn": 13.54,
+   "prob_real": 0.35035000000000005,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 40,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.4,
+   "pago_potencial_mxn": 17.01,
+   "prob_real": 0.277255,
+   "uno_entre": 4,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 41,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 3,
+   "multiplicador": 3.4,
+   "pago_potencial_mxn": 17.01,
+   "prob_real": 0.277255,
+   "uno_entre": 4,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-23"
+  },
+  {
+   "boleto": 42,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.38,
+   "pago_potencial_mxn": 11.89,
+   "prob_real": 0.3905,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 43,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.38,
+   "pago_potencial_mxn": 11.89,
+   "prob_real": 0.3905,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-23"
+  },
+  {
+   "boleto": 44,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Francia gana a Irak (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.18,
+     "momio_americano": "-556",
+     "prob_real": 0.78,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.16,
+   "pago_potencial_mxn": 10.8,
+   "prob_real": 0.42900000000000005,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 45,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.67,
+   "pago_potencial_mxn": 13.36,
+   "prob_real": 0.34650000000000003,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-20"
+  },
+  {
+   "boleto": 46,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España gana a Arabia Saudita (21-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.12,
+     "momio_americano": "-833",
+     "prob_real": 0.82,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.05,
+   "pago_potencial_mxn": 10.25,
+   "prob_real": 0.451,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-21"
+  },
+  {
+   "boleto": 47,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Canadá gana a Bosnia (12-jun, Toronto)",
+     "mercado": "1X2",
+     "momio_decimal": 1.83,
+     "momio_americano": "-120",
+     "prob_real": 0.55,
+     "fuente": "https://www.covers.com/world-cup/oddscanada-odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "México gana a Corea del Sur (18-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.61,
+     "momio_americano": "-164",
+     "prob_real": 0.57,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.95,
+   "pago_potencial_mxn": 14.73,
+   "prob_real": 0.3135,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-18"
+  },
+  {
+   "boleto": 48,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Francia gana el Grupo I (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.48,
+     "momio_americano": "-208",
+     "prob_real": 0.637,
+     "fuente": "US books -210 vía https://www.covers.com/world-cup/odds",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.1,
+   "pago_potencial_mxn": 10.51,
+   "prob_real": 0.43316000000000004,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 49,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.85,
+   "pago_potencial_mxn": 9.23,
+   "prob_real": 0.4828,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 50,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.85,
+   "pago_potencial_mxn": 9.23,
+   "prob_real": 0.4828,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-23"
+  },
+  {
+   "boleto": 51,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.87,
+   "pago_potencial_mxn": 9.36,
+   "prob_real": 0.4757,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 52,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.87,
+   "pago_potencial_mxn": 9.36,
+   "prob_real": 0.4757,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-23"
+  },
+  {
+   "boleto": 53,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Francia gana a Irak (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.18,
+     "momio_americano": "-556",
+     "prob_real": 0.78,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.68,
+   "pago_potencial_mxn": 8.38,
+   "prob_real": 0.5304000000000001,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 54,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.07,
+   "pago_potencial_mxn": 10.37,
+   "prob_real": 0.42840000000000006,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-20"
+  },
+  {
+   "boleto": 55,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Francia gana a Irak (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.18,
+     "momio_americano": "-556",
+     "prob_real": 0.78,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.7,
+   "pago_potencial_mxn": 8.5,
+   "prob_real": 0.5226000000000001,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-22"
+  },
+  {
+   "boleto": 56,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.1,
+   "pago_potencial_mxn": 10.51,
+   "prob_real": 0.42210000000000003,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-20"
+  },
+  {
+   "boleto": 57,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana a Arabia Saudita (21-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.12,
+     "momio_americano": "-833",
+     "prob_real": 0.82,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.59,
+   "pago_potencial_mxn": 7.95,
+   "prob_real": 0.5576,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-21"
+  },
+  {
+   "boleto": 58,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "México gana a Corea del Sur (18-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.61,
+     "momio_americano": "-164",
+     "prob_real": 0.57,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 2.29,
+   "pago_potencial_mxn": 11.43,
+   "prob_real": 0.3876,
+   "uno_entre": 3,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-18"
+  },
+  {
+   "boleto": 59,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana a Arabia Saudita (21-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.12,
+     "momio_americano": "-833",
+     "prob_real": 0.82,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.61,
+   "pago_potencial_mxn": 8.06,
+   "prob_real": 0.5494,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-21"
+  },
+  {
+   "boleto": 60,
+   "tier": "CONSERVADOR",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a RD Congo (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.74,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 2,
+   "multiplicador": 1.76,
+   "pago_potencial_mxn": 8.8,
+   "prob_real": 0.5032,
+   "uno_entre": 2,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-23"
+  },
+  {
+   "boleto": 61,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Empate Ecuador vs Alemania (25-jun)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 4.1,
+     "momio_americano": "+310",
+     "prob_real": 0.29,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-25"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 166.91,
+   "pago_potencial_mxn": 834.54,
+   "prob_real": 0.013596524865000001,
+   "uno_entre": 74,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 62,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Argentina CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 8.5,
+     "momio_americano": "+750",
+     "prob_real": 0.141,
+     "fuente": "Caliente +750 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Empate Ecuador vs Alemania (25-jun)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 4.1,
+     "momio_americano": "+310",
+     "prob_real": 0.29,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-25"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 151.25,
+   "pago_potencial_mxn": 756.25,
+   "prob_real": 0.014614903799999997,
+   "uno_entre": 68,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 63,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Empate Ecuador vs Alemania (25-jun)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 4.1,
+     "momio_americano": "+310",
+     "prob_real": 0.29,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-25"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 134.6,
+   "pago_potencial_mxn": 673.02,
+   "prob_real": 0.015977115000000004,
+   "uno_entre": 63,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 64,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Argentina CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 8.5,
+     "momio_americano": "+750",
+     "prob_real": 0.141,
+     "fuente": "Caliente +750 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 258.23,
+   "pago_potencial_mxn": 1291.15,
+   "prob_real": 0.0083153763,
+   "uno_entre": 120,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 65,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Argentina CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 8.5,
+     "momio_americano": "+750",
+     "prob_real": 0.141,
+     "fuente": "Caliente +750 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Empate Ecuador vs Alemania (25-jun)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 4.1,
+     "momio_americano": "+310",
+     "prob_real": 0.29,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-25"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 217.8,
+   "pago_potencial_mxn": 1088.99,
+   "prob_real": 0.009791985545999998,
+   "uno_entre": 102,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 66,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Empate Ecuador vs Alemania (25-jun)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 4.1,
+     "momio_americano": "+310",
+     "prob_real": 0.29,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-25"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 124.56,
+   "pago_potencial_mxn": 622.79,
+   "prob_real": 0.017102546999999996,
+   "uno_entre": 58,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 67,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Empate Ecuador vs Alemania (25-jun)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 4.1,
+     "momio_americano": "+310",
+     "prob_real": 0.29,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-25"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 274.97,
+   "pago_potencial_mxn": 1374.87,
+   "prob_real": 0.00572589369,
+   "uno_entre": 175,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 68,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España gana el Grupo H (def. 26-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.851,
+     "fuente": "US books -425 vía https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Argentina CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 8.5,
+     "momio_americano": "+750",
+     "prob_real": 0.141,
+     "fuente": "Caliente +750 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 105.51,
+   "pago_potencial_mxn": 527.53,
+   "prob_real": 0.014056945649999996,
+   "uno_entre": 71,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 69,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Argentina CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 8.5,
+     "momio_americano": "+750",
+     "prob_real": 0.141,
+     "fuente": "Caliente +750 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 87.52,
+   "pago_potencial_mxn": 437.58,
+   "prob_real": 0.014219624399999999,
+   "uno_entre": 70,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 70,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Empate EUA vs Paraguay (12-jun, LA)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 3.4,
+     "momio_americano": "+240",
+     "prob_real": 0.28,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Argentina CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 8.5,
+     "momio_americano": "+750",
+     "prob_real": 0.141,
+     "fuente": "Caliente +750 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 206.64,
+   "pago_potencial_mxn": 1033.18,
+   "prob_real": 0.0059425295999999996,
+   "uno_entre": 168,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 71,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Empate EUA vs Paraguay (12-jun, LA)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 3.4,
+     "momio_americano": "+240",
+     "prob_real": 0.28,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 32.58,
+   "pago_potencial_mxn": 162.88,
+   "prob_real": 0.03350575200000001,
+   "uno_entre": 30,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 72,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Colombia gana a Uzbekistán (17-jun, CDMX)",
+     "mercado": "1X2",
+     "momio_decimal": 1.43,
+     "momio_americano": "-233",
+     "prob_real": 0.71,
+     "fuente": "consenso US books vía espn.com/soccer/odds (de-vig -230)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Empate EUA vs Paraguay (12-jun, LA)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 3.4,
+     "momio_americano": "+240",
+     "prob_real": 0.28,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 46.91,
+   "pago_potencial_mxn": 234.54,
+   "prob_real": 0.02244885384,
+   "uno_entre": 45,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 73,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina gana el Grupo J (def. 27-jun)",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 1.34,
+     "momio_americano": "-294",
+     "prob_real": 0.795,
+     "fuente": "US books -290 vía https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Empate EUA vs Paraguay (12-jun, LA)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 3.4,
+     "momio_americano": "+240",
+     "prob_real": 0.28,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 4,
+   "multiplicador": 32.8,
+   "pago_potencial_mxn": 164.02,
+   "prob_real": 0.031618104,
+   "uno_entre": 32,
+   "tiene_momios_pendientes": false,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 74,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Escocia gana a Haití (13-jun, Boston)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.61,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-haiti-vs-scotland-06-13-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    },
+    {
+     "descripcion": "Empate EUA vs Paraguay (12-jun, LA)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 3.4,
+     "momio_americano": "+240",
+     "prob_real": 0.28,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 20.17,
+   "pago_potencial_mxn": 100.85,
+   "prob_real": 0.03289536059040001,
+   "uno_entre": 30,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-20"
+  },
+  {
+   "boleto": 75,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Brasil gana a Marruecos (13-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.57,
+     "momio_americano": "-175",
+     "prob_real": 0.55,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-brazil-vs-morocco-06-13-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Francia gana a Senegal (16-jun, NY)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.67,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    },
+    {
+     "descripcion": "Empate EUA vs Paraguay (12-jun, LA)",
+     "mercado": "1X2 empate",
+     "momio_decimal": 3.4,
+     "momio_americano": "+240",
+     "prob_real": 0.28,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-12"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 21.99,
+   "pago_potencial_mxn": 109.96,
+   "prob_real": 0.029659751352000014,
+   "uno_entre": 34,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-20"
+  },
+  {
+   "boleto": 76,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    },
+    {
+     "descripcion": "Francia CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 6.0,
+     "momio_americano": "+500",
+     "prob_real": 0.124,
+     "fuente": "BetMGM +500 vía foxsports.com",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 22.32,
+   "pago_potencial_mxn": 111.58,
+   "prob_real": 0.025307661456000004,
+   "uno_entre": 40,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 77,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Francia CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 6.0,
+     "momio_americano": "+500",
+     "prob_real": 0.124,
+     "fuente": "BetMGM +500 vía foxsports.com",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 22.32,
+   "pago_potencial_mxn": 111.58,
+   "prob_real": 0.025307661456000004,
+   "uno_entre": 40,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 78,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Francia CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 6.0,
+     "momio_americano": "+500",
+     "prob_real": 0.124,
+     "fuente": "BetMGM +500 vía foxsports.com",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 21.02,
+   "pago_potencial_mxn": 105.11,
+   "prob_real": 0.026778598559999995,
+   "uno_entre": 37,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 79,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina gana a Argelia (16-jun, KC)",
+     "mercado": "1X2",
+     "momio_decimal": 1.42,
+     "momio_americano": "-238",
+     "prob_real": 0.68,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Holanda gana a Suecia (20-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.46,
+     "momio_americano": "-217",
+     "prob_real": 0.63,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-20"
+    },
+    {
+     "descripcion": "Colombia gana a RD Congo (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.24,
+     "momio_americano": "-417",
+     "prob_real": 0.74,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Francia CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 6.0,
+     "momio_americano": "+500",
+     "prob_real": 0.124,
+     "fuente": "BetMGM +500 vía foxsports.com",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 21.29,
+   "pago_potencial_mxn": 106.43,
+   "prob_real": 0.026376999264000004,
+   "uno_entre": 38,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 80,
+   "tier": "MEDIO",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México gana a Sudáfrica (11-jun, Azteca)",
+     "mercado": "1X2",
+     "momio_decimal": 1.38,
+     "momio_americano": "-263",
+     "prob_real": 0.671,
+     "fuente": "Caliente vía https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Escocia gana a Haití (13-jun, Boston)",
+     "mercado": "1X2",
+     "momio_decimal": 1.44,
+     "momio_americano": "-227",
+     "prob_real": 0.61,
+     "fuente": "bet365 vía https://www.squawka.com/us/news/world-cup/match-preview-haiti-vs-scotland-06-13-26-world-cup-2026/",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Argentina gana a Austria (22-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-22"
+    },
+    {
+     "descripcion": "Portugal gana a Uzbekistán (23-jun)",
+     "mercado": "1X2",
+     "momio_decimal": 1.3,
+     "momio_americano": "-333",
+     "prob_real": 0.71,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Francia CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 6.0,
+     "momio_americano": "+500",
+     "prob_real": 0.124,
+     "fuente": "BetMGM +500 vía foxsports.com",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 20.15,
+   "pago_potencial_mxn": 100.75,
+   "prob_real": 0.025585313203999996,
+   "uno_entre": 39,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 81,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 1-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.5,
+     "momio_americano": "+550",
+     "prob_real": 0.133,
+     "fuente": "bet365 +550 vía mediotiempo.com (ÚNICO marcador exacto con momio real encontrado)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Ghana (23-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.73,
+     "momio_americano": "+373",
+     "prob_real": 0.182,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Argentina 2-0 Jordania (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.53,
+     "momio_americano": "+353",
+     "prob_real": 0.19,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 17061.17,
+   "pago_potencial_mxn": 85305.85,
+   "prob_real": 6.756872522400001e-05,
+   "uno_entre": 14800,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 82,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 1-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.5,
+     "momio_americano": "+550",
+     "prob_real": 0.133,
+     "fuente": "bet365 +550 vía mediotiempo.com (ÚNICO marcador exacto con momio real encontrado)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina 2-0 Argelia (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.7,
+     "momio_americano": "+470",
+     "prob_real": 0.151,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Ghana (23-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.73,
+     "momio_americano": "+373",
+     "prob_real": 0.182,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 21467.7,
+   "pago_potencial_mxn": 107338.48,
+   "prob_real": 5.36993553096e-05,
+   "uno_entre": 18622,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 83,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 1-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.5,
+     "momio_americano": "+550",
+     "prob_real": 0.133,
+     "fuente": "bet365 +550 vía mediotiempo.com (ÚNICO marcador exacto con momio real encontrado)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina 2-0 Argelia (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.7,
+     "momio_americano": "+470",
+     "prob_real": 0.151,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Argentina 2-0 Jordania (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.53,
+     "momio_americano": "+353",
+     "prob_real": 0.19,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 20559.97,
+   "pago_potencial_mxn": 102799.86,
+   "prob_real": 5.6059766531999997e-05,
+   "uno_entre": 17838,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 84,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 1-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.5,
+     "momio_americano": "+550",
+     "prob_real": 0.133,
+     "fuente": "bet365 +550 vía mediotiempo.com (ÚNICO marcador exacto con momio real encontrado)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Brasil 1-0 Marruecos (13-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.67,
+     "momio_americano": "+567",
+     "prob_real": 0.129,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Ghana (23-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.73,
+     "momio_americano": "+373",
+     "prob_real": 0.182,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 25120.97,
+   "pago_potencial_mxn": 125604.85,
+   "prob_real": 4.5875608178400006e-05,
+   "uno_entre": 21798,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 85,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 1-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.5,
+     "momio_americano": "+550",
+     "prob_real": 0.133,
+     "fuente": "bet365 +550 vía mediotiempo.com (ÚNICO marcador exacto con momio real encontrado)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina 2-0 Argelia (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.7,
+     "momio_americano": "+470",
+     "prob_real": 0.151,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Brasil 1-0 Marruecos (13-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.67,
+     "momio_americano": "+567",
+     "prob_real": 0.129,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 30272.63,
+   "pago_potencial_mxn": 151363.14,
+   "prob_real": 3.806163096120001e-05,
+   "uno_entre": 26273,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 86,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 1-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.5,
+     "momio_americano": "+550",
+     "prob_real": 0.133,
+     "fuente": "bet365 +550 vía mediotiempo.com (ÚNICO marcador exacto con momio real encontrado)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Brasil 1-0 Marruecos (13-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.67,
+     "momio_americano": "+567",
+     "prob_real": 0.129,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Argentina 2-0 Jordania (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.53,
+     "momio_americano": "+353",
+     "prob_real": 0.19,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Colombia gana el Grupo K (def. 27-jun) — TESIS",
+     "mercado": "Ganador de grupo",
+     "momio_decimal": 3.5,
+     "momio_americano": "+250",
+     "prob_real": 0.42,
+     "fuente": "Flashscore 3.50 (https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/); US books +200/+225 (https://www.legalsportsreport.com/odds/world-cup/group-k/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "España CAMPEONA del Mundial (19-jul)",
+     "mercado": "Campeón",
+     "momio_decimal": 5.0,
+     "momio_americano": "+400",
+     "prob_real": 0.212,
+     "fuente": "Caliente +400 (https://www.caliente.mx/mas/mundial/favoritos-a-ganar/)",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    },
+    {
+     "descripcion": "Mbappé Bota de Oro (19-jul)",
+     "mercado": "Goleador del torneo",
+     "momio_decimal": 7.0,
+     "momio_americano": "+600",
+     "prob_real": 0.165,
+     "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot (+600); Polymarket 16-17%",
+     "estatus": "REAL",
+     "fecha_resolucion": "2026-07-19"
+    }
+   ],
+   "n_patas": 6,
+   "multiplicador": 24058.77,
+   "pago_potencial_mxn": 120293.87,
+   "prob_real": 4.7892118428e-05,
+   "uno_entre": 20880,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-07-19"
+  },
+  {
+   "boleto": 87,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 2-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.28,
+     "momio_americano": "+528",
+     "prob_real": 0.137,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina 2-0 Argelia (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.7,
+     "momio_americano": "+470",
+     "prob_real": 0.151,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Brasil 1-0 Marruecos (13-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.67,
+     "momio_americano": "+567",
+     "prob_real": 0.129,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Holanda 1-0 Japón (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.72,
+     "momio_americano": "+572",
+     "prob_real": 0.128,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "España 2-0 Arabia Saudita (21-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.37,
+     "momio_americano": "+337",
+     "prob_real": 0.197,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7011.5,
+   "pago_potencial_mxn": 35057.51,
+   "prob_real": 6.729199756800001e-05,
+   "uno_entre": 14861,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-21"
+  },
+  {
+   "boleto": 88,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 2-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.28,
+     "momio_americano": "+528",
+     "prob_real": 0.137,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina 2-0 Argelia (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.7,
+     "momio_americano": "+470",
+     "prob_real": 0.151,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Brasil 1-0 Marruecos (13-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.67,
+     "momio_americano": "+567",
+     "prob_real": 0.129,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "Holanda 1-0 Japón (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.72,
+     "momio_americano": "+572",
+     "prob_real": 0.128,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Ghana (23-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.73,
+     "momio_americano": "+373",
+     "prob_real": 0.182,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7589.11,
+   "pago_potencial_mxn": 37945.54,
+   "prob_real": 6.2168241408e-05,
+   "uno_entre": 16085,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-23"
+  },
+  {
+   "boleto": 89,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 2-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.28,
+     "momio_americano": "+528",
+     "prob_real": 0.137,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Argentina 2-0 Argelia (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.7,
+     "momio_americano": "+470",
+     "prob_real": 0.151,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Brasil 1-0 Marruecos (13-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.67,
+     "momio_americano": "+567",
+     "prob_real": 0.129,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-13"
+    },
+    {
+     "descripcion": "España 2-0 Arabia Saudita (21-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.37,
+     "momio_americano": "+337",
+     "prob_real": 0.197,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    },
+    {
+     "descripcion": "México 1-0 Corea del Sur (18-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 7.05,
+     "momio_americano": "+605",
+     "prob_real": 0.122,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7355.82,
+   "pago_potencial_mxn": 36779.08,
+   "prob_real": 6.4137685182e-05,
+   "uno_entre": 15591,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-21"
+  },
+  {
+   "boleto": 90,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 2-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.28,
+     "momio_americano": "+528",
+     "prob_real": 0.137,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Holanda 1-0 Japón (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.72,
+     "momio_americano": "+572",
+     "prob_real": 0.128,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "España 2-0 Arabia Saudita (21-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.37,
+     "momio_americano": "+337",
+     "prob_real": 0.197,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    },
+    {
+     "descripcion": "México 1-0 Corea del Sur (18-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 7.05,
+     "momio_americano": "+605",
+     "prob_real": 0.122,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    },
+    {
+     "descripcion": "España 2-0 Uruguay (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.55,
+     "momio_americano": "+455",
+     "prob_real": 0.155,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7215.93,
+   "pago_potencial_mxn": 36079.66,
+   "prob_real": 6.532633472000001e-05,
+   "uno_entre": 15308,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 91,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 2-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.28,
+     "momio_americano": "+528",
+     "prob_real": 0.137,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Holanda 1-0 Japón (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.72,
+     "momio_americano": "+572",
+     "prob_real": 0.128,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Ghana (23-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.73,
+     "momio_americano": "+373",
+     "prob_real": 0.182,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "México 1-0 Corea del Sur (18-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 7.05,
+     "momio_americano": "+605",
+     "prob_real": 0.122,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    },
+    {
+     "descripcion": "España 2-0 Uruguay (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.55,
+     "momio_americano": "+455",
+     "prob_real": 0.155,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7810.38,
+   "pago_potencial_mxn": 39051.9,
+   "prob_real": 6.035224832e-05,
+   "uno_entre": 16569,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 92,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "México 2-0 Sudáfrica (11-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.28,
+     "momio_americano": "+528",
+     "prob_real": 0.137,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-11"
+    },
+    {
+     "descripcion": "Holanda 1-0 Japón (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.72,
+     "momio_americano": "+572",
+     "prob_real": 0.128,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "España 2-0 Arabia Saudita (21-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.37,
+     "momio_americano": "+337",
+     "prob_real": 0.197,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    },
+    {
+     "descripcion": "México 1-0 Corea del Sur (18-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 7.05,
+     "momio_americano": "+605",
+     "prob_real": 0.122,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    },
+    {
+     "descripcion": "Croacia 2-0 Ghana (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.41,
+     "momio_americano": "+441",
+     "prob_real": 0.159,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7033.91,
+   "pago_potencial_mxn": 35169.54,
+   "prob_real": 6.701217561600002e-05,
+   "uno_entre": 14923,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 93,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Holanda 1-0 Japón (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.72,
+     "momio_americano": "+572",
+     "prob_real": 0.128,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "Uruguay 1-0 Arabia Saudita (15-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.88,
+     "momio_americano": "+588",
+     "prob_real": 0.125,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "España 2-0 Arabia Saudita (21-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.37,
+     "momio_americano": "+337",
+     "prob_real": 0.197,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    },
+    {
+     "descripcion": "México 1-0 Corea del Sur (18-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 7.05,
+     "momio_americano": "+605",
+     "prob_real": 0.122,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    },
+    {
+     "descripcion": "España 2-0 Uruguay (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.55,
+     "momio_americano": "+455",
+     "prob_real": 0.155,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7905.35,
+   "pago_potencial_mxn": 39526.76,
+   "prob_real": 5.960432e-05,
+   "uno_entre": 16777,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 94,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Uruguay 1-0 Arabia Saudita (15-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.88,
+     "momio_americano": "+588",
+     "prob_real": 0.125,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "España 2-0 Arabia Saudita (21-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.37,
+     "momio_americano": "+337",
+     "prob_real": 0.197,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-21"
+    },
+    {
+     "descripcion": "México 1-0 Corea del Sur (18-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 7.05,
+     "momio_americano": "+605",
+     "prob_real": 0.122,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-18"
+    },
+    {
+     "descripcion": "España 2-0 Uruguay (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.55,
+     "momio_americano": "+455",
+     "prob_real": 0.155,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México 2-0 Chequia (24-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.37,
+     "momio_americano": "+537",
+     "prob_real": 0.135,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-24"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7493.62,
+   "pago_potencial_mxn": 37468.08,
+   "prob_real": 6.286393125e-05,
+   "uno_entre": 15907,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 95,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Uruguay 1-0 Arabia Saudita (15-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.88,
+     "momio_americano": "+588",
+     "prob_real": 0.125,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Ghana (23-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.73,
+     "momio_americano": "+373",
+     "prob_real": 0.182,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-23"
+    },
+    {
+     "descripcion": "España 2-0 Uruguay (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.55,
+     "momio_americano": "+455",
+     "prob_real": 0.155,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México 2-0 Chequia (24-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.37,
+     "momio_americano": "+537",
+     "prob_real": 0.135,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Portugal 2-1 Colombia (27-jun, Miami)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.23,
+     "momio_americano": "+523",
+     "prob_real": 0.138,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7167.54,
+   "pago_potencial_mxn": 35837.69,
+   "prob_real": 6.569403750000001e-05,
+   "uno_entre": 15222,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 96,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Alemania 2-0 Curazao (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.06,
+     "momio_americano": "+406",
+     "prob_real": 0.17,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "Uruguay 1-0 Arabia Saudita (15-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.88,
+     "momio_americano": "+588",
+     "prob_real": 0.125,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "España 2-0 Uruguay (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.55,
+     "momio_americano": "+455",
+     "prob_real": 0.155,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "México 2-0 Chequia (24-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.37,
+     "momio_americano": "+537",
+     "prob_real": 0.135,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Bélgica 2-0 Nueva Zelanda (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.89,
+     "momio_americano": "+489",
+     "prob_real": 0.146,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7249.14,
+   "pago_potencial_mxn": 36245.71,
+   "prob_real": 6.49198125e-05,
+   "uno_entre": 15404,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-26"
+  },
+  {
+   "boleto": 97,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Uruguay 1-0 Arabia Saudita (15-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.88,
+     "momio_americano": "+588",
+     "prob_real": 0.125,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "Argentina 2-0 Jordania (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 4.53,
+     "momio_americano": "+353",
+     "prob_real": 0.19,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "México 2-0 Chequia (24-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.37,
+     "momio_americano": "+537",
+     "prob_real": 0.135,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Bélgica 2-0 Nueva Zelanda (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.89,
+     "momio_americano": "+489",
+     "prob_real": 0.146,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Portugal 2-1 Colombia (27-jun, Miami)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.23,
+     "momio_americano": "+523",
+     "prob_real": 0.138,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7285.0,
+   "pago_potencial_mxn": 36424.99,
+   "prob_real": 6.459952500000001e-05,
+   "uno_entre": 15480,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 98,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Alemania 2-0 Curazao (14-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.06,
+     "momio_americano": "+406",
+     "prob_real": 0.17,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-14"
+    },
+    {
+     "descripcion": "Uruguay 1-0 Arabia Saudita (15-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.88,
+     "momio_americano": "+588",
+     "prob_real": 0.125,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-15"
+    },
+    {
+     "descripcion": "México 2-0 Chequia (24-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.37,
+     "momio_americano": "+537",
+     "prob_real": 0.135,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Croacia 2-0 Ghana (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.41,
+     "momio_americano": "+441",
+     "prob_real": 0.159,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Bélgica 2-0 Nueva Zelanda (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.89,
+     "momio_americano": "+489",
+     "prob_real": 0.146,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7066.28,
+   "pago_potencial_mxn": 35331.41,
+   "prob_real": 6.659516250000001e-05,
+   "uno_entre": 15016,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 99,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia 2-0 Senegal (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.81,
+     "momio_americano": "+481",
+     "prob_real": 0.148,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "México 2-0 Chequia (24-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.37,
+     "momio_americano": "+537",
+     "prob_real": 0.135,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-24"
+    },
+    {
+     "descripcion": "Croacia 2-0 Ghana (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.41,
+     "momio_americano": "+441",
+     "prob_real": 0.159,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Bélgica 2-0 Nueva Zelanda (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.89,
+     "momio_americano": "+489",
+     "prob_real": 0.146,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Portugal 2-1 Colombia (27-jun, Miami)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.23,
+     "momio_americano": "+523",
+     "prob_real": 0.138,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7347.1,
+   "pago_potencial_mxn": 36735.52,
+   "prob_real": 6.400656936000001e-05,
+   "uno_entre": 15623,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  },
+  {
+   "boleto": 100,
+   "tier": "JACKPOT",
+   "casa": "Caliente",
+   "apuesta_mxn": 5,
+   "patas": [
+    {
+     "descripcion": "Francia 2-0 Senegal (16-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.81,
+     "momio_americano": "+481",
+     "prob_real": 0.148,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-16"
+    },
+    {
+     "descripcion": "Portugal 2-0 RD Congo (17-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.81,
+     "momio_americano": "+481",
+     "prob_real": 0.148,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-17"
+    },
+    {
+     "descripcion": "Inglaterra 2-0 Panamá (27-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.01,
+     "momio_americano": "+501",
+     "prob_real": 0.143,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    },
+    {
+     "descripcion": "Bélgica 2-0 Nueva Zelanda (26-jun)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 5.89,
+     "momio_americano": "+489",
+     "prob_real": 0.146,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-26"
+    },
+    {
+     "descripcion": "Portugal 2-1 Colombia (27-jun, Miami)",
+     "mercado": "Marcador exacto",
+     "momio_decimal": 6.23,
+     "momio_americano": "+523",
+     "prob_real": 0.138,
+     "fuente": "EST modelo Elo→Poisson (data/predicciones_104.json / probabilidades_mc.json) — PENDIENTE-CAPTURA en Caliente",
+     "estatus": "EST",
+     "fecha_resolucion": "2026-06-27"
+    }
+   ],
+   "n_patas": 5,
+   "multiplicador": 7444.41,
+   "pago_potencial_mxn": 37222.03,
+   "prob_real": 6.310901625599999e-05,
+   "uno_entre": 15846,
+   "tiene_momios_pendientes": true,
+   "fecha_ultima_pata": "2026-06-27"
+  }
+ ]
+}
