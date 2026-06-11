@@ -4,11 +4,11 @@
 ---
 
 ## 1. Quiniela (`QUINIELA_2026_JAVIER_FINAL.xlsx`)
-Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación, KO sin empates, campeón coherente. **Bracket corregido al cuadro OFICIAL FIFA** (dos mitades): España (1H) y Argentina (1J) en lados OPUESTOS — solo pueden cruzarse en la final.
+Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación, KO sin empates, campeón coherente. **Bracket transcrito del cuadro OFICIAL FIFA** (imagen Football Rankings que mandaste) (dos mitades): España (1H) y Argentina (1J) en lados OPUESTOS — solo pueden cruzarse en la final.
 
 **Picks clave:**
 - 🏆 **Campeona: ESPAÑA** (le gana la final a **Argentina** 2-1 vía penales, 19-jul MetLife). Modelo MC: España 21.2% campeona (mercado ~16-18%, Caliente +400). Pick #1 del mercado Y del modelo.
-- **Bracket oficial respetado:** mitad izquierda = Francia, Alemania, España, Países Bajos; mitad derecha = Brasil, Inglaterra, Argentina, Portugal. **Cuartos:** Argentina–Portugal (Messi-Ronaldo, KC #97), Brasil–Inglaterra (#98), España–Países Bajos (#99), Francia–Alemania (#100). **Semis:** España–Francia (#102) y Argentina–Inglaterra (#101). **3er lugar:** Francia.
+- **Bracket oficial respetado:** mitad izquierda = Francia, Alemania, España, Países Bajos; mitad derecha = Brasil, Inglaterra, Argentina, Portugal. **Cuartos:** Argentina–Portugal (#100), Brasil–Inglaterra (#99), España–EUA (#98), Francia–Holanda (#97). **Semis:** Francia–España (#101) y Argentina–Inglaterra (#102). **3er lugar:** Francia.
 - **Grupo K: Portugal 1°, Colombia 2°** — decisión de Javier (Compuerta 1) siguiendo el mercado (Polymarket 62-63% Portugal). El modelo puro daba Colombia 52.7%; la tesis vive en los parlays.
 - **México gana el Grupo A** (Polymarket 57%, modelo 63.5%), elimina a Escocia en dieciseisavos en el Azteca y cae vs Inglaterra en octavos (Azteca, 5-jul).
 - **Bota de Oro: Mbappé** (+600 favorito; Francia llega a semis). **Último lugar: Curazao** (0 pts, −5; Elo 1500).

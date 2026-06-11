@@ -401,14 +401,14 @@
   }
  ],
  "asignacion_terceros": {
-  "79": "E",
-  "76": "A",
-  "80": "C",
-  "88": "F",
-  "75": "L",
-  "84": "J",
-  "85": "G",
-  "87": "D"
+  "80": "E",
+  "79": "C",
+  "81": "F",
+  "82": "A",
+  "74": "D",
+  "77": "G",
+  "85": "J",
+  "87": "L"
  },
  "predicciones": [
   {
@@ -3344,19 +3344,19 @@
   {
    "num": 73,
    "fase": "dieciseisavos",
-   "fecha": "2026-06-29",
+   "fecha": "2026-06-28",
    "ciudad": "Los Ángeles",
-   "slot_local": "1J",
-   "slot_visitante": "2H",
-   "local": "Argentina",
-   "visitante": "Uruguay",
-   "marcador": "2-0",
-   "gl": 2,
-   "gv": 0,
-   "ganador": "Argentina",
+   "slot_local": "2A",
+   "slot_visitante": "2B",
+   "local": "Corea del Sur",
+   "visitante": "Suiza",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
+   "ganador": "Suiza",
    "prob_avanza": {
-    "Argentina": 0.7939,
-    "Uruguay": 0.2061
+    "Corea del Sur": 0.4718,
+    "Suiza": 0.5282
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3364,19 +3364,19 @@
   {
    "num": 74,
    "fase": "dieciseisavos",
-   "fecha": "2026-07-03",
-   "ciudad": "Dallas",
-   "slot_local": "2D",
-   "slot_visitante": "2G",
-   "local": "Australia",
-   "visitante": "Irán",
-   "marcador": "1-2 (penales)",
+   "fecha": "2026-06-29",
+   "ciudad": "Atlanta",
+   "slot_local": "1E",
+   "slot_visitante": "3_ABCDF",
+   "local": "Alemania",
+   "visitante": "Turquía",
+   "marcador": "1-0",
    "gl": 1,
-   "gv": 2,
-   "ganador": "Irán",
+   "gv": 0,
+   "ganador": "Alemania",
    "prob_avanza": {
-    "Australia": 0.4924,
-    "Irán": 0.5076
+    "Alemania": 0.6721,
+    "Turquía": 0.3279
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3384,45 +3384,25 @@
   {
    "num": 75,
    "fase": "dieciseisavos",
-   "fecha": "2026-07-03",
-   "ciudad": "Filadelfia",
-   "slot_local": "1K",
-   "slot_visitante": "3_DEIJL",
-   "local": "Portugal",
-   "visitante": "Panamá",
-   "marcador": "2-0",
+   "fecha": "2026-06-29",
+   "ciudad": "Dallas",
+   "slot_local": "1F",
+   "slot_visitante": "2C",
+   "local": "Holanda",
+   "visitante": "Marruecos",
+   "marcador": "2-1 (penales)",
    "gl": 2,
-   "gv": 0,
-   "ganador": "Portugal",
+   "gv": 1,
+   "ganador": "Holanda",
    "prob_avanza": {
-    "Portugal": 0.7654,
-    "Panamá": 0.2346
+    "Holanda": 0.6056,
+    "Marruecos": 0.3944
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
   },
   {
    "num": 76,
-   "fase": "dieciseisavos",
-   "fecha": "2026-07-02",
-   "ciudad": "Toronto",
-   "slot_local": "1G",
-   "slot_visitante": "3_AEHIJ",
-   "local": "Bélgica",
-   "visitante": "Chequia",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
-   "ganador": "Bélgica",
-   "prob_avanza": {
-    "Bélgica": 0.6475,
-    "Chequia": 0.3525
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 77,
    "fase": "dieciseisavos",
    "fecha": "2026-06-29",
    "ciudad": "Houston",
@@ -3437,6 +3417,26 @@
    "prob_avanza": {
     "Brasil": 0.7069,
     "Japón": 0.2931
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 77,
+   "fase": "dieciseisavos",
+   "fecha": "2026-06-30",
+   "ciudad": "Nueva York",
+   "slot_local": "1I",
+   "slot_visitante": "3_CDFGH",
+   "local": "Francia",
+   "visitante": "Egipto",
+   "marcador": "2-0",
+   "gl": 2,
+   "gv": 0,
+   "ganador": "Francia",
+   "prob_avanza": {
+    "Francia": 0.7988,
+    "Egipto": 0.2012
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3464,26 +3464,6 @@
   {
    "num": 79,
    "fase": "dieciseisavos",
-   "fecha": "2026-07-02",
-   "ciudad": "Boston",
-   "slot_local": "1L",
-   "slot_visitante": "3_EHIJK",
-   "local": "Inglaterra",
-   "visitante": "Costa de Marfil",
-   "marcador": "2-0",
-   "gl": 2,
-   "gv": 0,
-   "ganador": "Inglaterra",
-   "prob_avanza": {
-    "Inglaterra": 0.792,
-    "Costa de Marfil": 0.208
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 80,
-   "fase": "dieciseisavos",
    "fecha": "2026-06-30",
    "ciudad": "Ciudad de México",
    "slot_local": "1A",
@@ -3502,150 +3482,30 @@
    "nota": "sin línea de mercado"
   },
   {
+   "num": 80,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-02",
+   "ciudad": "Boston",
+   "slot_local": "1L",
+   "slot_visitante": "3_EHIJK",
+   "local": "Inglaterra",
+   "visitante": "Costa de Marfil",
+   "marcador": "2-0",
+   "gl": 2,
+   "gv": 0,
+   "ganador": "Inglaterra",
+   "prob_avanza": {
+    "Inglaterra": 0.792,
+    "Costa de Marfil": 0.208
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
    "num": 81,
    "fase": "dieciseisavos",
-   "fecha": "2026-07-02",
-   "ciudad": "Los Ángeles",
-   "slot_local": "1H",
-   "slot_visitante": "2J",
-   "local": "España",
-   "visitante": "Argelia",
-   "marcador": "2-0",
-   "gl": 2,
-   "gv": 0,
-   "ganador": "España",
-   "prob_avanza": {
-    "España": 0.845,
-    "Argelia": 0.155
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 82,
-   "fase": "dieciseisavos",
-   "fecha": "2026-06-28",
-   "ciudad": "Los Ángeles",
-   "slot_local": "2A",
-   "slot_visitante": "2B",
-   "local": "Corea del Sur",
-   "visitante": "Suiza",
-   "marcador": "1-2 (penales)",
-   "gl": 1,
-   "gv": 2,
-   "ganador": "Suiza",
-   "prob_avanza": {
-    "Corea del Sur": 0.4718,
-    "Suiza": 0.5282
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 83,
-   "fase": "dieciseisavos",
-   "fecha": "2026-06-29",
-   "ciudad": "Monterrey",
-   "slot_local": "1F",
-   "slot_visitante": "2C",
-   "local": "Holanda",
-   "visitante": "Marruecos",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
-   "ganador": "Holanda",
-   "prob_avanza": {
-    "Holanda": 0.5743,
-    "Marruecos": 0.4257
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 84,
-   "fase": "dieciseisavos",
-   "fecha": "2026-07-02",
-   "ciudad": "Vancouver",
-   "slot_local": "1B",
-   "slot_visitante": "3_EFGIJ",
-   "local": "Canadá",
-   "visitante": "Austria",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
-   "ganador": "Canadá",
-   "prob_avanza": {
-    "Canadá": 0.5711,
-    "Austria": 0.4289
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 85,
-   "fase": "dieciseisavos",
-   "fecha": "2026-06-30",
-   "ciudad": "Nueva York",
-   "slot_local": "1I",
-   "slot_visitante": "3_CDFGH",
-   "local": "Francia",
-   "visitante": "Egipto",
-   "marcador": "2-0",
-   "gl": 2,
-   "gv": 0,
-   "ganador": "Francia",
-   "prob_avanza": {
-    "Francia": 0.7988,
-    "Egipto": 0.2012
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 86,
-   "fase": "dieciseisavos",
    "fecha": "2026-07-01",
-   "ciudad": "Atlanta",
-   "slot_local": "2K",
-   "slot_visitante": "2L",
-   "local": "Colombia",
-   "visitante": "Croacia",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
-   "ganador": "Colombia",
-   "prob_avanza": {
-    "Colombia": 0.5764,
-    "Croacia": 0.4236
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 87,
-   "fase": "dieciseisavos",
-   "fecha": "2026-07-01",
-   "ciudad": "Seattle",
-   "slot_local": "1E",
-   "slot_visitante": "3_ABCDF",
-   "local": "Alemania",
-   "visitante": "Turquía",
-   "marcador": "1-0",
-   "gl": 1,
-   "gv": 0,
-   "ganador": "Alemania",
-   "prob_avanza": {
-    "Alemania": 0.6721,
-    "Turquía": 0.3279
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
-   "num": 88,
-   "fase": "dieciseisavos",
-   "fecha": "2026-07-03",
-   "ciudad": "Kansas City",
+   "ciudad": "Filadelfia",
    "slot_local": "1D",
    "slot_visitante": "3_BEFIJ",
    "local": "Estados Unidos",
@@ -3662,21 +3522,161 @@
    "nota": "sin línea de mercado"
   },
   {
-   "num": 89,
-   "fase": "octavos",
-   "fecha": "2026-07-04",
-   "ciudad": "Houston",
-   "slot_local": "W73",
-   "slot_visitante": "W74",
+   "num": 82,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-02",
+   "ciudad": "Toronto",
+   "slot_local": "1G",
+   "slot_visitante": "3_AEHIJ",
+   "local": "Bélgica",
+   "visitante": "Chequia",
+   "marcador": "2-1 (penales)",
+   "gl": 2,
+   "gv": 1,
+   "ganador": "Bélgica",
+   "prob_avanza": {
+    "Bélgica": 0.6475,
+    "Chequia": 0.3525
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 83,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-01",
+   "ciudad": "Vancouver",
+   "slot_local": "2K",
+   "slot_visitante": "2L",
+   "local": "Colombia",
+   "visitante": "Croacia",
+   "marcador": "2-1 (penales)",
+   "gl": 2,
+   "gv": 1,
+   "ganador": "Colombia",
+   "prob_avanza": {
+    "Colombia": 0.5764,
+    "Croacia": 0.4236
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 84,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-02",
+   "ciudad": "Monterrey",
+   "slot_local": "1H",
+   "slot_visitante": "2J",
+   "local": "España",
+   "visitante": "Argelia",
+   "marcador": "2-0",
+   "gl": 2,
+   "gv": 0,
+   "ganador": "España",
+   "prob_avanza": {
+    "España": 0.8308,
+    "Argelia": 0.1692
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 85,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-03",
+   "ciudad": "Toronto",
+   "slot_local": "1B",
+   "slot_visitante": "3_EFGIJ",
+   "local": "Canadá",
+   "visitante": "Austria",
+   "marcador": "2-1 (penales)",
+   "gl": 2,
+   "gv": 1,
+   "ganador": "Canadá",
+   "prob_avanza": {
+    "Canadá": 0.5711,
+    "Austria": 0.4289
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 86,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-03",
+   "ciudad": "Miami",
+   "slot_local": "1J",
+   "slot_visitante": "2H",
    "local": "Argentina",
-   "visitante": "Irán",
+   "visitante": "Uruguay",
    "marcador": "2-0",
    "gl": 2,
    "gv": 0,
    "ganador": "Argentina",
    "prob_avanza": {
-    "Argentina": 0.8133,
-    "Irán": 0.1867
+    "Argentina": 0.7939,
+    "Uruguay": 0.2061
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 87,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-03",
+   "ciudad": "Seattle",
+   "slot_local": "1K",
+   "slot_visitante": "3_DEIJL",
+   "local": "Portugal",
+   "visitante": "Panamá",
+   "marcador": "2-0",
+   "gl": 2,
+   "gv": 0,
+   "ganador": "Portugal",
+   "prob_avanza": {
+    "Portugal": 0.7654,
+    "Panamá": 0.2346
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 88,
+   "fase": "dieciseisavos",
+   "fecha": "2026-07-03",
+   "ciudad": "Kansas City",
+   "slot_local": "2D",
+   "slot_visitante": "2G",
+   "local": "Australia",
+   "visitante": "Irán",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
+   "ganador": "Irán",
+   "prob_avanza": {
+    "Australia": 0.4924,
+    "Irán": 0.5076
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 89,
+   "fase": "octavos",
+   "fecha": "2026-07-04",
+   "ciudad": "Atlanta",
+   "slot_local": "W74",
+   "slot_visitante": "W77",
+   "local": "Alemania",
+   "visitante": "Francia",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
+   "ganador": "Francia",
+   "prob_avanza": {
+    "Alemania": 0.3632,
+    "Francia": 0.6368
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3685,18 +3685,18 @@
    "num": 90,
    "fase": "octavos",
    "fecha": "2026-07-04",
-   "ciudad": "Filadelfia",
-   "slot_local": "W75",
-   "slot_visitante": "W76",
-   "local": "Portugal",
-   "visitante": "Bélgica",
-   "marcador": "1-0",
-   "gl": 1,
-   "gv": 0,
-   "ganador": "Portugal",
+   "ciudad": "Dallas",
+   "slot_local": "W73",
+   "slot_visitante": "W75",
+   "local": "Suiza",
+   "visitante": "Holanda",
+   "marcador": "0-1",
+   "gl": 0,
+   "gv": 1,
+   "ganador": "Holanda",
    "prob_avanza": {
-    "Portugal": 0.6749,
-    "Bélgica": 0.3251
+    "Suiza": 0.3307,
+    "Holanda": 0.6693
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3705,8 +3705,8 @@
    "num": 91,
    "fase": "octavos",
    "fecha": "2026-07-05",
-   "ciudad": "Nueva York",
-   "slot_local": "W77",
+   "ciudad": "Houston",
+   "slot_local": "W76",
    "slot_visitante": "W78",
    "local": "Brasil",
    "visitante": "Ecuador",
@@ -3728,15 +3728,15 @@
    "ciudad": "Ciudad de México",
    "slot_local": "W79",
    "slot_visitante": "W80",
-   "local": "Inglaterra",
-   "visitante": "México",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
+   "local": "México",
+   "visitante": "Inglaterra",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
    "ganador": "Inglaterra",
    "prob_avanza": {
-    "Inglaterra": 0.5658,
-    "México": 0.4342
+    "México": 0.4342,
+    "Inglaterra": 0.5658
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3745,18 +3745,18 @@
    "num": 93,
    "fase": "octavos",
    "fecha": "2026-07-06",
-   "ciudad": "Dallas",
-   "slot_local": "W81",
-   "slot_visitante": "W82",
-   "local": "España",
-   "visitante": "Suiza",
-   "marcador": "2-0",
-   "gl": 2,
-   "gv": 0,
+   "ciudad": "Monterrey",
+   "slot_local": "W83",
+   "slot_visitante": "W84",
+   "local": "Colombia",
+   "visitante": "España",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
    "ganador": "España",
    "prob_avanza": {
-    "España": 0.8231,
-    "Suiza": 0.1769
+    "Colombia": 0.3506,
+    "España": 0.6494
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3765,18 +3765,18 @@
    "num": 94,
    "fase": "octavos",
    "fecha": "2026-07-06",
-   "ciudad": "Seattle",
-   "slot_local": "W83",
-   "slot_visitante": "W84",
-   "local": "Holanda",
-   "visitante": "Canadá",
-   "marcador": "1-0",
-   "gl": 1,
-   "gv": 0,
-   "ganador": "Holanda",
+   "ciudad": "Filadelfia",
+   "slot_local": "W81",
+   "slot_visitante": "W82",
+   "local": "Estados Unidos",
+   "visitante": "Bélgica",
+   "marcador": "2-1 (penales)",
+   "gl": 2,
+   "gv": 1,
+   "ganador": "Estados Unidos",
    "prob_avanza": {
-    "Holanda": 0.7043,
-    "Canadá": 0.2957
+    "Estados Unidos": 0.5637,
+    "Bélgica": 0.4363
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3785,18 +3785,18 @@
    "num": 95,
    "fase": "octavos",
    "fecha": "2026-07-07",
-   "ciudad": "Atlanta",
-   "slot_local": "W85",
-   "slot_visitante": "W86",
-   "local": "Francia",
-   "visitante": "Colombia",
-   "marcador": "2-1 (penales)",
+   "ciudad": "Miami",
+   "slot_local": "W86",
+   "slot_visitante": "W88",
+   "local": "Argentina",
+   "visitante": "Irán",
+   "marcador": "2-0",
    "gl": 2,
-   "gv": 1,
-   "ganador": "Francia",
+   "gv": 0,
+   "ganador": "Argentina",
    "prob_avanza": {
-    "Francia": 0.5859,
-    "Colombia": 0.4141
+    "Argentina": 0.7957,
+    "Irán": 0.2043
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3805,18 +3805,18 @@
    "num": 96,
    "fase": "octavos",
    "fecha": "2026-07-07",
-   "ciudad": "Vancouver",
-   "slot_local": "W87",
-   "slot_visitante": "W88",
-   "local": "Alemania",
-   "visitante": "Estados Unidos",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
+   "ciudad": "Seattle",
+   "slot_local": "W85",
+   "slot_visitante": "W87",
+   "local": "Canadá",
+   "visitante": "Portugal",
+   "marcador": "0-1",
+   "gl": 0,
    "gv": 1,
-   "ganador": "Alemania",
+   "ganador": "Portugal",
    "prob_avanza": {
-    "Alemania": 0.6436,
-    "Estados Unidos": 0.3564
+    "Canadá": 0.2613,
+    "Portugal": 0.7387
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3824,19 +3824,19 @@
   {
    "num": 97,
    "fase": "cuartos",
-   "fecha": "2026-07-11",
-   "ciudad": "Kansas City",
+   "fecha": "2026-07-09",
+   "ciudad": "Boston",
    "slot_local": "W89",
    "slot_visitante": "W90",
-   "local": "Argentina",
-   "visitante": "Portugal",
+   "local": "Francia",
+   "visitante": "Holanda",
    "marcador": "2-1 (penales)",
    "gl": 2,
    "gv": 1,
-   "ganador": "Argentina",
+   "ganador": "Francia",
    "prob_avanza": {
-    "Argentina": 0.6348,
-    "Portugal": 0.3652
+    "Francia": 0.6248,
+    "Holanda": 0.3752
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3844,7 +3844,27 @@
   {
    "num": 98,
    "fase": "cuartos",
-   "fecha": "2026-07-11",
+   "fecha": "2026-07-10",
+   "ciudad": "Los Ángeles",
+   "slot_local": "W93",
+   "slot_visitante": "W94",
+   "local": "España",
+   "visitante": "Estados Unidos",
+   "marcador": "2-0",
+   "gl": 2,
+   "gv": 0,
+   "ganador": "España",
+   "prob_avanza": {
+    "España": 0.7647,
+    "Estados Unidos": 0.2353
+   },
+   "prob_mercado": "sin línea de mercado",
+   "nota": "sin línea de mercado"
+  },
+  {
+   "num": 99,
+   "fase": "cuartos",
+   "fecha": "2026-07-10",
    "ciudad": "Miami",
    "slot_local": "W91",
    "slot_visitante": "W92",
@@ -3862,41 +3882,21 @@
    "nota": "sin línea de mercado"
   },
   {
-   "num": 99,
-   "fase": "cuartos",
-   "fecha": "2026-07-09",
-   "ciudad": "Boston",
-   "slot_local": "W93",
-   "slot_visitante": "W94",
-   "local": "España",
-   "visitante": "Holanda",
-   "marcador": "1-0",
-   "gl": 1,
-   "gv": 0,
-   "ganador": "España",
-   "prob_avanza": {
-    "España": 0.7111,
-    "Holanda": 0.2889
-   },
-   "prob_mercado": "sin línea de mercado",
-   "nota": "sin línea de mercado"
-  },
-  {
    "num": 100,
    "fase": "cuartos",
-   "fecha": "2026-07-10",
-   "ciudad": "Los Ángeles",
+   "fecha": "2026-07-11",
+   "ciudad": "Kansas City",
    "slot_local": "W95",
    "slot_visitante": "W96",
-   "local": "Francia",
-   "visitante": "Alemania",
+   "local": "Argentina",
+   "visitante": "Portugal",
    "marcador": "2-1 (penales)",
    "gl": 2,
    "gv": 1,
-   "ganador": "Francia",
+   "ganador": "Argentina",
    "prob_avanza": {
-    "Francia": 0.6368,
-    "Alemania": 0.3632
+    "Argentina": 0.6348,
+    "Portugal": 0.3652
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3904,19 +3904,19 @@
   {
    "num": 101,
    "fase": "semifinal",
-   "fecha": "2026-07-15",
-   "ciudad": "Atlanta",
+   "fecha": "2026-07-14",
+   "ciudad": "Dallas",
    "slot_local": "W97",
    "slot_visitante": "W98",
-   "local": "Argentina",
-   "visitante": "Inglaterra",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
-   "ganador": "Argentina",
+   "local": "Francia",
+   "visitante": "España",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
+   "ganador": "España",
    "prob_avanza": {
-    "Argentina": 0.5994,
-    "Inglaterra": 0.4006
+    "Francia": 0.4006,
+    "España": 0.5994
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3924,19 +3924,19 @@
   {
    "num": 102,
    "fase": "semifinal",
-   "fecha": "2026-07-14",
-   "ciudad": "Dallas",
+   "fecha": "2026-07-15",
+   "ciudad": "Atlanta",
    "slot_local": "W99",
    "slot_visitante": "W100",
-   "local": "España",
-   "visitante": "Francia",
-   "marcador": "2-1 (penales)",
-   "gl": 2,
-   "gv": 1,
-   "ganador": "España",
+   "local": "Inglaterra",
+   "visitante": "Argentina",
+   "marcador": "1-2 (penales)",
+   "gl": 1,
+   "gv": 2,
+   "ganador": "Argentina",
    "prob_avanza": {
-    "España": 0.5994,
-    "Francia": 0.4006
+    "Inglaterra": 0.4006,
+    "Argentina": 0.5994
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3948,15 +3948,15 @@
    "ciudad": "Miami",
    "slot_local": "L101",
    "slot_visitante": "L102",
-   "local": "Inglaterra",
-   "visitante": "Francia",
-   "marcador": "1-2 (penales)",
-   "gl": 1,
-   "gv": 2,
+   "local": "Francia",
+   "visitante": "Inglaterra",
+   "marcador": "2-1 (penales)",
+   "gl": 2,
+   "gv": 1,
    "ganador": "Francia",
    "prob_avanza": {
-    "Inglaterra": 0.4556,
-    "Francia": 0.5444
+    "Francia": 0.5444,
+    "Inglaterra": 0.4556
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"
@@ -3968,15 +3968,15 @@
    "ciudad": "Nueva York",
    "slot_local": "W101",
    "slot_visitante": "W102",
-   "local": "Argentina",
-   "visitante": "España",
-   "marcador": "1-2 (penales)",
-   "gl": 1,
-   "gv": 2,
+   "local": "España",
+   "visitante": "Argentina",
+   "marcador": "2-1 (penales)",
+   "gl": 2,
+   "gv": 1,
    "ganador": "España",
    "prob_avanza": {
-    "Argentina": 0.4556,
-    "España": 0.5444
+    "España": 0.5444,
+    "Argentina": 0.4556
    },
    "prob_mercado": "sin línea de mercado",
    "nota": "sin línea de mercado"

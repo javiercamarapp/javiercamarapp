@@ -1,58 +1,49 @@
 {
   "_meta": {
-    "descripcion": "Bracket eliminatorio Mundial 2026 (73-104) RECONSTRUIDO con la SIEMBRA OFICIAL FIFA por mitades.",
-    "correccion_11jun": "La versión previa juntaba a España (1H) y Argentina (1J) en el mismo cuadrante (se cruzaban en cuartos). CORREGIDO: ahora respeta los dos lados oficiales del cuadro.",
-    "fuentes_oficiales": [
-      "ESPN formato: España (1º ranking) y Argentina (2º) en pathways OPUESTOS; Francia (3º) e Inglaterra (4º) opuestos; el top-4 no se cruza hasta semis. https://www.espn.com/soccer/story/_/id/47108758/",
-      "FOX/NBC: lado IZQUIERDO = Francia, Alemania, España, Países Bajos; lado DERECHO = Brasil, Inglaterra, Argentina, Portugal. https://www.foxsports.com/stories/soccer/2026-fifa-world-cup-bracket-simulating-tournament-based-betting-favorites",
-      "Rutas confirmadas: Argentina(1J) R32 vs Uruguay(2H), R16 vs Turquía(2D), CUARTOS vs Portugal(1K) en Kansas City 11-jul (Messi-Ronaldo). Spain route: 1H vs 2J en LA. England: 1L vs 3º, SF vs Argentina. https://www.espn.com/soccer/story/_/id/48539270/",
-      "Semifinal de peso pesado España vs Francia (FOX13). Pares de R32 (1X v 2Y / 3º) = tabla oficial Wikipedia/FIFA."
-    ],
-    "nota_inferido": "Las MITADES y los duelos marquesina (España-Francia SF, Argentina-Portugal QF, Argentina-Inglaterra SF, España/Argentina solo en final) son de fuente oficial. La ubicación de equipos menores (Canadá 1B, EUA 1D, Bélgica 1G) dentro de su mitad y los micro-emparejamientos de R16 son INFERIDOS de forma consistente con la siembra; no alteran la ruta de los favoritos.",
-    "numeracion": "Los números 73-104 se asignan por cuadrante para legibilidad; pueden diferir de la numeración interna FIFA, pero la ESTRUCTURA de cruces es la oficial."
+    "descripcion": "Bracket eliminatorio Mundial 2026 (73-104) TRANSCRITO del cuadro oficial.",
+    "fuente": "Imagen oficial enviada por Javier (Football Rankings · 2026 FIFA World Cup Projected Bracket, IMG_8278) — esqueleto de posiciones OFICIAL FIFA; las banderas son proyección, las POSICIONES (1A/2B/3º y el cableado de rondas) son las oficiales.",
+    "verificado": "España (1H, mitad izquierda) y Argentina (1J, mitad derecha) en lados opuestos: solo se cruzan en la final. España+Francia → semifinal M101 (izq); Argentina+Inglaterra → semifinal M102 (der); Argentina-Portugal posible en cuartos M100; Brasil-Inglaterra en cuartos M99.",
+    "nota_sedes": "Las sedes/fechas son aproximadas (la imagen no las detalla); la ESTRUCTURA de cruces es la oficial. La localía solo afecta a México/Canadá/EUA si su sede coincide."
   },
   "dieciseisavos": [
-    {"num": 73, "local": "1J", "visitante": "2H", "ciudad": "Los Ángeles", "fecha": "2026-06-29", "_cuadrante": "D (Argentina)"},
-    {"num": 74, "local": "2D", "visitante": "2G", "ciudad": "Dallas", "fecha": "2026-07-03", "_cuadrante": "D"},
-    {"num": 75, "local": "1K", "visitante": "3_DEIJL", "ciudad": "Filadelfia", "fecha": "2026-07-03", "_cuadrante": "D (Portugal)"},
-    {"num": 76, "local": "1G", "visitante": "3_AEHIJ", "ciudad": "Toronto", "fecha": "2026-07-02", "_cuadrante": "D (Bélgica)"},
-
-    {"num": 77, "local": "1C", "visitante": "2F", "ciudad": "Houston", "fecha": "2026-06-29", "_cuadrante": "C (Brasil)"},
-    {"num": 78, "local": "2E", "visitante": "2I", "ciudad": "San Francisco", "fecha": "2026-06-30", "_cuadrante": "C"},
-    {"num": 79, "local": "1L", "visitante": "3_EHIJK", "ciudad": "Boston", "fecha": "2026-07-02", "_cuadrante": "C (Inglaterra)"},
-    {"num": 80, "local": "1A", "visitante": "3_CEFHI", "ciudad": "Ciudad de México", "fecha": "2026-06-30", "_cuadrante": "C (México)"},
-
-    {"num": 81, "local": "1H", "visitante": "2J", "ciudad": "Los Ángeles", "fecha": "2026-07-02", "_cuadrante": "A (España)"},
-    {"num": 82, "local": "2A", "visitante": "2B", "ciudad": "Los Ángeles", "fecha": "2026-06-28", "_cuadrante": "A"},
-    {"num": 83, "local": "1F", "visitante": "2C", "ciudad": "Monterrey", "fecha": "2026-06-29", "_cuadrante": "A (Países Bajos)"},
-    {"num": 84, "local": "1B", "visitante": "3_EFGIJ", "ciudad": "Vancouver", "fecha": "2026-07-02", "_cuadrante": "A (Canadá)"},
-
-    {"num": 85, "local": "1I", "visitante": "3_CDFGH", "ciudad": "Nueva York", "fecha": "2026-06-30", "_cuadrante": "B (Francia)"},
-    {"num": 86, "local": "2K", "visitante": "2L", "ciudad": "Atlanta", "fecha": "2026-07-01", "_cuadrante": "B"},
-    {"num": 87, "local": "1E", "visitante": "3_ABCDF", "ciudad": "Seattle", "fecha": "2026-07-01", "_cuadrante": "B (Alemania)"},
-    {"num": 88, "local": "1D", "visitante": "3_BEFIJ", "ciudad": "Kansas City", "fecha": "2026-07-03", "_cuadrante": "B (EUA)"}
+    {"num": 73, "local": "2A", "visitante": "2B", "ciudad": "Los Ángeles", "fecha": "2026-06-28"},
+    {"num": 74, "local": "1E", "visitante": "3_ABCDF", "ciudad": "Atlanta", "fecha": "2026-06-29"},
+    {"num": 75, "local": "1F", "visitante": "2C", "ciudad": "Dallas", "fecha": "2026-06-29"},
+    {"num": 76, "local": "1C", "visitante": "2F", "ciudad": "Houston", "fecha": "2026-06-29"},
+    {"num": 77, "local": "1I", "visitante": "3_CDFGH", "ciudad": "Nueva York", "fecha": "2026-06-30"},
+    {"num": 78, "local": "2E", "visitante": "2I", "ciudad": "San Francisco", "fecha": "2026-06-30"},
+    {"num": 79, "local": "1A", "visitante": "3_CEFHI", "ciudad": "Ciudad de México", "fecha": "2026-06-30"},
+    {"num": 80, "local": "1L", "visitante": "3_EHIJK", "ciudad": "Boston", "fecha": "2026-07-02"},
+    {"num": 81, "local": "1D", "visitante": "3_BEFIJ", "ciudad": "Filadelfia", "fecha": "2026-07-01"},
+    {"num": 82, "local": "1G", "visitante": "3_AEHIJ", "ciudad": "Toronto", "fecha": "2026-07-02"},
+    {"num": 83, "local": "2K", "visitante": "2L", "ciudad": "Vancouver", "fecha": "2026-07-01"},
+    {"num": 84, "local": "1H", "visitante": "2J", "ciudad": "Monterrey", "fecha": "2026-07-02"},
+    {"num": 85, "local": "1B", "visitante": "3_EFGIJ", "ciudad": "Toronto", "fecha": "2026-07-03"},
+    {"num": 86, "local": "1J", "visitante": "2H", "ciudad": "Miami", "fecha": "2026-07-03"},
+    {"num": 87, "local": "1K", "visitante": "3_DEIJL", "ciudad": "Seattle", "fecha": "2026-07-03"},
+    {"num": 88, "local": "2D", "visitante": "2G", "ciudad": "Kansas City", "fecha": "2026-07-03"}
   ],
   "octavos": [
-    {"num": 89, "local": "W73", "visitante": "W74", "ciudad": "Houston", "fecha": "2026-07-04", "_nota": "Argentina vs Turquía(2D)"},
-    {"num": 90, "local": "W75", "visitante": "W76", "ciudad": "Filadelfia", "fecha": "2026-07-04", "_nota": "Portugal vs Bélgica"},
-    {"num": 91, "local": "W77", "visitante": "W78", "ciudad": "Nueva York", "fecha": "2026-07-05", "_nota": "Brasil"},
-    {"num": 92, "local": "W79", "visitante": "W80", "ciudad": "Ciudad de México", "fecha": "2026-07-05", "_nota": "Inglaterra vs México (Azteca)"},
-    {"num": 93, "local": "W81", "visitante": "W82", "ciudad": "Dallas", "fecha": "2026-07-06", "_nota": "España"},
-    {"num": 94, "local": "W83", "visitante": "W84", "ciudad": "Seattle", "fecha": "2026-07-06", "_nota": "Países Bajos vs Canadá"},
-    {"num": 95, "local": "W85", "visitante": "W86", "ciudad": "Atlanta", "fecha": "2026-07-07", "_nota": "Francia"},
-    {"num": 96, "local": "W87", "visitante": "W88", "ciudad": "Vancouver", "fecha": "2026-07-07", "_nota": "Alemania vs EUA"}
+    {"num": 89, "local": "W74", "visitante": "W77", "ciudad": "Atlanta", "fecha": "2026-07-04"},
+    {"num": 90, "local": "W73", "visitante": "W75", "ciudad": "Dallas", "fecha": "2026-07-04"},
+    {"num": 91, "local": "W76", "visitante": "W78", "ciudad": "Houston", "fecha": "2026-07-05"},
+    {"num": 92, "local": "W79", "visitante": "W80", "ciudad": "Ciudad de México", "fecha": "2026-07-05"},
+    {"num": 93, "local": "W83", "visitante": "W84", "ciudad": "Monterrey", "fecha": "2026-07-06"},
+    {"num": 94, "local": "W81", "visitante": "W82", "ciudad": "Filadelfia", "fecha": "2026-07-06"},
+    {"num": 95, "local": "W86", "visitante": "W88", "ciudad": "Miami", "fecha": "2026-07-07"},
+    {"num": 96, "local": "W85", "visitante": "W87", "ciudad": "Seattle", "fecha": "2026-07-07"}
   ],
   "cuartos": [
-    {"num": 97, "local": "W89", "visitante": "W90", "ciudad": "Kansas City", "fecha": "2026-07-11", "_nota": "ARGENTINA vs PORTUGAL (Messi-Ronaldo)"},
-    {"num": 98, "local": "W91", "visitante": "W92", "ciudad": "Miami", "fecha": "2026-07-11", "_nota": "BRASIL vs INGLATERRA"},
-    {"num": 99, "local": "W93", "visitante": "W94", "ciudad": "Boston", "fecha": "2026-07-09", "_nota": "ESPAÑA vs Países Bajos/Canadá"},
-    {"num": 100, "local": "W95", "visitante": "W96", "ciudad": "Los Ángeles", "fecha": "2026-07-10", "_nota": "FRANCIA vs Alemania/EUA"}
+    {"num": 97, "local": "W89", "visitante": "W90", "ciudad": "Boston", "fecha": "2026-07-09", "_nota": "QF izquierda-arriba (Alemania/Francia región)"},
+    {"num": 98, "local": "W93", "visitante": "W94", "ciudad": "Los Ángeles", "fecha": "2026-07-10", "_nota": "QF izquierda-abajo (ESPAÑA región)"},
+    {"num": 99, "local": "W91", "visitante": "W92", "ciudad": "Miami", "fecha": "2026-07-10", "_nota": "QF derecha-arriba (BRASIL vs INGLATERRA región)"},
+    {"num": 100, "local": "W95", "visitante": "W96", "ciudad": "Kansas City", "fecha": "2026-07-11", "_nota": "QF derecha-abajo (ARGENTINA vs PORTUGAL región)"}
   ],
   "semifinales": [
-    {"num": 101, "local": "W97", "visitante": "W98", "ciudad": "Atlanta", "fecha": "2026-07-15", "_nota": "MITAD DERECHA: (Argentina/Portugal) vs (Brasil/Inglaterra)"},
-    {"num": 102, "local": "W99", "visitante": "W100", "ciudad": "Dallas", "fecha": "2026-07-14", "_nota": "MITAD IZQUIERDA: ESPAÑA vs FRANCIA"}
+    {"num": 101, "local": "W97", "visitante": "W98", "ciudad": "Dallas", "fecha": "2026-07-14", "_nota": "MITAD IZQUIERDA → ESPAÑA vs FRANCIA"},
+    {"num": 102, "local": "W99", "visitante": "W100", "ciudad": "Atlanta", "fecha": "2026-07-15", "_nota": "MITAD DERECHA → ARGENTINA vs INGLATERRA/BRASIL"}
   ],
   "tercer_lugar": {"num": 103, "local": "L101", "visitante": "L102", "ciudad": "Miami", "fecha": "2026-07-18"},
   "final": {"num": 104, "local": "W101", "visitante": "W102", "ciudad": "Nueva York", "fecha": "2026-07-19",
-            "_nota": "España (izq) vs Argentina (der) SOLO es posible aquí, en la final."}
+            "_nota": "ESPAÑA (izq) vs ARGENTINA (der) SOLO posible aquí."}
 }
