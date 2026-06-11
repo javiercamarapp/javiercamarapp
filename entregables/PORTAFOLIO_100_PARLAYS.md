@@ -228,7 +228,7 @@ _Última pata se resuelve: 2026-06-27_
 
 | Pata | Mercado | Momio dec (amer) | Prob real | Estatus | Fuente |
 |---|---|---|---|---|---|
-| España gana a Cabo Verde (15-jun, Atlanta) | 1X2 | 1.09 (-1111) | 84.0% | REAL | vegasodds.com (mercado parcial) |
+| España gana a Cabo Verde (15-jun, Atlanta) | 1X2 | 1.09 (-1111) | 84.0% | REAL | https://www.vegasodds.com/predictions/soccer/spain-vs-cape-verde-world-cup-picks |
 | Argentina gana el Grupo J (def. 27-jun) | Ganador de grupo | 1.34 (-294) | 79.5% | REAL | https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-c |
 | México gana el Grupo A (def. 24-jun) | Ganador de grupo | 1.83 (-120) | 60.0% | REAL | https://www.legalsportsreport.com/odds/world-cup/group-a/ (Polymarket 57%) |
 

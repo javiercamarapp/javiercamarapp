@@ -55,7 +55,7 @@ C = [
     leg("ML_SUI_J1", "Suiza gana a Catar (13-jun, SF)", "1X2", 1.30, 0.64, "2026-06-13", "J1", "Suiza", f"bet365 vía {F_SQK}match-preview-qatar-vs-switzerland-06-13-26-world-cup-2026/"),
     leg("ML_BRA_J1", "Brasil gana a Marruecos (13-jun, NY)", "1X2", 1.57, 0.55, "2026-06-13", "J1", "Brasil", f"bet365 vía {F_SQK}match-preview-brazil-vs-morocco-06-13-26-world-cup-2026/"),
     leg("ML_ESC_J1", "Escocia gana a Haití (13-jun, Boston)", "1X2", 1.44, 0.61, "2026-06-13", "J1", "Escocia", f"bet365 vía {F_SQK}match-preview-haiti-vs-scotland-06-13-26-world-cup-2026/"),
-    leg("ML_ESP_J1", "España gana a Cabo Verde (15-jun, Atlanta)", "1X2", 1.09, 0.84, "2026-06-15", "J1", "España", "US books vía vegasodds.com (mercado parcial)"),
+    leg("ML_ESP_J1", "España gana a Cabo Verde (15-jun, Atlanta)", "1X2", 1.09, 0.84, "2026-06-15", "J1", "España", "US books vía https://www.vegasodds.com/predictions/soccer/spain-vs-cape-verde-world-cup-picks-odds-preview-jun-15/ (mercado parcial)"),
     leg("ML_ARG_J1", "Argentina gana a Argelia (16-jun, KC)", "1X2", 1.42, 0.68, "2026-06-16", "J1", "Argentina", f"bet365 vía {F_SQK}match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/"),
     leg("ML_FRA_J1", "Francia gana a Senegal (16-jun, NY)", "1X2", 1.44, 0.67, "2026-06-16", "J1", "Francia", f"bet365 vía {F_SQK}match-preview-france-vs-senegal-06-16-26-world-cup-2026/"),
     leg("ML_COL_J1", "Colombia gana a Uzbekistán (17-jun, CDMX)", "1X2", 1.43, 0.71, "2026-06-17", "J1", "Colombia", "consenso US books vía espn.com/soccer/odds (de-vig -230)"),
