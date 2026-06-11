@@ -80,8 +80,8 @@ ALIAS = {
     "corea": "corea del sur",
     "ivory coast": "costa de marfil",
     "cote d'ivoire": "costa de marfil",
-    "czechia": "republica checa",
-    "chequia": "republica checa",
+    "czechia": "chequia",
+    "republica checa": "chequia",
 }
 
 
