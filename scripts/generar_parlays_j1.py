@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-generar_parlays_j1.py — Portafolio J1 que SÍ paga >$35,000, solo a GANADOR.
+generar_parlays_j1.py — Portafolio J1 que paga >$35,000, mezclando GANADORES
+y EMPATES de forma realista (decisión de Javier).
 ============================================================================
-Decisión final de Javier: el retorno debe ser >$35,000; usar hasta 16 juegos
-de la Jornada 1; sin empates ni patas absurdas (solo el favorito a GANAR).
-Matemática: con puros favoritos fuertes no alcanza, PERO incluyendo los
-partidos más CERRADOS de J1 (donde el favorito paga 1.7-2.5), 16 selecciones
-a ganador llegan a 7,000-10,719x = $35,597-$53,597. Hay 2,512 combinaciones
-posibles → se eligen 74 DISTINTAS (una por intento), $5 c/u = $370.
-Estructura 60/20/20 por monto: las 44 más PROBABLES (~$35-38k), 15 medias,
-15 al máximo (~$45-54k, las menos probables).
-Cada pata = ese equipo GANA su partido de J1 (1X2). Momios REALES donde
-existan; si no, EST 0.92/prob (PENDIENTE-CAPTURA en Caliente).
+Reglas:
+  - Mercado 1X2 de partidos de la Jornada 1. Cada pata = un resultado:
+      · Partido LOPSIDED (favorito ≥62%): solo "gana el favorito" (un empate
+        ahí sería absurdo — p.ej. Alemania-Curazao, España-Cabo Verde).
+      · Partido CERRADO (favorito <62%): se permite "gana el favorito" O
+        "empate" (ambos realistas; el empate paga 3.3-4.5).
+    Nunca se elige al claro perdedor (evita 'Panamá le gana a Ghana').
+  - Corrección de Javier: Ghana es favorito vs Panamá (no al revés).
+  - 16 a 18 selecciones por boleto; TODOS pagan >$35,000 (≥7,000x).
+  - $370 = 74 boletos × $5, DISTINTOS, una por intento. Tier 60/20/20 por monto.
+  - Momios REALES donde existan; si no, EST 0.92/prob (PENDIENTE-CAPTURA).
 """
 
-import itertools
 import json
 import math
 import os
+import random
 from collections import Counter
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,137 +35,159 @@ for p in MOM["partidos"]:
         REAL[(p["local"], p["visitante"])] = (md, p.get("fuente", "data/momios_mx.json"))
 
 F_EST = "EST modelo (data/predicciones_104.json), 0.92/prob ≈ con vig — PENDIENTE-CAPTURA en Caliente"
-NOMBRADOS = {"Inglaterra", "Brasil", "Alemania", "Argentina", "Francia",
-             "Portugal", "España", "Holanda", "Uruguay", "México"}  # picks de Javier
+LOPSIDED = 0.62   # umbral: arriba de esto el empate es absurdo
 
 
 def amer(d):
     return f"+{round((d-1)*100)}" if d >= 2 else f"{round(-100/(d-1))}"
 
 
-# ── Leg favorito (a GANAR) de cada uno de los 24 partidos de J1 ──
-LEGS = []
+# ── Por cada partido de J1: opciones de pata realistas {ganador, [empate]} ──
+PARTIDOS = []   # cada uno: {"num", "fecha", "opciones":[leg,...]}
 for p in PRED["predicciones"]:
     if p.get("fase") != "grupos" or p.get("jornada") != 1:
         continue
     m = p["prob_mezcla"]
+    L, V, fecha = p["local"], p["visitante"], p["fecha"]
+    real = REAL.get((L, V))
+    # favorito
     if m["local"] >= m["visitante"]:
-        lado, prob, eq, riv = "local", m["local"], p["local"], p["visitante"]
+        fav_lado, fav_eq, fav_riv, fav_p = "local", L, V, m["local"]
     else:
-        lado, prob, eq, riv = "visitante", m["visitante"], p["visitante"], p["local"]
-    real = REAL.get((p["local"], p["visitante"]))
-    if real:
-        dec = real[0][lado]; fuente, est = f"Caliente/casas vía {real[1]}", "REAL"
-    else:
-        dec = round(max(0.92 / prob, 1.04), 2); fuente, est = F_EST, "EST"
-    # CORRECCIÓN de Javier: en Ghana vs Panamá el modelo favorecía a Panamá por
-    # un Elo estimado inflado; Javier (acertadamente) lo voltea a Ghana favorito.
-    if {eq, riv} == {"Ghana", "Panamá"} and eq == "Panamá":
-        eq, riv, dec, prob = "Ghana", "Panamá", 1.95, 0.52
-        fuente = ("AJUSTE por lectura de Javier (Ghana favorito vs Panamá; Elo de equipos "
-                  "chicos poco confiable) — PENDIENTE-CAPTURA en Caliente")
-        est = "EST"
-    LEGS.append({"idx": len(LEGS), "equipo": eq, "rival": riv, "fecha": p["fecha"],
-                 "descripcion": f"Gana {eq} (vs {riv}, {p['fecha'][5:]})",
-                 "mercado": "Resultado 1X2", "momio_decimal": dec, "momio_americano": amer(dec),
-                 "prob_real": prob, "fuente": fuente, "estatus": est})
+        fav_lado, fav_eq, fav_riv, fav_p = "visitante", V, L, m["visitante"]
+    # CORRECCIÓN Javier: Ghana favorito vs Panamá
+    ghana_fix = ({fav_eq, fav_riv} == {"Ghana", "Panamá"} and fav_eq == "Panamá")
 
-N = len(LEGS)  # 24
+    opciones = []
+    # — ganador del favorito —
+    if ghana_fix:
+        opciones.append({"desc": f"Gana Ghana (vs Panamá, {fecha[5:]})", "tipo": "1X2",
+                         "dec": 1.95, "prob": 0.52, "fecha": fecha,
+                         "fuente": "AJUSTE Javier (Ghana favorito vs Panamá; Elo chico poco confiable) — PENDIENTE-CAPTURA",
+                         "est": "EST"})
+        fav_p = 0.52
+    else:
+        if real:
+            dec = real[0][fav_lado]; fuente, est = f"Caliente/casas vía {real[1]}", "REAL"
+        else:
+            dec = round(max(0.92 / fav_p, 1.04), 2); fuente, est = F_EST, "EST"
+        opciones.append({"desc": f"Gana {fav_eq} (vs {fav_riv}, {fecha[5:]})", "tipo": "1X2",
+                         "dec": dec, "prob": fav_p, "fecha": fecha, "fuente": fuente, "est": est})
+    # — empate (solo si el partido es CERRADO) —
+    if fav_p < LOPSIDED:
+        pe = m["empate"]
+        if real and real[0].get("empate"):
+            dec_e = real[0]["empate"]; fuente_e, est_e = f"Caliente/casas vía {real[1]}", "REAL"
+        else:
+            dec_e = round(max(0.92 / pe, 1.04), 2); fuente_e, est_e = F_EST, "EST"
+        opciones.append({"desc": f"Empate {L} vs {V} ({fecha[5:]})", "tipo": "1X2",
+                         "dec": dec_e, "prob": pe, "fecha": fecha, "fuente": fuente_e, "est": est_e})
+    PARTIDOS.append({"num": p["num"], "fecha": fecha, "opciones": opciones, "cerrado": fav_p < LOPSIDED})
+
+NP = len(PARTIDOS)  # 24
 
 
 def main():
     os.makedirs(ENT, exist_ok=True)
-    # enumerar combinaciones de 16 (de 24) con multiplicador ≥7,000x
-    # Javier permite agregar 2-3 partidos más → boletos de 16 a 18 selecciones.
-    validas = []
-    for k in (16, 17, 18):
-        for c in itertools.combinations(range(N), k):
-            mult = 1.0
-            for i in c:
-                mult *= LEGS[i]["momio_decimal"]
-            if mult >= 7000:
-                prob = 1.0
-                for i in c:
-                    prob *= LEGS[i]["prob_real"]
-                validas.append((prob, mult, c))
-    # Prioridad: MÁS SEGURO. Se toman las 74 combinaciones MÁS PROBABLES que
-    # aún pagan >$35,000 (las que tienen más favoritos sólidos y solo los
-    # partidos cerrados imprescindibles). Tier solo para presentar (por monto).
-    validas.sort(key=lambda t: -t[0])
-    top = validas[:74]
-    if len(top) < 74:
-        raise SystemExit(f"solo {len(top)} combinaciones ≥7000x")
-    # asignar tier por monto: 15 de mayor pago = LOTERÍA, siguientes 15 = SÚPER, 44 = SOÑADOR
+    rng = random.Random(2026)
+    cand = {}
+    intentos = 0
+    while len(cand) < 4000 and intentos < 1_500_000:
+        intentos += 1
+        k = rng.randint(16, 18)
+        idxs = rng.sample(range(NP), k)
+        combo = []
+        for j in idxs:
+            ops = PARTIDOS[j]["opciones"]
+            if len(ops) == 1:
+                combo.append((j, 0))
+            else:
+                # elegir ganador o empate ponderado por probabilidad
+                w = [o["prob"] for o in ops]
+                combo.append((j, rng.choices(range(len(ops)), weights=w)[0]))
+        key = tuple(sorted(combo))
+        if key in cand:
+            continue
+        mult = 1.0
+        prob = 1.0
+        for (j, oi) in combo:
+            o = PARTIDOS[j]["opciones"][oi]
+            mult *= o["dec"]; prob *= o["prob"]
+        if mult >= 7000:
+            cand[key] = (prob, mult, combo)
+
+    valid = sorted(cand.values(), key=lambda t: -t[0])  # más probable primero
+    if len(valid) < 74:
+        raise SystemExit(f"solo {len(valid)} combinaciones ≥7000x")
+    top = valid[:74]
     por_pago = sorted(range(74), key=lambda i: -top[i][1])
     tier_de = {}
     for rank, i in enumerate(por_pago):
         tier_de[i] = "LOTERÍA MÁXIMA" if rank < 15 else ("SÚPER SOÑADOR" if rank < 30 else "SOÑADOR")
-    sel = [(tier_de[i], top[i][0], top[i][1], top[i][2]) for i in range(74)]
-    # ordenar para numerar: SOÑADOR, SÚPER, LOTERÍA
     orden = {"SOÑADOR": 0, "SÚPER SOÑADOR": 1, "LOTERÍA MÁXIMA": 2}
-    sel.sort(key=lambda t: (orden[t[0]], -t[1]))
+    sel = sorted(((tier_de[i],) + top[i] for i in range(74)), key=lambda t: (orden[t[0]], -t[2]))
 
     boletos = []
-    for n, (tier, prob, mult, c) in enumerate(sel, start=1):
+    for n, (tier, prob, mult, combo) in enumerate(sel, start=1):
         emoji = {"SOÑADOR": "🌙", "SÚPER SOÑADOR": "🚀", "LOTERÍA MÁXIMA": "🎰"}[tier]
-        patas = [LEGS[i] for i in c]
-        nombrados = sum(1 for l in patas if l["equipo"] in NOMBRADOS)
+        patas = []
+        for (j, oi) in sorted(combo):
+            o = PARTIDOS[j]["opciones"][oi]
+            patas.append({"descripcion": o["desc"], "mercado": "Resultado 1X2",
+                          "momio_decimal": o["dec"], "momio_americano": amer(o["dec"]),
+                          "prob_real": o["prob"], "fuente": o["fuente"], "estatus": o["est"],
+                          "es_empate": o["desc"].startswith("Empate")})
         boletos.append({
             "boleto": n, "tier": tier, "emoji": emoji, "casa": "Caliente", "apuesta_mxn": 5,
-            "patas": [{k: l[k] for k in ("descripcion", "mercado", "momio_decimal",
-                                          "momio_americano", "prob_real", "fuente", "estatus")} for l in patas],
-            "n_patas": len(c),
-            "multiplicador": round(mult, 2),
-            "pago_potencial_mxn": round(5 * mult, 2),
+            "patas": patas, "n_patas": len(patas),
+            "multiplicador": round(mult, 2), "pago_potencial_mxn": round(5 * mult, 2),
             "prob_real": prob, "uno_entre": round(1 / prob),
-            "picks_de_javier": nombrados,
-            "tiene_momios_pendientes": any(l["estatus"] == "EST" for l in patas),
-            "fecha_ultima_pata": max(l["fecha"] for l in patas),
+            "empates": sum(1 for x in patas if x["es_empate"]),
+            "tiene_momios_pendientes": any(x["estatus"] == "EST" for x in patas),
+            "fecha_ultima_pata": max(PARTIDOS[j]["fecha"] for (j, oi) in combo),
         })
 
-    # reordenar números: tier por monto (mayor pago = LOTERÍA). Mantengo prob para SOÑADOR.
     p_no = 1.0
     for b in boletos:
         p_no *= (1 - b["prob_real"])
     p_alg = 1 - p_no
+    tot_emp = sum(b["empates"] for b in boletos)
     resumen = {
         "presupuesto_mxn": 370, "total_boletos": 74, "total_mxn": 370,
-        "enfoque": "Solo GANADOR (1X2) de hasta 16 partidos de J1; TODOS pagan >$35,000; sin empates ni patas absurdas",
-        "max_selecciones": 16,
+        "mercado": "1X2 de la Jornada 1 — GANADORES y EMPATES (empate solo en partidos cerrados)",
         "estructura": dict(Counter(b["tier"] for b in boletos)),
         "pago_min_mxn": min(b["pago_potencial_mxn"] for b in boletos),
         "pago_max_mxn": max(b["pago_potencial_mxn"] for b in boletos),
-        "prob_boleto_max_pct": round(max(b["prob_real"] for b in boletos) * 100, 4),
+        "total_empates_en_portafolio": tot_emp,
         "p_al_menos_uno_pegue": round(p_alg, 6),
         "uno_entre_global": round(1 / p_alg) if p_alg else None,
-        "combinaciones_posibles": len(validas),
-        "nota": ("Para llegar a $35,000 con puros GANADORES hay que incluir los partidos "
-                 "más CERRADOS de J1 (favoritos que pagan 1.7-2.5); los favoritos fuertísimos "
-                 "(Alemania, España) casi no suben el multiplicador. Son 16 aciertos seguidos: "
-                 f"P(que CUALQUIERA de los 74 pegue) ~{p_alg:.3%}. Entretenimiento, no inversión."),
+        "nota": ("Mezcla realista de ganadores y empates: el empate se permite SOLO en partidos "
+                 "cerrados (favorito <62%); en lopsided (Alemania, España, etc.) solo gana el "
+                 "favorito. Panamá corregido a Ghana. 16-18 aciertos por boleto: "
+                 f"P(que CUALQUIERA pegue) ~{p_alg:.3%}. Entretenimiento, no inversión."),
     }
     json.dump({"resumen": resumen, "boletos": boletos},
               open(os.path.join(ENT, "parlays.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=1)
     print(json.dumps(resumen, ensure_ascii=False, indent=2))
 
-    nombres = {"SOÑADOR": "🌙 44 SOÑADOR — las más alcanzables (~$35-38K)",
-               "SÚPER SOÑADOR": "🚀 15 SÚPER (~$38-45K)",
-               "LOTERÍA MÁXIMA": "🎰 15 LOTERÍA MÁXIMA (~$45-54K)"}
-    Lns = ["# PORTAFOLIO J1 — 74 parlays a GANADOR · Mundial 2026",
+    nombres = {"SOÑADOR": "🌙 44 SOÑADOR — las más probables",
+               "SÚPER SOÑADOR": "🚀 15 SÚPER",
+               "LOTERÍA MÁXIMA": "🎰 15 LOTERÍA (máximo pago)"}
+    Lns = ["# PORTAFOLIO J1 — 74 parlays 1X2 (ganadores y empates) · Mundial 2026",
            "",
-           "**$370 · 74 boletos × $5 · Caliente · hasta 16 GANADORES de la Jornada 1 · TODOS pagan >$35,000 · sin empates ni sorpresas absurdas**",
+           "**$370 · 74 boletos × $5 · Caliente · 16-18 resultados de la Jornada 1 · TODOS pagan >$35,000**",
            "",
            "## ⚠️ HONESTIDAD",
-           f"- Cada boleto son **16 partidos a ganador** que TODOS deben acertar. P(que alguno de los 74 pegue): **~{p_alg:.3%} ≈ 1 entre {round(1/p_alg):,}**.",
-           "- Para llegar a $35,000 hay que meter los partidos CERRADOS de J1 (favoritos que pagan 1.7-2.5, ~40-55%): Turquía, Suecia, Corea, Bélgica, USA, etc. No son empates ni absurdos, pero acertar los 16 es muy difícil.",
-           "- Todo se resuelve entre 11-17 jun. Momios `EST` = PENDIENTE-CAPTURA en Caliente. Lo más probable es perder los $370.",
+           f"- Mezcla realista: GANADORES + EMPATES (el empate solo en partidos cerrados; en Alemania/España/Argentina/etc. solo gana el favorito).",
+           f"- P(que CUALQUIERA de los 74 pegue): **~{p_alg:.3%} ≈ 1 entre {round(1/p_alg):,}**. Son 16-18 aciertos seguidos.",
+           "- Panamá corregido a Ghana. Momios `EST` = PENDIENTE-CAPTURA en Caliente. Lo más probable es perder los $370.",
            ""]
     for tier in ("SOÑADOR", "SÚPER SOÑADOR", "LOTERÍA MÁXIMA"):
         Lns.append(f"\n## {nombres[tier]}\n")
         for b in [b for b in boletos if b["tier"] == tier]:
-            Lns.append(f"### {b['emoji']} #{b['boleto']} — {b['n_patas']} ganadores — {b['multiplicador']:,.0f}x → "
-                       f"**${b['pago_potencial_mxn']:,.0f}** · ~1 entre {b['uno_entre']:,}")
+            Lns.append(f"### {b['emoji']} #{b['boleto']} — {b['n_patas']} patas ({b['empates']} empates) — "
+                       f"{b['multiplicador']:,.0f}x → **${b['pago_potencial_mxn']:,.0f}** · ~1 entre {b['uno_entre']:,}")
             Lns.append("")
             Lns.append("| Selección | Momio | Prob | Estatus |")
             Lns.append("|---|---|---|---|")

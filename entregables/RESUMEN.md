@@ -14,13 +14,12 @@ Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación
 - **Bota de Oro: Mbappé** (+600 favorito; Francia llega a semis). **Último lugar: Curazao** (0 pts, −5; Elo 1500).
 - Marcadores: modal Poisson/Dixon-Coles; cruces de KO con "+1 gol por penales" (regla del template).
 
-## 2. Portafolio J1 a GANADOR (`PORTAFOLIO_74_PARLAYS_J1.md` / `.pdf` + `parlays.json`)
-**$370 · 74 boletos × $5 · Caliente · 16-18 GANADORES de la Jornada 1 · TODOS pagan >$35,000 · sin empates ni picks irreales.** `scripts/verificar_portafolio.py` → **TODO PASS**.
+## 2. Portafolio J1 1X2 (`PORTAFOLIO_74_PARLAYS_J1.md` / `.pdf` + `parlays.json`)
+**$370 · 74 boletos × $5 · Caliente · 16-18 resultados 1X2 de la Jornada 1 · TODOS pagan >$35,000.** Mezcla realista de **ganadores y empates**. `scripts/verificar_portafolio.py` → **TODO PASS**.
 
-- **Corrección de Javier aplicada:** el modelo favorecía a **Panamá sobre Ghana** (Elo estimado inflado) → corregido a **Gana Ghana** en los 74 boletos. Panamá: 0 boletos.
-- **Turquía se queda** (gana a Australia), confirmado por Javier.
-- Se priorizó la **máxima probabilidad** que aún supera $35,000: pago $35,000-$37,870; se permiten hasta 18 selecciones (Javier autorizó 2-3 más) para apoyarse en más favoritos sólidos.
-- **P(que CUALQUIERA de los 74 pegue): ~0.46% ≈ 1 entre 215.** Son 16-18 aciertos seguidos: difícil, pero ya sin picks irreales. Momios `EST` = PENDIENTE-CAPTURA en Caliente.
+- **Ganadores + empates:** el empate se permite SOLO en partidos cerrados (favorito <62%); en lopsided (Alemania, España, Argentina, Francia, Portugal, Colombia…) solo gana el favorito. 149 empates repartidos; los 74 boletos llevan 1-4 empates.
+- **Panamá corregido a Ghana**; Turquía se queda.
+- Pago $35,070-$50,021. **P(que CUALQUIERA de los 74 pegue): ~0.34% ≈ 1 entre 296.** Momios `EST` = PENDIENTE-CAPTURA en Caliente.
 
 ## 3. Las 5 mejores apuestas de VALOR detectadas
 (edge = prob_real × momio − 1; prob_real = mezcla modelo+mercado, ver `data/probabilidades_mc.json`)

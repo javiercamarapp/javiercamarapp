@@ -17,7 +17,9 @@ regla("Estructura 44/15/15",(c["SOÑADOR"],c["SÚPER SOÑADOR"],c["LOTERÍA MÁX
 regla("Todos Caliente",all(b["casa"]=="Caliente" for b in B))
 regla("≤18 selecciones (Javier permitió +2-3)",all(b["n_patas"]<=18 for b in B),f"máx={max(b['n_patas'] for b in B)}")
 regla("Solo mercado Resultado 1X2",all(l["mercado"]=="Resultado 1X2" for b in B for l in b["patas"]))
-regla("TODO a ganador (cero empates/sorpresas)",all(l["descripcion"].startswith("Gana ") for b in B for l in b["patas"]))
+LOPS={"Alemania","España","Francia","Argentina","Portugal","Colombia","Irán","Noruega","México"}
+regla("Solo ganador o empate (1X2)",all(l["descripcion"].startswith(("Gana ","Empate ")) for b in B for l in b["patas"]))
+regla("Sin empates absurdos (no en partidos lopsided)",not any(l["descripcion"].startswith("Empate") and any(t in l["descripcion"] for t in LOPS) for b in B for l in b["patas"]))
 regla("Solo Jornada 1 (resuelve <=17 jun)",all(b["fecha_ultima_pata"]<="2026-06-17" for b in B))
 def mt(l):
     m=re.search(r"\(vs ([^,]+),",l["descripcion"]); return (l["descripcion"].split(" (")[0], m.group(1) if m else "")
