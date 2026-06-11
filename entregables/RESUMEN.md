@@ -14,19 +14,22 @@ Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación
 - **Bota de Oro: Mbappé** (+600 favorito; Francia llega a semis). **Último lugar: Curazao** (0 pts, −5; Elo 1500).
 - Marcadores: modal Poisson/Dixon-Coles; cruces de KO con "+1 gol por penales" (regla del template).
 
-## 2. Portafolio SOÑADOR (`PORTAFOLIO_74_SONADORES.md` / `.pdf` + `parlays.json`)
-**$370 MXN: 74 boletos × $5, TODOS en Caliente, TODOS pagan >$35,000.** Estructura 60/20/20 como NIVELES DE SUEÑO (decisión de Javier: "que paguen un chingo, son soñadores"). Verificación `scripts/verificar_portafolio.py` → **TODO PASS** (≤8 patas, ≥7,000x, diversificación ≤30%, 0 correlaciones, 0 boletos que mueran el día 1).
+## 2. Portafolio PARLAYS J1 (`PORTAFOLIO_74_PARLAYS_J1.md` / `.pdf` + `parlays.json`)
+**$370 MXN: 74 boletos × $5, TODOS en Caliente, solo RESULTADO 1X2 de la Jornada 1, máximo 16 selecciones, TODOS pagan >$35,000.** Estructura 60/20/20 (44/15/15) por niveles de pago (decisión de Javier). `scripts/verificar_portafolio.py` → **TODO PASS**.
 
-| Nivel | Boletos | Pago | Multiplicador | Prob/boleto |
-|---|---|---|---|---|
-| 🌙 Soñador | 44 | $35k–$150k | 7,000–30,000x | ~1 entre miles |
-| 🚀 Súper soñador | 15 | $150k–$750k | 30,000–150,000x | ~1 entre decenas de miles |
-| 🎰 Lotería máxima | 15 | $750k–$1.1M | 150,000–720,000x | ~1 entre cientos de miles |
+| Nivel | Boletos | Pago | Multiplicador |
+|---|---|---|---|
+| 🌙 Soñador | 44 | $35k–$77k | 7,000–30,000x |
+| 🚀 Súper soñador | 15 | $150k–$418k | 30,000–150,000x |
+| 🎰 Lotería máxima | 15 | $753k–$2.15M | 150,000–720,000x |
+
+Cada pata es el resultado (gana local / empate / gana visita) de uno de los 24 partidos de la Jornada 1 (11-17 jun). Para llegar a los multiplicadores se combinan favoritos con varios empates/sorpresas.
 
 ### 🚨 HONESTIDAD BRUTAL
-- **P(que CUALQUIERA de los 74 pegue): ~0.47% ≈ 1 entre 213.** Así de real. Lo más probable, por MUCHO, es perder los $370.
-- Son moonshots de marcadores exactos: casi todos los momios son `EST · PENDIENTE-CAPTURA` (estimación del modelo, factor 0.86 calibrado con el único exacto real hallado, México 1-0 a +550). Valídalos en la app de Caliente antes de apostar.
-- Upside no contado: bono parlay fútbol de Caliente (hasta +100% sobre ganancias, aplica al Mundial 2026).
+- **P(que CUALQUIERA de los 74 pegue): ~0.44% ≈ 1 entre 228.** Lo más probable, por MUCHO, es perder los $370.
+- **TODO el portafolio se resuelve entre el 11 y 17 de junio** (sin cobertura entre jornadas — es tu decisión de jugar solo J1).
+- 12 de los 24 partidos tienen momios 1X2 REALES (de casas/Caliente con fuente); el resto son `EST · PENDIENTE-CAPTURA` (modelo). Valida los multiplicadores en la app antes de apostar.
+- Upside no contado: bono parlay fútbol de Caliente (hasta +100% sobre ganancias).
 
 ## 3. Las 5 mejores apuestas de VALOR detectadas
 (edge = prob_real × momio − 1; prob_real = mezcla modelo+mercado, ver `data/probabilidades_mc.json`)

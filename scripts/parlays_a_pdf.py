@@ -22,8 +22,8 @@ th{background:#D9E1F2;text-align:left;padding:2px 4px;} td{border-bottom:1px sol
 .r{color:#1a7a1a;} .e{color:#b07000;}</style>"""
 
 out = [f"<html><head><meta charset='utf-8'>{CSS}</head><body>",
-       "<h1>Portafolio SOÑADOR — 74 Parlays · Mundial 2026</h1>",
-       f"<div class='sub'>$370 MXN · 74 boletos × $5 · Caliente · <b>TODOS pagan &gt;$35,000</b></div>",
+       "<h1>Portafolio Parlays J1 — 74 boletos · Mundial 2026</h1>",
+       f"<div class='sub'>$370 MXN · 74 boletos × $5 · Caliente · solo RESULTADO 1X2 de la Jornada 1 · ≤16 patas · <b>TODOS pagan &gt;$35,000</b></div>",
        f"""<div class='warn'><b>⚠️ ESTO ES UN SUEÑO, NO UN PLAN DE INVERSIÓN.</b>
        P(que CUALQUIERA de los 74 pegue): <b>~{R['p_al_menos_uno_pegue']*100:.2f}% ≈ 1 entre {R['uno_entre_global']:,}</b>.
        Cada boleto es ~1 entre decenas de miles a millones. Casi todos los momios son
@@ -48,9 +48,9 @@ for tier in ("SOÑADOR", "SÚPER SOÑADOR", "LOTERÍA MÁXIMA"):
         out.append("</table></div>")
 out.append("</body></html>")
 
-open("/tmp/sonadores.html", "w").write("".join(out))
+open("/tmp/parlays_j1.html", "w").write("".join(out))
 subprocess.run(["soffice", "--headless", "-env:UserInstallation=file:///tmp/loprofile",
-                "--convert-to", "pdf", "--outdir", ENT, "/tmp/sonadores.html"],
+                "--convert-to", "pdf", "--outdir", ENT, "/tmp/parlays_j1.html"],
                check=True, capture_output=True, timeout=180)
-os.replace(os.path.join(ENT, "sonadores.pdf"), os.path.join(ENT, "PORTAFOLIO_74_SONADORES.pdf"))
-print("OK → entregables/PORTAFOLIO_74_SONADORES.pdf")
+os.replace(os.path.join(ENT, "parlays_j1.pdf"), os.path.join(ENT, "PORTAFOLIO_74_PARLAYS_J1.pdf"))
+print("OK → entregables/PORTAFOLIO_74_PARLAYS_J1.pdf")
