@@ -15,15 +15,12 @@ Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación
 - Marcadores: modal Poisson/Dixon-Coles; cruces de KO con "+1 gol por penales" (regla del template).
 
 ## 2. Portafolio J1 a GANADOR (`PORTAFOLIO_74_PARLAYS_J1.md` / `.pdf` + `parlays.json`)
-**$370 · 74 boletos × $5 · Caliente · hasta 16 GANADORES de la Jornada 1 · TODOS pagan >$35,000 · sin empates ni sorpresas absurdas.** `scripts/verificar_portafolio.py` → **TODO PASS**.
+**$370 · 74 boletos × $5 · Caliente · 16-18 GANADORES de la Jornada 1 · TODOS pagan >$35,000 · sin empates ni picks irreales.** `scripts/verificar_portafolio.py` → **TODO PASS**.
 
-| Nivel | Boletos | Pago | Probabilidad |
-|---|---|---|---|
-| 🌙 Soñador | 44 | $35,028–$37,367 | ~1 entre 16-18 mil |
-| 🚀 Súper | 15 | $38,064–$40,303 | ~1 entre 18-19 mil |
-| 🎰 Lotería máxima | 15 | $45,085–$48,140 | ~1 entre 23-25 mil |
-
-Cada boleto = 16 partidos de J1 a ganador (1X2), TODOS deben acertar. Para llegar a $35,000 se incluyen los partidos CERRADOS (favoritos que pagan 1.7-2.5: Turquía, Suecia, Corea, Bélgica, USA…); los favoritos fuertísimos (Alemania 1.03, España 1.09) casi no suben el multiplicador. **NO hay empates ni underdogs absurdos** — solo el favorito de cada partido a ganar. **P(que CUALQUIERA de los 74 pegue): ~0.39% ≈ 1 entre 257.** Hay 2,512 combinaciones posibles; se eligieron 74 distintas (una por intento). 12 partidos con momio 1X2 REAL; resto `EST · PENDIENTE-CAPTURA`.
+- **Corrección de Javier aplicada:** el modelo favorecía a **Panamá sobre Ghana** (Elo estimado inflado) → corregido a **Gana Ghana** en los 74 boletos. Panamá: 0 boletos.
+- **Turquía se queda** (gana a Australia), confirmado por Javier.
+- Se priorizó la **máxima probabilidad** que aún supera $35,000: pago $35,000-$37,870; se permiten hasta 18 selecciones (Javier autorizó 2-3 más) para apoyarse en más favoritos sólidos.
+- **P(que CUALQUIERA de los 74 pegue): ~0.46% ≈ 1 entre 215.** Son 16-18 aciertos seguidos: difícil, pero ya sin picks irreales. Momios `EST` = PENDIENTE-CAPTURA en Caliente.
 
 ## 3. Las 5 mejores apuestas de VALOR detectadas
 (edge = prob_real × momio − 1; prob_real = mezcla modelo+mercado, ver `data/probabilidades_mc.json`)

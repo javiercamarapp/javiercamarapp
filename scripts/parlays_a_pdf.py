@@ -23,13 +23,13 @@ th{background:#D9E1F2;text-align:left;padding:2px 4px;} td{border-bottom:1px sol
 out = [f"<html><head><meta charset='utf-8'>{CSS}</head><body>",
        "<h1>Portafolio J1 — 74 parlays a GANADOR · Mundial 2026</h1>",
        f"<div class='sub'>$370 · 74 boletos × $5 · Caliente · hasta 16 GANADORES de la Jornada 1 · <b>TODOS pagan &gt;$35,000</b> · sin empates ni sorpresas absurdas</div>",
-       f"""<div class='warn'><b>⚠️ LA VERDAD.</b> Cada boleto son <b>16 partidos a ganador</b> que TODOS deben acertar.
+       f"""<div class='warn'><b>⚠️ LA VERDAD.</b> Cada boleto son <b>hasta 18 partidos a ganador</b> que TODOS deben acertar.
        P(que CUALQUIERA de los 74 pegue): <b>~{R['p_al_menos_uno_pegue']*100:.2f}% ≈ 1 entre {R['uno_entre_global']:,}</b>.
        Para llegar a $35,000 hay que incluir los partidos CERRADOS de J1 (favoritos que pagan 1.7-2.5: Turquía, Suecia, Corea, Bélgica, USA…) — no son empates ni absurdos, pero acertar los 16 seguidos es muy difícil.
        Momios <span class='e'>EST</span> = PENDIENTE-CAPTURA en Caliente. Lo más probable es perder los $370.</div>"""]
-nombres = {"SOÑADOR": "🌙 44 SOÑADOR · las más alcanzables (~$35-37K)",
-           "SÚPER SOÑADOR": "🚀 15 SÚPER (~$38-40K)",
-           "LOTERÍA MÁXIMA": "🎰 15 LOTERÍA MÁXIMA (~$45-48K)"}
+nombres = {"SOÑADOR": "🌙 44 SOÑADOR · las más probables (~$35.0-35.6K)",
+           "SÚPER SOÑADOR": "🚀 15 SÚPER (~$35.6-36.4K)",
+           "LOTERÍA MÁXIMA": "🎰 15 LOTERÍA (máximo pago ~$36-38K)"}
 for tier in ("SOÑADOR", "SÚPER SOÑADOR", "LOTERÍA MÁXIMA"):
     out.append(f"<div class='tier'>{nombres[tier]}</div>")
     for b in [b for b in B if b["tier"] == tier]:

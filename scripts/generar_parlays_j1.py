@@ -56,6 +56,13 @@ for p in PRED["predicciones"]:
         dec = real[0][lado]; fuente, est = f"Caliente/casas vía {real[1]}", "REAL"
     else:
         dec = round(max(0.92 / prob, 1.04), 2); fuente, est = F_EST, "EST"
+    # CORRECCIÓN de Javier: en Ghana vs Panamá el modelo favorecía a Panamá por
+    # un Elo estimado inflado; Javier (acertadamente) lo voltea a Ghana favorito.
+    if {eq, riv} == {"Ghana", "Panamá"} and eq == "Panamá":
+        eq, riv, dec, prob = "Ghana", "Panamá", 1.95, 0.52
+        fuente = ("AJUSTE por lectura de Javier (Ghana favorito vs Panamá; Elo de equipos "
+                  "chicos poco confiable) — PENDIENTE-CAPTURA en Caliente")
+        est = "EST"
     LEGS.append({"idx": len(LEGS), "equipo": eq, "rival": riv, "fecha": p["fecha"],
                  "descripcion": f"Gana {eq} (vs {riv}, {p['fecha'][5:]})",
                  "mercado": "Resultado 1X2", "momio_decimal": dec, "momio_americano": amer(dec),
@@ -67,35 +74,35 @@ N = len(LEGS)  # 24
 def main():
     os.makedirs(ENT, exist_ok=True)
     # enumerar combinaciones de 16 (de 24) con multiplicador ≥7,000x
+    # Javier permite agregar 2-3 partidos más → boletos de 16 a 18 selecciones.
     validas = []
-    for c in itertools.combinations(range(N), 16):
-        mult = 1.0
-        for i in c:
-            mult *= LEGS[i]["momio_decimal"]
-        if mult >= 7000:
-            prob = 1.0
+    for k in (16, 17, 18):
+        for c in itertools.combinations(range(N), k):
+            mult = 1.0
             for i in c:
-                prob *= LEGS[i]["prob_real"]
-            validas.append((prob, mult, c))
-    # ordenar por PROBABILIDAD desc dentro de cada banda de pago
+                mult *= LEGS[i]["momio_decimal"]
+            if mult >= 7000:
+                prob = 1.0
+                for i in c:
+                    prob *= LEGS[i]["prob_real"]
+                validas.append((prob, mult, c))
+    # Prioridad: MÁS SEGURO. Se toman las 74 combinaciones MÁS PROBABLES que
+    # aún pagan >$35,000 (las que tienen más favoritos sólidos y solo los
+    # partidos cerrados imprescindibles). Tier solo para presentar (por monto).
     validas.sort(key=lambda t: -t[0])
-    # bandas por multiplicador: SOÑADOR ($35-38k), SÚPER ($38-45k), LOTERÍA ($45-54k)
-    bandas = [("SOÑADOR", 44, 7000, 7600), ("SÚPER SOÑADOR", 15, 7600, 9000),
-              ("LOTERÍA MÁXIMA", 15, 9000, 10_800)]
-    sel = []
-    for tier, n, mn, mx in bandas:
-        cnt = 0
-        for prob, mult, c in validas:
-            if cnt >= n:
-                break
-            if mn <= mult < mx:
-                sel.append((tier, prob, mult, c)); cnt += 1
-        if cnt < n:
-            raise SystemExit(f"banda {tier}: solo {cnt}/{n} combinaciones en {mn}-{mx}x")
-    if len(sel) < 74:
-        raise SystemExit(f"solo {len(sel)} combinaciones ≥7000x")
+    top = validas[:74]
+    if len(top) < 74:
+        raise SystemExit(f"solo {len(top)} combinaciones ≥7000x")
+    # asignar tier por monto: 15 de mayor pago = LOTERÍA, siguientes 15 = SÚPER, 44 = SOÑADOR
+    por_pago = sorted(range(74), key=lambda i: -top[i][1])
+    tier_de = {}
+    for rank, i in enumerate(por_pago):
+        tier_de[i] = "LOTERÍA MÁXIMA" if rank < 15 else ("SÚPER SOÑADOR" if rank < 30 else "SOÑADOR")
+    sel = [(tier_de[i], top[i][0], top[i][1], top[i][2]) for i in range(74)]
+    # ordenar para numerar: SOÑADOR, SÚPER, LOTERÍA
+    orden = {"SOÑADOR": 0, "SÚPER SOÑADOR": 1, "LOTERÍA MÁXIMA": 2}
+    sel.sort(key=lambda t: (orden[t[0]], -t[1]))
 
-    # tiers por monto/probabilidad
     boletos = []
     for n, (tier, prob, mult, c) in enumerate(sel, start=1):
         emoji = {"SOÑADOR": "🌙", "SÚPER SOÑADOR": "🚀", "LOTERÍA MÁXIMA": "🎰"}[tier]
