@@ -14,17 +14,16 @@ Verificada con recálculo LibreOffice: posiciones auto-calculadas == simulación
 - **Bota de Oro: Mbappé** (+600 favorito; Francia llega a semis). **Último lugar: Curazao** (0 pts, −5; Elo 1500).
 - Marcadores: modal Poisson/Dixon-Coles; cruces de KO con "+1 gol por penales" (regla del template).
 
-## 2. Portafolio REALISTA J1 (`PORTAFOLIO_74_PARLAYS_J1.md` / `.pdf` + `parlays.json`)
-**$370 · 74 boletos × $5 · Caliente · SOLO favoritos fuertes elegidos por Javier (sin empates ni sorpresas).**
-Picks: Inglaterra, Brasil, Alemania, Argentina, Francia, Portugal, España, Países Bajos, Uruguay, México (dudoso). `scripts/verificar_portafolio.py` → **TODO PASS**.
+## 2. Portafolio J1 a GANADOR (`PORTAFOLIO_74_PARLAYS_J1.md` / `.pdf` + `parlays.json`)
+**$370 · 74 boletos × $5 · Caliente · hasta 16 GANADORES de la Jornada 1 · TODOS pagan >$35,000 · sin empates ni sorpresas absurdas.** `scripts/verificar_portafolio.py` → **TODO PASS**.
 
-| Nivel | Boletos | Picks | Pago | Prob |
-|---|---|---|---|---|
-| ✅ Seguras | 44 | 2-3 | $6–$11 | 38-70% |
-| ⚡ Medias | 15 | 4-6 | $10–$15 | 26-33% |
-| 🔥 Grandes | 15 | 7-10 | $80–$166 | 1.2-3.3% |
+| Nivel | Boletos | Pago | Probabilidad |
+|---|---|---|---|
+| 🌙 Soñador | 44 | $35,028–$37,367 | ~1 entre 16-18 mil |
+| 🚀 Súper | 15 | $38,064–$40,303 | ~1 entre 18-19 mil |
+| 🎰 Lotería máxima | 15 | $45,085–$48,140 | ~1 entre 23-25 mil |
 
-**La verdad sobre los pagos (honestidad brutal):** con puros favoritos el máximo es **~33x = $166** (las 10 juntas, ~1.2%); tus 9 sin México = **$119** (~1.8%). **NO se llega a $35,000** — eso solo salía metiendo empates/sorpresas irreales (como Alemania-Curazao empate), que quitamos por petición tuya. Lo más probable es cobrar las combinadas chicas de 2-3 fuertes. 12 de los picks tienen momio 1X2 REAL; el resto `EST · PENDIENTE-CAPTURA`.
+Cada boleto = 16 partidos de J1 a ganador (1X2), TODOS deben acertar. Para llegar a $35,000 se incluyen los partidos CERRADOS (favoritos que pagan 1.7-2.5: Turquía, Suecia, Corea, Bélgica, USA…); los favoritos fuertísimos (Alemania 1.03, España 1.09) casi no suben el multiplicador. **NO hay empates ni underdogs absurdos** — solo el favorito de cada partido a ganar. **P(que CUALQUIERA de los 74 pegue): ~0.39% ≈ 1 entre 257.** Hay 2,512 combinaciones posibles; se eligieron 74 distintas (una por intento). 12 partidos con momio 1X2 REAL; resto `EST · PENDIENTE-CAPTURA`.
 
 ## 3. Las 5 mejores apuestas de VALOR detectadas
 (edge = prob_real × momio − 1; prob_real = mezcla modelo+mercado, ver `data/probabilidades_mc.json`)
