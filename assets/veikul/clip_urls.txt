@@ -17,3 +17,4 @@ clip_05_notext|https://d8j0ntlcm91z4.cloudfront.net/user_305VYfOaSwvwZngGo33rwd2
 clip_10_text|https://d8j0ntlcm91z4.cloudfront.net/user_305VYfOaSwvwZngGo33rwd2fsM6/hf_20260705_053840_7749db40-58a1-4490-9da8-7088bc7a6ac0.mp4
 clip_10_notext|https://d8j0ntlcm91z4.cloudfront.net/user_305VYfOaSwvwZngGo33rwd2fsM6/hf_20260705_053910_899d0013-d50f-47ec-8709-f4b8c7342414.mp4
 clip_06_v2|https://d8j0ntlcm91z4.cloudfront.net/user_305VYfOaSwvwZngGo33rwd2fsM6/hf_20260705_054103_6e6daf65-076c-4dfb-9b45-5bcbad73fa00.mp4
+endcard_badges|https://d8j0ntlcm91z4.cloudfront.net/user_305VYfOaSwvwZngGo33rwd2fsM6/hf_20260705_040953_b3a1566f-6cd5-435f-9a26-4dbed479a8e9.png
