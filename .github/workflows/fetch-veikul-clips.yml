@@ -1,0 +1,33 @@
+name: Fetch Veikul clips
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Download clips from URL list
+        run: |
+          mkdir -p assets/veikul/clips
+          while IFS='|' read -r name url; do
+            [ -z "$name" ] && continue
+            echo "Downloading $name"
+            curl -fsSL --retry 3 -o "assets/veikul/clips/${name}.mp4" "$url"
+          done < assets/veikul/clip_urls.txt
+          ls -la assets/veikul/clips
+
+      - name: Commit clips
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/veikul/clips
+          git commit -m "Add downloaded Veikul ad clips"
+          git push
