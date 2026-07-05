@@ -2,6 +2,9 @@ name: Fetch Veikul clips
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - claude/higgsfield-mcp-sequence-animation-wsfztw
 
 permissions:
   contents: write
@@ -19,6 +22,10 @@ jobs:
           mkdir -p assets/veikul/clips
           while IFS='|' read -r name url; do
             [ -z "$name" ] && continue
+            if [ -s "assets/veikul/clips/${name}.mp4" ]; then
+              echo "$name already present, skipping"
+              continue
+            fi
             echo "Downloading $name"
             curl -fsSL --retry 3 -o "assets/veikul/clips/${name}.mp4" "$url"
           done < assets/veikul/clip_urls.txt
@@ -29,5 +36,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/veikul/clips
+          git diff --cached --quiet && echo "Nothing new to commit" && exit 0
           git commit -m "Add downloaded Veikul ad clips"
           git push
