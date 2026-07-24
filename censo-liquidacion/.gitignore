@@ -1,4 +1,7 @@
 *.xlsx
 *.csv
 *.log
+*.png
+capturas/
+ct_storage_state.json
 __pycache__/
