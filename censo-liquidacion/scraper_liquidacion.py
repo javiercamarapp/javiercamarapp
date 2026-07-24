@@ -575,10 +575,15 @@ class ComputrabajoScraper:
             try:
                 cards = self.search_keyword(keyword)
                 log.info("  %d vacantes listadas para '%s'", len(cards), keyword)
-                for card in cards:
+                for i, card in enumerate(cards, 1):
                     if card["job_url"] in checkpoint.seen_urls:
+                        log.info("  [%d/%d] ya descargada, saltando: %s",
+                                 i, len(cards), card["titulo"][:50])
                         continue
                     try:
+                        log.info("  [%d/%d] visitando: %s — %s",
+                                 i, len(cards), card["titulo"][:50],
+                                 card["empresa"][:40] or "(sin empresa)")
                         detail = self.fetch_detail(card)
                         detail["busqueda_keyword"] = keyword
                         detail["busqueda_plaza"] = "Computrabajo (nacional)"
@@ -588,6 +593,8 @@ class ComputrabajoScraper:
                         if c["clasificacion"] == "SEÑAL":
                             detail["screenshot"] = self.screenshot(
                                 detail["company"], detail["title"])
+                            log.info("      SEÑAL ✓ captura guardada (%s)",
+                                     detail["company"][:40])
                         rows.append(detail)
                         checkpoint.add(detail)
                     except CaptchaError:
