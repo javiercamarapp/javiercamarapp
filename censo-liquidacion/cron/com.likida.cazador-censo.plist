@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- El cron del Cazador de censo (C1, Fase 2 del blueprint) — LOCAL a
+       propósito, no GitHub Actions: Computrabajo/Indeed traen Cloudflare y
+       captcha que a veces exigen rescate HEADFUL humano, y las cookies de
+       sesión (ct_storage_state.json) viven en esta máquina. Un cron en la
+       nube fallaría en silencio contra el muro anti-bot — el modo de falla
+       que Likida no acepta. La corrida incremental (24h, append) es la que
+       el propio README documenta. -->
+  <key>Label</key><string>com.likida.cazador-censo</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>cd ~/javiercamarapp/censo-liquidacion && python3 scraper_liquidacion.py --hours-old 24 --append >> censo_cron.log 2>&1</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+  <!-- Sin RunAtLoad: la primera corrida es a la 7am siguiente, no al activar. -->
+  <key>StandardErrorPath</key><string>/tmp/cazador-censo.err</string>
+</dict>
+</plist>
