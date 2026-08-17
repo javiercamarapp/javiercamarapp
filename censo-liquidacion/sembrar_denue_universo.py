@@ -29,16 +29,23 @@ import urllib.request
 
 from enriquecer_censo import leer_env, normalizar
 
-CSV_DENUE = ("/private/tmp/claude-501/-Users-javiercamaraportepetit/"
-             "7b8203e5-d48d-448a-aa64-6e6a56de65e7/scratchpad/denue/"
-             "conjunto_de_datos/denue_inegi_48-49_.csv")
+BASE_DENUE = ("/private/tmp/claude-501/-Users-javiercamaraportepetit/"
+              "7b8203e5-d48d-448a-aa64-6e6a56de65e7/scratchpad/denue/")
+# El TAM por categoría (orden del 17-ago: "todo mi TAM ahí metido"): cada
+# fuente CSV con sus prefijos SCIAN. Todos filtrados a 31+ personas — el
+# establecimiento chico no tiene flota que liquidar.
+SECTORES = [
+    (BASE_DENUE + "conjunto_de_datos/denue_inegi_48-49_.csv", ("4841", "4842")),   # transportistas
+    (BASE_DENUE + "s43/conjunto_de_datos/denue_inegi_43_.csv", ("4311", "4312")),  # abarrotes/alimentos y bebidas al por mayor
+    (BASE_DENUE + "s3133/conjunto_de_datos/denue_inegi_31-33_.csv", ("3121",)),    # embotelladoras (manufactura de bebidas)
+]
 ESTRATOS = {"31 a 50 personas", "51 a 100 personas", "101 a 250 personas", "251 y más personas"}
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--aplicar", action="store_true")
-    ap.add_argument("--csv", default=CSV_DENUE)
+    ap.add_argument("--csv", default=None, help="un solo CSV (anula SECTORES)")
     args = ap.parse_args()
 
     url, key = leer_env("NEXT_PUBLIC_SUPABASE_URL"), leer_env("SUPABASE_SERVICE_ROLE_KEY")
@@ -54,15 +61,28 @@ def main():
         crudo = urllib.request.urlopen(req, timeout=120).read()
         return json.loads(crudo) if crudo else None
 
-    existentes = api("GET", "prospecto?select=empresa&limit=10000")
+    # PostgREST recorta a 1,000 filas EN SILENCIO (la trampa documentada en
+    # el CLAUDE.md de likida): el dedupe se pagina hasta vaciar, o quedaría
+    # ciego a todo lo que esté después de la primera página.
+    existentes, desde = [], 0
+    while True:
+        pagina = api("GET", f"prospecto?select=empresa&order=id&limit=1000&offset={desde}")
+        existentes.extend(pagina)
+        if len(pagina) < 1000:
+            break
+        desde += 1000
     ya = {normalizar(p["empresa"]) for p in existentes}
     print(f"en la base: {len(existentes)}")
 
+    fuentes = [(args.csv, ("4841", "4842"))] if args.csv else SECTORES
     nuevos, vistos = [], set()
-    for r in csv.DictReader(open(args.csv, encoding="latin-1")):
-        act = r.get("codigo_act", "")
-        if not (act.startswith("4841") or act.startswith("4842")):
-            continue
+    filas_csv = []
+    for ruta, prefijos in fuentes:
+        for r in csv.DictReader(open(ruta, encoding="latin-1")):
+            act = r.get("codigo_act", "")
+            if any(act.startswith(p) for p in prefijos):
+                filas_csv.append(r)
+    for r in filas_csv:
         if r.get("per_ocu", "").strip() not in ESTRATOS:
             continue
         nombre = (r.get("raz_social") or "").strip() or (r.get("nom_estab") or "").strip()
