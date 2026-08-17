@@ -29,7 +29,7 @@ a la DENUE.
    (son datos que la empresa dio para que la ubiquen). AAAG (`cargar_aaag.py`,
    pagina.aaag.org.mx/transportistas) es público y $0. **CANACAR NO es
    gratis** — es el único directorio de pago que salió con veredicto de
-   compra (~$800 USD, pago único; la muestra pública de Scribd de 41 filas
+   compra (~$800 MXN, pago único; la muestra pública de Scribd de 41 filas
    fue la prueba PREVIA a decidir comprarlo). `canacar.xlsx` (export
    estructurado del directorio completo de socios, 17-ago) →
    `sembrar_canacar_directorio.py --aplicar`; sin coordenadas propias, se
