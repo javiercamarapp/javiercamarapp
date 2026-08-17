@@ -24,6 +24,19 @@ a la DENUE.
 4. **Bolsas de trabajo** (`scraper_liquidacion.py`, diario 07:00): la
    DEMANDA — la vacante publicada es la confesión del dolor. Su agregado
    sube solo a la base (`subir_censo.py`, encadenado al cazador).
+5. **Padrones gremiales** (CANACAR, AAAG): directorios de socios de cámaras
+   y asociaciones del propio giro — mejor tasa de contacto que la DENUE
+   (son datos que la empresa dio para que la ubiquen). AAAG (`cargar_aaag.py`,
+   pagina.aaag.org.mx/transportistas) es público y $0. **CANACAR NO es
+   gratis** — es el único directorio de pago que salió con veredicto de
+   compra (~$800 USD, pago único; la muestra pública de Scribd de 41 filas
+   fue la prueba PREVIA a decidir comprarlo). `canacar.xlsx` (export
+   estructurado del directorio completo de socios, 17-ago) →
+   `sembrar_canacar_directorio.py --aplicar`; sin coordenadas propias, se
+   ubican después cruzando cada nombre contra la API DENUE
+   (`geocodificar_canacar.py`, mismo umbral de identidad plena que el punto
+   2). El costo real vive en `adquisicion.ts` (SIN_INTEGRACION, NO
+   COSTO_CERO) — jamás repartirlo como $/lead que nadie midió.
 
 ## Las 5 trampas que YA nos mordieron (no repetir)
 
@@ -38,6 +51,11 @@ a la DENUE.
   SIEMPRE en notas (`DENUE 05/2026: «match» …`).
 - **"Confidencial"/"Reclutamiento X" no son empresas**: filtro antirruido
   en `subir_censo.py`.
+- **Un padrón de socios trae una fila POR SUCURSAL, no por empresa**: CANACAR
+  repitió "Autotransportes de Carga Tresguerras" 158 veces (una por
+  terminal). Se colapsa a UNA fila por nombre normalizado ANTES de sembrar
+  (la más completa: tel+correo > tel > correo > la primera) — sembrar sin
+  colapsar habría metido 158 tareas de venta para la misma cuenta.
 
 ## La cadena viva (quién corre qué)
 
