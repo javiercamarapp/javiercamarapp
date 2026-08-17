@@ -301,7 +301,89 @@
   <div class="wrap">
     <div class="iso-seccion invertida">
       <figure class="iso-figura sangrado-izq revela">
-        <img src="assets/anillo-seguridad.png" alt="Ilustración isométrica de anillos de seguridad alrededor del servidor de Likida" loading="lazy">
+        <svg class="anillo-svg" viewBox="0 0 560 520" role="img" focusable="false" aria-label="El anillo de seguridad de Likida: los CFDI válidos se verifican y cruzan los anillos hacia el núcleo aislado de tu flota; un documento inválido se rechaza en el anillo exterior.">
+  <defs>
+    <g id="anillo-doc-valido">
+      <rect x="-8" y="-10.5" width="16" height="21" rx="2" fill="#fff" stroke="#17100d" stroke-width="1.1"/>
+      <g stroke="#9a9aa1" stroke-width="1" stroke-linecap="round">
+        <line x1="-4.5" y1="-5.5" x2="4.5" y2="-5.5"/>
+        <line x1="-4.5" y1="-2" x2="4.5" y2="-2"/>
+        <line x1="-4.5" y1="1.5" x2="1.5" y2="1.5"/>
+      </g>
+      <path d="M -3.2 6.4 l 2.3 2.3 l 4.1 -4.8" fill="none" stroke="#17100d" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="anillo-doc-invalido">
+      <rect x="-8" y="-10.5" width="16" height="21" rx="2" fill="#fff" stroke="#9a9aa1" stroke-width="1.1"/>
+      <g stroke="#9a9aa1" stroke-width="1" stroke-linecap="round">
+        <line x1="-4.5" y1="-5.5" x2="4.5" y2="-5.5"/>
+        <line x1="-4.5" y1="-2" x2="4.5" y2="-2"/>
+        <line x1="-4.5" y1="1.5" x2="1.5" y2="1.5"/>
+      </g>
+      <path d="M -2.6 4.6 L 2.6 9.4 M 2.6 4.6 L -2.6 9.4" fill="none" stroke="#9a9aa1" stroke-width="1.1" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <!-- Rejilla: líneas radiales punteadas por donde entran los documentos -->
+  <g stroke="#e3e3e7" stroke-width=".75" stroke-dasharray="1 5" stroke-linecap="round">
+    <line x1="442.6" y1="97.4" x2="316.8" y2="223.2"/>
+    <line x1="442.6" y1="422.6" x2="316.8" y2="296.8"/>
+    <line x1="117.4" y1="422.6" x2="243.2" y2="296.8"/>
+    <line x1="117.4" y1="97.4" x2="243.2" y2="223.2"/>
+    <line x1="505" y1="260" x2="332" y2="260"/>
+  </g>
+
+  <!-- Los tres anillos -->
+  <circle cx="280" cy="260" r="172" fill="none" stroke="#17100d" stroke-width="1.1"/>
+  <circle cx="280" cy="260" r="92" fill="none" stroke="#17100d" stroke-width="1.1"/>
+  <g class="anillo-escaner">
+    <circle cx="280" cy="260" r="132" fill="none" stroke="#9a9aa1" stroke-width="1.2" stroke-dasharray="1 6" stroke-linecap="round"/>
+    <circle cx="412" cy="260" r="2.4" fill="#9a9aa1"/>
+    <circle cx="148" cy="260" r="2.4" fill="#9a9aa1"/>
+  </g>
+
+  <!-- Destello donde el documento inválido toca el anillo exterior -->
+  <path class="anillo-flash" d="M 450.3 236.1 A 172 172 0 0 1 450.3 283.9" fill="none" stroke="#9a9aa1" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Pulso que respira desde el centro -->
+  <circle class="anillo-pulso" cx="280" cy="260" r="46" fill="none" stroke="#9a9aa1" stroke-width=".75"/>
+
+  <!-- Documentos válidos (4), cada uno por su línea radial -->
+  <g transform="translate(436,104)">
+    <g class="anillo-doc anillo-doc-1" style="--anillo-dx:-113px; --anillo-dy:113px">
+      <use href="#anillo-doc-valido"/>
+    </g>
+  </g>
+  <g transform="translate(436,416)">
+    <g class="anillo-doc anillo-doc-2" style="--anillo-dx:-113px; --anillo-dy:-113px">
+      <use href="#anillo-doc-valido"/>
+    </g>
+  </g>
+  <g transform="translate(124,416)">
+    <g class="anillo-doc anillo-doc-3" style="--anillo-dx:113px; --anillo-dy:-113px">
+      <use href="#anillo-doc-valido"/>
+    </g>
+  </g>
+  <g transform="translate(124,104)">
+    <g class="anillo-doc anillo-doc-4" style="--anillo-dx:113px; --anillo-dy:113px">
+      <use href="#anillo-doc-valido"/>
+    </g>
+  </g>
+
+  <!-- Documento inválido: rebota en el anillo exterior y se desvanece -->
+  <g transform="translate(510,260)">
+    <g class="anillo-doc-rechazado" style="--anillo-dx:-50px; --anillo-dy:0px">
+      <use href="#anillo-doc-invalido"/>
+    </g>
+  </g>
+
+  <!-- Núcleo: disco tenue + glifo de Likida -->
+  <circle cx="280" cy="260" r="44" fill="#f4f4f2"/>
+  <image href="assets/likida-glifo.png" x="257" y="237" width="46" height="46"/>
+
+  <!-- Etiquetas -->
+  <text class="anillo-etiqueta" x="280" y="44" text-anchor="middle">AISLADO POR FLOTA</text>
+  <text class="anillo-etiqueta" x="280" y="489" text-anchor="middle">CIFRADO EXTREMO A EXTREMO · CFDI VALIDADO CONTRA EL SAT</text>
+</svg>
       </figure>
       <div class="iso-texto revela">
         <span class="kicker kicker-pill">SEGURIDAD</span>
