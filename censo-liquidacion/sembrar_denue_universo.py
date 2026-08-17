@@ -34,12 +34,17 @@ BASE_DENUE = ("/private/tmp/claude-501/-Users-javiercamaraportepetit/"
 # El TAM por categoría (orden del 17-ago: "todo mi TAM ahí metido"): cada
 # fuente CSV con sus prefijos SCIAN. Todos filtrados a 31+ personas — el
 # establecimiento chico no tiene flota que liquidar.
+# Cada sector con SU corte de tamaño (17-ago, ronda 2 — "consigue más"):
+# el transportista de 11-30 personas es una flota real de 5-15 unidades y
+# es EL comprador natural de $35/viaje; el mayorista chico no.
+GRANDES = {"31 a 50 personas", "51 a 100 personas", "101 a 250 personas", "251 y más personas"}
+MEDIANOS = {"11 a 30 personas"} | GRANDES
 SECTORES = [
-    (BASE_DENUE + "conjunto_de_datos/denue_inegi_48-49_.csv", ("4841", "4842")),   # transportistas
-    (BASE_DENUE + "s43/conjunto_de_datos/denue_inegi_43_.csv", ("4311", "4312")),  # abarrotes/alimentos y bebidas al por mayor
-    (BASE_DENUE + "s3133/conjunto_de_datos/denue_inegi_31-33_.csv", ("3121",)),    # embotelladoras (manufactura de bebidas)
+    (BASE_DENUE + "conjunto_de_datos/denue_inegi_48-49_.csv", ("4841", "4842"), MEDIANOS),  # transportistas de carga
+    (BASE_DENUE + "conjunto_de_datos/denue_inegi_48-49_.csv", ("4921",), MEDIANOS),         # mensajería y paquetería
+    (BASE_DENUE + "s43/conjunto_de_datos/denue_inegi_43_.csv", ("4311", "4312"), GRANDES),  # abarrotes/alimentos y bebidas mayoreo
+    (BASE_DENUE + "s3133/conjunto_de_datos/denue_inegi_31-33_.csv", ("3121",), GRANDES),    # embotelladoras
 ]
-ESTRATOS = {"31 a 50 personas", "51 a 100 personas", "101 a 250 personas", "251 y más personas"}
 
 
 def main():
@@ -74,17 +79,15 @@ def main():
     ya = {normalizar(p["empresa"]) for p in existentes}
     print(f"en la base: {len(existentes)}")
 
-    fuentes = [(args.csv, ("4841", "4842"))] if args.csv else SECTORES
+    fuentes = [(args.csv, ("4841", "4842"), MEDIANOS)] if args.csv else SECTORES
     nuevos, vistos = [], set()
     filas_csv = []
-    for ruta, prefijos in fuentes:
+    for ruta, prefijos, estratos in fuentes:
         for r in csv.DictReader(open(ruta, encoding="latin-1")):
             act = r.get("codigo_act", "")
-            if any(act.startswith(p) for p in prefijos):
+            if any(act.startswith(p) for p in prefijos) and r.get("per_ocu", "").strip() in estratos:
                 filas_csv.append(r)
     for r in filas_csv:
-        if r.get("per_ocu", "").strip() not in ESTRATOS:
-            continue
         nombre = (r.get("raz_social") or "").strip() or (r.get("nom_estab") or "").strip()
         norm = normalizar(nombre)
         if not norm or norm in ya or norm in vistos:
