@@ -11,7 +11,7 @@
 //    Se saca en calendar.google.com → Crear → Horario de citas → Compartir →
 //    Insertar en sitio web. Mientras esté vacío, el paso 3 enseña el aviso
 //    de configuración en lugar de un calendario roto.
-const GOOGLE_CALENDAR_EMBED = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EWeVL0Abbhu4Lc12CtxYfQRc5hQ0_a5F6_fK52YQ9VoTafgXy8XqCa4Sl66Lv4lusm86YObD8?gv=true"; // "Demo Likida — con tus tickets" (Google Meet, 30 min) — creado 17-ago-2026
+const GOOGLE_CALENDAR_EMBED = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ333HTPKJeadElsRvd1C-nzE65gUjn8vnZEYja5CFZiB3p-Hfcr6cUySapAJiTx_GfzjRE8s-5i?gv=true"; // "Demo Likida — con tus tickets" bajo ventas@likida.ai (Google Meet, 30 min) — 17-ago-2026
 
 // ── 1) Header expandible ────────────────────────────────────────────────────
 const header = document.querySelector(".header");

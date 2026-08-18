@@ -741,3 +741,22 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .producto-marco-inner img { transform: scale(1); transition: transform 1.2s cubic-bezier(.22,1,.36,1); }
 .producto-marco:hover .producto-marco-inner img { transform: scale(1.025); }
 @media (prefers-reduced-motion: reduce) { .producto-marco-inner img { transition: none; } }
+
+/* ── Efecto agua: un brillo recorre el marco del hero en loop; al hover, lento y elegante ── */
+.producto-marco-inner { position: relative; }
+.producto-marco-inner::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.22) 50%, transparent 60%);
+  background-size: 260% 100%; background-position: 145% 0;
+  animation: agua-brillo 8s cubic-bezier(.45,.05,.35,.95) infinite;
+}
+@keyframes agua-brillo {
+  0% { background-position: 145% 0; }
+  46% { background-position: -45% 0; }
+  100% { background-position: -45% 0; }
+}
+.producto-marco:hover .producto-marco-inner::after {
+  animation-duration: 14s;
+  background-image: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.3) 50%, transparent 62%);
+}
+@media (prefers-reduced-motion: reduce) { .producto-marco-inner::after { animation: none; opacity: 0; } }
