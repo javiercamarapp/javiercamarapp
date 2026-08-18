@@ -1081,66 +1081,6 @@ html[data-i18n-velo] body { visibility: hidden; }
   .contacto-h1 { font-size: clamp(30px, 8.2vw, 40px); }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   CIERRE — la galaxia que cuaja en el logo (después del pie).
-   La sección mide 220vh y el lienzo va pegado arriba: ese sobrante de 120vh es
-   la pista por la que corre la animación. El JS (js/galaxia.js) lee la posición
-   de la sección y con eso mueve el progreso; aquí solo va la caja.
-   El fondo es --papel, un tono más frío que el blanco del pie: separa las dos
-   zonas sin necesidad de una línea gruesa.
-   ═══════════════════════════════════════════════════════════════════════════ */
-.galaxia-cierre {
-  position: relative;
-  height: 220vh;
-  background: var(--papel);
-  border-top: 1px solid var(--linea-footer);
-  overflow: clip;              /* nada de scroll horizontal si la nube se sale */
-  contain: paint;
-}
-.galaxia-marco {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-  overflow: hidden;
-}
-.galaxia-lienzo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  pointer-events: none;        /* el lienzo nunca se come el scroll ni el táctil */
-  touch-action: pan-y;
-}
-.galaxia-firma {
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 7vh;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .3em;
-  text-indent: .3em;           /* compensa el tracking del último carácter */
-  color: var(--gris);
-  opacity: 0;                  /* el JS la sube al final del recorrido */
-  pointer-events: none;
-  user-select: none;
-}
-
-@media (max-width: 760px) {
-  .galaxia-cierre { height: 170vh; }
-  .galaxia-firma { bottom: 9vh; font-size: 11px; }
-}
-
-/* Sin movimiento: no hay pista que recorrer ni bucle que correr — el JS pinta
-   el logo ya cuajado una sola vez y la sección se queda en una pantalla. */
-@media (prefers-reduced-motion: reduce) {
-  .galaxia-cierre { height: 100vh; height: 100svh; }
-  .galaxia-firma { opacity: 1; }
-}
-
 /* ── Al expandirse el encabezado, la palabra se retira y queda el ícono ──
    Igual que usehandle.ai: arriba se lee la marca completa; al scrollear, la
    píldora se vuelve barra y basta el glifo. El ancho se anima (no solo la
