@@ -750,3 +750,32 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
   touch-action: pan-y;
 }
 .producto-marco-inner noscript img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ── Selector de idioma ES/EN (header, junto al CTA) ──
+   El activo se pinta desde html[lang] — así nunca parpadea al recargar. */
+.header-acciones { display: flex; align-items: center; gap: 14px; }
+.idioma {
+  display: flex; align-items: center; gap: 5px;
+  font-family: var(--sans); font-size: 13px; letter-spacing: .06em; line-height: 1;
+  white-space: nowrap;
+}
+.idioma-op {
+  font: inherit; letter-spacing: inherit; font-weight: 400; color: var(--gris);
+  background: none; border: 0; padding: 3px 2px; margin: 0; cursor: pointer;
+  border-radius: 4px; transition: color .18s ease;
+  -webkit-appearance: none; appearance: none;
+}
+.idioma-op:hover { color: var(--tinta); }
+.idioma-op:focus-visible { outline: 2px solid var(--tinta); outline-offset: 2px; }
+.idioma-sep { color: var(--gris); opacity: .45; font-size: 12px; user-select: none; }
+html[lang="es"] .idioma-op[data-idioma="es"],
+html[lang="en"] .idioma-op[data-idioma="en"] { color: var(--tinta); font-weight: 600; cursor: default; }
+
+/* Velo anti-parpadeo mientras se aplica el idioma guardado (solo si no es el default) */
+html[data-i18n-velo] body { visibility: hidden; }
+
+@media (max-width: 480px) {
+  .header-acciones { gap: 10px; }
+  .idioma { font-size: 12px; }
+}

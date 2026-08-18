@@ -244,6 +244,9 @@ if (anio) anio.textContent = new Date().getFullYear();
   const pasos = document.querySelectorAll(".stepper .paso-flujo");
   if (!pasos.length) return;
   let i = 2; // arranca donde estaba el estado estático
+  // Las etiquetas de estado las escribe el JS, así que se traducen aquí
+  // (i18n.js ya está cargado en el <head>; el fallback deja el español).
+  const rotulo = (clave, es) => (window.I18N ? window.I18N.t(clave) : es) || es;
   const pinta = () => {
     pasos.forEach((p, j) => {
       const punto = p.querySelector(".punto");
@@ -253,11 +256,14 @@ if (anio) anio.textContent = new Date().getFullYear();
       if (punto) punto.className = "punto " + (j < i ? "" : j === i ? "progreso" : "pendiente");
       if (estado) {
         estado.className = "estado " + (j < i ? "hecho" : j === i ? "progreso" : "");
-        estado.textContent = j < i ? "Hecho" : j === i ? "En curso" : "Pendiente";
+        estado.textContent = j < i ? rotulo("step.hecho", "Hecho")
+          : j === i ? rotulo("step.curso", "En curso")
+          : rotulo("step.pendiente", "Pendiente");
       }
     });
   };
   pinta();
+  document.addEventListener("i18n:cambio", pinta);
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     setInterval(() => { i = (i + 1) % pasos.length; pinta(); }, 2400);
   }

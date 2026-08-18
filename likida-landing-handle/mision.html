@@ -3,31 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Misión — Likida</title>
-<meta name="description" content="Por qué existe Likida: el back-office del autotransporte de carga mexicano, automatizado agente por agente.">
+<title data-i18n="mis.title">Misión — Likida</title>
+<meta name="description" data-i18n-attr="content:mis.desc" content="Por qué existe Likida: el back-office del autotransporte de carga mexicano, automatizado agente por agente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-64.png">
-<link rel="stylesheet" href="css/main.css?v=9">
+<link rel="stylesheet" href="css/main.css?v=10">
+<script src="js/i18n.js?v=10"></script>
 </head>
 <body>
 
 <header class="header" id="header">
   <div class="header-inner">
-    <a class="logo" href="index.html" aria-label="Likida — inicio">
+    <a class="logo" href="index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
       <img src="assets/likida-logo.png" alt="Likida" style="height:22px;width:auto">
     </a>
     <nav class="nav">
-      <a href="index.html#producto">Producto</a>
-      <a href="index.html#ciclo">El ciclo</a>
-      <a href="index.html#seguridad">Seguridad</a>
-      <a href="mision.html" style="color:var(--tinta)">Misión</a>
-      <a href="index.html#faq">Preguntas</a>
+      <a href="index.html#producto" data-i18n="nav.producto">Producto</a>
+      <a href="index.html#ciclo" data-i18n="nav.ciclo">El ciclo</a>
+      <a href="index.html#seguridad" data-i18n="nav.seguridad">Seguridad</a>
+      <a href="mision.html" style="color:var(--tinta)" data-i18n="nav.mision">Misión</a>
+      <a href="index.html#faq" data-i18n="nav.faq">Preguntas</a>
     </nav>
-    <a class="btn btn-tinta" href="index.html#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span>Agenda una demo</a>
+    <div class="header-acciones">
+      <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
+        <button type="button" class="idioma-op" data-idioma="en" data-i18n-attr="aria-label:idioma.en" aria-label="Cambiar a inglés">EN</button>
+        <span class="idioma-sep" aria-hidden="true">/</span>
+        <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
+      </div>
+      <a class="btn btn-tinta" href="index.html#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    </div>
   </div>
 </header>
 
@@ -52,8 +60,8 @@
     <rect x="1152" y="72" width="30" height="66" fill="#6b7280" opacity=".55"/>
   </svg>
   <div class="wrap">
-    <span class="kicker kicker-pill">MISIÓN</span>
-    <h1 style="margin-top:26px">Likida, el último <span class="gris-suave">back-office.</span></h1>
+    <span class="kicker kicker-pill" data-i18n="mis.kicker">MISIÓN</span>
+    <h1 style="margin-top:26px" data-i18n="mis.h1">Likida, el último <span class="gris-suave">back-office.</span></h1>
   </div>
 </section>
 
@@ -61,47 +69,47 @@
   <div class="wrap">
     <div class="mision-cuerpo">
 
-      <h2 class="revela">El transportista mexicano no tiene un problema de gastos. Tiene un problema de que el comprobante viaja más lento que el camión.</h2>
+      <h2 class="revela" data-i18n="mis.h2.1">El transportista mexicano no tiene un problema de gastos. Tiene un problema de que el comprobante viaja más lento que el camión.</h2>
 
-      <p class="revela">Cada flota de carga en México termina su día con el mismo ritual: se despacha el viaje por teléfono, se persigue al operador, se teclean sus tickets de diésel, casetas y viáticos, se cuadran contra el anticipo, y alguien entra a los portales a bajar los CFDI que faltan. No lo hace una persona: lo tocan <strong>cinco</strong> — tráfico, liquidaciones, facturación, contable y la capa de mando que los supervisa.</p>
+      <p class="revela" data-i18n="mis.p.1">Cada flota de carga en México termina su día con el mismo ritual: se despacha el viaje por teléfono, se persigue al operador, se teclean sus tickets de diésel, casetas y viáticos, se cuadran contra el anticipo, y alguien entra a los portales a bajar los CFDI que faltan. No lo hace una persona: lo tocan <strong>cinco</strong> — tráfico, liquidaciones, facturación, contable y la capa de mando que los supervisa.</p>
 
-      <p class="revela">Y el país donde eso pasa es enorme: <strong>55,506 empresas</strong> de autotransporte con más de 5 unidades operan en México <span class="gris-suave">(Estadística Básica del Autotransporte Federal, DGAF-SICT)</span>. El combustible representa entre <strong>30% y 50%</strong> de su costo operativo <span class="gris-suave">(CANACAR vía Expansión; Total Protect vía T21 — no hay cifra oficial única, por eso citamos el rango)</span>. Y les faltan entre <strong>80,000 y 99,000 operadores</strong>, con decenas de miles de camiones parados por falta de chofer <span class="gris-suave">(CANACAR/IRU)</span>.</p>
+      <p class="revela" data-i18n="mis.p.2">Y el país donde eso pasa es enorme: <strong>55,506 empresas</strong> de autotransporte con más de 5 unidades operan en México <span class="gris-suave">(Estadística Básica del Autotransporte Federal, DGAF-SICT)</span>. El combustible representa entre <strong>30% y 50%</strong> de su costo operativo <span class="gris-suave">(CANACAR vía Expansión; Total Protect vía T21 — no hay cifra oficial única, por eso citamos el rango)</span>. Y les faltan entre <strong>80,000 y 99,000 operadores</strong>, con decenas de miles de camiones parados por falta de chofer <span class="gris-suave">(CANACAR/IRU)</span>.</p>
 
-      <h2 class="revela">El transporte es un negocio de documentos con un camión encima.</h2>
+      <h2 class="revela" data-i18n="mis.h2.2">El transporte es un negocio de documentos con un camión encima.</h2>
 
-      <p class="revela">Cada viaje genera su rastro de papel: la carta porte, los tickets de diésel, los cruces de caseta, los viáticos, el POD. Liquidar ese rastro a mano cuesta hoy alrededor de <strong>$105 pesos por viaje</strong> <span class="gris-suave">(banda $94–$115 según el tamaño de la flota; censo propio sobre 1,318 vacantes verificadas de 829 empresas de transporte)</span> — y el renglón más pesado es teclear comprobantes: minutos por ticket, tickets por viaje, viajes por día.</p>
+      <p class="revela" data-i18n="mis.p.3">Cada viaje genera su rastro de papel: la carta porte, los tickets de diésel, los cruces de caseta, los viáticos, el POD. Liquidar ese rastro a mano cuesta hoy alrededor de <strong>$105 pesos por viaje</strong> <span class="gris-suave">(banda $94–$115 según el tamaño de la flota; censo propio sobre 1,318 vacantes verificadas de 829 empresas de transporte)</span> — y el renglón más pesado es teclear comprobantes: minutos por ticket, tickets por viaje, viajes por día.</p>
 
-      <p class="revela">Lo fiscal lo vuelve peor a propósito: la cuota de IEPS acreditable del diésel <strong>varió 3.5 veces en 2026</strong> <span class="gris-suave">(de $7.36 a $2.09 por litro — DOF, LIF art. 20-A)</span> y se publica cada semana. El estímulo del 50% de peaje exige una bitácora conciliada que casi nadie lleva. El comprobante que no se factura a tiempo pierde su deducibilidad completa. Cada uno de esos huecos es dinero que la flota ya se ganó y no cobra.</p>
+      <p class="revela" data-i18n="mis.p.4">Lo fiscal lo vuelve peor a propósito: la cuota de IEPS acreditable del diésel <strong>varió 3.5 veces en 2026</strong> <span class="gris-suave">(de $7.36 a $2.09 por litro — DOF, LIF art. 20-A)</span> y se publica cada semana. El estímulo del 50% de peaje exige una bitácora conciliada que casi nadie lleva. El comprobante que no se factura a tiempo pierde su deducibilidad completa. Cada uno de esos huecos es dinero que la flota ya se ganó y no cobra.</p>
 
-      <h2 class="revela">Por qué nadie lo ha resuelto</h2>
+      <h2 class="revela" data-i18n="mis.h2.3">Por qué nadie lo ha resuelto</h2>
 
-      <p class="revela">Porque el software le pidió al transportista que cambiara: que sus choferes bajaran una app, que su contador migrara de sistema, que la operación se detuviera a implementar. El chofer no baja apps. El contador no suelta su ERP. Y la operación no se detiene nunca.</p>
+      <p class="revela" data-i18n="mis.p.5">Porque el software le pidió al transportista que cambiara: que sus choferes bajaran una app, que su contador migrara de sistema, que la operación se detuviera a implementar. El chofer no baja apps. El contador no suelta su ERP. Y la operación no se detiene nunca.</p>
 
-      <p class="revela">Likida partió de la regla contraria: <strong>conectarse a lo que ya existe</strong>. El operador usa el WhatsApp que ya tiene. El contador recibe el archivo que su SAP Business One o CONTPAQi ya sabe importar. Nadie aprende nada nuevo — el sistema aprende la operación.</p>
+      <p class="revela" data-i18n="mis.p.6">Likida partió de la regla contraria: <strong>conectarse a lo que ya existe</strong>. El operador usa el WhatsApp que ya tiene. El contador recibe el archivo que su SAP Business One o CONTPAQi ya sabe importar. Nadie aprende nada nuevo — el sistema aprende la operación.</p>
 
-      <h2 class="revela">Del registro a los agentes</h2>
+      <h2 class="revela" data-i18n="mis.h2.4">Del registro a los agentes</h2>
 
       <div class="mision-etapas revela">
-        <div class="etapa"><h3>Uno. El registro.</h3><p>Cada comprobante, viaje y cruce de caseta vive en un solo lugar, validado contra el SAT — vigente, receptor correcto, emisor fuera del 69-B.</p></div>
-        <div class="etapa"><h3>Dos. El cuadre.</h3><p>Un motor determinístico — no un modelo de lenguaje — cuadra cada viaje contra el anticipo y tu política de gastos. La IA lee y conversa; el motor calcula. Nunca al revés.</p></div>
-        <div class="etapa"><h3>Tres. Los agentes.</h3><p>Despacho, cobranza de comprobantes, recuperación de CFDI, conciliación de peajes: cada tarea del ciclo la ejecuta un agente que dice qué entrega y cuándo.</p></div>
-        <div class="etapa"><h3>Cuatro. El ciclo completo.</h3><p>Del ticket en la cabina al PDF firmado y al asiento en tu ERP — sin que nadie capture, persiga ni retecle en el camino.</p></div>
+        <div class="etapa"><h3 data-i18n="mis.e.1.h">Uno. El registro.</h3><p data-i18n="mis.e.1.p">Cada comprobante, viaje y cruce de caseta vive en un solo lugar, validado contra el SAT — vigente, receptor correcto, emisor fuera del 69-B.</p></div>
+        <div class="etapa"><h3 data-i18n="mis.e.2.h">Dos. El cuadre.</h3><p data-i18n="mis.e.2.p">Un motor determinístico — no un modelo de lenguaje — cuadra cada viaje contra el anticipo y tu política de gastos. La IA lee y conversa; el motor calcula. Nunca al revés.</p></div>
+        <div class="etapa"><h3 data-i18n="mis.e.3.h">Tres. Los agentes.</h3><p data-i18n="mis.e.3.p">Despacho, cobranza de comprobantes, recuperación de CFDI, conciliación de peajes: cada tarea del ciclo la ejecuta un agente que dice qué entrega y cuándo.</p></div>
+        <div class="etapa"><h3 data-i18n="mis.e.4.h">Cuatro. El ciclo completo.</h3><p data-i18n="mis.e.4.p">Del ticket en la cabina al PDF firmado y al asiento en tu ERP — sin que nadie capture, persiga ni retecle en el camino.</p></div>
       </div>
 
-      <h2 class="revela">A lo que le estamos tirando</h2>
+      <h2 class="revela" data-i18n="mis.h2.5">A lo que le estamos tirando</h2>
 
-      <div class="mision-cita revela">Ser el sistema operativo del back-office del autotransporte de carga mexicano — empezando por la liquidación de viajes y expandiendo agente por agente.</div>
+      <div class="mision-cita revela" data-i18n="mis.cita">Ser el sistema operativo del back-office del autotransporte de carga mexicano — empezando por la liquidación de viajes y expandiendo agente por agente.</div>
 
-      <p class="revela">Los siguientes agentes no se inventaron en una sala de juntas: los pidió en voz alta una flota real, en una llamada real. Así se decide qué construir — escuchando a quien opera, no adivinando desde el escritorio.</p>
+      <p class="revela" data-i18n="mis.p.7">Los siguientes agentes no se inventaron en una sala de juntas: los pidió en voz alta una flota real, en una llamada real. Así se decide qué construir — escuchando a quien opera, no adivinando desde el escritorio.</p>
 
-      <h2 class="revela">Quién lo construye</h2>
+      <h2 class="revela" data-i18n="mis.h2.6">Quién lo construye</h2>
 
-      <p class="revela">Javier Cámara — Contador Público que construye orquestando flotas de agentes de IA. Likida existe porque su fundador puede leer la RMF, la LIF y el CFF en fuente primaria y convertirlas en software determinístico que un contralor puede defender en una revisión.</p>
+      <p class="revela" data-i18n="mis.p.8">Javier Cámara — Contador Público que construye orquestando flotas de agentes de IA. Likida existe porque su fundador puede leer la RMF, la LIF y el CFF en fuente primaria y convertirlas en software determinístico que un contralor puede defender en una revisión.</p>
 
-      <p class="revela gris-suave" style="font-size:15px;border-top:1px solid var(--linea);padding-top:22px;margin-top:44px">Una nota de honestidad: Likida está construyendo sus primeras flotas piloto, y esta página lo dice cada vez que importa. No vas a encontrar aquí logos de clientes que no existen ni proyecciones a cinco años — vas a encontrar un producto que puedes ver corriendo con tus propios tickets, hoy.</p>
+      <p class="revela gris-suave" style="font-size:15px;border-top:1px solid var(--linea);padding-top:22px;margin-top:44px" data-i18n="mis.p.9">Una nota de honestidad: Likida está construyendo sus primeras flotas piloto, y esta página lo dice cada vez que importa. No vas a encontrar aquí logos de clientes que no existen ni proyecciones a cinco años — vas a encontrar un producto que puedes ver corriendo con tus propios tickets, hoy.</p>
 
       <div class="revela" style="margin-top:44px">
-        <a class="btn btn-acento" href="index.html#demo" style="font-size:16.5px;padding:15px 32px">Agenda una demo con tus tickets</a>
+        <a class="btn btn-acento" href="index.html#demo" style="font-size:16.5px;padding:15px 32px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
       </div>
 
     </div>
@@ -111,7 +119,7 @@
 <footer class="footer">
   <div class="wrap" style="padding:0">
     <div class="footer-legal" style="border-top:none">
-      <span>© <span id="anio"></span> Likida. Ninguna cifra de esta página se inventó — cada una tiene su fuente.</span>
+      <span>© <span id="anio"></span> <span data-i18n="foot.legal">Likida. Ninguna cifra de esta página se inventó — cada una tiene su fuente.</span></span>
       <div class="footer-chips">
         <span>CFDI 4.0</span><span>SAT 69-B</span><span>LIF 20-A</span><span>Multi-tenant</span><span>AES-256</span>
       </div>
@@ -119,6 +127,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=9"></script>
+<script src="js/main.js?v=10"></script>
 </body>
 </html>
