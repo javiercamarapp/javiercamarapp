@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  PLANTILLA DE ARTÍCULO — Blog de Likida
+  ─────────────────────────────────────────────────────────────────────────────
+  CÓMO SE USA
+  1. Copia este archivo a  blog/<slug>.html  (el slug que te asignaron).
+  2. Reemplaza los 13 marcadores {{ASÍ}}. No queda ninguno sin reemplazar.
+  3. Escribe el artículo entre las marcas ▼ CUERPO ▼ y ▲ FIN DEL CUERPO ▲,
+     borrando el contenido de muestra que viene de ejemplo.
+  4. Borra la línea marcada «BORRAR AL PUBLICAR» (el meta robots noindex).
+  5. Da de alta la tarjeta en blog/index.html si no está ya.
+  6. No toques el header ni el footer: son los del sitio, idénticos.
+
+  LOS 13 MARCADORES
+    {{TITULO_SEO}}     Título de pestaña y de redes. ≤ 60 caracteres. Lleva
+                       la clave objetivo y termina en « | Likida».
+    {{DESCRIPCION}}    Meta description. 140–155 caracteres, una promesa
+                       concreta, con la clave objetivo dentro.
+    {{SLUG}}           Nombre del archivo SIN «.html» (va en canonical y og:url).
+    {{CLAVE_OBJETIVO}} La frase clave del artículo, tal cual te la asignaron.
+    {{CATEGORIA}}      Una sola: Industria · Fiscal · Cumplimiento · Perspectiva.
+    {{FECHA_ISO}}      AAAA-MM-DD (atributos datetime y JSON-LD).
+    {{FECHA_TEXTO}}    «Mes Año» — sin día. Ej.: Agosto 2026.
+    {{MINUTOS}}        Entero. Palabras del artículo ÷ 200, redondeado.
+    {{IMAGEN}}         Archivo de portada dentro de assets/blog/ (con extensión).
+                       Aparece literal en el JSON-LD; en la <figure> de la
+                       portada viene cargado «portada-generica.svg» para que la
+                       plantilla abra sin errores — cámbialo también ahí.
+    {{IMAGEN_ALT}}     Qué se ve en la portada. Descriptivo, sin la clave metida
+                       a fuerza.
+    {{TITULO}}         El titular del artículo, EXACTO como te lo asignaron.
+    {{ENTRADILLA}}     1–2 frases. Amplía el titular, no lo repite.
+    {{PREGUNTA_CIERRE}} Una sola pregunta, en los términos operativos del lector.
+
+  REGLAS DE CONTENIDO (no negociables)
+  · Likida no tiene clientes: cero logos, testimonios, casos de éxito o premios.
+  · Cero cifras sin fuente citable (DOF, SAT, LIF, INEGI/DENUE, CANACAR, ANPACT).
+    Sin fuente, se escribe el argumento sin número.
+  · Cifras propias que SÍ se pueden usar, citadas como «censo propio de Likida»:
+    ~$105 MXN por viaje liquidado a mano (banda $94–$115); 5 puestos tocan el
+    ciclo; 1,318 vacantes verificadas de 829 empresas de transporte.
+  · Ortografía fiscal: CFDI, SAT, IEPS, LIF art. 20-A, lista 69-B, Carta Porte,
+    RFC, CANACAR, CAPUFE.
+  · Toda norma citada va en una caja .blog-fundamento con su fuente completa.
+  · Una sola imagen por artículo: la portada. Nada intercalado salvo que el
+    argumento lo exija.
+  · Un solo CTA, al final. Nunca a media lectura.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><!-- BORRAR AL PUBLICAR -->
+<title>{{TITULO_SEO}}</title>
+<meta name="description" content="{{DESCRIPCION}}">
+<link rel="canonical" href="https://likida.ai/blog/{{SLUG}}.html">
+<meta name="theme-color" content="#fbfbfd">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Likida">
+<meta property="og:url" content="https://likida.ai/blog/{{SLUG}}.html">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="{{TITULO_SEO}}">
+<meta property="og:description" content="{{DESCRIPCION}}">
+<!-- La imagen social es el OG del sitio a propósito: las portadas del blog son
+     WebP de 1600×900 y la tarjeta social pide 1200×630 en PNG. -->
+<meta property="og:image" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="{{FECHA_ISO}}">
+<meta property="article:section" content="{{CATEGORIA}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITULO_SEO}}">
+<meta name="twitter:description" content="{{DESCRIPCION}}">
+<meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/favicon-64.png">
+<link rel="stylesheet" href="../css/main.css?v=11">
+<link rel="stylesheet" href="../css/blog.css?v=1">
+<script src="../js/i18n.js?v=11"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://likida.ai/blog/{{SLUG}}.html#articulo",
+      "url": "https://likida.ai/blog/{{SLUG}}.html",
+      "headline": "{{TITULO}}",
+      "description": "{{DESCRIPCION}}",
+      "inLanguage": "es-MX",
+      "datePublished": "{{FECHA_ISO}}",
+      "dateModified": "{{FECHA_ISO}}",
+      "articleSection": "{{CATEGORIA}}",
+      "keywords": "{{CLAVE_OBJETIVO}}",
+      "image": "https://likida.ai/assets/blog/{{IMAGEN}}",
+      "isPartOf": { "@id": "https://likida.ai/blog/#blog" },
+      "author": { "@type": "Organization", "name": "Likida", "url": "https://likida.ai/" },
+      "publisher": { "@id": "https://likida.ai/#organizacion" },
+      "mainEntityOfPage": "https://likida.ai/blog/{{SLUG}}.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://likida.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://likida.ai/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "{{TITULO}}", "item": "https://likida.ai/blog/{{SLUG}}.html" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="blog">
+
+<!-- ── Aviso superior: el mismo del sitio ── -->
+<div class="aviso" data-i18n="aviso">
+  Likida está armando su <strong>grupo cerrado de flotas piloto</strong> este trimestre — cada piloto se adapta a mano y el cupo es limitado.
+</div>
+
+<!-- ── Header idéntico al de la landing. NO EDITAR. ── -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="logo" href="../index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
+      <img src="../assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
+    </a>
+    <nav class="nav">
+      <a href="../index.html#producto" data-i18n="nav.producto">Producto</a>
+      <a href="../index.html#ciclo" data-i18n="nav.ciclo">El ciclo</a>
+      <a href="../index.html#seguridad" data-i18n="nav.seguridad">Seguridad</a>
+      <a href="../mision.html" data-i18n="nav.mision">Misión</a>
+      <a href="index.html" style="color:var(--tinta)" data-i18n="nav.blog">Blog</a>
+      <a href="../index.html#faq" data-i18n="nav.faq">Preguntas</a>
+    </nav>
+    <div class="header-acciones">
+      <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
+        <button type="button" class="idioma-op" data-idioma="en" data-i18n-attr="aria-label:idioma.en" aria-label="Cambiar a inglés">EN</button>
+        <span class="idioma-sep" aria-hidden="true">/</span>
+        <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
+      </div>
+      <a class="btn btn-tinta" href="../index.html#demo"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<article class="blog-articulo">
+  <div class="wrap">
+
+    <!-- ══ Cabecera del artículo (medida 760 px) ══ -->
+    <header class="blog-art-cabecera">
+      <p class="blog-migajon"><a href="index.html">← Blog de Likida</a></p>
+      <div class="blog-art-meta">
+        <span class="blog-etiqueta">{{CATEGORIA}}</span>
+        <span class="blog-etiqueta"><time datetime="{{FECHA_ISO}}">{{FECHA_TEXTO}}</time></span>
+        <span class="blog-etiqueta">{{MINUTOS}} min de lectura</span>
+      </div>
+      <h1>{{TITULO}}</h1>
+      <p class="blog-art-entradilla">{{ENTRADILLA}}</p>
+    </header>
+
+    <!-- ══ Portada (misma medida que la cabecera) ══
+         {{IMAGEN}}: cambia «portada-generica.svg» por el archivo de tu artículo. -->
+    <figure class="blog-art-portada">
+      <img src="../assets/blog/portada-generica.svg" alt="{{IMAGEN_ALT}}" width="1600" height="900" decoding="async">
+    </figure>
+
+    <hr class="blog-filete blog-art-filete">
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         ▼ CUERPO ▼  Borra TODO lo que hay hasta «▲ FIN DEL CUERPO ▲» y
+         escribe aquí. Lo de abajo es el muestrario de bloques disponibles.
+
+         Dos registros posibles, elige uno:
+         (a) Ensayo — 900–1,000 palabras, prosa pura, 4 <h2>, sin listas ni
+             tablas ni citas.
+         (b) Guía — ~1,100 palabras, 6 <h2> + 5 <h3> + 6 listas (~22 viñetas).
+         En los dos: sin tabla de contenido, sin barra lateral, sin cajas de
+         aviso y sin repetir el CTA a media lectura.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="blog-cuerpo">
+
+      <p>
+        Párrafo de arranque. Entra en materia en la primera línea: nada de
+        «en el mundo actual del autotransporte». El cuerpo va en gris y los
+        encabezados en tinta — ese contraste es el que hace que la página se
+        pueda escanear.
+      </p>
+
+      <h2>Un encabezado de sección, en serif</h2>
+      <p>
+        Los <code>&lt;h2&gt;</code> llevan mucho aire encima a propósito: son la
+        estructura que se lee antes que el texto. Dentro del párrafo se puede
+        poner <strong>una idea en negritas</strong> y un
+        <a href="https://www.dof.gob.mx/">enlace a la fuente primaria</a>, que va
+        subrayado fino.
+      </p>
+
+      <h3>Una sub-etiqueta que encabeza una lista</h3>
+      <p>El <code>&lt;h3&gt;</code> no es serif: es sans, 16.5 px, semibold.</p>
+      <ul>
+        <li>Viñeta corta, de una línea o dos.</li>
+        <li>Sin punto final si es un fragmento; con punto si es una oración.</li>
+        <li>Entre tres y cinco por lista.</li>
+      </ul>
+
+      <!-- Caja de fundamento fiscal: la norma citada textual, con su fuente
+           completa. Va donde el argumento la necesita, no de adorno. -->
+      <aside class="blog-fundamento">
+        <span class="blog-fundamento-etiqueta">Fundamento fiscal</span>
+        <p>
+          Aquí va la porción de la norma citada textualmente, entrecomillada y sin
+          recortarle lo que la matiza.
+        </p>
+        <cite>Ordenamiento, artículo y fracción — publicación y fecha (DOF, SAT o LIF).</cite>
+      </aside>
+
+      <p>
+        Después de la caja se explica qué implica la norma en la operación real:
+        qué tiene que existir en el expediente para que eso se sostenga.
+      </p>
+
+      <!-- Cita destacada: una frase del propio artículo, no de un tercero. -->
+      <blockquote class="blog-destacado">
+        <p>Una frase del artículo que resume la tesis en menos de veinte palabras.</p>
+        <cite>Opcional: a quién se le atribuye</cite>
+      </blockquote>
+
+      <!-- Tabla: solo cuando compara cosas del mismo tipo. Las cifras van con
+           class="num" para que queden tabulares y alineadas a la derecha. -->
+      <div class="blog-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Qué se necesita probar</th>
+              <th class="num">Plazo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Renglón A</td>
+              <td>Qué documento lo sostiene.</td>
+              <td class="num">72 h</td>
+            </tr>
+            <tr>
+              <td>Renglón B</td>
+              <td>Qué documento lo sostiene.</td>
+              <td class="num">30 d</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Figura intercalada: solo si el argumento no se entiende sin ella. -->
+      <figure class="blog-figura">
+        <img src="../assets/blog/portada-generica.svg" alt="Qué muestra la figura" width="1600" height="900" loading="lazy" decoding="async">
+        <figcaption>Pie de figura: qué se está viendo y de dónde salió.</figcaption>
+      </figure>
+
+      <p class="blog-nota">
+        Nota de cifra: de dónde salió el número del párrafo anterior. Ej.: censo
+        propio de Likida, 1,318 vacantes verificadas de 829 empresas de transporte.
+      </p>
+
+    </div>
+    <!-- ▲ FIN DEL CUERPO ▲ -->
+
+    <!-- ══ Fuentes: toda cifra del artículo se rastrea desde aquí.
+         Si el artículo no trae cifras, se borra la sección completa. ══ -->
+    <section class="blog-fuentes">
+      <span class="blog-etiqueta">Fuentes</span>
+      <ol>
+        <li>Ordenamiento o publicación, artículo, fecha — <a href="https://www.dof.gob.mx/">enlace a la fuente primaria</a>.</li>
+        <li>Censo propio de Likida, agosto 2026.</li>
+      </ol>
+    </section>
+
+    <!-- ══ Cierre: una pregunta y un solo botón. ══ -->
+    <section class="blog-cierre">
+      <p>{{PREGUNTA_CIERRE}}</p>
+      <a class="btn btn-tinta" href="../index.html#demo" style="font-size:16px;padding:14px 28px"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    </section>
+
+  </div>
+</article>
+</main>
+
+<!-- ── FOOTER idéntico al de la landing. NO EDITAR. ── -->
+<footer class="footer">
+  <div class="wrap" style="padding:0">
+    <div class="footer-grid">
+      <div class="footer-col footer-marca">
+        <img src="../assets/likida-glifo.svg" alt="Likida" width="1130" height="1490" loading="lazy" decoding="async" style="height:150px;width:auto">
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k1">PRODUCTO</span>
+        <ul>
+          <li><a href="../index.html#producto" data-i18n="foot.como">Cómo funciona</a></li>
+          <li><a href="../index.html#ciclo" data-i18n="foot.ciclo">El ciclo completo</a></li>
+          <li><a href="../index.html#seguridad" data-i18n="foot.seguridad">Seguridad</a></li>
+          <li><a href="../index.html#faq" data-i18n="foot.faq">Preguntas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k2">COMPAÑÍA</span>
+        <ul>
+          <li><a href="../mision.html" data-i18n="foot.mision">Misión</a></li>
+          <li><a href="index.html" data-i18n="nav.blog">Blog</a></li>
+          <li><a href="../index.html#demo" data-i18n="cta.contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k3">CONECTA</span>
+        <ul>
+          <li><a href="../index.html#demo" data-i18n="foot.contacto">Contacto</a></li>
+          <li><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div>
+          <span class="kicker">■</span>
+          <div class="footer-tag" style="border-top:none;margin-top:8px;padding-top:0">
+            <p data-i18n="foot.tag1">El sistema operativo del back-office del autotransporte de carga mexicano.</p>
+            <p data-i18n="foot.tag2">Empezando por la liquidación de viajes, agente por agente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span id="anio"></span> <span data-i18n="foot.legal">Likida. Ninguna cifra de esta página se inventó — cada una tiene su fuente.</span></span>
+      <div class="footer-chips">
+        <span>CFDI 4.0</span><span>SAT 69-B</span><span>LIF 20-A</span><span>Multi-tenant</span><span>AES-256</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=10"></script>
+</body>
+</html>

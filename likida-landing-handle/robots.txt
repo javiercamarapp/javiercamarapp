@@ -1,6 +1,7 @@
 # Likida — https://likida.ai
-# Sitio estático de dos páginas. Todo es público y todo es rastreable:
-# no hay panel, ni área de cliente, ni rutas privadas que esconder.
+# Sitio estático: portada, misión y el blog. Todo es público y todo es
+# rastreable: no hay panel, ni área de cliente, ni rutas privadas que esconder.
+# La única excepción es la plantilla del blog, que no es una página real.
 #
 # El comodín de abajo también deja pasar a los rastreadores de los buscadores
 # de IA (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended).
@@ -9,5 +10,6 @@
 
 User-agent: *
 Allow: /
+Disallow: /blog/_plantilla.html
 
 Sitemap: https://likida.ai/sitemap.xml

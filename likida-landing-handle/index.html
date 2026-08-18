@@ -31,6 +31,16 @@
 <meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
 <meta name="twitter:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
 
+<!-- ── Fraunces (subconjunto latino) es la fuente del h1 y de todos los h2: es la
+     que decide cuándo deja de moverse la página. Sin este preload el navegador
+     pinta con Georgia, luego cambia y todo lo de abajo salta — medido, ese solo
+     reflow vale 0.037 de CLS de carga; con el preload baja a 0.001.
+     El resto de las familias se quedan en el <link> normal: no mueven la caja.
+     OJO al mantenerlo: la URL trae la versión (v38). Si Google publica una
+     nueva, el archivo viejo sigue sirviéndose pero el preload deja de usarse
+     (aviso en consola, no error). El arreglo durable es auto-hospedar la
+     fuente — Fraunces es OFL y se puede servir desde /assets. ── -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -145,13 +155,14 @@
 <header class="header" id="header">
   <div class="header-inner">
     <a class="logo" href="#" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
-      <img src="assets/likida-logo.png" alt="Likida" style="height:22px;width:auto">
+      <img src="assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
     </a>
     <nav class="nav">
       <a href="#producto" data-i18n="nav.producto">Producto</a>
       <a href="#ciclo" data-i18n="nav.ciclo">El ciclo</a>
       <a href="#seguridad" data-i18n="nav.seguridad">Seguridad</a>
       <a href="mision.html" data-i18n="nav.mision">Misión</a>
+      <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
       <a href="#faq" data-i18n="nav.faq">Preguntas</a>
     </nav>
     <div class="header-acciones">
@@ -160,7 +171,7 @@
         <span class="idioma-sep" aria-hidden="true">/</span>
         <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
       </div>
-      <a class="btn btn-tinta" href="#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-tinta" href="#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </div>
   </div>
 </header>
@@ -174,7 +185,7 @@
       por viaje — desde el WhatsApp que tu operador ya usa. Sin apps nuevas, sin cambiar de ERP.
     </p>
     <div class="hero-centro-cta">
-      <a class="btn btn-acento" href="#demo" style="font-size:16.5px;padding:15px 30px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-acento" href="#demo" style="font-size:16.5px;padding:15px 30px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </div>
     <p class="hero-centro-nota" data-i18n="hero.nota">En la demo lo ves corriendo con un caso tuyo: trae 10 fotos de un viaje cerrado.</p>
   </div>
@@ -328,23 +339,23 @@
         <ul class="iso-lista">
           <li>
             <span class="paso-num">1</span>
-            <div><h4 data-i18n="arq.1.h">De dónde entra el dato</h4>
+            <div><h3 data-i18n="arq.1.h">De dónde entra el dato</h3>
             <p data-i18n="arq.1.p">El WhatsApp del operador, los CFDI del SAT, los portales de casetas y TAG, el GPS de tu flota y tu ERP.</p></div>
           </li>
           <li>
             <span class="paso-num">2</span>
-            <div><h4 data-i18n="arq.2.h">Los agentes que ejecutan</h4>
+            <div><h3 data-i18n="arq.2.h">Los agentes que ejecutan</h3>
             <p data-i18n="arq.2.p">Conductores, cobranza de comprobantes, liquidación, facturas y conciliación de peajes — de punta a punta.</p></div>
           </li>
           <li>
             <span class="paso-num">3</span>
-            <div><h4 data-i18n="arq.3.h">Lo que ves en tiempo real</h4>
+            <div><h3 data-i18n="arq.3.h">Lo que ves en tiempo real</h3>
             <p data-i18n="arq.3.p">Cola de viajes por cerrar, IVA acreditable, litros elegibles, discrepancias de peaje marcadas y alertas de vigencias.</p></div>
           </li>
         </ul>
       </div>
       <figure class="iso-figura sangrado-der revela">
-        <img src="assets/arquitectura-3-capas.png" data-i18n-attr="alt:arq.alt" alt="Diagrama isométrico: fuentes de datos, agentes de IA y visibilidad en tiempo real" loading="lazy">
+        <img src="assets/arquitectura-3-capas.png" data-i18n-attr="alt:arq.alt" alt="Diagrama isométrico de las tres capas de Likida: las fuentes de datos (WhatsApp, SAT, portales de casetas, GPS y ERP), los agentes de IA que las trabajan y el panel de visibilidad en tiempo real" width="1744" height="2336" loading="lazy" decoding="async">
       </figure>
     </div>
   </div>
@@ -353,14 +364,14 @@
 <!-- ── STEPPER: el ciclo automático del agente de liquidación ── -->
 <section class="seccion" style="padding-top:0;background:var(--blanco)">
   <div class="wrap">
-    <p class="stepper-titulo revela" data-i18n="step.titulo">AGENTE DE LIQUIDACIÓN — CICLO AUTOMÁTICO</p>
+    <h2 class="stepper-titulo revela" data-i18n="step.titulo">AGENTE DE LIQUIDACIÓN — CICLO AUTOMÁTICO</h2>
     <div class="stepper revela">
-      <div class="paso-flujo"><div class="fila"><span class="n">01</span><span class="punto"></span></div><h4 data-i18n="step.1.h">Recibe los comprobantes</h4><p data-i18n="step.1.p">El operador manda las fotos por WhatsApp al terminar el viaje.</p><span class="estado hecho">Hecho</span></div>
-      <div class="paso-flujo"><div class="fila"><span class="n">02</span><span class="punto"></span></div><h4 data-i18n="step.2.h">Lee y decodifica</h4><p data-i18n="step.2.p">Extrae monto, RFC y folio fiscal de cada ticket y su CFDI.</p><span class="estado hecho">Hecho</span></div>
-      <div class="paso-flujo"><div class="fila"><span class="n">03</span><span class="punto progreso"></span></div><h4 data-i18n="step.3.h">Valida contra el SAT</h4><p data-i18n="step.3.p">Vigente, receptor correcto, emisor fuera de la lista 69-B.</p><span class="estado progreso">En curso</span></div>
-      <div class="paso-flujo"><div class="fila"><span class="n">04</span><span class="punto"></span></div><h4 data-i18n="step.4.h">Cuadra contra tu política</h4><p data-i18n="step.4.p">Compara lo comprobado contra el anticipo y las reglas de gasto.</p><span class="estado hecho">Hecho</span></div>
-      <div class="paso-flujo"><div class="fila"><span class="n">05</span><span class="punto"></span></div><h4 data-i18n="step.5.h">Genera la liquidación</h4><p data-i18n="step.5.p">PDF con desglose y fundamento fiscal, listo para revisión.</p><span class="estado hecho">Hecho</span></div>
-      <div class="paso-flujo apagado"><div class="fila"><span class="n">06</span><span class="punto pendiente"></span></div><h4 data-i18n="step.6.h">Exporta a tu ERP</h4><p data-i18n="step.6.p">El archivo que SAP Business One o CONTPAQi ya sabe importar.</p><span class="estado">Pendiente</span></div>
+      <div class="paso-flujo"><div class="fila"><span class="n">01</span><span class="punto"></span></div><h3 data-i18n="step.1.h">Recibe los comprobantes</h3><p data-i18n="step.1.p">El operador manda las fotos por WhatsApp al terminar el viaje.</p><span class="estado hecho">Hecho</span></div>
+      <div class="paso-flujo"><div class="fila"><span class="n">02</span><span class="punto"></span></div><h3 data-i18n="step.2.h">Lee y decodifica</h3><p data-i18n="step.2.p">Extrae monto, RFC y folio fiscal de cada ticket y su CFDI.</p><span class="estado hecho">Hecho</span></div>
+      <div class="paso-flujo"><div class="fila"><span class="n">03</span><span class="punto progreso"></span></div><h3 data-i18n="step.3.h">Valida contra el SAT</h3><p data-i18n="step.3.p">Vigente, receptor correcto, emisor fuera de la lista 69-B.</p><span class="estado progreso">En curso</span></div>
+      <div class="paso-flujo"><div class="fila"><span class="n">04</span><span class="punto"></span></div><h3 data-i18n="step.4.h">Cuadra contra tu política</h3><p data-i18n="step.4.p">Compara lo comprobado contra el anticipo y las reglas de gasto.</p><span class="estado hecho">Hecho</span></div>
+      <div class="paso-flujo"><div class="fila"><span class="n">05</span><span class="punto"></span></div><h3 data-i18n="step.5.h">Genera la liquidación</h3><p data-i18n="step.5.p">PDF con desglose y fundamento fiscal, listo para revisión.</p><span class="estado hecho">Hecho</span></div>
+      <div class="paso-flujo apagado"><div class="fila"><span class="n">06</span><span class="punto pendiente"></span></div><h3 data-i18n="step.6.h">Exporta a tu ERP</h3><p data-i18n="step.6.p">El archivo que SAP Business One o CONTPAQi ya sabe importar.</p><span class="estado">Pendiente</span></div>
     </div>
   </div>
 </section>
@@ -438,14 +449,14 @@
 <!-- ── BANNER FOTOGRÁFICO con revelado por fracciones ── -->
 <section class="banner-fotos">
   <div class="banner-grid">
-    <div class="banner-celda"><span class="num">01</span><img src="assets/foto-carretera.png" data-i18n-attr="alt:ban.1.alt" alt="Tractocamión en carretera" loading="lazy"><span class="sub" data-i18n="ban.1.sub">EN RUTA</span><span class="etiqueta" data-i18n="ban.1.et">Carretera</span><span class="desc" data-i18n="ban.1.d">El viaje genera gastos desde el kilómetro cero — y cada uno deja comprobante.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">02</span><img src="assets/foto-caseta.png" data-i18n-attr="alt:ban.2.alt" alt="Caseta de peaje" loading="lazy"><span class="sub" data-i18n="ban.2.sub">TAG · CAPUFE</span><span class="etiqueta" data-i18n="ban.2.et">Casetas</span><span class="desc" data-i18n="ban.2.d">Cada cruce del TAG se concilia contra su viaje, sin bitácora a mano.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">03</span><img src="assets/foto-diesel.png" data-i18n-attr="alt:ban.3.alt" alt="Carga de diésel" loading="lazy"><span class="sub" data-i18n="ban.3.sub">IEPS EN LITROS</span><span class="etiqueta" data-i18n="ban.3.et">Diésel</span><span class="desc" data-i18n="ban.3.d">Litros y IEPS acreditable, leídos del ticket en segundos.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">04</span><img src="assets/foto-operador.png" data-i18n-attr="alt:ban.4.alt" alt="Operador fotografiando su ticket" loading="lazy"><span class="sub" data-i18n="ban.4.sub">WHATSAPP</span><span class="etiqueta" data-i18n="ban.4.et">El operador</span><span class="desc" data-i18n="ban.4.d">Foto al ticket por WhatsApp y listo — sin apps nuevas que aprender.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">05</span><img src="assets/foto-patio.png" data-i18n-attr="alt:ban.5.alt" alt="Patio de maniobras" loading="lazy"><span class="sub" data-i18n="ban.5.sub">DESPACHO</span><span class="etiqueta" data-i18n="ban.5.et">El patio</span><span class="desc" data-i18n="ban.5.d">El viaje nace con su presupuesto y su anticipo ya registrados.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">06</span><img src="assets/foto-bascula.png" data-i18n-attr="alt:ban.6.alt" alt="Báscula de camiones" loading="lazy"><span class="sub" data-i18n="ban.6.sub">HITOS · POD</span><span class="etiqueta" data-i18n="ban.6.et">La báscula</span><span class="desc" data-i18n="ban.6.d">Cada hito del viaje queda asentado con su evidencia.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">07</span><img src="assets/foto-frontera.png" data-i18n-attr="alt:ban.7.alt" alt="Cruce fronterizo" loading="lazy"><span class="sub" data-i18n="ban.7.sub">CRUCES</span><span class="etiqueta" data-i18n="ban.7.et">La frontera</span><span class="desc" data-i18n="ban.7.d">Los gastos del cruce, documentados en el momento, no al regreso.</span><span class="flecha">→</span><div class="velo"></div></div>
-    <div class="banner-celda"><span class="num">08</span><img src="assets/foto-oficina.png" data-i18n-attr="alt:ban.8.alt" alt="Escritorio del contador" loading="lazy"><span class="sub" data-i18n="ban.8.sub">CIERRE FISCAL</span><span class="etiqueta" data-i18n="ban.8.et">El contador</span><span class="desc" data-i18n="ban.8.d">CFDIs validados contra el SAT, listos para deducir sin sorpresas.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">01</span><img src="assets/foto-carretera.png" data-i18n-attr="alt:ban.1.alt" alt="Tractocamión en carretera" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.1.sub">EN RUTA</span><span class="etiqueta" data-i18n="ban.1.et">Carretera</span><span class="desc" data-i18n="ban.1.d">El viaje genera gastos desde el kilómetro cero — y cada uno deja comprobante.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">02</span><img src="assets/foto-caseta.png" data-i18n-attr="alt:ban.2.alt" alt="Caseta de peaje" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.2.sub">TAG · CAPUFE</span><span class="etiqueta" data-i18n="ban.2.et">Casetas</span><span class="desc" data-i18n="ban.2.d">Cada cruce del TAG se concilia contra su viaje, sin bitácora a mano.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">03</span><img src="assets/foto-diesel.png" data-i18n-attr="alt:ban.3.alt" alt="Carga de diésel" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.3.sub">IEPS EN LITROS</span><span class="etiqueta" data-i18n="ban.3.et">Diésel</span><span class="desc" data-i18n="ban.3.d">Litros y IEPS acreditable, leídos del ticket en segundos.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">04</span><img src="assets/foto-operador.png" data-i18n-attr="alt:ban.4.alt" alt="Operador fotografiando su ticket" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.4.sub">WHATSAPP</span><span class="etiqueta" data-i18n="ban.4.et">El operador</span><span class="desc" data-i18n="ban.4.d">Foto al ticket por WhatsApp y listo — sin apps nuevas que aprender.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">05</span><img src="assets/foto-patio.png" data-i18n-attr="alt:ban.5.alt" alt="Patio de maniobras" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.5.sub">DESPACHO</span><span class="etiqueta" data-i18n="ban.5.et">El patio</span><span class="desc" data-i18n="ban.5.d">El viaje nace con su presupuesto y su anticipo ya registrados.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">06</span><img src="assets/foto-bascula.png" data-i18n-attr="alt:ban.6.alt" alt="Báscula de camiones" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.6.sub">HITOS · POD</span><span class="etiqueta" data-i18n="ban.6.et">La báscula</span><span class="desc" data-i18n="ban.6.d">Cada hito del viaje queda asentado con su evidencia.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">07</span><img src="assets/foto-frontera.png" data-i18n-attr="alt:ban.7.alt" alt="Cruce fronterizo" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.7.sub">CRUCES</span><span class="etiqueta" data-i18n="ban.7.et">La frontera</span><span class="desc" data-i18n="ban.7.d">Los gastos del cruce, documentados en el momento, no al regreso.</span><span class="flecha">→</span><div class="velo"></div></div>
+    <div class="banner-celda"><span class="num">08</span><img src="assets/foto-oficina.png" data-i18n-attr="alt:ban.8.alt" alt="Escritorio del contador" width="2336" height="1744" loading="lazy" decoding="async"><span class="sub" data-i18n="ban.8.sub">CIERRE FISCAL</span><span class="etiqueta" data-i18n="ban.8.et">El contador</span><span class="desc" data-i18n="ban.8.d">CFDIs validados contra el SAT, listos para deducir sin sorpresas.</span><span class="flecha">→</span><div class="velo"></div></div>
   </div>
 </section>
 
@@ -562,9 +573,9 @@
         <h2 data-i18n="demo.h2">Ve tu propio viaje, <span class="gris-suave">ya cuadrado.</span></h2>
         <p style="color:var(--tinta-suave);max-width:46ch;margin-top:18px" data-i18n="demo.p">Trae 10 fotos de un viaje cerrado y en la demo lo ves correr con tus números — no con los nuestros. 30 minutos por Google Meet, con disponibilidad en tiempo real.</p>
         <ul class="iso-lista" style="margin-top:30px;max-width:440px">
-          <li><span class="paso-num">1</span><div><h4 data-i18n="demo.1.h">Cuéntanos de tu flota</h4><p data-i18n="demo.1.p">Nombre, tamaño y contacto — nada más.</p></div></li>
-          <li><span class="paso-num">2</span><div><h4 data-i18n="demo.2.h">Elige tu horario</h4><p data-i18n="demo.2.p">El calendario de abajo es el real: lo que ves disponible, está disponible.</p></div></li>
-          <li><span class="paso-num">3</span><div><h4 data-i18n="demo.3.h">Llega con tus tickets</h4><p data-i18n="demo.3.p">La demo corre con un viaje tuyo, cuadrado en vivo.</p></div></li>
+          <li><span class="paso-num">1</span><div><h3 data-i18n="demo.1.h">Cuéntanos de tu flota</h3><p data-i18n="demo.1.p">Nombre, tamaño y contacto — nada más.</p></div></li>
+          <li><span class="paso-num">2</span><div><h3 data-i18n="demo.2.h">Elige tu horario</h3><p data-i18n="demo.2.p">El calendario de abajo es el real: lo que ves disponible, está disponible.</p></div></li>
+          <li><span class="paso-num">3</span><div><h3 data-i18n="demo.3.h">Llega con tus tickets</h3><p data-i18n="demo.3.p">La demo corre con un viaje tuyo, cuadrado en vivo.</p></div></li>
         </ul>
       </div>
       <div class="demo-caja revela">
@@ -577,19 +588,19 @@
 
           <div class="demo-vista activa">
             <p class="demo-etiqueta" data-i18n="demo.p1.et">PASO 1 DE 3</p>
-            <h2 class="demo-titulo" data-i18n="demo.p1.t">Agenda una demo personalizada</h2>
+            <h3 class="demo-titulo" data-i18n="demo.p1.t">Agenda una demo personalizada</h3>
             <p class="demo-hint" data-i18n="demo.p1.hint">Cuéntanos un poco sobre tu flota</p>
             <input class="campo" type="text" name="empresa" data-i18n-attr="placeholder:demo.ph.empresa" placeholder="Nombre de tu empresa" required>
             <div class="campos-2">
               <input class="campo" type="text" name="nombre" data-i18n-attr="placeholder:demo.ph.nombre" placeholder="Tu nombre" required>
               <input class="campo" type="text" name="apellido" data-i18n-attr="placeholder:demo.ph.apellido" placeholder="Tu apellido" required>
             </div>
-            <button type="button" class="btn btn-acento btn-continuar" data-avanza><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="demo.continuar">Continuar</span></button>
+            <button type="button" class="btn btn-acento btn-continuar" data-avanza><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="demo.continuar">Continuar</span></button>
           </div>
 
           <div class="demo-vista">
             <p class="demo-etiqueta" data-i18n="demo.p2.et">PASO 2 DE 3</p>
-            <h2 class="demo-titulo" data-i18n="demo.p2.t">¿Dónde te contactamos?</h2>
+            <h3 class="demo-titulo" data-i18n="demo.p2.t">¿Dónde te contactamos?</h3>
             <p class="demo-hint" data-i18n="demo.p2.hint">Usamos estos datos solo para coordinar tu demo</p>
             <input class="campo" type="email" name="correo" data-i18n-attr="placeholder:demo.ph.correo" placeholder="Correo empresarial" required>
             <input class="campo" type="tel" name="whatsapp" data-i18n-attr="placeholder:demo.ph.tel" placeholder="Teléfono / WhatsApp" required>
@@ -600,13 +611,13 @@
               <option data-i18n="demo.u.3">101 a 250 unidades</option>
               <option data-i18n="demo.u.4">Más de 250 unidades</option>
             </select>
-            <button type="button" class="btn btn-acento btn-continuar" data-avanza><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="demo.continuar">Continuar</span></button>
+            <button type="button" class="btn btn-acento btn-continuar" data-avanza><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="demo.continuar">Continuar</span></button>
             <button type="button" class="btn btn-borde btn-continuar" style="margin-top:10px" data-regresa data-i18n="demo.regresar">Regresar</button>
           </div>
 
           <div class="demo-vista">
             <p class="demo-etiqueta" data-i18n="demo.p3.et">PASO 3 DE 3</p>
-            <h2 class="demo-titulo" data-i18n="demo.p3.t">Elige tu horario</h2>
+            <h3 class="demo-titulo" data-i18n="demo.p3.t">Elige tu horario</h3>
             <p class="demo-hint" data-i18n="demo.p3.hint">Disponibilidad en tiempo real — la cita cae directo en nuestro calendario</p>
             <div class="cal-marco" id="cal-marco"></div>
             <p class="cal-nota" data-i18n="demo.cal.nota">Al agendar recibes la invitación con la liga de Google Meet en tu correo.</p>
@@ -655,7 +666,7 @@
   <div class="wrap revela">
     <h2 data-i18n="cta2.h2">El comprobante ya no viaja <em style="font-style:italic">más lento que el camión.</em></h2>
     <p data-i18n="cta2.p">Agenda 30 minutos y ve un viaje tuyo cuadrado en vivo — con tus números, no con los nuestros.</p>
-    <a class="btn btn-acento" href="#demo" style="font-size:17px;padding:16px 36px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    <a class="btn btn-acento" href="#demo" style="font-size:17px;padding:16px 36px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
   </div>
 </section>
 
@@ -664,7 +675,7 @@
   <div class="wrap" style="padding:0">
     <div class="footer-grid">
       <div class="footer-col footer-marca">
-        <img src="assets/likida-glifo.svg" alt="Likida" style="height:150px;width:auto">
+        <img src="assets/likida-glifo.svg" alt="Likida" width="1130" height="1490" loading="lazy" decoding="async" style="height:150px;width:auto">
       </div>
       <div class="footer-col">
         <span class="kicker" data-i18n="foot.k1">PRODUCTO</span>
@@ -679,6 +690,7 @@
         <span class="kicker" data-i18n="foot.k2">COMPAÑÍA</span>
         <ul>
           <li><a href="mision.html" data-i18n="foot.mision">Misión</a></li>
+          <li><a href="blog/index.html" data-i18n="nav.blog">Blog</a></li>
           <li><a href="#demo" data-i18n="cta.contacto">Contáctanos</a></li>
         </ul>
       </div>

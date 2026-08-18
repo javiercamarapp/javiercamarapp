@@ -10,6 +10,7 @@
   --tinta-suave: #3f3f46;
   --gris: #6b7280;
   --linea: #ececef;
+  --linea-footer: #d8d6d0;   /* divisores del pie: hairline con presencia, como el de Handle */
   --acento: #17100d;
   --acento-tinta: #ffffff;
   --oscuro: #17100d;
@@ -31,7 +32,11 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+/* height:auto es obligatorio ahora que las <img> declaran width/height: sin él,
+   max-width:100% encoge el ancho pero el alto se queda en el atributo y la
+   imagen se deforma. Con él, el navegador reserva la caja por la relación de
+   aspecto de los atributos y el contenido de abajo deja de saltar (CLS). */
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 
 .wrap { max-width: var(--ancho); margin: 0 auto; padding: 0 28px; }
@@ -135,7 +140,10 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .demo-paso { height: 5px; flex: 1; border-radius: 3px; background: var(--linea); transition: background .3s ease; }
 .demo-paso.activo { background: var(--tinta); }
 .demo-etiqueta { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--gris); margin-bottom: 10px; }
-.demo-titulo { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 2.8vw, 42px); line-height: 1.08; margin-bottom: 10px; }
+/* letter-spacing explícito: estos títulos eran h2 y heredaban el -0.015em de la
+   regla global de h1,h2. Ahora son h3 (cuelgan del h2 de la sección) y esa regla
+   ya no les toca, así que el tracking se fija aquí. */
+.demo-titulo { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 2.8vw, 42px); line-height: 1.08; letter-spacing: -0.015em; margin-bottom: 10px; }
 .demo-hint { color: var(--gris); font-size: 15px; margin-bottom: 26px; }
 .campo {
   width: 100%; padding: 16px 18px; margin-bottom: 14px;
@@ -196,7 +204,10 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
   width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--tinta);
   display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;
 }
-.iso-lista h4 { font-size: 16.5px; font-weight: 600; margin-bottom: 3px; }
+/* Estos títulos cuelgan de un h2 de sección, así que son h3 (la jerarquía no
+   debe brincarse un nivel). La regla repite family/line-height porque la regla
+   global de h3 los pondría en serif a 23px: aquí van en sans, como siempre. */
+.iso-lista h3, .iso-lista h4 { font-family: var(--sans); font-size: 16.5px; font-weight: 600; line-height: 1.6; margin-bottom: 3px; }
 .iso-lista p { font-size: 14.5px; color: var(--tinta-suave); margin: 0; }
 
 /* ── Banner fotográfico (grid con revelado por fracciones al scroll) ── */
@@ -258,12 +269,12 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .cta-final p { color: var(--tinta-suave); max-width: 56ch; margin: 0 auto 34px; }
 
 /* ── Footer clean premium (papel cálido, hairlines finas) ── */
-.footer { background: var(--blanco); border-top: 1px solid var(--linea); padding: 0; color: #201c19; }
+.footer { background: var(--blanco); border-top: 1px solid var(--linea-footer); padding: 0; color: #201c19; }
 .footer-grid {
   display: grid; grid-template-columns: 1.15fr 1fr 1fr 1fr 1.3fr;
-  border-left: 1px solid var(--linea); border-right: 1px solid var(--linea);
+  border-left: 1px solid var(--linea-footer); border-right: 1px solid var(--linea-footer);
 }
-.footer-col { padding: 56px 34px; border-right: 1px solid var(--linea); }
+.footer-col { padding: 56px 34px; border-right: 1px solid var(--linea-footer); }
 .footer-col:last-child { border-right: none; }
 .footer-col .kicker { margin-bottom: 22px; display: block; color: #8b8b93; font-weight: 600; letter-spacing: .18em; }
 .footer-col ul { list-style: none; display: grid; gap: 14px; font-size: 15.5px; font-weight: 400; }
@@ -271,7 +282,7 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .footer-col a:hover { opacity: .55; }
 .footer-marca { display: flex; align-items: center; }
 .footer-marca img { opacity: .92; }
-.footer-tag { border-top: 1px solid var(--linea); padding-top: 20px; margin-top: 20px; }
+.footer-tag { border-top: 1px solid var(--linea-footer); padding-top: 20px; margin-top: 20px; }
 .footer-tag p:first-child { font-weight: 500; margin-bottom: 6px; font-size: 15.5px; }
 .footer-tag p:last-child { color: #8b877e; font-size: 14.5px; }
 .footer-legal {
@@ -439,7 +450,9 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .producto-marco video, .producto-marco img { width: 100%; display: block; }
 
 /* ── Stepper de ciclo automático (estilo Handle) ── */
-.stepper-titulo { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--gris); margin-bottom: 20px; }
+/* Es el h2 de su sección (antes era un <p>), pero se ve como kicker: la regla
+   global de h2 lo pondría en serif, así que se fija la sans aquí. */
+.stepper-titulo { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--gris); margin-bottom: 20px; line-height: 1.6; }
 .stepper { display: grid; grid-template-columns: repeat(6, 1fr); background: var(--blanco); }
 .paso-flujo { padding: 22px 20px 24px; border-left: 1px solid var(--linea); display: flex; flex-direction: column; gap: 8px; background: linear-gradient(180deg, #fafaf8, #ffffff); }
 .paso-flujo:first-child { border-left: none; }
@@ -449,7 +462,8 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .paso-flujo .punto.progreso { background: #16a34a; animation: latido 1.4s ease infinite; }
 .paso-flujo .punto.pendiente { background: var(--linea); box-shadow: none; }
 @keyframes latido { 50% { opacity: .35; } }
-.paso-flujo h4 { font-size: 15.5px; font-weight: 600; }
+/* Mismo caso que .iso-lista: h3 por jerarquía, tipografía sans intacta. */
+.paso-flujo h3, .paso-flujo h4 { font-family: var(--sans); font-size: 15.5px; font-weight: 600; line-height: 1.6; }
 .paso-flujo p { font-size: 13px; color: var(--tinta-suave); line-height: 1.5; flex: 1; }
 .paso-flujo .estado { font-size: 12.5px; font-weight: 600; }
 .paso-flujo .estado.progreso::before { content: "● "; }

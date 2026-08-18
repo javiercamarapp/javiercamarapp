@@ -1,0 +1,303 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIKIDA — BLOG. Hoja complementaria: se carga SIEMPRE después de main.css.
+
+   Reglas de esta hoja:
+   · No redefine la paleta ni las fuentes. Usa las variables de main.css
+     (--papel, --papel-2, --tinta, --tinta-suave, --gris, --linea, --blanco,
+     --serif, --sans, --mono, --ancho, --radio).
+   · Todo lleva prefijo `blog-`. El header, el footer, `.wrap`, `.btn` y
+     `.kicker` se heredan de main.css tal cual: el blog es el mismo sitio.
+   · Disciplina de medida: cuatro anchos máximos distintos para que ningún
+     texto corra a lo ancho del contenedor.
+       760 px  cabecera de artículo y portada
+       680 px  cuerpo del artículo (~68 caracteres por renglón)
+       520 px  título de tarjeta
+       480 px  entradilla de tarjeta
+   · Todo lo que separa es un filete de 1px. Ni sombras de tarjeta, ni radios
+     grandes, ni un solo color de acento: papel, tinta y un gris.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.blog {
+  --blog-ancha: 760px;
+  --blog-medida: 680px;
+  --blog-titulo-tarjeta: 520px;
+  --blog-bajada-tarjeta: 480px;
+}
+
+/* ── Etiqueta monoespaciada: la voz que da el aire editorial ──
+   11 px, mayúsculas, tracking abierto. Es la ÚNICA pieza en mono del blog. */
+.blog-etiqueta {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gris);
+  line-height: 1.2;
+}
+
+/* Filete: la única herramienta de separación del blog. */
+.blog-filete { border: 0; border-top: 1px solid var(--linea); margin: 0; }
+
+/* ═══════════════════════ ÍNDICE — CABECERA ═══════════════════════ */
+.blog-cabecera { padding: clamp(60px, 9vw, 132px) 0 clamp(38px, 4.4vw, 62px); }
+.blog-cabecera-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: clamp(30px, 4vw, 60px);
+  align-items: end;
+}
+.blog-cabecera .blog-etiqueta { display: block; margin-bottom: 22px; }
+.blog-cabecera h1 { font-size: clamp(38px, 5.2vw, 74px); max-width: 700px; }
+.blog-cabecera-bajada {
+  margin-top: 24px; font-size: 17px; line-height: 1.65;
+  color: var(--gris); max-width: 56ch;
+}
+/* Columna derecha: la invitación. Un solo CTA en toda la página. */
+.blog-cabecera-aparte { padding-bottom: 8px; }
+.blog-cabecera-aparte p {
+  font-size: 15px; line-height: 1.65; color: var(--tinta-suave);
+  max-width: 40ch; margin-bottom: 20px;
+}
+
+/* ═══════════════════════ ÍNDICE — REJILLA ═══════════════════════ */
+.blog-rejilla-seccion { padding-bottom: clamp(64px, 9vw, 130px); }
+
+/* El truco del filete: separación de 1px sobre el color de línea. Ninguna
+   celda dibuja borde; lo que se ve entre ellas es el fondo de la rejilla. */
+.blog-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--linea);
+  border-bottom: 1px solid var(--linea);
+}
+.blog-tarjeta {
+  display: flex; flex-direction: column;
+  background: var(--papel);
+  padding: clamp(28px, 3vw, 44px) 0 clamp(34px, 3.6vw, 52px);
+}
+.blog-tarjeta:focus-visible { outline: 2px solid var(--tinta); outline-offset: -6px; }
+
+.blog-tarjeta-figura {
+  display: block; overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  border: 1px solid var(--linea);
+  background: var(--papel-2);
+}
+.blog-tarjeta-figura img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+.blog-tarjeta:hover .blog-tarjeta-figura img { transform: scale(1.02); }
+
+.blog-tarjeta-meta { display: flex; flex-wrap: wrap; gap: 16px; margin: 22px 0 14px; }
+.blog-tarjeta-titulo {
+  font-size: clamp(21px, 2.4vw, 29px);
+  line-height: 1.16;
+  max-width: var(--blog-titulo-tarjeta);
+  transition: opacity .25s ease;
+}
+.blog-tarjeta:hover .blog-tarjeta-titulo { opacity: .7; }
+.blog-tarjeta-bajada {
+  margin-top: 12px; font-size: 14.5px; line-height: 1.6;
+  color: var(--gris); max-width: var(--blog-bajada-tarjeta);
+  flex: 1;
+}
+.blog-tarjeta-leer {
+  margin-top: 22px; font-size: 14px; font-weight: 600; color: var(--tinta);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.blog-tarjeta-leer span {
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+.blog-tarjeta:hover .blog-tarjeta-leer span { transform: translateX(5px); }
+
+@media (min-width: 860px) {
+  .blog-rejilla { grid-template-columns: 1fr 1fr; }
+  /* Las orillas exteriores quedan a ras del contenedor; solo respira el centro. */
+  .blog-tarjeta { padding-left: 36px; padding-right: 36px; }
+  .blog-tarjeta:nth-child(odd) { padding-left: 0; }
+  .blog-tarjeta:nth-child(even) { padding-right: 0; }
+}
+@media (max-width: 860px) {
+  .blog-cabecera-grid { grid-template-columns: 1fr; align-items: start; }
+  /* Apilada, la invitación necesita su propio aire para no leerse como un
+     tercer párrafo de la bajada. */
+  .blog-cabecera-aparte { padding-bottom: 0; margin-top: 14px; }
+}
+
+/* ═══════════════════════ ARTÍCULO ═══════════════════════ */
+.blog-articulo { padding: clamp(44px, 6vw, 92px) 0 clamp(70px, 9vw, 130px); }
+
+.blog-migajon { margin-bottom: 28px; }
+.blog-migajon a {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--gris);
+  transition: color .2s ease;
+}
+.blog-migajon a:hover { color: var(--tinta); }
+
+.blog-art-cabecera { max-width: var(--blog-ancha); }
+.blog-art-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 22px; }
+.blog-art-cabecera h1 { font-size: clamp(31px, 4.4vw, 56px); line-height: 1.08; }
+.blog-art-entradilla {
+  margin-top: 24px; font-size: 18.5px; line-height: 1.62;
+  color: var(--gris); max-width: 58ch;
+}
+
+.blog-art-portada { max-width: var(--blog-ancha); margin: clamp(34px, 4vw, 56px) 0 0; }
+.blog-art-portada img {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border: 1px solid var(--linea); border-radius: 6px; background: var(--papel-2);
+}
+.blog-art-portada figcaption {
+  margin-top: 12px; font-size: 13px; line-height: 1.55; color: var(--gris);
+  max-width: 60ch;
+}
+
+.blog-art-filete { max-width: var(--blog-ancha); margin: clamp(34px, 4vw, 56px) 0; }
+
+/* ── Cuerpo ──
+   Los párrafos van en tinta suave y los encabezados en tinta: ese contraste
+   es el que hace el escaneo, no el tamaño. */
+.blog-cuerpo { max-width: var(--blog-medida); }
+.blog-cuerpo > :first-child { margin-top: 0; }
+.blog-cuerpo p {
+  font-size: 17px; line-height: 1.75; color: var(--tinta-suave); margin-bottom: 20px;
+}
+.blog-cuerpo h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 56px 0 20px;
+}
+/* El h3 NO es serif: es una sub-etiqueta en sans que encabeza una lista. */
+.blog-cuerpo h3 {
+  font-family: var(--sans); font-size: 16.5px; font-weight: 600;
+  line-height: 1.5; letter-spacing: 0; color: var(--tinta);
+  margin: 32px 0 12px;
+}
+.blog-cuerpo ul, .blog-cuerpo ol {
+  margin: 0 0 20px; padding-left: 1.25em;
+  display: grid; gap: 9px;
+  font-size: 17px; line-height: 1.7; color: var(--tinta-suave);
+}
+.blog-cuerpo li::marker { color: var(--gris); }
+.blog-cuerpo strong { color: var(--tinta); font-weight: 600; }
+.blog-cuerpo em { font-style: italic; }
+.blog-cuerpo a {
+  color: var(--tinta);
+  text-decoration: underline; text-underline-offset: 3px;
+  text-decoration-thickness: 1px; text-decoration-color: #c8c8ce;
+  transition: text-decoration-color .2s ease;
+}
+.blog-cuerpo a:hover { text-decoration-color: var(--tinta); }
+.blog-cuerpo code {
+  font-family: var(--mono); font-size: .88em;
+  background: var(--papel-2); border: 1px solid var(--linea);
+  border-radius: 5px; padding: 1px 6px;
+}
+.blog-cuerpo .num, .blog-cuerpo .tabular { font-variant-numeric: tabular-nums; }
+
+/* ── Cita destacada ── */
+.blog-destacado {
+  border-left: 3px solid var(--tinta);
+  padding: 4px 0 4px 26px; margin: 36px 0;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 27px); line-height: 1.35;
+  letter-spacing: -0.015em; color: var(--tinta);
+}
+.blog-destacado p { font: inherit; color: inherit; margin: 0; }
+.blog-destacado cite {
+  display: block; margin-top: 14px; font-style: normal;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--gris);
+}
+
+/* ── Caja de fundamento fiscal: la norma citada textual ──
+   Va donde el argumento necesita respaldo. Siempre con la fuente completa
+   (ordenamiento, artículo y fecha de publicación). Sin fuente, no va. */
+.blog-fundamento {
+  background: var(--papel-2);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: clamp(22px, 2.4vw, 30px);
+  margin: 36px 0;
+}
+.blog-fundamento-etiqueta {
+  display: block; margin-bottom: 16px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--gris);
+}
+.blog-fundamento p {
+  font-size: 15.5px; line-height: 1.7; color: var(--tinta); margin-bottom: 12px;
+}
+.blog-fundamento p:last-of-type { margin-bottom: 0; }
+.blog-fundamento cite {
+  display: block; margin-top: 16px; font-style: normal;
+  font-size: 13.5px; line-height: 1.55; color: var(--gris);
+}
+
+/* ── Tabla: hairlines, encabezado en mono, cifras tabulares ── */
+.blog-tabla {
+  margin: 32px 0; overflow-x: auto;
+  border: 1px solid var(--linea); border-radius: 12px; background: var(--blanco);
+  -webkit-overflow-scrolling: touch;
+}
+/* min-width: la tabla no se comprime hasta romper las palabras; si no cabe,
+   el que se desliza es el contenedor, nunca la página. */
+.blog-tabla table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 14.5px; }
+.blog-tabla th {
+  text-align: left; padding: 14px 18px; white-space: nowrap;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--gris);
+  border-bottom: 1px solid var(--linea);
+}
+.blog-tabla td {
+  padding: 14px 18px; vertical-align: top; line-height: 1.6;
+  color: var(--tinta-suave); border-bottom: 1px solid var(--linea);
+}
+.blog-tabla tbody tr:last-child td { border-bottom: 0; }
+.blog-tabla td:first-child { color: var(--tinta); font-weight: 500; }
+.blog-tabla .num, .blog-tabla th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ── Figura dentro del cuerpo (opcional: la norma es una sola imagen, la portada) ── */
+.blog-figura { margin: 36px 0; }
+.blog-figura img {
+  width: 100%; border: 1px solid var(--linea); border-radius: 8px; background: var(--papel-2);
+}
+.blog-figura figcaption {
+  margin-top: 12px; font-size: 13px; line-height: 1.55; color: var(--gris);
+}
+
+/* ── Nota al pie de un párrafo: de dónde salió una cifra ── */
+.blog-nota { font-size: 13.5px; line-height: 1.6; color: var(--gris); margin: 0 0 22px; }
+
+/* ── Fuentes: toda cifra del artículo se puede rastrear desde aquí ── */
+.blog-fuentes {
+  max-width: var(--blog-medida);
+  margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--linea);
+}
+.blog-fuentes .blog-etiqueta { display: block; margin-bottom: 16px; }
+.blog-fuentes ol {
+  margin: 0; padding-left: 1.3em; display: grid; gap: 9px;
+  font-size: 14px; line-height: 1.6; color: var(--gris);
+}
+.blog-fuentes li::marker { color: var(--gris); }
+.blog-fuentes a { color: var(--tinta-suave); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Cierre: una pregunta y un solo botón. Nunca a media lectura. ── */
+.blog-cierre {
+  max-width: var(--blog-medida);
+  margin-top: 60px; padding-top: 44px; border-top: 1px solid var(--linea);
+}
+.blog-cierre p {
+  font-size: 17.5px; line-height: 1.7; color: var(--tinta);
+  max-width: 52ch; margin-bottom: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-tarjeta-figura img,
+  .blog-tarjeta-titulo,
+  .blog-tarjeta-leer span { transition: none !important; }
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog de Likida — liquidación de viajes, CFDI e impuestos del autotransporte</title>
+<meta name="description" content="Notas de operador a operador sobre el back-office del autotransporte: liquidación de viajes, CFDI, IEPS de diésel, peajes y Carta Porte.">
+<link rel="canonical" href="https://likida.ai/blog/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#fbfbfd">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Likida">
+<meta property="og:url" content="https://likida.ai/blog/">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Blog de Likida — el back-office del autotransporte, renglón por renglón">
+<meta property="og:description" content="Liquidación de viajes, validación de CFDI contra el SAT, IEPS de diésel, estímulo del 50% de peaje y Carta Porte. Cada cifra con su fuente.">
+<meta property="og:image" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog de Likida — el back-office del autotransporte, renglón por renglón">
+<meta name="twitter:description" content="Liquidación de viajes, validación de CFDI contra el SAT, IEPS de diésel, estímulo del 50% de peaje y Carta Porte. Cada cifra con su fuente.">
+<meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/favicon-64.png">
+<link rel="stylesheet" href="../css/main.css?v=11">
+<link rel="stylesheet" href="../css/blog.css?v=1">
+<script src="../js/i18n.js?v=11"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://likida.ai/blog/#blog",
+      "url": "https://likida.ai/blog/",
+      "name": "Blog de Likida",
+      "description": "Notas sobre el back-office del autotransporte de carga mexicano: liquidación de viajes, validación de CFDI contra el SAT, IEPS de diésel, peajes y Carta Porte.",
+      "inLanguage": "es-MX",
+      "publisher": { "@id": "https://likida.ai/#organizacion" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://likida.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://likida.ai/blog/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="blog">
+
+<!-- ── Aviso superior: el mismo del sitio ── -->
+<div class="aviso" data-i18n="aviso">
+  Likida está armando su <strong>grupo cerrado de flotas piloto</strong> este trimestre — cada piloto se adapta a mano y el cupo es limitado.
+</div>
+
+<!-- ── Header idéntico al de la landing (los anclas apuntan a la portada) ── -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="logo" href="../index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
+      <img src="../assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
+    </a>
+    <nav class="nav">
+      <a href="../index.html#producto" data-i18n="nav.producto">Producto</a>
+      <a href="../index.html#ciclo" data-i18n="nav.ciclo">El ciclo</a>
+      <a href="../index.html#seguridad" data-i18n="nav.seguridad">Seguridad</a>
+      <a href="../mision.html" data-i18n="nav.mision">Misión</a>
+      <a href="index.html" style="color:var(--tinta)" data-i18n="nav.blog">Blog</a>
+      <a href="../index.html#faq" data-i18n="nav.faq">Preguntas</a>
+    </nav>
+    <div class="header-acciones">
+      <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
+        <button type="button" class="idioma-op" data-idioma="en" data-i18n-attr="aria-label:idioma.en" aria-label="Cambiar a inglés">EN</button>
+        <span class="idioma-sep" aria-hidden="true">/</span>
+        <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
+      </div>
+      <a class="btn btn-tinta" href="../index.html#demo"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ══ Cabecera editorial: 7 columnas de título, 5 de invitación ══ -->
+  <section class="blog-cabecera">
+    <div class="wrap">
+      <div class="blog-cabecera-grid">
+        <div>
+          <span class="blog-etiqueta">Blog de Likida</span>
+          <h1>El back-office del transporte, explicado renglón por renglón.</h1>
+          <p class="blog-cabecera-bajada">
+            Liquidación de viajes, CFDI, IEPS de diésel, peajes y Carta Porte — de operador
+            a operador. Cada cifra trae su fuente; cuando no hay fuente, no hay cifra.
+          </p>
+        </div>
+        <aside class="blog-cabecera-aparte">
+          <p>
+            ¿Prefieres verlo con tus propios comprobantes? Trae 10 fotos de un viaje
+            cerrado y lo cuadramos contigo en 30 minutos.
+          </p>
+          <a class="btn btn-tinta" href="../index.html#demo"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Rejilla: dos columnas, filetes de 1px, sin paginación ni filtros ══ -->
+  <section class="blog-rejilla-seccion">
+    <div class="wrap">
+      <hr class="blog-filete">
+      <div class="blog-rejilla">
+
+        <a class="blog-tarjeta" href="cuanto-cuesta-liquidar-un-viaje.html">
+          <span class="blog-tarjeta-figura">
+            <img src="../assets/blog/cuanto-cuesta-liquidar-un-viaje.webp" alt="Ilustración a línea de una pila de comprobantes de viaje con una línea de cota que mide su altura" width="1600" height="900" loading="lazy" decoding="async">
+          </span>
+          <span class="blog-tarjeta-meta">
+            <span class="blog-etiqueta">Industria</span>
+            <span class="blog-etiqueta"><time datetime="2026-08-17">Agosto 2026</time></span>
+          </span>
+          <h2 class="blog-tarjeta-titulo">Nadie mide lo que cuesta liquidar un viaje a mano. Nosotros lo medimos.</h2>
+          <p class="blog-tarjeta-bajada">
+            El costo de la liquidación de viajes no vive en ninguna cuenta contable: está
+            repartido entre tráfico, liquidaciones, facturación y contabilidad. Nuestro censo
+            lo pone en unos $105 por viaje, en una banda de $94 a $115.
+          </p>
+          <span class="blog-tarjeta-leer">Leer artículo <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="blog-tarjeta" href="ieps-diesel-acreditable-cfdi-desglosado.html">
+          <span class="blog-tarjeta-figura">
+            <img src="../assets/blog/ieps-diesel-acreditable-cfdi-desglosado.webp" alt="Pistola de despacho de diésel vertiendo un hilo de combustible en una probeta graduada" width="1600" height="900" loading="lazy" decoding="async">
+          </span>
+          <span class="blog-tarjeta-meta">
+            <span class="blog-etiqueta">Fiscal</span>
+            <span class="blog-etiqueta"><time datetime="2026-08-17">Agosto 2026</time></span>
+          </span>
+          <h2 class="blog-tarjeta-titulo">El estímulo del IEPS no se pierde en el cálculo. Se pierde en el CFDI de la gasolinera.</h2>
+          <p class="blog-tarjeta-bajada">
+            El monto acreditable no está escrito en ningún renglón del comprobante: son
+            litros por la cuota vigente el día de la carga. Qué campos del CFDI sostienen
+            el estímulo de la LIF art. 20-A, y cuáles lo tumban desde la bomba.
+          </p>
+          <span class="blog-tarjeta-leer">Leer artículo <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="blog-tarjeta" href="estimulo-50-peaje-conciliacion-casetas-tag.html">
+          <span class="blog-tarjeta-figura">
+            <img src="../assets/blog/estimulo-50-peaje-conciliacion-casetas-tag.webp" alt="Caseta de cobro con lector de TAG y una tarjeta de peaje que emite señal hacia una bitácora de tres columnas vacías" width="1600" height="900" loading="lazy" decoding="async">
+          </span>
+          <span class="blog-tarjeta-meta">
+            <span class="blog-etiqueta">Fiscal</span>
+            <span class="blog-etiqueta"><time datetime="2026-08-17">Agosto 2026</time></span>
+          </span>
+          <h2 class="blog-tarjeta-titulo">El 50% del peaje se acredita contra el ISR. Primero hay que probar que ese cruce fue tuyo.</h2>
+          <p class="blog-tarjeta-bajada">
+            El 50% sale de una multiplicación. Lo caro es lo otro: el estado de cuenta del TAG
+            llega consolidado por mes y no dice a qué viaje pertenece cada cruce. La regla
+            9.1.8 pide que la bitácora y ese estado de cuenta coincidan.
+          </p>
+          <span class="blog-tarjeta-leer">Leer artículo <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="blog-tarjeta" href="carta-porte-3-1-revision-en-la-liquidacion.html">
+          <span class="blog-tarjeta-figura">
+            <img src="../assets/blog/carta-porte-3-1-revision-en-la-liquidacion.webp" alt="Documento de embarque dibujado a línea fina, con una lupa encima de sus renglones y un reloj al costado" width="1600" height="900" loading="lazy" decoding="async">
+          </span>
+          <span class="blog-tarjeta-meta">
+            <span class="blog-etiqueta">Cumplimiento</span>
+            <span class="blog-etiqueta"><time datetime="2026-08-17">Agosto 2026</time></span>
+          </span>
+          <h2 class="blog-tarjeta-titulo">La Carta Porte no se revisa cuando se emite. Se revisa cuando ya no se puede corregir.</h2>
+          <p class="blog-tarjeta-bajada">
+            Casi todos los errores del complemento pasan el timbrado sin hacer ruido: el PAC
+            valida aritmética y catálogos, no si el viaje ocurrió como dice el papel. Qué
+            contrastar en la liquidación, mientras corregir todavía es barato.
+          </p>
+          <span class="blog-tarjeta-leer">Leer artículo <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="blog-tarjeta" href="cancelacion-cfdi-plazo-2026-flotas.html">
+          <span class="blog-tarjeta-figura">
+            <img src="../assets/blog/cancelacion-cfdi-plazo-2026-flotas.webp" alt="Comprobante cruzado por una diagonal, calendario con una casilla en negro y una pistola de diésel, en línea negra sobre fondo crema" width="1600" height="900" loading="lazy" decoding="async">
+          </span>
+          <span class="blog-tarjeta-meta">
+            <span class="blog-etiqueta">Fiscal</span>
+            <span class="blog-etiqueta"><time datetime="2026-08-17">Agosto 2026</time></span>
+          </span>
+          <h2 class="blog-tarjeta-titulo">Tu proveedor puede cancelar la factura del diésel después de que ya la dedujiste.</h2>
+          <p class="blog-tarjeta-bajada">
+            Sobre cada comprobante que ya diste por cerrado corren dos relojes: el plazo de
+            cancelación de CFDI que rige en 2026 y los treinta días del artículo 69-B. Ninguno
+            de los dos toca la puerta.
+          </p>
+          <span class="blog-tarjeta-leer">Leer artículo <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="blog-tarjeta" href="agentes-de-ia-para-transporte-de-carga.html">
+          <span class="blog-tarjeta-figura">
+            <img src="../assets/blog/agentes-de-ia-para-transporte-de-carga.webp" alt="Diagrama de línea: un núcleo cuadrado unido por seis radios a una pistola de diésel, una caseta, documentos, una báscula, un sello y un tractocamión; uno de los radios va en línea cortada" width="1600" height="900" loading="lazy" decoding="async">
+          </span>
+          <span class="blog-tarjeta-meta">
+            <span class="blog-etiqueta">Perspectiva</span>
+            <span class="blog-etiqueta"><time datetime="2026-08-17">Agosto 2026</time></span>
+          </span>
+          <h2 class="blog-tarjeta-titulo">Qué puede y qué no puede hacer un agente de IA en el back office de una flota</h2>
+          <p class="blog-tarjeta-bajada">
+            El modelo lee y ordena; el motor calcula. Dónde va cada uno, qué partes del ciclo
+            siguen necesitando manos humanas, y las cinco preguntas con las que se evalúa a
+            cualquier proveedor — Likida incluido.
+          </p>
+          <span class="blog-tarjeta-leer">Leer artículo <span aria-hidden="true">→</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER idéntico al de la landing ── -->
+<footer class="footer">
+  <div class="wrap" style="padding:0">
+    <div class="footer-grid">
+      <div class="footer-col footer-marca">
+        <img src="../assets/likida-glifo.svg" alt="Likida" width="1130" height="1490" loading="lazy" decoding="async" style="height:150px;width:auto">
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k1">PRODUCTO</span>
+        <ul>
+          <li><a href="../index.html#producto" data-i18n="foot.como">Cómo funciona</a></li>
+          <li><a href="../index.html#ciclo" data-i18n="foot.ciclo">El ciclo completo</a></li>
+          <li><a href="../index.html#seguridad" data-i18n="foot.seguridad">Seguridad</a></li>
+          <li><a href="../index.html#faq" data-i18n="foot.faq">Preguntas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k2">COMPAÑÍA</span>
+        <ul>
+          <li><a href="../mision.html" data-i18n="foot.mision">Misión</a></li>
+          <li><a href="index.html" data-i18n="nav.blog">Blog</a></li>
+          <li><a href="../index.html#demo" data-i18n="cta.contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k3">CONECTA</span>
+        <ul>
+          <li><a href="../index.html#demo" data-i18n="foot.contacto">Contacto</a></li>
+          <li><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div>
+          <span class="kicker">■</span>
+          <div class="footer-tag" style="border-top:none;margin-top:8px;padding-top:0">
+            <p data-i18n="foot.tag1">El sistema operativo del back-office del autotransporte de carga mexicano.</p>
+            <p data-i18n="foot.tag2">Empezando por la liquidación de viajes, agente por agente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span id="anio"></span> <span data-i18n="foot.legal">Likida. Ninguna cifra de esta página se inventó — cada una tiene su fuente.</span></span>
+      <div class="footer-chips">
+        <span>CFDI 4.0</span><span>SAT 69-B</span><span>LIF 20-A</span><span>Multi-tenant</span><span>AES-256</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=10"></script>
+</body>
+</html>
