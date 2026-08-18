@@ -95,7 +95,7 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .12em; font-size: 17px; }
 .logo svg { transition: transform .45s cubic-bezier(.22,1,.36,1); }
 .header.expandido .logo svg { transform: scale(1.12); }
-.nav { display: flex; gap: 30px; font-size: 14.5px; font-weight: 500; color: #55555c; letter-spacing: .01em; }
+.nav { display: flex; gap: 36px; font-size: 15px; font-weight: 400; color: #46464d; letter-spacing: .015em; }
 .nav a:hover { color: var(--tinta); }
 .btn {
   display: inline-flex; align-items: center; gap: 9px;
@@ -257,20 +257,20 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .cta-final p { color: var(--tinta-suave); max-width: 56ch; margin: 0 auto 34px; }
 
 /* ── Footer clean premium (papel cálido, hairlines finas) ── */
-.footer { background: #edebe5; border-top: 1px solid #dcdad2; padding: 0; color: #201c19; }
+.footer { background: var(--blanco); border-top: 1px solid var(--linea); padding: 0; color: #201c19; }
 .footer-grid {
   display: grid; grid-template-columns: 1.15fr 1fr 1fr 1fr 1.3fr;
-  border-left: 1px solid #dcdad2; border-right: 1px solid #dcdad2;
+  border-left: 1px solid var(--linea); border-right: 1px solid var(--linea);
 }
-.footer-col { padding: 56px 34px; border-right: 1px solid #dcdad2; }
+.footer-col { padding: 56px 34px; border-right: 1px solid var(--linea); }
 .footer-col:last-child { border-right: none; }
-.footer-col .kicker { margin-bottom: 22px; display: block; color: #8b877e; font-weight: 600; letter-spacing: .18em; }
+.footer-col .kicker { margin-bottom: 22px; display: block; color: #8b8b93; font-weight: 600; letter-spacing: .18em; }
 .footer-col ul { list-style: none; display: grid; gap: 14px; font-size: 15.5px; font-weight: 400; }
 .footer-col a { transition: opacity .2s ease; }
 .footer-col a:hover { opacity: .55; }
 .footer-marca { display: flex; align-items: center; }
 .footer-marca img { opacity: .92; }
-.footer-tag { border-top: 1px solid #dcdad2; padding-top: 20px; margin-top: 20px; }
+.footer-tag { border-top: 1px solid var(--linea); padding-top: 20px; margin-top: 20px; }
 .footer-tag p:first-child { font-weight: 500; margin-bottom: 6px; font-size: 15.5px; }
 .footer-tag p:last-child { color: #8b877e; font-size: 14.5px; }
 .footer-legal {
@@ -419,7 +419,7 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .btn:hover .glifo { width: 17px; margin-right: 0; opacity: 1; transform: none; }
 
 /* ── HERO centrado estilo Handle ── */
-.hero-centro { text-align: center; padding: clamp(56px, 7vw, 100px) 0 0; }
+.hero-centro { text-align: center; padding: clamp(34px, 4.2vw, 60px) 0 0; }
 .hero-centro h1 { font-size: clamp(44px, 5.4vw, 84px); max-width: 22ch; margin: 0 auto; position: relative; }
 .hero-centro .subrayado { position: relative; white-space: nowrap; }
 .hero-centro .subrayado svg { position: absolute; left: -2%; bottom: -0.12em; width: 104%; height: .34em; pointer-events: none; }
@@ -430,7 +430,7 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 
 /* ── Marco de producto con video (el frame gris de Handle) ── */
 .producto-marco {
-  max-width: 1280px; margin: clamp(44px, 5vw, 72px) auto 0; padding: clamp(16px, 2.2vw, 30px);
+  max-width: 1280px; margin: clamp(26px, 3.2vw, 44px) auto 0; padding: clamp(16px, 2.2vw, 30px);
   background: #f2f1ee; border: 1px solid rgba(23,16,13,.05); border-radius: 30px;
   box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 24px 60px -24px rgba(23,16,13,.18);
 }
@@ -631,4 +631,65 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
   .anillo-svg * {
     animation: none !important;
   }
+}
+
+/* ═══ Gráficas v2: cada animación cuenta su texto ═══ */
+.grafica .t-est, .grafica .t-campo { fill: none; stroke: #17100d; stroke-width: 1.1; }
+.grafica .t-lin { fill: none; stroke: #9a9aa1; stroke-width: 1; }
+.grafica .t-fant { fill: none; stroke: #9a9aa1; stroke-width: 1.1; animation: g-pulsar 3.2s ease-in-out infinite; }
+/* el ticket viaja de la guantera al campo de captura */
+.t-viaja { animation: t-viajar 7s cubic-bezier(.55,0,.25,1) infinite; }
+@keyframes t-viajar {
+  0% { transform: translateX(0); opacity: 0; }
+  6% { transform: translateX(0); opacity: 1; }
+  40% { transform: translateX(74px); opacity: 1; }
+  88% { transform: translateX(74px); opacity: 1; }
+  94%, 100% { transform: translateX(74px); opacity: 0; }
+}
+/* y se teclea, renglón por renglón */
+.t-tipeo { stroke: #8b8b93; stroke-width: 1.3; fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; animation: t-tipear 7s steps(14) infinite; animation-delay: var(--d, 0s); }
+@keyframes t-tipear {
+  0%, 45% { stroke-dashoffset: 1; opacity: 1; }
+  80% { stroke-dashoffset: 0; }
+  88% { stroke-dashoffset: 0; opacity: 1; }
+  94%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+/* la pasada de conciliación barre los 10 días */
+.p-barrido { animation: p-barrer 10s linear infinite; }
+@keyframes p-barrer {
+  0% { transform: translateX(0); opacity: 0; }
+  3% { opacity: 1; }
+  83% { opacity: 1; }
+  86%, 100% { transform: translateX(183px); opacity: 0; }
+}
+.p-check { opacity: 0; animation: p-palomear 10s ease infinite; animation-delay: var(--d, 0s); }
+@keyframes p-palomear { 0% { opacity: 0; } 3% { opacity: 1; } 60% { opacity: 1; } 70%, 100% { opacity: 0; } }
+/* el reloj de 72 h */
+.c-mano { transform-box: view-box; transform-origin: 146px 58px; animation: c-girar 8s linear infinite; }
+@keyframes c-girar { to { transform: rotate(360deg); } }
+.c-arco { stroke-dasharray: 1; animation: c-agotar 8s linear infinite; }
+@keyframes c-agotar { from { stroke-dashoffset: 0; } to { stroke-dashoffset: 1; } }
+.c-palomita { animation: c-valido 8s ease infinite; }
+@keyframes c-valido { 0%, 64% { opacity: 1; } 70%, 96% { opacity: 0; } 100% { opacity: 1; } }
+.c-equis { opacity: 0; animation: c-vencido 8s ease infinite; }
+@keyframes c-vencido { 0%, 66% { opacity: 0; } 72%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.c-etq { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; fill: #8b8b93; }
+/* el escáner vigila 4 vigencias; la quinta vence fuera */
+.v-scan { animation: v-escanear 9s cubic-bezier(.6,0,.3,1) infinite; }
+@keyframes v-escanear {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(20px); }
+  50%, 70% { transform: translateY(40px); }
+  75%, 90% { transform: translateY(60px); }
+  96%, 100% { transform: translateY(0); }
+}
+.v-dot { opacity: .35; animation: v-vigilar 9s ease infinite; animation-delay: var(--d, 0s); }
+@keyframes v-vigilar { 0% { opacity: .35; } 4% { opacity: 1; } 24% { opacity: 1; } 32%, 100% { opacity: .35; } }
+.v-equis { opacity: 0; animation: v-sinaviso 9s ease infinite; }
+@keyframes v-sinaviso { 0%, 78% { opacity: 0; } 83%, 93% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .t-viaja, .t-tipeo, .t-fant, .p-barrido, .p-check, .c-mano, .c-arco, .c-palomita, .c-equis,
+  .v-scan, .v-dot, .v-equis { animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; }
+  .c-equis, .v-equis { opacity: 0 !important; }
 }
