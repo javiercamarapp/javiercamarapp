@@ -6,6 +6,13 @@
    · Cada nodo traducible lleva data-i18n="clave" (texto o HTML) y/o
      data-i18n-attr="atributo:clave;otro:clave" (placeholder, aria-label, alt,
      content del meta).
+   · El español de un nodo no hace falta declararlo: la primera pasada guarda
+     el innerHTML original como valor por defecto de su clave. Por eso los
+     diccionarios del blog solo traen el inglés. Lo que sí esté escrito en
+     DICT.es manda sobre lo capturado.
+   · El JSON-LD se traduce con data-i18n-json="ruta.al.campo:clave".
+   · Las páginas del blog cargan diccionarios aparte (js/i18n-blog*.js) que se
+     anuncian en window.LIKIDA_I18N antes de que corra este archivo.
    · La elección se guarda en localStorage y se aplica ANTES de pintar: si el
      idioma guardado no es el default, se pone un velo sobre el body que se
      quita en cuanto termina la primera pasada (nunca se ve el español).
@@ -633,6 +640,34 @@
   var IDIOMAS = ["es", "en"];
   var idioma = DEFAULT;
 
+  /* ── Diccionarios externos ──────────────────────────────────────────────────
+     El blog son siete páginas largas: meterlas aquí obligaría a quien entra a
+     la portada a bajarse el texto de seis artículos que no va a leer. Cada
+     página del blog carga su propio diccionario ANTES que este archivo
+     (js/i18n-blog.js en las siete, js/i18n-blog-<artículo>.js solo en la suya)
+     y lo anuncia con window.LIKIDA_I18N.push({ en: {…} }). Aquí se funden en
+     DICT antes de la primera pasada, así que el velo antiparpadeo los cubre
+     igual que a lo demás. window.I18N.registra() hace lo mismo si algo llega
+     tarde. */
+  function funde(extra) {
+    if (!extra) return;
+    for (var f = 0; f < IDIOMAS.length; f++) {
+      var lng = IDIOMAS[f];
+      var tabla = extra[lng];
+      if (!tabla) continue;
+      if (!DICT[lng]) DICT[lng] = {};
+      for (var k in tabla) {
+        if (Object.prototype.hasOwnProperty.call(tabla, k)) DICT[lng][k] = tabla[k];
+      }
+    }
+  }
+
+  (function () {
+    var cola = window.LIKIDA_I18N;
+    if (!cola || !cola.length) return;
+    for (var i = 0; i < cola.length; i++) funde(cola[i]);
+  })();
+
   try {
     var guardado = window.localStorage.getItem(CLAVE);
     if (IDIOMAS.indexOf(guardado) !== -1) idioma = guardado;
@@ -650,18 +685,69 @@
   }
   function quitaVelo() { raiz.removeAttribute("data-i18n-velo"); }
 
-  function t(clave) {
+  /* El HTML es el diccionario español. Lo que un nodo trae escrito se guarda
+     como su valor por defecto la primera vez que se le pasa encima, así que el
+     diccionario del blog solo declara el inglés y volver a español restituye el
+     original exacto — sin transcribir dos veces dos mil palabras por artículo.
+     Las claves que ya viven en DICT.es siguen mandando: esto es solo el
+     respaldo para las que no están. */
+  var ORIG = {};       // clave → innerHTML original del nodo
+  var ORIG_ATTR = {};  // clave → valor original del atributo (o del campo JSON)
+
+  function valor(clave) {
     var tabla = DICT[idioma] || DICT[DEFAULT];
     var v = tabla[clave];
     if (v == null) v = DICT[DEFAULT][clave];
+    return v == null ? null : v;
+  }
+
+  function t(clave) {
+    var v = valor(clave);
+    if (v == null) v = ORIG[clave];
+    if (v == null) v = ORIG_ATTR[clave];
     return v == null ? "" : v;
+  }
+
+  /* JSON-LD: data-i18n-json="ruta.al.campo:clave;otra.ruta:clave". La ruta se
+     recorre por índices y nombres dentro del JSON del propio <script>. Los
+     rastreadores no ejecutan JS y siempre leen el español; esto solo mantiene
+     el bloque coherente con lo que el visitante está leyendo. */
+  function aplicaJson(el) {
+    var spec = el.getAttribute("data-i18n-json");
+    if (!spec) return;
+    var datos;
+    try { datos = JSON.parse(el.textContent); } catch (e) { return; }
+    var pares = spec.split(";");
+    var cambio = false;
+    for (var i = 0; i < pares.length; i++) {
+      var par = pares[i].trim();
+      if (!par) continue;
+      var corte = par.indexOf(":");
+      if (corte < 0) continue;
+      var ruta = par.slice(0, corte).trim().split(".");
+      var k = par.slice(corte + 1).trim();
+      var nodo = datos;
+      for (var j = 0; j < ruta.length - 1 && nodo != null; j++) nodo = nodo[ruta[j]];
+      if (nodo == null) continue;
+      var campo = ruta[ruta.length - 1];
+      if (typeof nodo[campo] !== "string") continue;
+      if (!(k in ORIG_ATTR)) ORIG_ATTR[k] = nodo[campo];
+      var v = valor(k);
+      if (v == null) v = ORIG_ATTR[k];
+      if (v != null && nodo[campo] !== v) { nodo[campo] = v; cambio = true; }
+    }
+    if (cambio) el.textContent = JSON.stringify(datos, null, 2);
   }
 
   function aplicaNodo(el) {
     var clave = el.getAttribute("data-i18n");
     if (clave) {
-      var v = t(clave);
-      if (v) {
+      if (!(clave in ORIG)) ORIG[clave] = el.innerHTML;
+      var v = valor(clave);
+      if (v == null) {
+        var o = ORIG[clave];
+        if (o != null && el.innerHTML !== o) el.innerHTML = o;
+      } else if (v) {
         if (v.indexOf("<") !== -1) { if (el.innerHTML !== v) el.innerHTML = v; }
         else if (el.textContent !== v) { el.textContent = v; }
       }
@@ -676,16 +762,19 @@
         if (corte < 0) continue;
         var attr = par.slice(0, corte).trim();
         var k = par.slice(corte + 1).trim();
-        var val = t(k);
+        if (!(k in ORIG_ATTR)) ORIG_ATTR[k] = el.getAttribute(attr);
+        var val = valor(k);
+        if (val == null) val = ORIG_ATTR[k];
         if (val) el.setAttribute(attr, val);
       }
     }
+    if (el.hasAttribute("data-i18n-json")) aplicaJson(el);
   }
 
   function aplica(ambito) {
     var base = ambito || document;
     if (base.nodeType === 1) aplicaNodo(base);
-    var nodos = base.querySelectorAll("[data-i18n],[data-i18n-attr]");
+    var nodos = base.querySelectorAll("[data-i18n],[data-i18n-attr],[data-i18n-json]");
     for (var i = 0; i < nodos.length; i++) aplicaNodo(nodos[i]);
   }
 
@@ -720,6 +809,7 @@
     t: t,
     aplica: aplica,
     cambia: cambia,
+    registra: function (tabla) { funde(tabla); aplica(document); },
     get idioma() { return idioma; }
   };
 })();
