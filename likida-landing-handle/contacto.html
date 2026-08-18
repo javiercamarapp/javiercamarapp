@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="con.title">Contacto — agenda una demo de Likida con un viaje tuyo</title>
+<meta name="description" data-i18n-attr="content:con.desc" content="Agenda 30 minutos con Likida y ve un viaje tuyo cuadrado en vivo: trae 10 fotos de un viaje cerrado y te llevas la liquidación, aunque no compres nada.">
+<link rel="canonical" href="https://likida.ai/contacto">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#fbfbfd">
+
+<!-- ── Identidad social. Igual que en index.html: los rastreadores de OG no
+     ejecutan JS, así que siempre leen el español del HTML. ── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Likida">
+<meta property="og:url" content="https://likida.ai/contacto">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" data-i18n-attr="content:og.con.title" content="Agenda una demo de Likida — con tu propio viaje, no con el nuestro">
+<meta property="og:description" data-i18n-attr="content:og.con.desc" content="30 minutos por Google Meet. Trae 10 fotos de un viaje cerrado y lo ves cuadrado en vivo: CFDI validados contra el SAT, diésel, casetas y viáticos.">
+<meta property="og:image" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:secure_url" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" data-i18n-attr="content:og.con.title" content="Agenda una demo de Likida — con tu propio viaje, no con el nuestro">
+<meta name="twitter:description" data-i18n-attr="content:og.con.desc" content="30 minutos por Google Meet. Trae 10 fotos de un viaje cerrado y lo ves cuadrado en vivo: CFDI validados contra el SAT, diésel, casetas y viáticos.">
+<meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
+<meta name="twitter:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
+
+<!-- Mismo preload que index.html: Fraunces decide cuándo deja de moverse la página. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/favicon-64.png">
+<link rel="stylesheet" href="css/main.css?v=11">
+<script src="js/i18n.js?v=11"></script>
+
+<!-- ── Datos estructurados. Sin aggregateRating, review ni offers: Likida no
+     tiene clientes ni precio público. ContactPage + el ContactPoint real. ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://likida.ai/contacto#pagina",
+      "url": "https://likida.ai/contacto",
+      "name": "Contacto — agenda una demo de Likida",
+      "description": "Agenda 30 minutos con Likida y ve un viaje tuyo cuadrado en vivo: trae 10 fotos de un viaje cerrado.",
+      "inLanguage": "es-MX",
+      "isPartOf": { "@id": "https://likida.ai/#sitio" },
+      "about": { "@id": "https://likida.ai/#organizacion" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://likida.ai/assets/contacto.png",
+        "caption": "Ilustración de línea: manos acomodando los comprobantes de un viaje junto a una pantalla con la liquidación."
+      },
+      "breadcrumb": { "@id": "https://likida.ai/contacto#migas" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://likida.ai/#organizacion",
+      "name": "Likida",
+      "url": "https://likida.ai/",
+      "areaServed": { "@type": "Country", "name": "MX" },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "ventas@likida.ai",
+          "availableLanguage": ["es-MX", "en"],
+          "areaServed": "MX"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://likida.ai/contacto#migas",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://likida.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://likida.ai/contacto" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="aviso" data-i18n="aviso">
+  Likida está armando su <strong>grupo cerrado de flotas piloto</strong> este trimestre — cada piloto se adapta a mano y el cupo es limitado.
+</div>
+
+<!-- ── Header píldora → ancho completo al scroll (idéntico al de index.html;
+     los anclas de sección apuntan a index.html porque aquí no existen) ── -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="logo" href="index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
+      <img src="assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
+    </a>
+    <nav class="nav">
+      <a href="index.html#producto" data-i18n="nav.producto">Producto</a>
+      <a href="index.html#ciclo" data-i18n="nav.ciclo">El ciclo</a>
+      <a href="index.html#seguridad" data-i18n="nav.seguridad">Seguridad</a>
+      <a href="mision.html" data-i18n="nav.mision">Misión</a>
+      <a href="index.html#faq" data-i18n="nav.faq">Preguntas</a>
+    </nav>
+    <div class="header-acciones">
+      <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
+        <button type="button" class="idioma-op" data-idioma="en" data-i18n-attr="aria-label:idioma.en" aria-label="Cambiar a inglés">EN</button>
+        <span class="idioma-sep" aria-hidden="true">/</span>
+        <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
+      </div>
+      <a class="btn btn-tinta" href="#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     CONTACTO — estructura clonada de usehandle.ai/getdemo: media pantalla de
+     argumento y media de formulario, a sangre, con el form arriba del pliegue.
+     Diferencias a propósito:
+     · Su mitad izquierda es tinta oscura; la nuestra es crema — la paleta del
+       sitio no tiene un panel oscuro fuera del footer.
+     · Donde ellos cuelgan logos de clientes y estrellas, nosotros NO ponemos
+       prueba social: Likida no tiene clientes todavía. En su lugar va lo único
+       que sí podemos prometer — el minuto a minuto de la demo, qué traer y
+       qué se lleva el prospecto aunque no compre.
+     El formulario es EL MISMO de index.html (#form-demo, .demo-vista,
+     [data-avanza]) y lo mueve el mismo js/main.js — ni marcado nuevo ni lógica
+     duplicada.
+     ══════════════════════════════════════════════════════════════════════════ -->
+<main class="contacto-split" id="demo">
+
+  <!-- ── Mitad de argumento, parte 1: el encabezado y la ilustración.
+       Va en dos piezas (intro / detalle) por una razón de móvil: al apilarse,
+       el formulario se cuela ENTRE las dos para no quedar sepultado bajo tres
+       bloques de texto. En escritorio las dos piezas forman una sola columna
+       crema continua. ── -->
+  <div class="contacto-intro">
+    <div class="contacto-columna">
+      <span class="kicker kicker-pill" data-i18n="con.kicker">AGENDA UNA DEMO</span>
+      <h1 class="contacto-h1" data-i18n="con.h1">Trae un viaje cerrado. <span class="gris-suave">Sal con él cuadrado.</span></h1>
+      <p class="contacto-sub" data-i18n="con.sub">
+        30 minutos por Google Meet. Corremos la liquidación con tus tickets, tu política de gastos
+        y tus números — no con una cuenta de demostración.
+      </p>
+
+      <figure class="contacto-figura">
+        <img src="assets/contacto.png" width="1580" height="982" loading="eager" decoding="async"
+             data-i18n-attr="alt:con.img.alt"
+             alt="Ilustración de línea: dos manos acomodando en fila los comprobantes de un viaje sobre un escritorio, junto a una laptop con la liquidación en pantalla y un teléfono con un mensaje.">
+      </figure>
+    </div>
+  </div>
+
+  <!-- ── Mitad de formulario: el MISMO #form-demo de index.html ── -->
+  <div class="contacto-forma">
+    <div class="contacto-forma-inner">
+      <form id="form-demo" novalidate>
+        <div class="demo-pasos" aria-hidden="true">
+          <div class="demo-paso activo"></div>
+          <div class="demo-paso"></div>
+          <div class="demo-paso"></div>
+        </div>
+
+        <div class="demo-vista activa">
+          <p class="demo-etiqueta" data-i18n="demo.p1.et">PASO 1 DE 3</p>
+          <h2 class="demo-titulo" data-i18n="demo.p1.t">Agenda una demo personalizada</h2>
+          <p class="demo-hint" data-i18n="demo.p1.hint">Cuéntanos un poco sobre tu flota</p>
+          <input class="campo" type="text" name="empresa" data-i18n-attr="placeholder:demo.ph.empresa" placeholder="Nombre de tu empresa" required>
+          <div class="campos-2">
+            <input class="campo" type="text" name="nombre" data-i18n-attr="placeholder:demo.ph.nombre" placeholder="Tu nombre" required>
+            <input class="campo" type="text" name="apellido" data-i18n-attr="placeholder:demo.ph.apellido" placeholder="Tu apellido" required>
+          </div>
+          <button type="button" class="btn btn-acento btn-continuar" data-avanza><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="demo.continuar">Continuar</span></button>
+        </div>
+
+        <div class="demo-vista">
+          <p class="demo-etiqueta" data-i18n="demo.p2.et">PASO 2 DE 3</p>
+          <h2 class="demo-titulo" data-i18n="demo.p2.t">¿Dónde te contactamos?</h2>
+          <p class="demo-hint" data-i18n="demo.p2.hint">Usamos estos datos solo para coordinar tu demo</p>
+          <input class="campo" type="email" name="correo" data-i18n-attr="placeholder:demo.ph.correo" placeholder="Correo empresarial" required>
+          <input class="campo" type="tel" name="whatsapp" data-i18n-attr="placeholder:demo.ph.tel" placeholder="Teléfono / WhatsApp" required>
+          <select class="campo" name="unidades" required>
+            <option value="" data-i18n="demo.u.0">¿Cuántas unidades opera tu flota?</option>
+            <option data-i18n="demo.u.1">5 a 30 unidades</option>
+            <option data-i18n="demo.u.2">31 a 100 unidades</option>
+            <option data-i18n="demo.u.3">101 a 250 unidades</option>
+            <option data-i18n="demo.u.4">Más de 250 unidades</option>
+          </select>
+          <button type="button" class="btn btn-acento btn-continuar" data-avanza><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="demo.continuar">Continuar</span></button>
+          <button type="button" class="btn btn-borde btn-continuar" style="margin-top:10px" data-regresa data-i18n="demo.regresar">Regresar</button>
+        </div>
+
+        <div class="demo-vista">
+          <p class="demo-etiqueta" data-i18n="demo.p3.et">PASO 3 DE 3</p>
+          <h2 class="demo-titulo" data-i18n="demo.p3.t">Elige tu horario</h2>
+          <p class="demo-hint" data-i18n="demo.p3.hint">Disponibilidad en tiempo real — la cita cae directo en nuestro calendario</p>
+          <div class="cal-marco" id="cal-marco"></div>
+          <p class="cal-nota" data-i18n="demo.cal.nota">Al agendar recibes la invitación con la liga de Google Meet en tu correo.</p>
+          <button type="button" class="btn btn-borde btn-continuar" style="margin-top:14px" data-regresa data-i18n="demo.regresar">Regresar</button>
+        </div>
+      </form>
+
+      <p class="contacto-privacidad" data-i18n="con.privacidad">
+        Tus datos se usan solo para coordinar la demo. No se comparten, no se venden y no entran a
+        ninguna lista — si no agendas, se quedan ahí y ya.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Mitad de argumento, parte 2: lo que en Handle serían los logos ── -->
+  <div class="contacto-detalle">
+    <div class="contacto-columna">
+      <div class="contacto-bloques">
+        <div class="contacto-bloque">
+          <span class="kicker" data-i18n="con.b1.k">LOS 30 MINUTOS</span>
+          <ol class="contacto-minutos">
+            <li><span class="contacto-min">00–05</span><p data-i18n="con.b1.1">Nos cuentas cómo liquidas hoy: quién teclea, quién revisa y en qué día de la semana se atora.</p></li>
+            <li><span class="contacto-min">05–20</span><p data-i18n="con.b1.2">Subimos tus fotos en vivo. El agente las lee, valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra tu política. Lo ves en pantalla compartida, no en un video grabado.</p></li>
+            <li><span class="contacto-min">20–30</span><p data-i18n="con.b1.3">Te decimos qué falló, qué todavía no sabemos hacer y qué haría falta para correrlo con tu flota completa.</p></li>
+          </ol>
+        </div>
+
+        <div class="contacto-bloque">
+          <span class="kicker" data-i18n="con.b2.k">QUÉ TRAER</span>
+          <ul class="contacto-lista">
+            <li data-i18n="con.b2.1"><strong>10 fotos de un viaje ya cerrado</strong> — tickets de diésel, casetas y viáticos, como te los entregó el operador. Torcidas y con el dedo encima está bien: así llegan en la realidad.</li>
+            <li data-i18n="con.b2.2"><strong>Si lo tienes a la mano,</strong> el estado de cuenta del TAG de esa semana. Con él te enseñamos la conciliación de peajes.</li>
+            <li data-i18n="con.b2.3"><strong>Nada de accesos.</strong> No pedimos tu ERP, ni tu GPS, ni tu monedero para la demo. Eso se habla después, si hay piloto.</li>
+          </ul>
+        </div>
+
+        <div class="contacto-bloque">
+          <span class="kicker" data-i18n="con.b3.k">CON QUÉ TE VAS</span>
+          <ul class="contacto-lista">
+            <li data-i18n="con.b3.1"><strong>La liquidación de ese viaje</strong> en PDF, más el archivo que tu SAP Business One o CONTPAQi ya sabe importar.</li>
+            <li data-i18n="con.b3.2"><strong>El veredicto de cada comprobante:</strong> cuáles pasaron la validación del SAT, cuáles no y por qué.</li>
+            <li data-i18n="con.b3.3"><strong>Es tuyo aunque no compres nada.</strong> Si la demo sale mal, te lo decimos en la llamada y no hay seguimiento.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Donde Handle pone logos de clientes, nosotros ponemos la verdad. -->
+      <p class="contacto-honesto" data-i18n="con.honesto">
+        No vas a encontrar logos de clientes ni testimonios en esta página: Likida está armando su
+        primer grupo de flotas piloto y todavía no tiene clientes que presumir. Lo que sí puedes ver
+        es el producto corriendo con un viaje tuyo — que es la única prueba que importa.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER cuadrícula editorial (idéntico al de index.html) ── -->
+<footer class="footer">
+  <div class="wrap" style="padding:0">
+    <div class="footer-grid">
+      <div class="footer-col footer-marca">
+        <img src="assets/likida-glifo.svg" alt="Likida" width="1130" height="1490" loading="lazy" decoding="async" style="height:150px;width:auto">
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k1">PRODUCTO</span>
+        <ul>
+          <li><a href="index.html#producto" data-i18n="foot.como">Cómo funciona</a></li>
+          <li><a href="index.html#ciclo" data-i18n="foot.ciclo">El ciclo completo</a></li>
+          <li><a href="index.html#seguridad" data-i18n="foot.seguridad">Seguridad</a></li>
+          <li><a href="index.html#faq" data-i18n="foot.faq">Preguntas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k2">COMPAÑÍA</span>
+        <ul>
+          <li><a href="mision.html" data-i18n="foot.mision">Misión</a></li>
+          <li><a href="blog/index.html" data-i18n="nav.blog">Blog</a></li>
+          <li><a href="#demo" data-i18n="cta.contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="kicker" data-i18n="foot.k3">CONECTA</span>
+        <ul>
+          <li><a href="#demo" data-i18n="foot.contacto">Contacto</a></li>
+          <li><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div>
+          <span class="kicker">■</span>
+          <div class="footer-tag" style="border-top:none;margin-top:8px;padding-top:0">
+            <p data-i18n="foot.tag1">El sistema operativo del back-office del autotransporte de carga mexicano.</p>
+            <p data-i18n="foot.tag2">Empezando por la liquidación de viajes, agente por agente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span id="anio"></span> <span data-i18n="foot.legal">Likida. Ninguna cifra de esta página se inventó — cada una tiene su fuente.</span></span>
+      <div class="footer-chips">
+        <span>CFDI 4.0</span><span>SAT 69-B</span><span>LIF 20-A</span><span>Multi-tenant</span><span>AES-256</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>
