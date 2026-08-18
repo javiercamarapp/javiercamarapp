@@ -737,27 +737,16 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 }
 
 /* ── Hero: el SS del chat con zoom suave al pasar el cursor (tipo Handle) ── */
-.producto-marco { transition: box-shadow .7s ease; }
-.producto-marco:hover { box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 34px 80px -26px rgba(23,16,13,.26); }
-.producto-marco-inner img { transform: scale(1); transition: transform 1.2s cubic-bezier(.22,1,.36,1); }
-.producto-marco:hover .producto-marco-inner img { transform: scale(1.025); }
-@media (prefers-reduced-motion: reduce) { .producto-marco-inner img { transition: none; } }
 
-/* ── Efecto agua: un brillo recorre el marco del hero en loop; al hover, lento y elegante ── */
-.producto-marco-inner { position: relative; }
-.producto-marco-inner::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.22) 50%, transparent 60%);
-  background-size: 260% 100%; background-position: 145% 0;
-  animation: agua-brillo 8s cubic-bezier(.45,.05,.35,.95) infinite;
+/* ── Marco del hero: el lienzo de mosaicos (misma estructura que Handle) ──
+   El marco es estático a propósito: todo el movimiento vive dentro del canvas. */
+.producto-marco-inner {
+  position: relative;
+  aspect-ratio: 16 / 10;   /* el de la captura: 2560×1600, así no se recorta nada */
+  box-shadow: 0 8px 40px -12px rgba(0,0,0,.12);
 }
-@keyframes agua-brillo {
-  0% { background-position: 145% 0; }
-  46% { background-position: -45% 0; }
-  100% { background-position: -45% 0; }
+.producto-marco-inner canvas {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  touch-action: pan-y;
 }
-.producto-marco:hover .producto-marco-inner::after {
-  animation-duration: 14s;
-  background-image: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.3) 50%, transparent 62%);
-}
-@media (prefers-reduced-motion: reduce) { .producto-marco-inner::after { animation: none; opacity: 0; } }
+.producto-marco-inner noscript img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
