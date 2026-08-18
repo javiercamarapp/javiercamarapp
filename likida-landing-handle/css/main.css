@@ -151,7 +151,8 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
 .demo-vista.activa { display: block; animation: aparecer .35s ease; }
 @keyframes aparecer { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .cal-marco { border: 1.5px solid var(--linea); border-radius: var(--radio); overflow: hidden; background: var(--blanco); }
-.cal-marco iframe { width: 100%; height: 560px; border: 0; display: block; }
+.cal-marco iframe { width: 100%; border: 0; display: block; }
+.cal-marco { min-height: 560px; }
 .cal-nota { font-size: 12.5px; color: var(--gris); margin-top: 10px; }
 
 /* ── Secciones ── */

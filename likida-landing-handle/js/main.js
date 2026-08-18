@@ -7,11 +7,10 @@
    4) Demo en 3 pasos → calendario de Google en tiempo real (paso 3).
    ═══════════════════════════════════════════════════════════════════════════ */
 
-// ── CONFIG: el link de "Horarios de citas" de Google Calendar de Javier.
-//    Se saca en calendar.google.com → Crear → Horario de citas → Compartir →
-//    Insertar en sitio web. Mientras esté vacío, el paso 3 enseña el aviso
-//    de configuración en lugar de un calendario roto.
-const GOOGLE_CALENDAR_EMBED = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ333HTPKJeadElsRvd1C-nzE65gUjn8vnZEYja5CFZiB3p-Hfcr6cUySapAJiTx_GfzjRE8s-5i?gv=true"; // "Demo Likida — con tus tickets" bajo ventas@likida.ai (Google Meet, 30 min) — 17-ago-2026
+// ── CONFIG: Cal.com bajo ventas@likida.ai. Las citas caen en su Google Calendar y
+//    el personal de Javier se consulta solo para evitar empalmes. El embed se tematiza
+//    con nuestras variables (Cal.com cobra por marca en su página, no en el embed).
+const CAL_LINK = "likida/demo"; // cal.com/likida/demo — 30 min, Google Meet
 
 // ── 1) Header expandible ────────────────────────────────────────────────────
 const header = document.querySelector(".header");
@@ -62,24 +61,59 @@ if (form) {
     const marco = document.getElementById("cal-marco");
     if (!marco || marco.dataset.montado) return;
     marco.dataset.montado = "1";
-    if (GOOGLE_CALENDAR_EMBED) {
-      const url = new URL(GOOGLE_CALENDAR_EMBED);
-      // El nombre/correo capturados pre-llenan el formulario de la cita.
-      if (datos.nombre) url.searchParams.set("name", `${datos.nombre} ${datos.apellido ?? ""}`.trim());
-      if (datos.correo) url.searchParams.set("email", datos.correo);
-      const iframe = document.createElement("iframe");
-      iframe.src = url.toString();
-      iframe.title = "Agenda tu demo — calendario en tiempo real";
-      iframe.loading = "lazy";
-      marco.appendChild(iframe);
-    } else {
-      marco.innerHTML =
-        '<div style="padding:48px 32px;text-align:center;color:#8a8a90;font-size:15px;line-height:1.7">' +
-        "El calendario en tiempo real se conecta aquí.<br>" +
-        "<strong style=\"color:#111114\">Falta pegar el link de Horarios de citas de Google Calendar</strong> " +
-        "en <code>js/main.js</code> (constante GOOGLE_CALENDAR_EMBED)." +
-        "</div>";
-    }
+
+    // Cargador oficial de Cal.com (una sola vez).
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal, ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {}; cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); }
+          else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "demo", { origin: "https://app.cal.com" });
+    Cal.ns.demo("inline", {
+      elementOrSelector: "#cal-marco",
+      calLink: CAL_LINK,
+      layout: "month_view",
+      config: {
+        // El nombre y correo capturados pre-llenan el formulario de la cita.
+        name: [datos.nombre, datos.apellido].filter(Boolean).join(" "),
+        email: datos.correo || "",
+        theme: "light",
+      },
+    });
+    // Nuestra paleta dentro del embed: tinta de marca, tipografía y esquinas del sitio.
+    Cal.ns.demo("ui", {
+      theme: "light",
+      cssVarsPerTheme: {
+        light: {
+          "cal-brand": "#17100d",
+          "cal-text": "#17100d",
+          "cal-text-emphasis": "#17100d",
+          "cal-bg": "#ffffff",
+          "cal-bg-emphasis": "#f2f1ee",
+          "cal-border": "#ececef",
+          "cal-border-emphasis": "#d9d9dd",
+          "cal-text-subtle": "#6b7280",
+        },
+      },
+      hideEventTypeDetails: false,
+    });
   }
 
   form.addEventListener("submit", (ev) => ev.preventDefault());
