@@ -734,3 +734,10 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 
   .chat-cursor { animation: none; }
   .chat-tarjeta, .chat-glifo, .chat-puntos, .chat-marco { transition: none !important; }
 }
+
+/* ── Hero: el SS del chat con zoom suave al pasar el cursor (tipo Handle) ── */
+.producto-marco { transition: box-shadow .7s ease; }
+.producto-marco:hover { box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 34px 80px -26px rgba(23,16,13,.26); }
+.producto-marco-inner img { transform: scale(1); transition: transform 1.2s cubic-bezier(.22,1,.36,1); }
+.producto-marco:hover .producto-marco-inner img { transform: scale(1.025); }
+@media (prefers-reduced-motion: reduce) { .producto-marco-inner img { transition: none; } }
