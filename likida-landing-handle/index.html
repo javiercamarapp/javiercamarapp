@@ -155,7 +155,7 @@
 <header class="header" id="header">
   <div class="header-inner">
     <a class="logo" href="#" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
-      <img src="assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
+      <img class="logo-completo" src="assets/likida-logo.png" alt="Likida" width="726" height="149"><img class="logo-glifo" src="assets/likida-glifo.svg" alt="" aria-hidden="true" width="149" height="149">
     </a>
     <nav class="nav">
       <a href="#producto" data-i18n="nav.producto">Producto</a>
@@ -170,7 +170,7 @@
         <span class="idioma-sep" aria-hidden="true">/</span>
         <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
       </div>
-      <a class="btn btn-tinta" href="#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-tinta" href="contacto.html"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </div>
   </div>
 </header>
@@ -184,7 +184,7 @@
       por viaje — desde el WhatsApp que tu operador ya usa. Sin apps nuevas, sin cambiar de ERP.
     </p>
     <div class="hero-centro-cta">
-      <a class="btn btn-acento btn-gloss" href="#demo" style="font-size:16.5px;padding:15px 30px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-acento btn-gloss" href="contacto.html" style="font-size:16.5px;padding:15px 30px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </div>
     <p class="hero-centro-nota" data-i18n="hero.nota">En la demo lo ves corriendo con un caso tuyo: trae 10 fotos de un viaje cerrado.</p>
   </div>
@@ -665,7 +665,7 @@
   <div class="wrap revela">
     <h2 data-i18n="cta2.h2">El comprobante ya no viaja <em style="font-style:italic">más lento que el camión.</em></h2>
     <p data-i18n="cta2.p">Agenda 30 minutos y ve un viaje tuyo cuadrado en vivo — con tus números, no con los nuestros.</p>
-    <a class="btn btn-acento" href="#demo" style="font-size:17px;padding:16px 36px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+    <a class="btn btn-acento" href="contacto.html" style="font-size:17px;padding:16px 36px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
   </div>
 </section>
 
@@ -690,13 +690,13 @@
         <ul>
           <li><a href="mision.html" data-i18n="foot.mision">Misión</a></li>
           <li><a href="blog/index.html" data-i18n="nav.blog">Blog</a></li>
-          <li><a href="#demo" data-i18n="cta.contacto">Contáctanos</a></li>
+          <li><a href="contacto.html" data-i18n="cta.contacto">Contáctanos</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <span class="kicker" data-i18n="foot.k3">CONECTA</span>
         <ul>
-          <li><a href="#demo" data-i18n="foot.contacto">Contacto</a></li>
+          <li><a href="contacto.html" data-i18n="foot.contacto">Contacto</a></li>
           <li><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a></li>
         </ul>
       </div>
@@ -719,7 +719,21 @@
   </div>
 </footer>
 
+<!-- ── CIERRE: la galaxia que cuaja en el logo ──
+     Los puntos no adornan el logo: SON el logo. js/galaxia.js rasteriza
+     assets/likida-glifo.svg y la palabra recortada de assets/likida-logo.png en
+     un lienzo fuera de pantalla y muestrea sus píxeles para sacar la coordenada
+     de destino de cada partícula. Sin JS no se ve nada y no sobra nada: la
+     sección es decorativa (aria-hidden) y el logo ya vive en el pie. -->
+<section class="galaxia-cierre" aria-hidden="true">
+  <div class="galaxia-marco">
+    <canvas class="galaxia-lienzo" id="galaxia-lienzo"></canvas>
+    <span class="galaxia-firma">likida.ai</span>
+  </div>
+</section>
+
 <script src="js/hero.js?v=10"></script>
 <script src="js/main.js?v=10"></script>
+<script src="js/galaxia.js?v=1" defer></script>
 </body>
 </html>

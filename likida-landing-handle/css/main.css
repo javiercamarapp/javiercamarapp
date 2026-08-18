@@ -968,3 +968,196 @@ html[data-i18n-velo] body { visibility: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .btn-gloss { animation: none; background-image: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PÁGINA DE CONTACTO (contacto.html)
+   Estructura clonada de usehandle.ai/getdemo: la pantalla partida a la mitad,
+   argumento de un lado y formulario del otro, con el paso 1 arriba del pliegue.
+   Lo que cambia es la piel: donde ellos ponen un panel de tinta oscura nosotros
+   ponemos la crema del sitio, y donde ellos cuelgan logos de clientes nosotros
+   NO ponemos nada — Likida todavía no tiene clientes.
+   El formulario reusa .demo-*, .campo y .cal-marco tal cual: aquí solo se
+   define el contenedor.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.contacto-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* La columna crema son DOS piezas (intro arriba, detalle abajo) para poder
+     colar el formulario entre las dos al apilarse en móvil. En escritorio se
+     ven como una sola columna continua. */
+  grid-template-areas:
+    "intro   forma"
+    "detalle forma";
+  align-items: stretch;
+  border-bottom: 1px solid var(--linea);
+}
+.contacto-intro   { grid-area: intro; }
+.contacto-detalle { grid-area: detalle; }
+.contacto-forma   { grid-area: forma; }
+
+.contacto-intro,
+.contacto-detalle {
+  background: #f2f1ee;
+  border-right: 1px solid var(--linea);
+}
+.contacto-intro   { padding: clamp(38px, 4.6vw, 76px) clamp(24px, 3.4vw, 60px) 0; }
+.contacto-detalle { padding: clamp(30px, 3.4vw, 52px) clamp(24px, 3.4vw, 60px) clamp(46px, 5vw, 84px); }
+.contacto-forma {
+  background: var(--blanco);
+  padding: clamp(38px, 4.6vw, 76px) clamp(24px, 3.4vw, 60px) clamp(46px, 5vw, 84px);
+}
+/* Las dos piezas crema comparten medida para que el texto quede en un solo eje. */
+.contacto-columna     { max-width: 560px; margin: 0 auto; }
+.contacto-forma-inner {
+  max-width: 480px; margin: 0 auto;
+  /* El argumento es más largo que el formulario: el form acompaña el scroll
+     en vez de dejar media pantalla en blanco. */
+  position: sticky; top: 92px;
+}
+
+.contacto-h1 {
+  font-size: clamp(34px, 3.4vw, 52px);
+  margin: 22px 0 0;
+}
+.contacto-sub {
+  margin-top: 18px; max-width: 48ch;
+  font-size: 17px; line-height: 1.65; color: var(--tinta-suave);
+}
+
+/* Ilustración de línea: el mismo lenguaje que los diagramas de la landing.
+   El fondo del PNG ya es #f2f1ee, así que se funde con la columna sin caja. */
+.contacto-figura { margin: clamp(26px, 3vw, 44px) 0 0; }
+.contacto-figura img { display: block; width: 100%; height: auto; }
+
+/* ── Lo que Handle resuelve con logos, aquí es información útil ── */
+.contacto-bloques { display: grid; gap: 34px; }
+.contacto-bloque { border-top: 1px solid var(--linea); padding-top: 22px; }
+.contacto-bloque .kicker { display: block; margin-bottom: 16px; letter-spacing: .18em; }
+
+.contacto-minutos { list-style: none; display: grid; gap: 16px; }
+.contacto-minutos li { display: grid; grid-template-columns: 62px 1fr; gap: 16px; align-items: baseline; }
+.contacto-min {
+  font: 600 12.5px var(--mono); letter-spacing: .04em; color: var(--tinta);
+  padding-top: 2px; white-space: nowrap;
+}
+.contacto-minutos p { font-size: 15.5px; line-height: 1.62; color: var(--tinta-suave); }
+
+.contacto-lista { list-style: none; display: grid; gap: 14px; }
+.contacto-lista li {
+  position: relative; padding-left: 20px;
+  font-size: 15.5px; line-height: 1.62; color: var(--tinta-suave);
+}
+.contacto-lista li::before {
+  content: ""; position: absolute; left: 0; top: 10px;
+  width: 8px; height: 1px; background: var(--tinta);
+}
+.contacto-lista strong { color: var(--tinta); font-weight: 600; }
+
+.contacto-honesto {
+  margin-top: 34px; border-top: 1px solid var(--linea); padding-top: 22px;
+  font-size: 14.5px; line-height: 1.65; color: var(--gris); max-width: 56ch;
+}
+.contacto-privacidad {
+  margin-top: 22px; font-size: 13px; line-height: 1.6; color: var(--gris);
+}
+
+/* ── Apilado: intro, formulario, y hasta abajo el detalle ── */
+@media (max-width: 1080px) {
+  .contacto-split {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "forma" "detalle";
+  }
+  .contacto-intro, .contacto-detalle { border-right: none; }
+  .contacto-intro { padding-bottom: clamp(30px, 5vw, 48px); }
+  .contacto-forma {
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+  }
+  .contacto-forma-inner { position: static; }
+  .contacto-columna, .contacto-forma-inner { max-width: 620px; }
+}
+@media (max-width: 560px) {
+  .contacto-minutos li { grid-template-columns: 54px 1fr; gap: 12px; }
+  .contacto-h1 { font-size: clamp(30px, 8.2vw, 40px); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CIERRE — la galaxia que cuaja en el logo (después del pie).
+   La sección mide 220vh y el lienzo va pegado arriba: ese sobrante de 120vh es
+   la pista por la que corre la animación. El JS (js/galaxia.js) lee la posición
+   de la sección y con eso mueve el progreso; aquí solo va la caja.
+   El fondo es --papel, un tono más frío que el blanco del pie: separa las dos
+   zonas sin necesidad de una línea gruesa.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.galaxia-cierre {
+  position: relative;
+  height: 220vh;
+  background: var(--papel);
+  border-top: 1px solid var(--linea-footer);
+  overflow: clip;              /* nada de scroll horizontal si la nube se sale */
+  contain: paint;
+}
+.galaxia-marco {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+.galaxia-lienzo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;        /* el lienzo nunca se come el scroll ni el táctil */
+  touch-action: pan-y;
+}
+.galaxia-firma {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 7vh;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-indent: .3em;           /* compensa el tracking del último carácter */
+  color: var(--gris);
+  opacity: 0;                  /* el JS la sube al final del recorrido */
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .galaxia-cierre { height: 170vh; }
+  .galaxia-firma { bottom: 9vh; font-size: 11px; }
+}
+
+/* Sin movimiento: no hay pista que recorrer ni bucle que correr — el JS pinta
+   el logo ya cuajado una sola vez y la sección se queda en una pantalla. */
+@media (prefers-reduced-motion: reduce) {
+  .galaxia-cierre { height: 100vh; height: 100svh; }
+  .galaxia-firma { opacity: 1; }
+}
+
+/* ── Al expandirse el encabezado, la palabra se retira y queda el ícono ──
+   Igual que usehandle.ai: arriba se lee la marca completa; al scrollear, la
+   píldora se vuelve barra y basta el glifo. El ancho se anima (no solo la
+   opacidad) para que el nav no dé un salto cuando la palabra desaparece.
+   726×149 del logo a 22px de alto ≈ 107px; el glifo es cuadrado ≈ 22px. */
+.logo { position: relative; display: flex; align-items: center; height: 22px; width: 107px; overflow: hidden;
+  transition: width .45s cubic-bezier(.22,1,.36,1); }
+.logo img { height: 22px; width: auto; display: block; }
+.logo .logo-completo { transition: opacity .3s ease; }
+.logo .logo-glifo {
+  position: absolute; left: 0; top: 0; opacity: 0;
+  transform: scale(.86); transform-origin: left center;
+  transition: opacity .3s ease .06s, transform .45s cubic-bezier(.34,1.56,.64,1) .06s;
+}
+.header.expandido .logo { width: 24px; }
+.header.expandido .logo .logo-completo { opacity: 0; transition-duration: .18s; }
+.header.expandido .logo .logo-glifo { opacity: 1; transform: scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .logo, .logo img { transition: none !important; }
+}
