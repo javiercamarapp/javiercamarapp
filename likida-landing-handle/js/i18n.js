@@ -32,7 +32,7 @@
          el visitante en su navegador. */
       "og.idx.title": "Likida — El back-office del autotransporte, automatizado con agentes de IA",
       "og.idx.desc": "Liquida los viajes de tu flota por WhatsApp: valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra tu política de gastos.",
-      "og.mis.title": "Misión de Likida — el último back-office del autotransporte",
+      "og.mis.title": "Misión de Likida — el último kilómetro del dinero en el autotransporte",
       "og.mis.desc": "El transporte es un negocio de documentos con un camión encima. Por qué automatizamos el back-office del autotransporte de carga mexicano, agente por agente.",
       "og.img.alt": "Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.",
 
@@ -88,7 +88,7 @@
       "arq.2.p": "Conductores, cobranza de comprobantes, liquidación, facturas y conciliación de peajes — de punta a punta.",
       "arq.3.h": "Lo que ves en tiempo real",
       "arq.3.p": "Cola de viajes por cerrar, IVA acreditable, litros elegibles, discrepancias de peaje marcadas y alertas de vigencias.",
-      "arq.alt": "Diagrama isométrico: fuentes de datos, agentes de IA y visibilidad en tiempo real",
+      "arq.alt": "Diagrama isométrico de las tres capas de Likida: las fuentes de datos (WhatsApp, SAT, portales de casetas, GPS y ERP), los agentes de IA que las trabajan y el panel de visibilidad en tiempo real",
 
       /* ── stepper ── */
       "step.titulo": "AGENTE DE LIQUIDACIÓN — CICLO AUTOMÁTICO",
@@ -270,7 +270,7 @@
 
       /* ── misión ── */
       "mis.kicker": "MISIÓN",
-      "mis.h1": 'Likida, el último <span class="gris-suave">back-office.</span>',
+      "mis.h1": 'El último kilómetro no es el de la carga. <span class="gris-suave">Es el del dinero.</span>',
       "mis.h2.1": "El transportista mexicano no tiene un problema de gastos. Tiene un problema de que el comprobante viaja más lento que el camión.",
       "mis.p.1": "Cada flota de carga en México termina su día con el mismo ritual: se despacha el viaje por teléfono, se persigue al operador, se teclean sus tickets de diésel, casetas y viáticos, se cuadran contra el anticipo, y alguien entra a los portales a bajar los CFDI que faltan. No lo hace una persona: lo tocan <strong>cinco</strong> — tráfico, liquidaciones, facturación, contable y la capa de mando que los supervisa.",
       "mis.p.2": 'Y el país donde eso pasa es enorme: <strong>55,506 empresas</strong> de autotransporte con más de 5 unidades operan en México <span class="gris-suave">(Estadística Básica del Autotransporte Federal, DGAF-SICT)</span>. El combustible representa entre <strong>30% y 50%</strong> de su costo operativo <span class="gris-suave">(CANACAR vía Expansión; Total Protect vía T21 — no hay cifra oficial única, por eso citamos el rango)</span>. Y les faltan entre <strong>80,000 y 99,000 operadores</strong>, con decenas de miles de camiones parados por falta de chofer <span class="gris-suave">(CANACAR/IRU)</span>.',
@@ -308,7 +308,7 @@
          Spanish in the HTML; these keys only change what the visitor sees. */
       "og.idx.title": "Likida — The freight back-office, automated with AI agents",
       "og.idx.desc": "Settle your fleet's trips over WhatsApp: every CFDI validated against Mexico's SAT, with diesel, tolls and per diems reconciled against your expense policy.",
-      "og.mis.title": "Likida's mission — the last freight back-office",
+      "og.mis.title": "Likida's mission — the money's last mile in freight",
       "og.mis.desc": "Trucking is a documents business with a truck on top. Why we automate the Mexican freight back-office, one AI agent at a time.",
       "og.img.alt": "Likida — the freight back-office, automated with AI agents: trip settlement, CFDI validated against the SAT and toll reconciliation.",
 
@@ -364,7 +364,7 @@
       "arq.2.p": "Drivers, receipt collection, trip settlement, invoices and toll reconciliation — end to end.",
       "arq.3.h": "What you see in real time",
       "arq.3.p": "The queue of trips left to close, creditable VAT, eligible liters, flagged toll discrepancies and renewal alerts.",
-      "arq.alt": "Isometric diagram: data sources, AI agents and real-time visibility",
+      "arq.alt": "Isometric diagram of Likida's three layers: the data sources (WhatsApp, the SAT, toll and TAG portals, GPS and the ERP), the AI agents that work them, and the real-time dashboard",
 
       /* ── stepper ── */
       "step.titulo": "SETTLEMENT AGENT — AUTOMATIC CYCLE",
@@ -546,7 +546,7 @@
 
       /* ── mission ── */
       "mis.kicker": "MISSION",
-      "mis.h1": 'Likida, the last <span class="gris-suave">back-office.</span>',
+      "mis.h1": 'The last mile isn\'t the freight\'s. <span class="gris-suave">It\'s the money\'s.</span>',
       "mis.h2.1": "The Mexican carrier does not have an expense problem. It has a problem with the receipt traveling slower than the truck.",
       "mis.p.1": "Every freight fleet in Mexico ends its day with the same ritual: the trip is dispatched by phone, the driver is chased down, his diesel, toll and per-diem receipts are keyed in, they are reconciled against the cash advance, and somebody logs into the portals to pull the missing CFDIs. It is not one person's job: <strong>five</strong> of them touch it — dispatch, settlements, invoicing, accounting and the management layer that supervises them.",
       "mis.p.2": 'And the country where that happens is enormous: <strong>55,506 trucking companies</strong> with more than 5 units operate in Mexico <span class="gris-suave">(Estadística Básica del Autotransporte Federal, DGAF-SICT)</span>. Fuel accounts for between <strong>30% and 50%</strong> of their operating cost <span class="gris-suave">(CANACAR via Expansión; Total Protect via T21 — there is no single official figure, which is why we cite the range)</span>. And they are short between <strong>80,000 and 99,000 drivers</strong>, with tens of thousands of trucks parked for lack of one <span class="gris-suave">(CANACAR/IRU)</span>.',

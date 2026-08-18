@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://likida.ai/mision.html">
 <meta property="og:locale" content="es_MX">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" data-i18n-attr="content:og.mis.title" content="Misión de Likida — el último back-office del autotransporte">
+<meta property="og:title" data-i18n-attr="content:og.mis.title" content="Misión de Likida — el último kilómetro del dinero en el autotransporte">
 <meta property="og:description" data-i18n-attr="content:og.mis.desc" content="El transporte es un negocio de documentos con un camión encima. Por qué automatizamos el back-office del autotransporte de carga mexicano, agente por agente.">
 <meta property="og:image" content="https://likida.ai/assets/og-likida.png">
 <meta property="og:image:secure_url" content="https://likida.ai/assets/og-likida.png">
@@ -24,11 +24,21 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" data-i18n-attr="content:og.mis.title" content="Misión de Likida — el último back-office del autotransporte">
+<meta name="twitter:title" data-i18n-attr="content:og.mis.title" content="Misión de Likida — el último kilómetro del dinero en el autotransporte">
 <meta name="twitter:description" data-i18n-attr="content:og.mis.desc" content="El transporte es un negocio de documentos con un camión encima. Por qué automatizamos el back-office del autotransporte de carga mexicano, agente por agente.">
 <meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
 <meta name="twitter:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
 
+<!-- ── Fraunces (subconjunto latino) es la fuente del h1 y de todos los h2: es la
+     que decide cuándo deja de moverse la página. Sin este preload el navegador
+     pinta con Georgia, luego cambia y todo lo de abajo salta — medido, ese solo
+     reflow vale 0.037 de CLS de carga; con el preload baja a 0.001.
+     El resto de las familias se quedan en el <link> normal: no mueven la caja.
+     OJO al mantenerlo: la URL trae la versión (v38). Si Google publica una
+     nueva, el archivo viejo sigue sirviéndose pero el preload deja de usarse
+     (aviso en consola, no error). El arreglo durable es auto-hospedar la
+     fuente — Fraunces es OFL y se puede servir desde /assets. ── -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -105,7 +115,7 @@
 <header class="header" id="header">
   <div class="header-inner">
     <a class="logo" href="index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
-      <img src="assets/likida-logo.png" alt="Likida" style="height:22px;width:auto">
+      <img src="assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
     </a>
     <nav class="nav">
       <a href="index.html#producto" data-i18n="nav.producto">Producto</a>
@@ -120,7 +130,7 @@
         <span class="idioma-sep" aria-hidden="true">/</span>
         <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
       </div>
-      <a class="btn btn-tinta" href="index.html#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-tinta" href="index.html#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </div>
   </div>
 </header>
@@ -191,7 +201,7 @@
   </svg>
   <div class="wrap">
     <span class="kicker kicker-pill" data-i18n="mis.kicker">MISIÓN</span>
-    <h1 style="margin-top:26px" data-i18n="mis.h1">Likida, el último <span class="gris-suave">back-office.</span></h1>
+    <h1 style="margin-top:26px" data-i18n="mis.h1">El último kilómetro no es el de la carga. <span class="gris-suave">Es el del dinero.</span></h1>
   </div>
 </section>
 
@@ -239,7 +249,7 @@
       <p class="revela gris-suave" style="font-size:15px;border-top:1px solid var(--linea);padding-top:22px;margin-top:44px" data-i18n="mis.p.9">Una nota de honestidad: Likida está construyendo sus primeras flotas piloto, y esta página lo dice cada vez que importa. No vas a encontrar aquí logos de clientes que no existen ni proyecciones a cinco años — vas a encontrar un producto que puedes ver corriendo con tus propios tickets, hoy.</p>
 
       <div class="revela" style="margin-top:44px">
-        <a class="btn btn-acento" href="index.html#demo" style="font-size:16.5px;padding:15px 32px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt=""></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+        <a class="btn btn-acento" href="index.html#demo" style="font-size:16.5px;padding:15px 32px"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
       </div>
 
     </div>
