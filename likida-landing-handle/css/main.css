@@ -945,3 +945,26 @@ html[data-i18n-velo] body { visibility: hidden; }
   .mision-hero h1 { animation: none !important; }
   .mision-celda img { opacity: var(--mision-op); }
 }
+
+/* ── Brillo del botón principal ──
+   Misma mecánica que el CTA del hero de usehandle.ai: un degradado más ancho que
+   el botón que se recorre con background-position (no con transform, así no
+   repinta el layout). Ellos lo hacen sobre verde lima; aquí el destello es una
+   veta más clara sobre la tinta, que es lo que aguanta nuestra paleta. */
+@keyframes gloss-recorre {
+  0%   { background-position: 200% center; }
+  100% { background-position: -100% center; }
+}
+.btn-gloss {
+  background-image: linear-gradient(100deg,
+    var(--tinta) 0%, var(--tinta) 40%,
+    #4a3b33 46%, #7d6a5e 50%, #4a3b33 54%,
+    var(--tinta) 60%, var(--tinta) 100%);
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  animation: gloss-recorre 4.2s linear infinite;
+}
+.btn-gloss:hover { animation-duration: 2.4s; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-gloss { animation: none; background-image: none; }
+}
