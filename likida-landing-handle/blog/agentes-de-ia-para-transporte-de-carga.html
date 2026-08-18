@@ -85,16 +85,16 @@
 <!-- ── Header idéntico al de la landing. NO EDITAR. ── -->
 <header class="header" id="header">
   <div class="header-inner">
-    <a class="logo" href="../index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
+    <a class="logo" href="/" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
       <img src="../assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
     </a>
     <nav class="nav">
-      <a href="../index.html#producto" data-i18n="nav.producto">Producto</a>
-      <a href="../index.html#ciclo" data-i18n="nav.ciclo">El ciclo</a>
-      <a href="../index.html#seguridad" data-i18n="nav.seguridad">Seguridad</a>
-      <a href="../mision.html" data-i18n="nav.mision">Misión</a>
-      <a href="index.html" style="color:var(--tinta)" data-i18n="nav.blog">Blog</a>
-      <a href="../index.html#faq" data-i18n="nav.faq">Preguntas</a>
+      <a href="/#producto" data-i18n="nav.producto">Producto</a>
+      <a href="/#ciclo" data-i18n="nav.ciclo">El ciclo</a>
+      <a href="/#seguridad" data-i18n="nav.seguridad">Seguridad</a>
+      <a href="/mision" data-i18n="nav.mision">Misión</a>
+      <a href="/blog" style="color:var(--tinta)" data-i18n="nav.blog">Blog</a>
+      <a href="/#faq" data-i18n="nav.faq">Preguntas</a>
     </nav>
     <div class="header-acciones">
       <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
@@ -102,7 +102,7 @@
         <span class="idioma-sep" aria-hidden="true">/</span>
         <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
       </div>
-      <a class="btn btn-tinta" href="../getdemo.html"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-tinta" href="/getdemo"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </div>
   </div>
 </header>
@@ -113,7 +113,7 @@
 
     <!-- ══ Cabecera del artículo (medida 760 px) ══ -->
     <header class="blog-art-cabecera">
-      <p class="blog-migajon"><a href="index.html" data-i18n="blog.migajon">← Blog de Likida</a></p>
+      <p class="blog-migajon"><a href="/blog" data-i18n="blog.migajon">← Blog de Likida</a></p>
       <div class="blog-art-meta">
         <span class="blog-etiqueta" data-i18n="blog.tag.perspectiva">Perspectiva</span>
         <span class="blog-etiqueta"><time datetime="2026-08-17" data-i18n="blog.fecha.ago2026">Agosto 2026</time></span>
@@ -178,14 +178,14 @@
         <li data-i18n="blog.agentes.li.1.2">Recibir por WhatsApp los comprobantes de un operador en carretera y acomodarlos contra el viaje al que pertenecen, sin que nadie los capture a mano.</li>
         <li data-i18n="blog.agentes.li.1.3">Cotejar el XML de un CFDI contra su representación impresa, que no siempre dicen lo mismo.</li>
         <li data-i18n="blog.agentes.li.1.4">Notar lo que falta: un viaje con dos casetas registradas en una ruta que tiene cinco.</li>
-        <li data-i18n="blog.agentes.li.1.5"><a href="cancelacion-cfdi-plazo-2026-flotas.html">Vigilar el estado de los comprobantes ya recibidos</a> y avisar cuando un proveedor cancela uno que ya entró a una liquidación cerrada.</li>
-        <li data-i18n="blog.agentes.li.1.6">Redactar la aclaración que se le manda al proveedor cuando <a href="ieps-diesel-acreditable-cfdi-desglosado.html">un comprobante de diésel no desglosa lo que debería</a>.</li>
+        <li data-i18n="blog.agentes.li.1.5"><a href="/blog/cancelacion-cfdi-plazo-2026-flotas">Vigilar el estado de los comprobantes ya recibidos</a> y avisar cuando un proveedor cancela uno que ya entró a una liquidación cerrada.</li>
+        <li data-i18n="blog.agentes.li.1.6">Redactar la aclaración que se le manda al proveedor cuando <a href="/blog/ieps-diesel-acreditable-cfdi-desglosado">un comprobante de diésel no desglosa lo que debería</a>.</li>
       </ul>
 
       <p data-i18n="blog.agentes.p6">
         Ninguna de esas tareas es lucidora y todas se comen el tiempo de gente cara. Nuestro
         censo pone el costo de cerrar un viaje a mano en unos $105, repartidos entre cinco
-        puestos distintos; <a href="cuanto-cuesta-liquidar-un-viaje.html">el desglose está
+        puestos distintos; <a href="/blog/cuanto-cuesta-liquidar-un-viaje">el desglose está
         en la nota sobre lo que cuesta liquidar</a>. Casi todo ese costo es acarreo de
         papel, no criterio.
       </p>
@@ -201,7 +201,7 @@
         Un modelo de lenguaje predice la continuación más plausible de un texto. Esa es su
         virtud leyendo un ticket borroso y su defecto haciendo aritmética. <strong>Un agente
         de IA no debe calcular la liquidación.</strong> Los importes —anticipos, comisiones,
-        retenciones, el IEPS acreditable del diésel, <a href="estimulo-50-peaje-conciliacion-casetas-tag.html">el
+        retenciones, el IEPS acreditable del diésel, <a href="/blog/estimulo-50-peaje-conciliacion-casetas-tag">el
         50% del peaje</a>— tienen que salir de un motor determinista: mismo dato de entrada,
         mismo resultado hoy y dentro de tres años, reproducible renglón por renglón.
       </p>
@@ -319,7 +319,7 @@
         <li data-i18n="blog.agentes.li.3.1">El criterio de deducibilidad en los casos de frontera. Alguien con cédula lo decide y lo firma.</li>
         <li data-i18n="blog.agentes.li.3.2">La negociación con el proveedor que se niega a desglosar el comprobante como debe.</li>
         <li data-i18n="blog.agentes.li.3.3">Lo que se le descuenta a un operador. Eso es un asunto laboral y de confianza, no de datos.</li>
-        <li data-i18n="blog.agentes.li.3.4"><a href="carta-porte-3-1-revision-en-la-liquidacion.html">Los errores de Carta Porte que ya se emitieron</a>: el sistema los encuentra, pero corregirlos es trabajo de personas hablando entre áreas.</li>
+        <li data-i18n="blog.agentes.li.3.4"><a href="/blog/carta-porte-3-1-revision-en-la-liquidacion">Los errores de Carta Porte que ya se emitieron</a>: el sistema los encuentra, pero corregirlos es trabajo de personas hablando entre áreas.</li>
         <li data-i18n="blog.agentes.li.3.5">El arranque. Los primeros viajes de cualquier flota se cuadran a mano contra el sistema hasta que los dos números coincidan; no hay atajo.</li>
       </ul>
 
@@ -355,7 +355,7 @@
     <!-- ══ Cierre: una pregunta y un solo botón. ══ -->
     <section class="blog-cierre">
       <p data-i18n="blog.agentes.cierre">¿Cuál de las cinco preguntas no sabrías contestar del sistema con el que hoy liquidas?</p>
-      <a class="btn btn-tinta" href="../getdemo.html" style="font-size:16px;padding:14px 28px"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
+      <a class="btn btn-tinta" href="/getdemo" style="font-size:16px;padding:14px 28px"><span class="glifo"><img src="../assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
     </section>
 
   </div>
@@ -372,24 +372,24 @@
       <div class="footer-col">
         <span class="kicker" data-i18n="foot.k1">PRODUCTO</span>
         <ul>
-          <li><a href="../index.html#producto" data-i18n="foot.como">Cómo funciona</a></li>
-          <li><a href="../index.html#ciclo" data-i18n="foot.ciclo">El ciclo completo</a></li>
-          <li><a href="../index.html#seguridad" data-i18n="foot.seguridad">Seguridad</a></li>
-          <li><a href="../index.html#faq" data-i18n="foot.faq">Preguntas</a></li>
+          <li><a href="/#producto" data-i18n="foot.como">Cómo funciona</a></li>
+          <li><a href="/#ciclo" data-i18n="foot.ciclo">El ciclo completo</a></li>
+          <li><a href="/#seguridad" data-i18n="foot.seguridad">Seguridad</a></li>
+          <li><a href="/#faq" data-i18n="foot.faq">Preguntas</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <span class="kicker" data-i18n="foot.k2">COMPAÑÍA</span>
         <ul>
-          <li><a href="../mision.html" data-i18n="foot.mision">Misión</a></li>
-          <li><a href="index.html" data-i18n="nav.blog">Blog</a></li>
-          <li><a href="../getdemo.html" data-i18n="cta.contacto">Contáctanos</a></li>
+          <li><a href="/mision" data-i18n="foot.mision">Misión</a></li>
+          <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
+          <li><a href="/getdemo" data-i18n="cta.contacto">Contáctanos</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <span class="kicker" data-i18n="foot.k3">CONECTA</span>
         <ul>
-          <li><a href="../getdemo.html" data-i18n="foot.contacto">Contacto</a></li>
+          <li><a href="/getdemo" data-i18n="foot.contacto">Contacto</a></li>
           <li><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a></li>
         </ul>
       </div>
