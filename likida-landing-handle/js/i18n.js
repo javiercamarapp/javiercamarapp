@@ -46,6 +46,8 @@
       "nav.blog": "Blog",
       "nav.faq": "Preguntas",
       "cta.contacto": "Contáctanos",
+      "gd.volver": "Volver",
+      "gd.volver.aria": "Volver a la portada",
       "idioma.aria": "Idioma",
       "idioma.en": "Cambiar a inglés",
       "idioma.es": "Cambiar a español",
@@ -237,7 +239,7 @@
       "demo.p3.hint": "Disponibilidad en tiempo real — la cita cae directo en nuestro calendario",
       "demo.cal.nota": "Al agendar recibes la invitación con la liga de Google Meet en tu correo.",
 
-      /* ── página de contacto (contacto.html) ── */
+      /* ── página de contacto (getdemo.html) ── */
       "con.title": "Contacto — agenda una demo de Likida con un viaje tuyo",
       "con.desc": "Agenda 30 minutos con Likida y ve un viaje tuyo cuadrado en vivo: trae 10 fotos de un viaje cerrado y te llevas la liquidación, aunque no compres nada.",
       "og.con.title": "Agenda una demo de Likida — con tu propio viaje, no con el nuestro",
@@ -347,6 +349,8 @@
       "nav.blog": "Blog",
       "nav.faq": "FAQ",
       "cta.contacto": "Contact us",
+      "gd.volver": "Back",
+      "gd.volver.aria": "Back to home",
       "idioma.aria": "Language",
       "idioma.en": "Switch to English",
       "idioma.es": "Switch to Spanish",
@@ -538,7 +542,7 @@
       "demo.p3.hint": "Live availability — the meeting lands straight on our calendar",
       "demo.cal.nota": "Once you book, the invite with the Google Meet link lands in your inbox.",
 
-      /* ── contact page (contacto.html) ── */
+      /* ── contact page (getdemo.html) ── */
       "con.title": "Contact — book a Likida demo with a trip of your own",
       "con.desc": "Book 30 minutes with Likida and watch one of your own trips reconciled live: bring 10 photos from a closed trip and keep the settlement.",
       "og.con.title": "Book a Likida demo — on your own trip, not on ours",

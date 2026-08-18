@@ -13,10 +13,10 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <!-- Sin .html a propósito: es la URL canónica que declara contacto.html
-         (Vercel resuelve /contacto → contacto.html). Es la página a la que
+    <!-- Sin .html a propósito: es la URL canónica que declara getdemo.html
+         (Vercel resuelve /contacto → getdemo.html). Es la página a la que
          apuntan todos los CTA del sitio. -->
-    <loc>https://likida.ai/contacto</loc>
+    <loc>https://likida.ai/getdemo</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

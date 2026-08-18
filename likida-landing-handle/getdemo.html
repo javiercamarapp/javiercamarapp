@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="con.title">Contacto — agenda una demo de Likida con un viaje tuyo</title>
 <meta name="description" data-i18n-attr="content:con.desc" content="Agenda 30 minutos con Likida y ve un viaje tuyo cuadrado en vivo: trae 10 fotos de un viaje cerrado y te llevas la liquidación, aunque no compres nada.">
-<link rel="canonical" href="https://likida.ai/contacto">
+<link rel="canonical" href="https://likida.ai/getdemo">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="theme-color" content="#fbfbfd">
 
@@ -13,7 +13,7 @@
      ejecutan JS, así que siempre leen el español del HTML. ── -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likida">
-<meta property="og:url" content="https://likida.ai/contacto">
+<meta property="og:url" content="https://likida.ai/getdemo">
 <meta property="og:locale" content="es_MX">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" data-i18n-attr="content:og.con.title" content="Agenda una demo de Likida — con tu propio viaje, no con el nuestro">
@@ -49,8 +49,8 @@
   "@graph": [
     {
       "@type": "ContactPage",
-      "@id": "https://likida.ai/contacto#pagina",
-      "url": "https://likida.ai/contacto",
+      "@id": "https://likida.ai/getdemo#pagina",
+      "url": "https://likida.ai/getdemo",
       "name": "Contacto — agenda una demo de Likida",
       "description": "Agenda 30 minutos con Likida y ve un viaje tuyo cuadrado en vivo: trae 10 fotos de un viaje cerrado.",
       "inLanguage": "es-MX",
@@ -61,7 +61,7 @@
         "url": "https://likida.ai/assets/contacto.png",
         "caption": "Ilustración de línea: manos acomodando los comprobantes de un viaje junto a una pantalla con la liquidación."
       },
-      "breadcrumb": { "@id": "https://likida.ai/contacto#migas" }
+      "breadcrumb": { "@id": "https://likida.ai/getdemo#migas" }
     },
     {
       "@type": "Organization",
@@ -81,10 +81,10 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://likida.ai/contacto#migas",
+      "@id": "https://likida.ai/getdemo#migas",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://likida.ai/" },
-        { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://likida.ai/contacto" }
+        { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://likida.ai/getdemo" }
       ]
     }
   ]
@@ -93,32 +93,19 @@
 </head>
 <body>
 
-<div class="aviso" data-i18n="aviso">
-  Likida está armando su <strong>grupo cerrado de flotas piloto</strong> este trimestre — cada piloto se adapta a mano y el cupo es limitado.
-</div>
-
 <!-- ── Header píldora → ancho completo al scroll (idéntico al de index.html;
      los anclas de sección apuntan a index.html porque aquí no existen) ── -->
-<header class="header" id="header">
-  <div class="header-inner">
-    <a class="logo" href="index.html" data-i18n-attr="aria-label:logo.aria" aria-label="Likida — inicio">
-      <img src="assets/likida-logo.png" alt="Likida" width="726" height="149" style="height:22px;width:auto">
-    </a>
-    <nav class="nav">
-      <a href="index.html#producto" data-i18n="nav.producto">Producto</a>
-      <a href="index.html#ciclo" data-i18n="nav.ciclo">El ciclo</a>
-      <a href="index.html#seguridad" data-i18n="nav.seguridad">Seguridad</a>
-      <a href="mision.html" data-i18n="nav.mision">Misión</a>
-      <a href="index.html#faq" data-i18n="nav.faq">Preguntas</a>
-    </nav>
-    <div class="header-acciones">
-      <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
-        <button type="button" class="idioma-op" data-idioma="en" data-i18n-attr="aria-label:idioma.en" aria-label="Cambiar a inglés">EN</button>
-        <span class="idioma-sep" aria-hidden="true">/</span>
-        <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
-      </div>
-      <a class="btn btn-tinta" href="#demo"><span class="glifo"><img src="assets/likida-glifo-claro.png" alt="" width="149" height="149" decoding="async"></span><span data-i18n="cta.contacto">Contáctanos</span></a>
-    </div>
+<!-- ── Barra mínima, como el getdemo de Handle: solo volver e idioma.
+     Aquí no hay nav ni CTA a propósito — es una página de conversión y todo
+     lo que no sea el formulario compite con él. -->
+<header class="gd-barra">
+  <a class="gd-volver" href="index.html" data-i18n-attr="aria-label:gd.volver.aria" aria-label="Volver a la portada">
+    <span class="gd-flecha" aria-hidden="true">&#8249;</span><span data-i18n="gd.volver">Volver</span>
+  </a>
+  <div class="idioma" role="group" data-i18n-attr="aria-label:idioma.aria" aria-label="Idioma">
+    <button type="button" class="idioma-op" data-idioma="es" data-i18n-attr="aria-label:idioma.es" aria-label="Cambiar a español">ES</button>
+    <span class="idioma-sep" aria-hidden="true">/</span>
+    <button type="button" class="idioma-op" data-idioma="en" data-i18n-attr="aria-label:idioma.en" aria-label="Cambiar a inglés">EN</button>
   </div>
 </header>
 
