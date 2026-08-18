@@ -3,16 +3,136 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="idx.title">Likida — Tu flota, liquidada al día</title>
-<meta name="description" data-i18n-attr="content:idx.desc" content="Valida comprobantes contra el SAT, aplica tu política de gastos y cuadra la liquidación por viaje — desde el WhatsApp que tu operador ya usa.">
+<title data-i18n="idx.title">Likida — Liquidación de viajes con IA para flotas en México</title>
+<meta name="description" data-i18n-attr="content:idx.desc" content="Agentes de IA que liquidan los viajes de tu flota de autotransporte por WhatsApp: validan cada CFDI contra el SAT y cuadran diésel, casetas y viáticos.">
+<link rel="canonical" href="https://likida.ai/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#fbfbfd">
+
+<!-- ── Identidad social. OJO: los rastreadores de OG/Twitter no ejecutan JS,
+     así que siempre leen el español del HTML. El data-i18n solo sirve para que
+     la pestaña y la meta description cambien en el navegador del visitante. ── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Likida">
+<meta property="og:url" content="https://likida.ai/">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" data-i18n-attr="content:og.idx.title" content="Likida — El back-office del autotransporte, automatizado con agentes de IA">
+<meta property="og:description" data-i18n-attr="content:og.idx.desc" content="Liquida los viajes de tu flota por WhatsApp: valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra tu política de gastos.">
+<meta property="og:image" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:secure_url" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" data-i18n-attr="content:og.idx.title" content="Likida — El back-office del autotransporte, automatizado con agentes de IA">
+<meta name="twitter:description" data-i18n-attr="content:og.idx.desc" content="Liquida los viajes de tu flota por WhatsApp: valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra tu política de gastos.">
+<meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
+<meta name="twitter:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-64.png">
-<link rel="stylesheet" href="css/main.css?v=10">
-<script src="js/i18n.js?v=10"></script>
+<link rel="stylesheet" href="css/main.css?v=11">
+<script src="js/i18n.js?v=11"></script>
+
+<!-- ── Datos estructurados. En español porque el HTML servido es español.
+     Sin aggregateRating, review ni offers: Likida no tiene clientes ni precio
+     público, y schema.org inventado se castiga. ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://likida.ai/#organizacion",
+      "name": "Likida",
+      "alternateName": "Likida.ai",
+      "url": "https://likida.ai/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://likida.ai/#logo",
+        "url": "https://likida.ai/assets/likida-logo.png",
+        "contentUrl": "https://likida.ai/assets/likida-logo.png",
+        "width": 726,
+        "height": 149,
+        "caption": "Likida"
+      },
+      "image": { "@id": "https://likida.ai/#logo" },
+      "description": "Likida automatiza el back-office del autotransporte de carga mexicano: liquida los viajes de la flota por WhatsApp, valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra la política de gastos de la empresa.",
+      "areaServed": { "@type": "Country", "name": "MX" },
+      "knowsLanguage": ["es-MX", "en"],
+      "knowsAbout": [
+        "Liquidación de viajes de autotransporte de carga",
+        "Validación de CFDI contra el SAT",
+        "Conciliación de peajes y estados de cuenta de TAG",
+        "IEPS acreditable de diésel",
+        "Automatización del back-office con agentes de IA"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://likida.ai/#sitio",
+      "url": "https://likida.ai/",
+      "name": "Likida",
+      "description": "Software que liquida los viajes de flotas de autotransporte de carga en México por WhatsApp, valida los CFDI contra el SAT y cuadra los gastos contra la política de la empresa.",
+      "inLanguage": "es-MX",
+      "publisher": { "@id": "https://likida.ai/#organizacion" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://likida.ai/#pagina",
+      "url": "https://likida.ai/",
+      "name": "Likida — Liquidación de viajes con IA para flotas en México",
+      "description": "Agentes de IA que liquidan los viajes de tu flota de autotransporte por WhatsApp: validan cada CFDI contra el SAT y cuadran diésel, casetas y viáticos.",
+      "inLanguage": "es-MX",
+      "isPartOf": { "@id": "https://likida.ai/#sitio" },
+      "about": { "@id": "https://likida.ai/#software" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://likida.ai/assets/og-likida.png",
+        "width": 1200,
+        "height": 630
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://likida.ai/#software",
+      "name": "Likida",
+      "url": "https://likida.ai/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Liquidación de viajes y back-office para autotransporte de carga",
+      "operatingSystem": "Web, WhatsApp",
+      "browserRequirements": "Navegador moderno para el panel; el operador solo necesita WhatsApp.",
+      "inLanguage": ["es-MX", "en"],
+      "areaServed": { "@type": "Country", "name": "MX" },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Flotas de autotransporte de carga en México"
+      },
+      "provider": { "@id": "https://likida.ai/#organizacion" },
+      "publisher": { "@id": "https://likida.ai/#organizacion" },
+      "description": "Agentes de IA que cierran el ciclo del viaje: reciben los comprobantes por el WhatsApp que el operador ya usa, validan cada CFDI contra el SAT, cuadran diésel, casetas y viáticos contra la política de gastos de la flota y entregan la liquidación lista para el ERP.",
+      "featureList": [
+        "Liquidación de viajes por WhatsApp, sin apps nuevas para el operador",
+        "Lectura de tickets de diésel, casetas y viáticos con extracción de monto, RFC y folio fiscal",
+        "Validación de cada CFDI contra el SAT: vigencia, receptor correcto y emisor fuera de la lista 69-B",
+        "Cuadre determinístico del viaje contra el anticipo y la política de gastos de la flota",
+        "Conciliación del estado de cuenta del TAG contra los cruces reales de caseta",
+        "Calendario de recuperación de CFDI por ticket, con el portal y la fecha límite de cada emisor",
+        "Vigilancia de IVA acreditable, estímulo del 50% de peaje e IEPS de diésel en litros",
+        "Exportación al ERP (SAP Business One, CONTPAQi) sin recaptura",
+        "Alertas de vigencias de permisos, verificaciones, pólizas y licencias de operador"
+      ],
+      "screenshot": "https://likida.ai/assets/ss-chat-dashboard.png"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 

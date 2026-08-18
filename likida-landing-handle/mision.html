@@ -3,16 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="mis.title">Misión — Likida</title>
-<meta name="description" data-i18n-attr="content:mis.desc" content="Por qué existe Likida: el back-office del autotransporte de carga mexicano, automatizado agente por agente.">
+<title data-i18n="mis.title">Misión de Likida — automatizar el back-office del autotransporte</title>
+<meta name="description" data-i18n-attr="content:mis.desc" content="Por qué existe Likida: en el transporte mexicano el comprobante viaja más lento que el camión. La tesis para automatizar el back-office, agente por agente.">
+<link rel="canonical" href="https://likida.ai/mision.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#fbfbfd">
+
+<!-- ── Identidad social (los rastreadores no ejecutan JS: siempre leen el español). ── -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Likida">
+<meta property="og:url" content="https://likida.ai/mision.html">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" data-i18n-attr="content:og.mis.title" content="Misión de Likida — el último back-office del autotransporte">
+<meta property="og:description" data-i18n-attr="content:og.mis.desc" content="El transporte es un negocio de documentos con un camión encima. Por qué automatizamos el back-office del autotransporte de carga mexicano, agente por agente.">
+<meta property="og:image" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:secure_url" content="https://likida.ai/assets/og-likida.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" data-i18n-attr="content:og.mis.title" content="Misión de Likida — el último back-office del autotransporte">
+<meta name="twitter:description" data-i18n-attr="content:og.mis.desc" content="El transporte es un negocio de documentos con un camión encima. Por qué automatizamos el back-office del autotransporte de carga mexicano, agente por agente.">
+<meta name="twitter:image" content="https://likida.ai/assets/og-likida.png">
+<meta name="twitter:image:alt" data-i18n-attr="content:og.img.alt" content="Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-64.png">
-<link rel="stylesheet" href="css/main.css?v=10">
-<script src="js/i18n.js?v=10"></script>
+<link rel="stylesheet" href="css/main.css?v=11">
+<script src="js/i18n.js?v=11"></script>
+
+<!-- ── Datos estructurados (español, sin cifras ni valoraciones inventadas). ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://likida.ai/#organizacion",
+      "name": "Likida",
+      "alternateName": "Likida.ai",
+      "url": "https://likida.ai/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://likida.ai/#logo",
+        "url": "https://likida.ai/assets/likida-logo.png",
+        "contentUrl": "https://likida.ai/assets/likida-logo.png",
+        "width": 726,
+        "height": 149,
+        "caption": "Likida"
+      },
+      "image": { "@id": "https://likida.ai/#logo" },
+      "description": "Likida automatiza el back-office del autotransporte de carga mexicano: liquida los viajes de la flota por WhatsApp, valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra la política de gastos de la empresa.",
+      "areaServed": { "@type": "Country", "name": "MX" },
+      "knowsLanguage": ["es-MX", "en"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://likida.ai/#sitio",
+      "url": "https://likida.ai/",
+      "name": "Likida",
+      "inLanguage": "es-MX",
+      "publisher": { "@id": "https://likida.ai/#organizacion" }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://likida.ai/mision.html#pagina",
+      "url": "https://likida.ai/mision.html",
+      "name": "Misión de Likida — automatizar el back-office del autotransporte",
+      "description": "Por qué existe Likida: en el transporte mexicano el comprobante viaja más lento que el camión. La tesis para automatizar el back-office, agente por agente.",
+      "inLanguage": "es-MX",
+      "isPartOf": { "@id": "https://likida.ai/#sitio" },
+      "about": { "@id": "https://likida.ai/#organizacion" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://likida.ai/assets/og-likida.png",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": { "@id": "https://likida.ai/mision.html#migas" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://likida.ai/mision.html#migas",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://likida.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "Misión", "item": "https://likida.ai/mision.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -39,8 +125,52 @@
   </div>
 </header>
 
-<!-- ── HERO de misión con fondo de líneas abstractas (plano de rutas) ── -->
+<!-- ── HERO de misión: mosaico de fotos de Likida en loop detrás del título ──
+     Adaptación del banner del hero de HappyRobot (rejilla modular de celdas
+     cuadradas con fragmentos de foto que pasan tenues). Allá es un .mp4 de 10 s;
+     aquí son tres tiras CSS en marquee infinito, cada una triplicada para que el
+     reinicio caiga en un fotograma idéntico al inicial. Todo decorativo: las
+     celdas van con alt="" y el bloque entero con aria-hidden, así el lector de
+     pantalla solo oye el título. ── -->
 <section class="mision-hero">
+  <div class="mision-mosaico" aria-hidden="true">
+      <div class="mision-tira mision-tira-a">
+        <div class="mision-pista">
+          <span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span>
+        </div>
+      </div>
+      <div class="mision-tira mision-tira-b">
+        <div class="mision-pista">
+          <span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span>
+        </div>
+      </div>
+      <div class="mision-tira mision-tira-c">
+        <div class="mision-pista">
+          <span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span>
+        </div>
+      </div>
+      <div class="mision-tira mision-tira-d">
+        <div class="mision-pista">
+          <span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span>
+        </div>
+      </div>
+      <div class="mision-tira mision-tira-e">
+        <div class="mision-pista">
+          <span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span>
+          <span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/oficina.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/diesel.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/bascula.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/caseta.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/patio.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/operador.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/frontera.jpg" alt="" decoding="async"></span><span class="mision-celda"><img src="assets/mosaico/carretera.jpg" alt="" decoding="async"></span>
+        </div>
+      </div>
+  </div>
+  <div class="mision-velo" aria-hidden="true"></div>
   <svg class="mision-fondo" viewBox="0 0 1400 760" fill="none" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
     <g stroke="#c9c6bd" stroke-width="1">
       <path d="M760 40 v180 M760 220 h190 M950 220 v160"/>

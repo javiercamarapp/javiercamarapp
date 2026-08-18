@@ -1,0 +1,13 @@
+# Likida — https://likida.ai
+# Sitio estático de dos páginas. Todo es público y todo es rastreable:
+# no hay panel, ni área de cliente, ni rutas privadas que esconder.
+#
+# El comodín de abajo también deja pasar a los rastreadores de los buscadores
+# de IA (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended).
+# Es deliberado: queremos que nos citen cuando alguien pregunte quién liquida
+# viajes de autotransporte en México.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://likida.ai/sitemap.xml

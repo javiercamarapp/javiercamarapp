@@ -779,3 +779,155 @@ html[data-i18n-velo] body { visibility: hidden; }
   .header-acciones { gap: 10px; }
   .idioma { font-size: 12px; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MISIÓN — banner de mosaico en loop detrás del título
+   ───────────────────────────────────────────────────────────────────────────
+   Clonado del hero de HappyRobot: rejilla modular de celdas cuadradas de ~98 px
+   por las que van pasando fragmentos de foto, tenues, sin robarle la lectura al
+   título. Allá el mosaico es un .mp4 de 10.04 s (1920×1080, loop muted); aquí es
+   CSS puro — tres tiras en marquee, cada una repetida 3 veces y desplazada
+   exactamente -33.3333%, así el último fotograma es idéntico al primero y el
+   reinicio no se ve. Paleta del sitio: papel #fbfbfd, crema #f2f1ee, gris
+   #9a9aa1, tinta #17100d.
+   Todo va con prefijo .mision-* para no chocar con el hero de la portada.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.mision-hero {
+  --mision-celda: 98px;      /* módulo de HappyRobot: 97.6 px a 1440 de ancho */
+  --mision-hueco: 14px;
+  --mision-linea: rgba(154, 154, 161, .30);
+  --mision-crema: #f2f1ee;
+  --mision-op: .30;          /* opacidad de reposo de cada foto */
+  isolation: isolate;
+}
+
+/* ── La caja del mosaico: centrada en vertical y desvanecida arriba y abajo ── */
+.mision-mosaico {
+  position: absolute; inset: 0; z-index: 0;
+  overflow: hidden; pointer-events: none; user-select: none;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: var(--mision-hueco);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 26%, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 26%, #000 70%, transparent 100%);
+}
+
+/* ── Una tira = una fila de celdas que se desplaza sola ── */
+.mision-tira { position: relative; width: 100%; overflow: hidden; flex: 0 0 auto; }
+.mision-pista {
+  display: flex; width: max-content; flex: 0 0 auto;
+  animation: mision-desfile var(--mision-dur, 78s) linear infinite;
+  will-change: transform;
+}
+/* Tres copias idénticas de una tira de 14 celdas ⇒ el recorrido es EXACTAMENTE
+   el ancho de una copia (14 × la celda). Al terminar, la copia 2 está justo donde
+   arrancó la 1 y el fotograma es idéntico al inicial: el reinicio no se ve.
+   Se recorre en píxeles, no en %, para no dejar el residuo de subpíxel que deja
+   un -33.3333% sobre un ancho que no divide exacto. */
+@keyframes mision-desfile {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(calc(var(--mision-celda) * -14), 0, 0); }
+}
+/* Cinco filas, cada una a su velocidad y alternando el sentido: ninguna columna
+   se queda alineada con la de arriba y el conjunto nunca se repite a la vista. */
+.mision-tira-a .mision-pista { --mision-dur: 76s; }
+.mision-tira-b .mision-pista { --mision-dur: 104s; animation-direction: reverse; }
+.mision-tira-c .mision-pista { --mision-dur: 88s; }
+.mision-tira-d .mision-pista { --mision-dur: 122s; animation-direction: reverse; }
+.mision-tira-e .mision-pista { --mision-dur: 94s; }
+
+/* ── La celda: cuadrada, con su hilo de rejilla, como en el original ── */
+.mision-celda {
+  position: relative; display: block; flex: 0 0 auto;
+  width: var(--mision-celda); height: var(--mision-celda);
+  background: var(--mision-crema);
+  border-right: 1px solid var(--mision-linea);
+  border-top: 1px solid var(--mision-linea);
+  border-bottom: 1px solid var(--mision-linea);
+}
+.mision-celda img {
+  position: absolute; inset: 0; display: block;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: var(--mision-op);
+  /* desaturadas y aclaradas: el mosaico es textura, no fotografía */
+  filter: grayscale(.55) sepia(.14) contrast(.94) brightness(1.02);
+  animation: mision-respira 17s ease-in-out infinite;
+}
+/* Las fotos no laten todas a la vez: cada cuarta celda entra desfasada, así el
+   banner nunca se ve "encendido" ni "apagado" completo. */
+.mision-celda:nth-child(4n + 1) img { animation-delay: -0s; }
+.mision-celda:nth-child(4n + 2) img { animation-delay: -4.2s; }
+.mision-celda:nth-child(4n + 3) img { animation-delay: -8.5s; }
+.mision-celda:nth-child(4n + 4) img { animation-delay: -12.8s; }
+@keyframes mision-respira {
+  0%, 100% { opacity: calc(var(--mision-op) * .55); }
+  40%, 60% { opacity: var(--mision-op); }
+}
+
+/* ── El velo: garantiza que el título se lea SIEMPRE ──
+   Papel opaco sobre la columna del texto que se abre hacia la derecha, más un
+   corte arriba para que el mosaico no se pegue al header. */
+.mision-velo {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(96deg,
+      #fbfbfd 0, #fbfbfd 30%,
+      rgba(251, 251, 253, .92) 44%,
+      rgba(251, 251, 253, .55) 62%,
+      rgba(251, 251, 253, .12) 80%,
+      rgba(251, 251, 253, 0) 92%),
+    linear-gradient(to bottom, #fbfbfd 0, rgba(251, 251, 253, 0) 16%);
+}
+
+/* El plano de rutas queda de capa intermedia y más discreto que antes: ahora el
+   movimiento lo pone el mosaico. Sus dos bloques macizos se ocultan: con el
+   mosaico detrás leían como una mancha, no como parte del plano. */
+.mision-fondo { z-index: 1; opacity: .28; }
+.mision-fondo rect[fill] { display: none; }
+
+/* ── El título entra como el de HappyRobot: sube 16 px y aparece ──
+   Allá es un solo bloque (.hero-enter, .6s cubic-bezier(.22,1,.36,1) both);
+   aquí van escalonados el pill y el h1 porque son dos piezas, no una. */
+.mision-hero > .wrap { position: relative; z-index: 3; }
+.mision-hero .kicker { animation: mision-entra .6s cubic-bezier(.22, 1, .36, 1) both; }
+.mision-hero h1      { animation: mision-entra .6s cubic-bezier(.22, 1, .36, 1) .09s both; }
+@keyframes mision-entra {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Responsive: en móvil el título ocupa todo el ancho, así que el velo pasa a
+   ser vertical y las fotos bajan de intensidad. ── */
+@media (max-width: 900px) {
+  .mision-hero { --mision-celda: 76px; --mision-hueco: 10px; --mision-op: .24; }
+  /* El campo ocupa casi toda la sección: la máscara solo corta arriba y abajo. */
+  .mision-mosaico {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+  }
+  /* Aquí el título ocupa todo el ancho, así que el velo deja de ser lateral y se
+     vuelve una banda opaca justo detrás de las dos líneas del h1 (≈40–76% de la
+     sección); arriba y abajo el mosaico sí se ve. */
+  .mision-velo {
+    background: linear-gradient(to bottom,
+      #fbfbfd 0, #fbfbfd 8%,
+      rgba(251, 251, 253, .55) 24%,
+      rgba(251, 251, 253, .93) 40%,
+      rgba(251, 251, 253, .93) 76%,
+      rgba(251, 251, 253, .55) 90%,
+      rgba(251, 251, 253, .45) 100%);
+  }
+  .mision-fondo { opacity: .22; }
+}
+@media (max-width: 520px) {
+  .mision-hero { --mision-celda: 64px; --mision-hueco: 8px; }
+}
+
+/* ── Sin movimiento: se queda quieto y legible, nada parpadea ── */
+@media (prefers-reduced-motion: reduce) {
+  .mision-pista,
+  .mision-celda img,
+  .mision-hero .kicker,
+  .mision-hero h1 { animation: none !important; }
+  .mision-celda img { opacity: var(--mision-op); }
+}

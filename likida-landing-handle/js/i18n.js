@@ -22,10 +22,19 @@
   var DICT = {
     es: {
       /* ── head ── */
-      "idx.title": "Likida — Tu flota, liquidada al día",
-      "idx.desc": "Valida comprobantes contra el SAT, aplica tu política de gastos y cuadra la liquidación por viaje — desde el WhatsApp que tu operador ya usa.",
-      "mis.title": "Misión — Likida",
-      "mis.desc": "Por qué existe Likida: el back-office del autotransporte de carga mexicano, automatizado agente por agente.",
+      "idx.title": "Likida — Liquidación de viajes con IA para flotas en México",
+      "idx.desc": "Agentes de IA que liquidan los viajes de tu flota de autotransporte por WhatsApp: validan cada CFDI contra el SAT y cuadran diésel, casetas y viáticos.",
+      "mis.title": "Misión de Likida — automatizar el back-office del autotransporte",
+      "mis.desc": "Por qué existe Likida: en el transporte mexicano el comprobante viaja más lento que el camión. La tesis para automatizar el back-office, agente por agente.",
+
+      /* Identidad social. Los rastreadores de OG/Twitter no ejecutan JS y
+         siempre leen el español del HTML; estas claves solo cambian lo que ve
+         el visitante en su navegador. */
+      "og.idx.title": "Likida — El back-office del autotransporte, automatizado con agentes de IA",
+      "og.idx.desc": "Liquida los viajes de tu flota por WhatsApp: valida cada CFDI contra el SAT y cuadra diésel, casetas y viáticos contra tu política de gastos.",
+      "og.mis.title": "Misión de Likida — el último back-office del autotransporte",
+      "og.mis.desc": "El transporte es un negocio de documentos con un camión encima. Por qué automatizamos el back-office del autotransporte de carga mexicano, agente por agente.",
+      "og.img.alt": "Likida — el back-office del transporte, automatizado con agentes de IA: liquidación por viaje, CFDI validado contra el SAT y conciliación de peajes.",
 
       /* ── aviso + header ── */
       "aviso": "Likida está armando su <strong>grupo cerrado de flotas piloto</strong> este trimestre — cada piloto se adapta a mano y el cupo es limitado.",
@@ -290,10 +299,18 @@
 
     en: {
       /* ── head ── */
-      "idx.title": "Likida — Your fleet, settled every day",
-      "idx.desc": "Validates receipts against the SAT, applies your expense policy and settles every trip — from the WhatsApp your driver already uses.",
-      "mis.title": "Mission — Likida",
-      "mis.desc": "Why Likida exists: the back-office of Mexican freight trucking, automated one agent at a time.",
+      "idx.title": "Likida — AI trip settlement for freight fleets in Mexico",
+      "idx.desc": "AI agents that settle your trucking fleet's trips over WhatsApp: they validate every CFDI against Mexico's SAT and reconcile diesel, tolls and per diems.",
+      "mis.title": "Likida's mission — automating the freight trucking back-office",
+      "mis.desc": "Why Likida exists: in Mexican trucking the receipt travels slower than the truck. The thesis for automating the back-office, one agent at a time.",
+
+      /* Social identity. OG/Twitter crawlers do not run JS and always read the
+         Spanish in the HTML; these keys only change what the visitor sees. */
+      "og.idx.title": "Likida — The freight back-office, automated with AI agents",
+      "og.idx.desc": "Settle your fleet's trips over WhatsApp: every CFDI validated against Mexico's SAT, with diesel, tolls and per diems reconciled against your expense policy.",
+      "og.mis.title": "Likida's mission — the last freight back-office",
+      "og.mis.desc": "Trucking is a documents business with a truck on top. Why we automate the Mexican freight back-office, one AI agent at a time.",
+      "og.img.alt": "Likida — the freight back-office, automated with AI agents: trip settlement, CFDI validated against the SAT and toll reconciliation.",
 
       /* ── notice bar + header ── */
       "aviso": "Likida is forming its <strong>closed group of pilot fleets</strong> this quarter — every pilot is set up by hand and spots are limited.",
