@@ -1,0 +1,275 @@
+{
+  "generado": "2026-06-11T03:45Z (UTC; ~21:45 del 10-jun hora CDMX)",
+  "metodo": "WebSearch (la red bloquea acceso directo a casas; WebFetch dio 403 en caliente.mx y draftea.mx). Todos los momios provienen de snippets de búsqueda reales con URL. Pueden tener horas/días de desfase.",
+  "nota_regla_de_oro": "Ningún momio fue inventado. Donde una fuente daba rango (ej. -225 a -240) se registra el rango. Los momios decimales marcados 'calc' fueron convertidos del americano por fórmula estándar (+450=5.50, -200=1.50).",
+  "campeon": [
+    {"equipo": "España", "casa": "Caliente.mx", "momio_americano": "+400", "momio_decimal": 5.0, "fuente": "https://www.caliente.mx/mas/mundial/favoritos-a-ganar/ (vía snippet de búsqueda)", "fecha_dato": "junio 2026 (página activa al 11-jun)"},
+    {"equipo": "Inglaterra", "casa": "Caliente.mx", "momio_americano": "+525", "momio_decimal": 6.25, "fuente": "https://www.caliente.mx/mas/mundial/favoritos-a-ganar/ (vía snippet de búsqueda)", "fecha_dato": "junio 2026"},
+    {"equipo": "Argentina", "casa": "Caliente.mx", "momio_americano": "+750", "momio_decimal": 8.5, "fuente": "https://www.caliente.mx/mas/mundial/favoritos-a-ganar/ (vía snippet de búsqueda)", "fecha_dato": "junio 2026"},
+    {"equipo": "Brasil", "casa": "Caliente.mx", "momio_americano": "+750", "momio_decimal": 8.5, "fuente": "https://www.caliente.mx/mas/mundial/favoritos-a-ganar/ (vía snippet de búsqueda)", "fecha_dato": "junio 2026"},
+    {"equipo": "España", "casa": "BetMGM", "momio_americano": "+450", "momio_decimal": 5.5, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Francia", "casa": "BetMGM", "momio_americano": "+500", "momio_decimal": 6.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Inglaterra", "casa": "BetMGM", "momio_americano": "+700", "momio_decimal": 8.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Brasil", "casa": "BetMGM", "momio_americano": "+800", "momio_decimal": 9.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Portugal", "casa": "BetMGM", "momio_americano": "+900", "momio_decimal": 10.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Argentina", "casa": "BetMGM", "momio_americano": "+900", "momio_decimal": 10.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Alemania", "casa": "BetMGM", "momio_americano": "+1400", "momio_decimal": 15.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Países Bajos", "casa": "BetMGM", "momio_americano": "+2000", "momio_decimal": 21.0, "fuente": "https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "España", "casa": "consenso ESPN", "momio_americano": "+450", "momio_decimal": 5.5, "fuente": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Argentina", "casa": "consenso ESPN", "momio_americano": "+1000", "momio_decimal": 11.0, "fuente": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "Alemania", "casa": "consenso ESPN", "momio_americano": "+1300", "momio_decimal": 14.0, "fuente": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups", "fecha_dato": "2026-06-10/11"},
+    {"equipo": "España", "casa": "Kalshi (mercado de predicción)", "momio_americano": "+510", "momio_decimal": 6.1, "prob_implicita": 0.164, "fuente": "https://defirate.com/prediction-markets/world-cup-odds/", "fecha_dato": "2026-06 (tras amistoso Francia-Costa de Marfil del 4-jun)"},
+    {"equipo": "Francia", "casa": "Kalshi (mercado de predicción)", "momio_americano": "+523", "momio_decimal": 6.23, "prob_implicita": 0.161, "fuente": "https://defirate.com/prediction-markets/world-cup-odds/", "fecha_dato": "2026-06"},
+    {"equipo": "Portugal", "casa": "Kalshi (mercado de predicción)", "momio_americano": "+815", "momio_decimal": 9.15, "prob_implicita": 0.109, "fuente": "https://defirate.com/prediction-markets/world-cup-odds/", "fecha_dato": "2026-06"},
+    {"equipo": "México", "casa": "consenso US books", "momio_americano": "+6600", "momio_decimal": 67.0, "fuente": "https://www.goal.com/en-us/betting/world-cup/mexico-world-cup-odds/A%3Abltd59f746076be9dc6", "fecha_dato": "junio 2026"}
+  ],
+  "ganador_grupo": [
+    {"grupo": "K", "equipo": "Portugal", "momio_decimal": 1.65, "casa": "agregador Flashscore", "fuente": "https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/", "fecha_dato": "previa jun-2026"},
+    {"grupo": "K", "equipo": "Colombia", "momio_decimal": 3.5, "casa": "agregador Flashscore", "fuente": "https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/", "fecha_dato": "previa jun-2026", "nota": "3.50 implica 28.6%; modelo del autor le da 31.7% => valor en Colombia"},
+    {"grupo": "K", "equipo": "RD Congo", "momio_decimal": 21.0, "casa": "agregador Flashscore", "fuente": "https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/", "fecha_dato": "previa jun-2026"},
+    {"grupo": "K", "equipo": "Uzbekistán", "momio_decimal": 26.0, "casa": "agregador Flashscore", "fuente": "https://www.flashscore.com.ar/noticias/futbol-campeonato-del-mundo-previa-de-apuestas-del-grupo-k-del-mundial-2026-pronosticos-cuotas-y-mejores-apuestas/IaFwVKqn/", "fecha_dato": "previa jun-2026"},
+    {"grupo": "K", "equipo": "Portugal", "momio_americano": "-200 a -210", "momio_decimal": 1.48, "casa": "US books (apertura)", "fuente": "https://www.legalsportsreport.com/odds/world-cup/group-k/ y https://www.oddschecker.com/us/insight/soccer/20260610-2026-fifa-world-cup-group-k-odds-predictions-analysis-for-portugal-group", "fecha_dato": "2026-06-10"},
+    {"grupo": "K", "equipo": "Colombia", "momio_americano": "+200 a +225", "momio_decimal": 3.2, "casa": "US books (apertura)", "fuente": "https://www.legalsportsreport.com/odds/world-cup/group-k/", "fecha_dato": "2026-06-10", "nota": "+223 ≈ 31% implícita citada como pick de valor"},
+    {"grupo": "K", "equipo": "RD Congo", "momio_americano": "+1100 a +1400", "momio_decimal": 13.5, "casa": "US books", "fuente": "https://www.legalsportsreport.com/odds/world-cup/group-k/", "fecha_dato": "2026-06-10"},
+    {"grupo": "K", "equipo": "Uzbekistán", "momio_americano": "+2800", "momio_decimal": 29.0, "casa": "US books", "fuente": "https://www.legalsportsreport.com/odds/world-cup/group-k/", "fecha_dato": "2026-06-10"},
+    {"grupo": "K", "equipo": "Portugal", "momio_decimal": 1.4, "casa": "agregador RedGol", "fuente": "https://redgol.cl/apuestas/apuestas-mundial/grupo-k-copa-del-mundo-2026-analisis", "fecha_dato": "jun-2026", "nota": "Colombia 3.75 en esta misma fuente"},
+    {"grupo": "A", "equipo": "México", "momio_americano": "-120", "momio_decimal": 1.83, "casa": "US books", "fuente": "https://www.legalsportsreport.com/odds/world-cup/group-a/ y https://www.oddschecker.com/us/insight/soccer/20260608-2026-fifa-world-cup-group-a-odds-predictions-analysis-for-mexicos-group", "fecha_dato": "2026-06-08/10", "nota": "Otra fuente: 4/6 (~1.67, ~60%). Grupo A: México, Sudáfrica, Corea del Sur, Rep. Checa"},
+    {"grupo": "C", "equipo": "Brasil", "momio_americano": "-350", "momio_decimal": 1.29, "casa": "US books (apertura); FanDuel -330; otra -310", "fuente": "https://www.sportscasting.com/news/world-cup-2026-group-c-odds-predictions/", "fecha_dato": "2026-06-08/10"},
+    {"grupo": "C", "equipo": "Marruecos", "momio_americano": "+400 a +450", "momio_decimal": 5.25, "casa": "US books", "fuente": "https://www.sportscasting.com/news/world-cup-2026-group-c-odds-predictions/", "fecha_dato": "2026-06-08/10"},
+    {"grupo": "C", "equipo": "Escocia", "momio_americano": "+1000 a +1200", "momio_decimal": 12.0, "casa": "US books", "fuente": "https://www.sportscasting.com/news/world-cup-2026-group-c-odds-predictions/", "fecha_dato": "2026-06-08/10"},
+    {"grupo": "C", "equipo": "Haití", "momio_americano": "+10000 a +15000", "momio_decimal": 126.0, "casa": "US books", "fuente": "https://www.sportscasting.com/news/world-cup-2026-group-c-odds-predictions/", "fecha_dato": "2026-06-08/10"},
+    {"grupo": "H", "equipo": "España", "momio_americano": "-425", "momio_decimal": 1.24, "casa": "US books", "fuente": "https://www.si.com/betting/2026-world-cup-odds-and-best-bets-to-win-every-group-colombia-paraguay-and-egypt-are-great-plus-money-plays-01ktmbkgc6pj", "fecha_dato": "jun-2026", "nota": "Grupo H: España, Uruguay, Cabo Verde, Arabia Saudita"},
+    {"grupo": "I", "equipo": "Francia", "momio_americano": "-210", "momio_decimal": 1.48, "casa": "US books", "fuente": "https://www.covers.com/world-cup/odds", "fecha_dato": "jun-2026", "nota": "Grupo I: Francia, Senegal, Noruega, Irak"},
+    {"grupo": "J", "equipo": "Argentina", "momio_americano": "-290", "momio_decimal": 1.34, "casa": "US books", "fuente": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups", "fecha_dato": "2026-06-10/11", "nota": "Fuente indica grupo con Austria, Argelia y Jordania; otra nota lo llama Grupo L — verificar letra del grupo en app"},
+    {"grupo": "L", "equipo": "Inglaterra", "momio_americano": null, "momio_decimal": null, "casa": null, "fuente": "https://bleacherreport.com/articles/25435908-world-cup-2026-predictions-group-picks-odds-favorites-and-projections", "fecha_dato": "jun-2026", "nota": "Inglaterra favorita del Grupo L (con Croacia y Ghana) pero NO se encontró el número — capturar"},
+    {"grupo": "E", "equipo": "Alemania", "momio_americano": null, "momio_decimal": null, "casa": null, "fuente": "https://bleacherreport.com/articles/25435189-world-cup-2026-favorites-and-updated-group-odds-top-contenders", "fecha_dato": "jun-2026", "nota": "Alemania proyectada ganadora del Grupo E (Ecuador, Costa de Marfil, Curazao) pero sin número — capturar"}
+  ],
+  "partidos": [
+    {
+      "local": "México", "visitante": "Sudáfrica", "fecha": "2026-06-11", "grupo": "A", "estadio": "Estadio Azteca/Banorte, CDMX", "mercado": "1X2",
+      "casa": "Caliente.mx",
+      "momios": {"local": "-264", "empate": "+335", "visitante": "+850"},
+      "momios_decimal": {"local": 1.38, "empate": 4.35, "visitante": 9.5},
+      "prob_devig": {"local": 0.684, "empate": 0.217, "visitante": 0.099},
+      "fuente": "https://www.gambling.com/mx/news/mexico-vs-sudafrica-mundial-2026 (cita momios Caliente)",
+      "fecha_dato": "2026-06-10/11",
+      "nota": "Bolavip cita México -253 en otra captura; transfermarkt.mx cita -250/+330/+700. Pick de valor citado: México gana + Under 2.5"
+    },
+    {
+      "local": "México", "visitante": "Sudáfrica", "fecha": "2026-06-11", "grupo": "A", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "-209", "empate": "+333", "visitante": "+550"},
+      "momios_decimal": {"local": 1.48, "empate": 4.33, "visitante": 6.5},
+      "prob_devig": {"local": 0.637, "empate": 0.218, "visitante": 0.145},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-mexico-vs-south-africa-06-11-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "México", "visitante": "Sudáfrica", "fecha": "2026-06-11", "grupo": "A", "mercado": "1X2",
+      "casa": "FanDuel",
+      "momios": {"local": "-250", "empate": "+350", "visitante": "+800"},
+      "momios_decimal": {"local": 1.4, "empate": 4.5, "visitante": 9.0},
+      "prob_devig": {"local": 0.682, "empate": 0.212, "visitante": 0.106},
+      "fuente": "https://sportsbook.fanduel.com/soccer/fifa-world-cup/mexico-v-south-africa-35035283 (vía snippet)",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "México", "visitante": "Sudáfrica", "fecha": "2026-06-11", "grupo": "A", "mercado": "probabilidades Kalshi",
+      "casa": "Kalshi",
+      "momios": null,
+      "prob_mercado": {"local": 0.70, "empate": 0.21, "visitante": 0.11},
+      "fuente": "https://www.squawka.com/us-es/news/mexico-vs-sudafrica-pronostico-mundial-2026/",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "México", "visitante": "Sudáfrica", "fecha": "2026-06-11", "grupo": "A", "mercado": "marcador exacto",
+      "casa": "bet365 (Predictor IA)",
+      "momios": {"mexico_1_0": "+550"},
+      "momios_decimal": {"mexico_1_0": 6.5},
+      "fuente": "https://www.mediotiempo.com/futbol/copa-mundial/mexico-vs-sudafrica-pronostico-ia-partido-inauguracion-mundial-2026",
+      "fecha_dato": "2026-06-10/11",
+      "nota": "ÚNICO marcador exacto con momio encontrado en toda la búsqueda. El 2-0 de México es el pick más citado pero SIN momio publicado"
+    },
+    {
+      "local": "Estados Unidos", "visitante": "Paraguay", "fecha": "2026-06-12", "grupo": "D", "estadio": "SoFi Stadium, Los Ángeles", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "+100", "empate": "+240", "visitante": "+275"},
+      "momios_decimal": {"local": 2.0, "empate": 3.4, "visitante": 3.75},
+      "prob_devig": {"local": 0.471, "empate": 0.277, "visitante": 0.251},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-united-states-vs-paraguay-06-12-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "Canadá", "visitante": "Bosnia y Herzegovina", "fecha": "2026-06-12", "grupo": "B", "mercado": "1X2",
+      "casa": "US books (Covers)",
+      "momios": {"local": "-120", "empate": "+275", "visitante": "+400"},
+      "momios_decimal": {"local": 1.83, "empate": 3.75, "visitante": 5.0},
+      "prob_devig": {"local": 0.539, "empate": 0.263, "visitante": 0.198},
+      "fuente": "https://www.covers.com/world-cup/canada-odds",
+      "fecha_dato": "jun-2026",
+      "nota": "Italia NO clasificó (perdió repechaje en marzo); el rival de Canadá es Bosnia"
+    },
+    {
+      "local": "Qatar", "visitante": "Suiza", "fecha": "2026-06-13", "grupo": "B", "estadio": "Levi's Stadium, Bahía de San Francisco", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "+850", "empate": "+450", "visitante": "-334"},
+      "momios_decimal": {"local": 9.5, "empate": 5.5, "visitante": 1.3},
+      "prob_devig": {"local": 0.100, "empate": 0.172, "visitante": 0.728},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-qatar-vs-switzerland-06-13-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "Brasil", "visitante": "Marruecos", "fecha": "2026-06-13", "grupo": "C", "estadio": "MetLife Stadium", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "-175", "empate": "+300", "visitante": "+425"},
+      "momios_decimal": {"local": 1.57, "empate": 4.0, "visitante": 5.25},
+      "prob_devig": {"local": 0.591, "empate": 0.232, "visitante": 0.177},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-brazil-vs-morocco-06-13-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "Haití", "visitante": "Escocia", "fecha": "2026-06-13", "grupo": "C", "estadio": "Gillette Stadium", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "+525", "empate": "+350", "visitante": "-225"},
+      "momios_decimal": {"local": 6.25, "empate": 4.5, "visitante": 1.44},
+      "prob_devig": {"local": 0.149, "empate": 0.207, "visitante": 0.644},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-haiti-vs-scotland-06-13-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11"
+    },
+    {
+      "local": "Alemania", "visitante": "Curazao", "fecha": "2026-06-14", "grupo": "E", "estadio": "NRG Stadium, Houston", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "-3300", "empate": "+1600", "visitante": "+4000"},
+      "momios_decimal": {"local": 1.03, "empate": 17.0, "visitante": 41.0},
+      "prob_devig": {"local": 0.921, "empate": 0.056, "visitante": 0.023},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-germany-vs-curacao-06-14-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11",
+      "nota": "FanDuel: -2000/+1900/+4000. Marcador más probable según supercomputadora: Alemania 3-0 (13.7%) — sin momio. Germany al cero (win to nil) 1.44. Línea de goles Alemania -3.5 a -120 (SportsLine)"
+    },
+    {
+      "local": "España", "visitante": "Cabo Verde", "fecha": "2026-06-15", "grupo": "H", "estadio": "Mercedes-Benz Stadium, Atlanta", "mercado": "1X2 (PARCIAL — no de-vig)",
+      "casa": "US books vía VegasOdds/SportsCasting",
+      "momios": {"local": "≈-1099 (apostar $1,099 paga $1,199 total)", "empate": null, "visitante": "≈+2500 ($100 paga $2,600 total)"},
+      "momios_decimal": {"local": 1.09, "empate": null, "visitante": 26.0},
+      "prob_devig": null,
+      "fuente": "https://www.vegasodds.com/predictions/soccer/spain-vs-cape-verde-world-cup-picks-odds-preview-jun-15/ y https://www.sportscasting.com/news/supercomputer-spain-vs-cape-verde-betting-picks-predictions-odds/",
+      "fecha_dato": "jun-2026",
+      "nota": "Mercado incompleto (falta empate) => no se calcula de-vig. Modelo: España 86.2% / Cabo Verde 3.9%. OJO: el rival de España el 15-jun es CABO VERDE, no Curazao (Curazao está en el grupo de Alemania)"
+    },
+    {
+      "local": "Argentina", "visitante": "Argelia", "fecha": "2026-06-16", "grupo": "J", "estadio": "Arrowhead, Kansas City", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "-239", "empate": "+350", "visitante": "+600"},
+      "momios_decimal": {"local": 1.42, "empate": 4.5, "visitante": 7.0},
+      "prob_devig": {"local": 0.659, "empate": 0.208, "visitante": 0.134},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-argentina-vs-algeria-06-16-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11",
+      "nota": "Otra fuente (Ámbito): 1.41 / 4.35 / 9.10. Kalshi: 71/21/10. Marcador más probable citado: 2-0 — sin momio"
+    },
+    {
+      "local": "Francia", "visitante": "Senegal", "fecha": "2026-06-16", "grupo": "I", "estadio": "MetLife Stadium", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "-225", "empate": "+350", "visitante": "+550"},
+      "momios_decimal": {"local": 1.44, "empate": 4.5, "visitante": 6.5},
+      "prob_devig": {"local": 0.648, "empate": 0.208, "visitante": 0.144},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-france-vs-senegal-06-16-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11",
+      "nota": "Kalshi: Francia 68% / empate 20% / Senegal 13%. Revancha del shock de 2002"
+    },
+    {
+      "local": "Inglaterra", "visitante": "Croacia", "fecha": "2026-06-17", "grupo": "L", "estadio": "AT&T Stadium, Arlington", "mercado": "1X2",
+      "casa": "bet365",
+      "momios": {"local": "-138", "empate": "+270", "visitante": "+375"},
+      "momios_decimal": {"local": 1.72, "empate": 3.7, "visitante": 4.75},
+      "prob_devig": {"local": 0.547, "empate": 0.255, "visitante": 0.199},
+      "fuente": "https://www.squawka.com/us/news/world-cup/match-preview-england-vs-croatia-06-17-26-world-cup-2026/",
+      "fecha_dato": "2026-06-10/11",
+      "nota": "Marcador más probable según supercomputadora: Inglaterra 1-0 (13.6%) — sin momio"
+    },
+    {
+      "local": "Uzbekistán", "visitante": "Colombia", "fecha": "2026-06-17", "grupo": "K", "estadio": "Estadio Banorte/Azteca, CDMX", "mercado": "1X2",
+      "casa": "consenso US books (ESPN/OddsShark/FanDuel)",
+      "momios": {"local": "+700 a +750", "empate": "+300 a +320", "visitante": "-225 a -240"},
+      "momios_decimal": {"local": 8.25, "empate": 4.1, "visitante": 1.43},
+      "prob_devig": {"local": 0.114, "empate": 0.230, "visitante": 0.656},
+      "fuente": "https://www.espn.com/soccer/odds/_/gameId/760436 y https://www.sportscasting.com/news/uzbekistan-vs-colombia-betting-picks-predictions-odds/",
+      "fecha_dato": "2026-06-10",
+      "nota": "De-vig calculado sobre punto medio (-230/+310/+725). Modelo: Colombia 67.5%/empate 20.5%/Uzb 12%. Marcador más probable Colombia 1-0 (~13%) — picks citados: Colombia ML -230, Under 2.5 a -110, marcador exacto 1-0 (sin momio del exacto)"
+    }
+  ],
+  "bota_de_oro": [
+    {"jugador": "Kylian Mbappé", "pais": "Francia", "momio_americano": "+600", "momio_decimal": 7.0, "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot", "fecha_dato": "jun-2026"},
+    {"jugador": "Harry Kane", "pais": "Inglaterra", "momio_americano": "+700", "momio_decimal": 8.0, "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot", "fecha_dato": "jun-2026"},
+    {"jugador": "Mikel Oyarzabal", "pais": "España", "momio_americano": "+1200", "momio_decimal": 13.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Erling Haaland", "pais": "Noruega", "momio_americano": "+1600", "momio_decimal": 17.0, "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot", "fecha_dato": "jun-2026"},
+    {"jugador": "Lionel Messi", "pais": "Argentina", "momio_americano": "+1800", "momio_decimal": 19.0, "fuente": "https://www.foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot", "fecha_dato": "jun-2026"},
+    {"jugador": "Cristiano Ronaldo", "pais": "Portugal", "momio_americano": "+2200", "momio_decimal": 23.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Julián Álvarez", "pais": "Argentina", "momio_americano": "+2500", "momio_decimal": 26.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Lamine Yamal", "pais": "España", "momio_americano": "+2700", "momio_decimal": 28.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Kai Havertz", "pais": "Alemania", "momio_americano": "+2700", "momio_decimal": 28.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Raphinha", "pais": "Brasil", "momio_americano": "+2700", "momio_decimal": 28.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Vinícius Júnior", "pais": "Brasil", "momio_americano": "+3000", "momio_decimal": 31.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Lautaro Martínez", "pais": "Argentina", "momio_americano": "+3300", "momio_decimal": 34.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Romelu Lukaku", "pais": "Bélgica", "momio_americano": "+4000", "momio_decimal": 41.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Cody Gakpo", "pais": "Países Bajos", "momio_americano": "+4000", "momio_decimal": 41.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"},
+    {"jugador": "Ousmane Dembélé", "pais": "Francia", "momio_americano": "+4000", "momio_decimal": 41.0, "fuente": "https://www.si.com/betting/2026-world-cup-golden-boot-odds-and-prediction-kylian-mbappe-and-harry-kane-set-as-favorites-01ktmhgzvh6n", "fecha_dato": "jun-2026"}
+  ],
+  "reglas_casas": {
+    "caliente": {
+      "apuesta_minima_mxn": "5 a 10 MXN por evento según el evento; combinadas/parlay desde 2 MXN; streaming en vivo requiere apuesta mínima de 10 MXN",
+      "max_selecciones_parlay": "Conflicto entre fuentes: la guía de combinadas habla de hasta 20 pronósticos; la página de reglas/parlay clásico habla de 2 a 8 selecciones. VERIFICAR EN APP",
+      "pago_maximo_sencilla_mxn": 1500000,
+      "pago_maximo_parlay_mxn": 3600000,
+      "bono_parlay_futbol": {
+        "aplica": "parlays de 2+ selecciones en mercados 'Resultado Final' o 'Resultado/Ambos Anotan' de ligas participantes, INCLUYE Mundial 2026",
+        "bono_max_pct": "hasta 100% sobre ganancias (excluye el monto apostado)",
+        "bono_max_mxn": 2000000,
+        "vigencia": "hasta 2026-12-31",
+        "ejemplo_citado": "parlay de 8 selecciones con 7 ganadoras y 1 cancelada recibe 15% (el % se ajusta al número de selecciones ganadoras)",
+        "tabla_porcentajes": "NO ENCONTRADA en snippets — capturar de la app/página de promoción"
+      },
+      "regla_cancelaciones": "empate/no acción: parlay de 2 se vuelve apuesta derecha; de 3+ se reduce al número inferior de combinaciones"
+    },
+    "draftea": {
+      "operador": "Producciones Móviles S.A. de C.V., permiso DGAJS/SCEVF/P-06/2005-TER",
+      "apuesta_minima_mxn": "NO CONFIRMADA — no se encontró si acepta $5 MXN; capturar de la app",
+      "deposito_minimo_mxn": "100 MXN para promoción de bienvenida (referencias de terceros mencionan depósitos desde 50 MXN)",
+      "ganancia_maxima_por_juego_mxn": 1000000,
+      "parlays": "acepta apuestas múltiples (NBA, NFL, fútbol, etc.); máximo de selecciones NO encontrado",
+      "custom_bet": "función 'Custom Bet / Crea tu Apuesta' permite combinar selecciones correlacionadas del MISMO evento en un solo boleto",
+      "regla_cancelaciones": "si todas las selecciones empatan o se cancelan, se devuelve el monto de la entrada"
+    },
+    "fuentes": [
+      "https://www.caliente.mx/mas/ayuda/deportes/cual-es-el-importe-minimo-maximo-que-se-puede-jugar-en-una-apuesta/",
+      "https://www.caliente.mx/mas/ayuda/reglas-de-apuestas/apuestas-generales/",
+      "https://www.caliente.mx/mas/promociones/parlay-de-futbol/",
+      "https://www.caliente.mx/mas/ayuda/deportes/que-apuestas-se-pueden-combinar/",
+      "https://www.draftea.mx/page/reglas-de-apuestas-generales",
+      "https://www.draftea.mx/page/custom-bet-crea-tu-apuesta",
+      "https://www.draftea.mx/page/terminos-y-condiciones-cupon-bienvenidoweb",
+      "https://calientecasino.com.mx/deportes/reglas-y-limites-de-apuestas-de-deportes/"
+    ]
+  },
+  "faltantes_para_captura": [
+    "Marcador exacto México 2-0 Sudáfrica (HOY 11-jun) en Caliente — solo se tiene bet365 1-0 a +550; capturar toda la grilla de marcadores",
+    "Marcador exacto España vs Cabo Verde (15-jun): 2-0, 3-0, 4-0 en Caliente (OJO: es Cabo Verde, no Curazao)",
+    "Marcador exacto Argentina 2-0 Argelia (16-jun) en Caliente",
+    "Marcador exacto Brasil vs Marruecos (13-jun): 1-0, 2-0, 2-1 en Caliente",
+    "Marcador exacto Alemania 3-0 Curazao (14-jun) en Caliente (modelo lo da 13.7% probable)",
+    "Marcador exacto Inglaterra 1-0 Croacia (17-jun) y Francia vs Senegal (16-jun) en Caliente",
+    "Marcador exacto Colombia 1-0 Uzbekistán (17-jun) en Caliente — pick citado por modelos sin momio",
+    "1X2 completo España vs Cabo Verde (15-jun): falta el momio del EMPATE en cualquier casa",
+    "1X2 Portugal vs RD Congo (17-jun, Houston) — no se encontró ningún momio",
+    "1X2 Corea del Sur vs República Checa (12-jun, Grupo A) — no se encontró ningún momio",
+    "1X2 resto de partidos 14-15 jun (Países Bajos, Bélgica, etc.) — no buscados a fondo",
+    "Ganador Grupo K en CALIENTE (Portugal/Colombia) — solo se tienen agregadores (1.65/3.50) y US books (-200/+200); la tesis del proyecto necesita el precio exacto de Caliente",
+    "Ganador Grupo A México en CALIENTE — solo US books (-120)",
+    "Ganador Grupo L (Inglaterra), Grupo E (Alemania) e I (Francia, US -210) con número en Caliente",
+    "Campeón en Caliente: momios de Francia, Portugal, Alemania y México (solo se capturaron España +400, Inglaterra +525, Argentina +750, Brasil +750)",
+    "Doble oportunidad y línea Over/Under con momio para México vs Sudáfrica (solo se sabe que el pick es Under 2.5; Colombia-Uzb Under 2.5 ≈ -110)",
+    "Apuesta mínima exacta de Draftea (¿acepta $5 MXN?) y máximo de selecciones por parlay en Draftea",
+    "Tabla completa de porcentajes del bono parlay fútbol de Caliente (% por 3, 4, 5... selecciones)",
+    "Confirmar máximo de selecciones por parlay en Caliente (¿8 o 20?)",
+    "Bota de Oro en Caliente (solo se tienen momios de casas US)"
+  ]
+}

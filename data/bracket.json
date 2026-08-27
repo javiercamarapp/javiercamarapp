@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "descripcion": "Bracket eliminatorio Mundial 2026 (73-104) TRANSCRITO del cuadro oficial.",
+    "fuente": "Imagen oficial enviada por Javier (Football Rankings · 2026 FIFA World Cup Projected Bracket, IMG_8278) — esqueleto de posiciones OFICIAL FIFA; las banderas son proyección, las POSICIONES (1A/2B/3º y el cableado de rondas) son las oficiales.",
+    "verificado": "España (1H, mitad izquierda) y Argentina (1J, mitad derecha) en lados opuestos: solo se cruzan en la final. España+Francia → semifinal M101 (izq); Argentina+Inglaterra → semifinal M102 (der); Argentina-Portugal posible en cuartos M100; Brasil-Inglaterra en cuartos M99.",
+    "nota_sedes": "Las sedes/fechas son aproximadas (la imagen no las detalla); la ESTRUCTURA de cruces es la oficial. La localía solo afecta a México/Canadá/EUA si su sede coincide."
+  },
+  "dieciseisavos": [
+    {"num": 73, "local": "2A", "visitante": "2B", "ciudad": "Los Ángeles", "fecha": "2026-06-28"},
+    {"num": 74, "local": "1E", "visitante": "3_ABCDF", "ciudad": "Atlanta", "fecha": "2026-06-29"},
+    {"num": 75, "local": "1F", "visitante": "2C", "ciudad": "Dallas", "fecha": "2026-06-29"},
+    {"num": 76, "local": "1C", "visitante": "2F", "ciudad": "Houston", "fecha": "2026-06-29"},
+    {"num": 77, "local": "1I", "visitante": "3_CDFGH", "ciudad": "Nueva York", "fecha": "2026-06-30"},
+    {"num": 78, "local": "2E", "visitante": "2I", "ciudad": "San Francisco", "fecha": "2026-06-30"},
+    {"num": 79, "local": "1A", "visitante": "3_CEFHI", "ciudad": "Ciudad de México", "fecha": "2026-06-30"},
+    {"num": 80, "local": "1L", "visitante": "3_EHIJK", "ciudad": "Boston", "fecha": "2026-07-02"},
+    {"num": 81, "local": "1D", "visitante": "3_BEFIJ", "ciudad": "Filadelfia", "fecha": "2026-07-01"},
+    {"num": 82, "local": "1G", "visitante": "3_AEHIJ", "ciudad": "Toronto", "fecha": "2026-07-02"},
+    {"num": 83, "local": "2K", "visitante": "2L", "ciudad": "Vancouver", "fecha": "2026-07-01"},
+    {"num": 84, "local": "1H", "visitante": "2J", "ciudad": "Monterrey", "fecha": "2026-07-02"},
+    {"num": 85, "local": "1B", "visitante": "3_EFGIJ", "ciudad": "Toronto", "fecha": "2026-07-03"},
+    {"num": 86, "local": "1J", "visitante": "2H", "ciudad": "Miami", "fecha": "2026-07-03"},
+    {"num": 87, "local": "1K", "visitante": "3_DEIJL", "ciudad": "Seattle", "fecha": "2026-07-03"},
+    {"num": 88, "local": "2D", "visitante": "2G", "ciudad": "Kansas City", "fecha": "2026-07-03"}
+  ],
+  "octavos": [
+    {"num": 89, "local": "W74", "visitante": "W77", "ciudad": "Atlanta", "fecha": "2026-07-04"},
+    {"num": 90, "local": "W73", "visitante": "W75", "ciudad": "Dallas", "fecha": "2026-07-04"},
+    {"num": 91, "local": "W76", "visitante": "W78", "ciudad": "Houston", "fecha": "2026-07-05"},
+    {"num": 92, "local": "W79", "visitante": "W80", "ciudad": "Ciudad de México", "fecha": "2026-07-05"},
+    {"num": 93, "local": "W83", "visitante": "W84", "ciudad": "Monterrey", "fecha": "2026-07-06"},
+    {"num": 94, "local": "W81", "visitante": "W82", "ciudad": "Filadelfia", "fecha": "2026-07-06"},
+    {"num": 95, "local": "W86", "visitante": "W88", "ciudad": "Miami", "fecha": "2026-07-07"},
+    {"num": 96, "local": "W85", "visitante": "W87", "ciudad": "Seattle", "fecha": "2026-07-07"}
+  ],
+  "cuartos": [
+    {"num": 97, "local": "W89", "visitante": "W90", "ciudad": "Boston", "fecha": "2026-07-09", "_nota": "QF izquierda-arriba (Alemania/Francia región)"},
+    {"num": 98, "local": "W93", "visitante": "W94", "ciudad": "Los Ángeles", "fecha": "2026-07-10", "_nota": "QF izquierda-abajo (ESPAÑA región)"},
+    {"num": 99, "local": "W91", "visitante": "W92", "ciudad": "Miami", "fecha": "2026-07-10", "_nota": "QF derecha-arriba (BRASIL vs INGLATERRA región)"},
+    {"num": 100, "local": "W95", "visitante": "W96", "ciudad": "Kansas City", "fecha": "2026-07-11", "_nota": "QF derecha-abajo (ARGENTINA vs PORTUGAL región)"}
+  ],
+  "semifinales": [
+    {"num": 101, "local": "W97", "visitante": "W98", "ciudad": "Dallas", "fecha": "2026-07-14", "_nota": "MITAD IZQUIERDA → ESPAÑA vs FRANCIA"},
+    {"num": 102, "local": "W99", "visitante": "W100", "ciudad": "Atlanta", "fecha": "2026-07-15", "_nota": "MITAD DERECHA → ARGENTINA vs INGLATERRA/BRASIL"}
+  ],
+  "tercer_lugar": {"num": 103, "local": "L101", "visitante": "L102", "ciudad": "Miami", "fecha": "2026-07-18"},
+  "final": {"num": 104, "local": "W101", "visitante": "W102", "ciudad": "Nueva York", "fecha": "2026-07-19",
+            "_nota": "ESPAÑA (izq) vs ARGENTINA (der) SOLO posible aquí."}
+}
